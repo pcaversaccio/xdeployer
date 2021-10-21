@@ -1,12 +1,9 @@
 import { HardhatUserConfig } from "hardhat/types";
-import * as dotenv from "dotenv";
-
-// We load the plugin here.
 import "../../../src/index";
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.4", // Hardhat currently only fully supports up to and including 0.8.4
+    version: "0.8.4",
     settings: {
       optimizer: {
         enabled: true,
@@ -14,14 +11,24 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  networks: {
+    hardhat: {
+      accounts: [
+        {
+          privateKey: "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
+          balance: "100000000000000000000",
+        },
+      ],
+    },
+  },
   defaultNetwork: "hardhat",
   xdeploy: {
-    networks: ["rinkeby", "ropsten", "kovan"],
+    networks: ["hardhat"],
     contract: "ERC20Mock",
     salt: "YOLO",
-    constructorArgsPath: "contracts/deploy-args.js",
-    signer: process.env.PRIVATE_KEY,
-    rpcUrls: [process.env.RINKEBY_URL, process.env.ROPSTEN_URL, process.env.KOVAN_URL],
+    constructorArgsPath: "../test/fixture-projects/hardhat-project/deploy-args.ts",
+    signer: "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
+    rpcUrls: ["hardhat"],
   }
 };
 

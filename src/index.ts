@@ -6,10 +6,7 @@ import {
   AMOUNT,
   GASLIMIT,
   PLUGIN_NAME,
-  TASK_VERIFY_NETWORK_ARGUMENTS,
-  TASK_VERIFY_CONTRACT,
-  TASK_VERIFY_SALT,
-  TASK_VERIFY_GAS_LIMIT
+  TASK_VERIFY_NETWORK_ARGUMENTS
 } from "./constants";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
@@ -29,11 +26,11 @@ task("xdeploy", "Deploys the contract across all defined networks")
       let create2Deployer: Array<any> = [];
       let createReceipt: Array<any> = [];
       let initcode: any;
-
+      
       if (hre.config.xdeploy.constructorArgsPath !== undefined && hre.config.xdeploy.contract !== undefined) {
-        const args = require(hre.config.xdeploy.constructorArgsPath);
+        const args = (await import(hre.config.xdeploy.constructorArgsPath));
         const Contract = await hre.ethers.getContractFactory(hre.config.xdeploy.contract);
-        initcode = await Contract.getDeployTransaction(...args);
+        initcode = await Contract.getDeployTransaction(...args.data);
       } else if (hre.config.xdeploy.contract !== undefined) {
         const Contract = await hre.ethers.getContractFactory(hre.config.xdeploy.contract);
         initcode = await Contract.getDeployTransaction();
@@ -47,7 +44,7 @@ task("xdeploy", "Deploys the contract across all defined networks")
         
         if (hre.config.xdeploy.salt !== undefined){
         createReceipt[i] = await create2Deployer[i].deploy(AMOUNT, hre.ethers.utils.id(
-          hre.config.xdeploy.salt), initcode.data, { GASLIMIT }
+          hre.config.xdeploy.salt), initcode.data, { gasLimit: GASLIMIT }
         )
         await createReceipt[i].wait();
         console.log(

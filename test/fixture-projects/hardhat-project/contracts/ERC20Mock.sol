@@ -3,7 +3,7 @@
 
 pragma solidity ^0.8.4;
 
-import "../contracts/libraries/ERC20.sol";
+import "./imported/ERC20.sol";
 
 // Mock class using ERC20
 contract ERC20Mock is ERC20 {
