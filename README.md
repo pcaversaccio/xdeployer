@@ -1,58 +1,85 @@
-# Hardhat TypeScript plugin boilerplate
+# hardhat-example-plugin
 
-This is a sample Hardhat plugin written in TypeScript. Creating a Hardhat plugin
-can be as easy as extracting a part of your config into a different file and
-publishing it to npm.
+_A one line description of the plugin_
 
-This sample project contains an example on how to do that, but also comes with
-many more features:
+[Hardhat](https://hardhat.org) plugin example. 
 
-- A mocha test suite ready to use
-- TravisCI already setup
-- A package.json with scripts and publishing info
-- Examples on how to do different things
+## What
+
+<_A longer, one paragraph, description of the plugin_>
+
+This plugin will help you with world domination by implementing a simple tic-tac-toe in the terminal.
 
 ## Installation
 
-To start working on your project, just run
+<_A step-by-step guide on how to install the plugin_>
 
 ```bash
-npm install
+npm install <your npm package name> [list of peer dependencies]
 ```
 
-## Plugin development
+Import the plugin in your `hardhat.config.js`:
 
-Make sure to read our [Plugin Development Guide](https://hardhat.org/advanced/building-plugins.html) to learn how to build a plugin.
+```js
+require("<your plugin npm package name>");
+```
 
-## Testing
+Or if you are using TypeScript, in your `hardhat.config.ts`:
 
-Running `npm run test` will run every test located in the `test/` folder. They
-use [mocha](https://mochajs.org) and [chai](https://www.chaijs.com/),
-but you can customize them.
+```ts
+import "<your plugin npm package name>";
+```
 
-We recommend creating unit tests for your own modules, and integration tests for
-the interaction of the plugin with Hardhat and its dependencies.
 
-## Linting and autoformat
+## Required plugins
 
-All of Hardhat projects use [prettier](https://prettier.io/) and
-[tslint](https://palantir.github.io/tslint/).
+<_The list of all the required Hardhat plugins if there are any_>
 
-You can check if your code style is correct by running `npm run lint`, and fix
-it with `npm run lint:fix`.
+- [@nomiclabs/hardhat-web3](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-web3)
 
-## Building the project
+## Tasks
 
-Just run `npm run build` ️👷
+<_A description of each task added by this plugin. If it just overrides internal 
+tasks, this may not be needed_>
 
-## README file
+This plugin creates no additional tasks.
 
-This README describes this boilerplate project, but won't be very useful to your
-plugin users.
+<_or_>
 
-Take a look at `README-TEMPLATE.md` for an example of what a Hardhat plugin's
-README should look like.
+This plugin adds the _example_ task to Hardhat:
+```
+output of `npx hardhat help example`
+```
 
-## Migrating from Buidler?
+## Environment extensions
 
-Take a look at [the migration guide](MIGRATION.md)!
+<_A description of each extension to the Hardhat Runtime Environment_>
+
+This plugin extends the Hardhat Runtime Environment by adding an `example` field
+whose type is `ExampleHardhatRuntimeEnvironmentField`.
+
+## Configuration
+
+<_A description of each extension to the HardhatConfig or to its fields_>
+
+This plugin extends the `HardhatUserConfig`'s `ProjectPathsUserConfig` object with an optional
+`newPath` field.
+
+This is an example of how to set it:
+
+```js
+module.exports = {
+  paths: {
+    newPath: "new-path"
+  }
+};
+```
+
+## Usage
+
+<_A description of how to use this plugin. How to use the tasks if there are any, etc._>
+
+There are no additional steps you need to take for this plugin to work.
+
+Install it and access ethers through the Hardhat Runtime Environment anywhere
+you need it (tasks, scripts, tests, etc).

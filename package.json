@@ -1,22 +1,29 @@
 {
-  "name": "evm-cross-deployer",
+  "name": "xdeployer",
   "version": "1.0.0",
-  "description": "Deploy your smart contracts across multiple EVM chains with the same deterministic address.",
-  "repository": "github:pcaversaccio/evm-cross-deployer-plugin",
+  "description": "Hardhat plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.",
   "author": "Pascal Marco Caversaccio",
   "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "keywords": [
+    "deployment",
     "ethereum",
-    "smart-contracts",
+    "create2",
     "hardhat",
     "hardhat-plugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pcaversaccio/xdeployer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pcaversaccio/xdeployer/issues"
+  },
   "scripts": {
     "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
     "lint": "tslint --config tslint.json --project tsconfig.json",
-    "test": "mocha --exit --recursive --timeout 80000 'test/**/*.test.ts'",
+    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
     "watch": "tsc -w",
     "prepublishOnly": "npm run build"
@@ -28,7 +35,6 @@
     "README.md"
   ],
   "devDependencies": {
-    "@eth-sdk/utils": "^0.2.10",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@openzeppelin/contracts": "^4.3.2",
     "@types/chai": "^4.1.7",
