@@ -14,7 +14,7 @@ export const xdeployConfigExtender: ConfigExtender = (config, userConfig) => {
     const customConfig = userConfig.xdeploy;
     config.xdeploy = {
       ...defaultConfig,
-      ...customConfig
+      ...customConfig,
     };
   } else {
     config.xdeploy = defaultConfig;
