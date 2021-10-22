@@ -13,6 +13,7 @@ import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomiclabs/hardhat-ethers";
+import { Contract } from "hardhat/internal/hardhat-network/stack-traces/model";
 
 extendConfig(xdeployConfigExtender);
 
@@ -40,16 +41,30 @@ task("xdeploy", "Deploys the contract across all defined networks")
         providers[i] = new hre.ethers.providers.JsonRpcProvider(hre.config.xdeploy.rpcUrls[i]);
         wallets[i] = new hre.ethers.Wallet(hre.config.xdeploy.signer, providers[i]);
         signers[i] = wallets[i].connect(providers[i]);
-        create2Deployer[i] =  new hre.ethers.Contract(CREATE2_DEPLOYER_ADDRESS, abi, signers[i]);
         
-        if (hre.config.xdeploy.salt !== undefined){
-        createReceipt[i] = await create2Deployer[i].deploy(AMOUNT, hre.ethers.utils.id(
-          hre.config.xdeploy.salt), initcode.data, { gasLimit: GASLIMIT }
-        )
-        await createReceipt[i].wait();
-        console.log(
-          `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
-        );
+        if(hre.config.xdeploy.networks[i] !== "hardhat") {
+          create2Deployer[i] =  new hre.ethers.Contract(CREATE2_DEPLOYER_ADDRESS, abi, signers[i]);
+          if (hre.config.xdeploy.salt !== undefined){
+            createReceipt[i] = await create2Deployer[i].deploy(AMOUNT, hre.ethers.utils.id(
+              hre.config.xdeploy.salt), initcode.data, { gasLimit: GASLIMIT }
+            )
+            await createReceipt[i].wait();
+            console.log(
+              `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+            );
+          }
+        } else if (hre.config.xdeploy.networks[i] === "hardhat") {
+          const hhcreate2Deployer = await hre.ethers.getContractFactory("Create2Deployer");
+          create2Deployer[i] = await hhcreate2Deployer.deploy();
+          if (hre.config.xdeploy.salt !== undefined){
+            createReceipt[i] = await create2Deployer[i].deploy(AMOUNT, hre.ethers.utils.id(
+              hre.config.xdeploy.salt), initcode.data, { gasLimit: GASLIMIT }
+            )
+            await createReceipt[i].wait();
+            console.log(
+              `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+            );
+          }
         }
       }
     }

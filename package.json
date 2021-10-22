@@ -30,6 +30,7 @@
   "devDependencies": {
     "@eth-sdk/utils": "^0.2.10",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@openzeppelin/contracts": "^4.3.2",
     "@types/chai": "^4.1.7",
     "@types/fs-extra": "^5.0.4",
     "@types/mocha": "^5.2.6",
