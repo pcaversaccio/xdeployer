@@ -6,19 +6,26 @@ import {
   AMOUNT,
   GASLIMIT,
   PLUGIN_NAME,
-  TASK_VERIFY_NETWORK_ARGUMENTS
+  TASK_VERIFY_NETWORK_ARGUMENTS,
+  TASK_VERIFY_SALT,
+  TASK_VERIFY_SIGNER
 } from "./constants";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomiclabs/hardhat-ethers";
-import { Contract } from "hardhat/internal/hardhat-network/stack-traces/model";
 
 extendConfig(xdeployConfigExtender);
 
 task("xdeploy", "Deploys the contract across all defined networks")
   .setAction(async (_, hre) => {
+    await hre.run(TASK_VERIFY_NETWORK_ARGUMENTS);
+    await hre.run(TASK_VERIFY_SALT);
+    await hre.run(TASK_VERIFY_SIGNER);
+
+    await hre.run("compile")
+
     if (hre.config.xdeploy.rpcUrls !== undefined && hre.config.xdeploy.networks !== undefined 
       && hre.config.xdeploy.rpcUrls.length == hre.config.xdeploy.networks.length) {
       let providers: Array<any> = [];
@@ -81,3 +88,24 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS)
       );
     }
   });
+
+subtask(TASK_VERIFY_SALT)
+.setAction(async (_,hre) => {
+  if (hre.config.xdeploy.salt === undefined || hre.config.xdeploy.salt == "") {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `Please provide an arbitrary value as salt.`
+    );
+  }
+});
+
+subtask(TASK_VERIFY_SIGNER)
+.setAction(async (_,hre) => {
+  if (hre.config.xdeploy.signer === undefined || hre.config.xdeploy.signer == "") {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `Please provide a signer private key. We recommend using a .env file.
+      See https://www.npmjs.com/package/dotenv.`
+    );
+  }
+});
