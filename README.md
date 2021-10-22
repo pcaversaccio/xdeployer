@@ -1,4 +1,6 @@
 # hardhat-example-plugin
+[![build status](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 _A one line description of the plugin_
 
