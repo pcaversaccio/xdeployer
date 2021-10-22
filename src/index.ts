@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
 import { xdeployConfigExtender } from "./config";
 import { networks } from "./networks";
