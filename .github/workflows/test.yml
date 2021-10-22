@@ -1,0 +1,45 @@
+name: Test xdeploy
+
+# Controls when the action will run 
+on: [push, pull_request]
+
+jobs:
+  unit:
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          # - macos-latest
+          # - windows-latest
+        node_version:
+          - 14
+          # - 15
+        # architecture:
+          # - x64
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        # We add a new step to our job that tracks our package-lock.json for any changes. 
+        # If the job doesn't see any differences, then it can use the npm cache from a 
+        # previous build, which speeds things up quite a bit.
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install npm project with a clean slate
+        run: npm ci
+        
+      - name: Run tests
+        run: npm run test
