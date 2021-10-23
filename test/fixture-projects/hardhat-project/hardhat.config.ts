@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/types";
 import "../../../src/index";
+import { ethers } from "ethers";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -26,7 +27,7 @@ const config: HardhatUserConfig = {
   xdeploy: {
     networks: ["hardhat"],
     contract: "ERC20Mock",
-    salt: "YOLO1",
+    salt: ethers.utils.id(Date.now().toString()),
     constructorArgsPath:
       "../test/fixture-projects/hardhat-project/deploy-args.ts",
     signer:
