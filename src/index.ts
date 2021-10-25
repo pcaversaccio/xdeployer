@@ -5,111 +5,156 @@ import { networks } from "./networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
   AMOUNT,
-  GASLIMIT,
   PLUGIN_NAME,
   TASK_VERIFY_NETWORK_ARGUMENTS,
+  TASK_VERIFY_SUPPORTED_NETWORKS,
+  TASK_VERIFY_EQUAL_ARGS_NETWORKS,
   TASK_VERIFY_SALT,
   TASK_VERIFY_SIGNER,
+  TASK_VERIFY_CONTRACT,
+  TASK_VERIFY_GASLIMIT,
 } from "./constants";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomiclabs/hardhat-ethers";
+import * as fs from "fs";
+import path from "path";
 
 extendConfig(xdeployConfigExtender);
 
-task("xdeploy", "Deploys the contract across all defined networks").setAction(
-  async (_, hre) => {
-    await hre.run(TASK_VERIFY_NETWORK_ARGUMENTS);
-    await hre.run(TASK_VERIFY_SALT);
-    await hre.run(TASK_VERIFY_SIGNER);
+task(
+  "xdeploy",
+  "Deploys the contract across all predefined networks"
+).setAction(async (_, hre) => {
+  await hre.run(TASK_VERIFY_NETWORK_ARGUMENTS);
+  await hre.run(TASK_VERIFY_SUPPORTED_NETWORKS);
+  await hre.run(TASK_VERIFY_EQUAL_ARGS_NETWORKS);
+  await hre.run(TASK_VERIFY_SALT);
+  await hre.run(TASK_VERIFY_SIGNER);
+  await hre.run(TASK_VERIFY_CONTRACT);
+  await hre.run(TASK_VERIFY_GASLIMIT);
 
-    await hre.run("compile");
+  await hre.run("compile");
 
-    if (
-      hre.config.xdeploy.rpcUrls !== undefined &&
-      hre.config.xdeploy.networks !== undefined &&
-      hre.config.xdeploy.rpcUrls.length == hre.config.xdeploy.networks.length
+  if (hre.config.xdeploy.rpcUrls && hre.config.xdeploy.networks) {
+    const providers: Array<any> = [];
+    const wallets: Array<any> = [];
+    const signers: Array<any> = [];
+    const create2Deployer: Array<any> = [];
+    const createReceipt: Array<any> = [];
+    let initcode: any;
+    const dir = "./deployments";
+
+    if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
+      const args = await import(hre.config.xdeploy.constructorArgsPath);
+      const Contract = await hre.ethers.getContractFactory(
+        hre.config.xdeploy.contract
+      );
+      initcode = await Contract.getDeployTransaction(...args.data);
+    } else if (
+      !hre.config.xdeploy.constructorArgsPath &&
+      hre.config.xdeploy.contract
     ) {
-      const providers: Array<any> = [];
-      const wallets: Array<any> = [];
-      const signers: Array<any> = [];
-      const create2Deployer: Array<any> = [];
-      const createReceipt: Array<any> = [];
-      let initcode: any;
+      const Contract = await hre.ethers.getContractFactory(
+        hre.config.xdeploy.contract
+      );
+      initcode = await Contract.getDeployTransaction();
+    }
 
-      if (
-        hre.config.xdeploy.constructorArgsPath !== undefined &&
-        hre.config.xdeploy.contract !== undefined
-      ) {
-        const args = await import(hre.config.xdeploy.constructorArgsPath);
-        const Contract = await hre.ethers.getContractFactory(
-          hre.config.xdeploy.contract
-        );
-        initcode = await Contract.getDeployTransaction(...args.data);
-      } else if (hre.config.xdeploy.contract !== undefined) {
-        const Contract = await hre.ethers.getContractFactory(
-          hre.config.xdeploy.contract
-        );
-        initcode = await Contract.getDeployTransaction();
-      }
+    for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
+      providers[i] = new hre.ethers.providers.JsonRpcProvider(
+        hre.config.xdeploy.rpcUrls[i]
+      );
+      wallets[i] = new hre.ethers.Wallet(
+        hre.config.xdeploy.signer,
+        providers[i]
+      );
+      signers[i] = wallets[i].connect(providers[i]);
 
-      for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
-        providers[i] = new hre.ethers.providers.JsonRpcProvider(
-          hre.config.xdeploy.rpcUrls[i]
+      if (hre.config.xdeploy.networks[i] !== "hardhat") {
+        create2Deployer[i] = new hre.ethers.Contract(
+          CREATE2_DEPLOYER_ADDRESS,
+          abi,
+          signers[i]
         );
-        wallets[i] = new hre.ethers.Wallet(
-          hre.config.xdeploy.signer,
-          providers[i]
-        );
-        signers[i] = wallets[i].connect(providers[i]);
-
-        if (hre.config.xdeploy.networks[i] !== "hardhat") {
-          create2Deployer[i] = new hre.ethers.Contract(
-            CREATE2_DEPLOYER_ADDRESS,
-            abi,
-            signers[i]
+        if (hre.config.xdeploy.salt) {
+          createReceipt[i] = await create2Deployer[i].deploy(
+            AMOUNT,
+            hre.ethers.utils.id(hre.config.xdeploy.salt),
+            initcode.data,
+            { gasLimit: hre.config.xdeploy.gasLimit }
           );
-          if (hre.config.xdeploy.salt !== undefined) {
-            createReceipt[i] = await create2Deployer[i].deploy(
-              AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              initcode.data,
-              { gasLimit: GASLIMIT }
-            );
-            await createReceipt[i].wait();
-            console.log(
-              `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
-            );
+          await createReceipt[i].wait();
+
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
           }
-        } else if (hre.config.xdeploy.networks[i] === "hardhat") {
-          const hhcreate2Deployer = await hre.ethers.getContractFactory(
-            "Create2Deployer"
+          fs.writeFile(
+            path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_depoyment.json`
+              )
+            ),
+            JSON.stringify(createReceipt[i]),
+            function (err) {
+              if (err) {
+                console.log(err);
+              }
+            }
           );
-          create2Deployer[i] = await hhcreate2Deployer.deploy();
-          if (hre.config.xdeploy.salt !== undefined) {
-            createReceipt[i] = await create2Deployer[i].deploy(
-              AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              initcode.data,
-              { gasLimit: GASLIMIT }
-            );
-            await createReceipt[i].wait();
-            console.log(
-              `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
-            );
+          console.log(
+            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+          );
+        }
+      } else if (hre.config.xdeploy.networks[i] === "hardhat") {
+        const hhcreate2Deployer = await hre.ethers.getContractFactory(
+          "Create2Deployer"
+        );
+        create2Deployer[i] = await hhcreate2Deployer.deploy();
+        if (hre.config.xdeploy.salt) {
+          createReceipt[i] = await create2Deployer[i].deploy(
+            AMOUNT,
+            hre.ethers.utils.id(hre.config.xdeploy.salt),
+            initcode.data,
+            { gasLimit: hre.config.xdeploy.gasLimit }
+          );
+          await createReceipt[i].wait();
+
+          if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
           }
+          fs.writeFile(
+            path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_depoyment.json`
+              )
+            ),
+            JSON.stringify(createReceipt[i]),
+            function (err) {
+              if (err) {
+                console.log(err);
+              }
+            }
+          );
+          console.log(
+            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+          );
         }
       }
     }
   }
-);
+});
 
 subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
   if (
-    hre.config.xdeploy.networks === undefined ||
-    hre.config.xdeploy.networks.length == 0
+    !hre.config.xdeploy.networks ||
+    hre.config.xdeploy.networks.length === 0
   ) {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
@@ -120,24 +165,75 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
   }
 });
 
-subtask(TASK_VERIFY_SALT).setAction(async (_, hre) => {
-  if (hre.config.xdeploy.salt === undefined || hre.config.xdeploy.salt == "") {
+subtask(TASK_VERIFY_SUPPORTED_NETWORKS).setAction(async (_, hre) => {
+  const unsupported = hre?.config?.xdeploy?.networks?.filter(
+    (v) => !networks.includes(v)
+  );
+  if (unsupported && unsupported.length > 0) {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
-      `Please provide an arbitrary value as salt.`
+      `You have tried to configure a network that this plugin does not yet support,
+      or you have misspelled the network name. The currently supported networks are
+      ${networks}.`
+    );
+  }
+});
+
+subtask(TASK_VERIFY_EQUAL_ARGS_NETWORKS).setAction(async (_, hre) => {
+  if (
+    hre.config.xdeploy.networks &&
+    hre.config.xdeploy.rpcUrls &&
+    hre.config.xdeploy.rpcUrls.length !== hre.config.xdeploy.networks.length
+  ) {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `The parameters "network" and "rpcUrls" do not have the same length.
+      Please ensure that both parameters have the same length, i.e. for each
+      network there is a corresponding rpcUrls entry.`
+    );
+  }
+});
+
+subtask(TASK_VERIFY_SALT).setAction(async (_, hre) => {
+  if (!hre.config.xdeploy.salt || hre.config.xdeploy.salt === "") {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `Please provide an arbitrary value as salt.
+      E.g.: { [...], xdeploy: { salt: "WAGMI" }, [...] }.`
     );
   }
 });
 
 subtask(TASK_VERIFY_SIGNER).setAction(async (_, hre) => {
-  if (
-    hre.config.xdeploy.signer === undefined ||
-    hre.config.xdeploy.signer == ""
-  ) {
+  if (!hre.config.xdeploy.signer || hre.config.xdeploy.signer === "") {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please provide a signer private key. We recommend using a .env file.
-      See https://www.npmjs.com/package/dotenv.`
+      See https://www.npmjs.com/package/dotenv.
+      E.g.: { [...], xdeploy: { signer: process.env.PRIVATE_KEY }, [...] }.`
+    );
+  }
+});
+
+subtask(TASK_VERIFY_CONTRACT).setAction(async (_, hre) => {
+  if (!hre.config.xdeploy.contract || hre.config.xdeploy.contract === "") {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `Please specify the contract name of the smart contract to be deployed.
+      E.g.: { [...], xdeploy: { contract: "ERC20" }, [...] }.`
+    );
+  }
+});
+
+subtask(TASK_VERIFY_GASLIMIT).setAction(async (_, hre) => {
+  if (
+    hre.config.xdeploy.gasLimit &&
+    hre.config.xdeploy.gasLimit > 15 * 10 ** 6
+  ) {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `Please specify a lower gasLimit. Each block has currently 
+      a target size of 15 million gas.`
     );
   }
 });
