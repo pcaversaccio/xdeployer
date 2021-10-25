@@ -79,6 +79,7 @@ task(
           abi,
           signers[i]
         );
+
         if (hre.config.xdeploy.salt) {
           createReceipt[i] = await create2Deployer[i].deploy(
             AMOUNT,
@@ -86,19 +87,21 @@ task(
             initcode.data,
             { gasLimit: hre.config.xdeploy.gasLimit }
           );
+
           await createReceipt[i].wait();
 
           if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
           }
+          const saveDir = path.normalize(
+            path.join(
+              hre.config.paths.root,
+              "deployments",
+              `${hre.config.xdeploy.networks[i]}_depoyment.json`
+            )
+          );
           fs.writeFile(
-            path.normalize(
-              path.join(
-                hre.config.paths.root,
-                "deployments",
-                `${hre.config.xdeploy.networks[i]}_depoyment.json`
-              )
-            ),
+            saveDir,
             JSON.stringify(createReceipt[i]),
             function (err) {
               if (err) {
@@ -107,14 +110,20 @@ task(
             }
           );
           console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
+            "\n",
+            `Transaction details successfully written to ${saveDir}.`
           );
         }
-      } else if (hre.config.xdeploy.networks[i] === "hardhat") {
+      } else if (
+        hre.config.xdeploy.networks[i] === "hardhat" ||
+        hre.config.xdeploy.networks[i] === "localhost"
+      ) {
         const hhcreate2Deployer = await hre.ethers.getContractFactory(
           "Create2Deployer"
         );
         create2Deployer[i] = await hhcreate2Deployer.deploy();
+
         if (hre.config.xdeploy.salt) {
           createReceipt[i] = await create2Deployer[i].deploy(
             AMOUNT,
@@ -122,19 +131,21 @@ task(
             initcode.data,
             { gasLimit: hre.config.xdeploy.gasLimit }
           );
+
           await createReceipt[i].wait();
 
           if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
           }
+          const saveDir = path.normalize(
+            path.join(
+              hre.config.paths.root,
+              "deployments",
+              `${hre.config.xdeploy.networks[i]}_depoyment.json`
+            )
+          );
           fs.writeFile(
-            path.normalize(
-              path.join(
-                hre.config.paths.root,
-                "deployments",
-                `${hre.config.xdeploy.networks[i]}_depoyment.json`
-              )
-            ),
+            saveDir,
             JSON.stringify(createReceipt[i]),
             function (err) {
               if (err) {
@@ -143,7 +154,9 @@ task(
             }
           );
           console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`
+            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
+            "\n",
+            `Transaction details successfully written to ${saveDir}.`
           );
         }
       }

@@ -88,8 +88,6 @@ you need it (tasks, scripts, tests, etc).
 
 ---
 ## Some TO DOS (before releasing v1)
-- Refactor `index.ts`;
-- Add check for which networks are currently supported (`networks.ts`);
 - Add separate integration tests for hardhat/localhost & multiple test networks;
 - Write proper tests for subtasks;
 - Write proper README including specific preparation for deployment on Hardhat/localhost network (node v17 port [::1]). Also only testnet support for the moment being;
