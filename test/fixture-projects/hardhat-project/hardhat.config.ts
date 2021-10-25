@@ -31,8 +31,8 @@ const config: HardhatUserConfig = {
     salt: ethers.utils.id(Date.now().toString()),
     signer:
       "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
-    networks: ["hardhat", "localhost"],
-    rpcUrls: ["hardhat", "http://127.0.0.1:8545"],
+    networks: ["hardhat"],
+    rpcUrls: ["hardhat"],
     gasLimit: 1.2 * 10 ** 6,
   },
 };
