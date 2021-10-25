@@ -2,11 +2,11 @@ import { ConfigExtender } from "hardhat/types";
 
 export const xdeployConfigExtender: ConfigExtender = (config, userConfig) => {
   const defaultConfig = {
-    networks: [""],
     contract: "",
-    salt: "",
     constructorArgsPath: "",
+    salt: "",
     signer: "",
+    networks: [""],
     rpcUrls: [""],
   };
 
