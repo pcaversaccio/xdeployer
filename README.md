@@ -88,9 +88,8 @@ you need it (tasks, scripts, tests, etc).
 
 ---
 ## Some TO DOS (before releasing v1)
-- Add separate integration tests for hardhat/localhost & multiple test networks;
+- Deploy to further testnets (BSC Testnet, Fantom Testnet, Huobi Testnet, Optimism Testnet, Polygon Testnet, Arbitrum Testnet); 
 - Write proper README including specific preparation for deployment on Hardhat/localhost network (node v17 port [::1]). Also only testnet support for the moment being;
 - Explain prefixed gasLimit value;
 - Explain architecture behind plugin & deployed smart contract (& ownable & pausable structure behind it) & link to smart contract repo;
-- Deploy to further testnets (BSC Testnet, Fantom Testnet, Huobi Testnet, Optimism Testnet, Polygon Testnet, Arbitrum Testnet); 
 - Publish to NPM;

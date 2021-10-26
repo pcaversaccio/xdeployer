@@ -37,7 +37,6 @@
   ],
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "@nomiclabs/hardhat-web3": "^2.0.0",
     "@openzeppelin/contracts": "^4.3.2",
     "@types/chai": "^4.1.7",
     "@types/fs-extra": "^5.0.4",
@@ -56,8 +55,7 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^4.4.4",
-    "web3": "^1.6.0"
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "hardhat": "^2.0.0",
