@@ -9,9 +9,29 @@ describe("Plugin test xdeploy", function () {
       return this.hre.run("xdeploy");
     });
 
-    it("should fail due to missing network arguments", async function () {
+    it("should fail due to missing network arguments - version 1", async function () {
       this.hre.config.xdeploy.networks = [];
-      this.hre
+      return this.hre
+        .run("xdeploy")
+        .then(() => {
+          assert.fail("deployment request should fail");
+        })
+        .catch((reason) => {
+          expect(reason).to.be.an.instanceOf(
+            NomicLabsHardhatPluginError,
+            "missing network arguments should throw a plugin error"
+          );
+          expect(reason.message)
+            .to.be.a("string")
+            .and.include(
+              "Please provide at least one deployment network via the hardhat config."
+            );
+        });
+    });
+
+    it("should fail due to missing network arguments - version 2", async function () {
+      this.hre.config.xdeploy.networks = undefined;
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -31,7 +51,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to unsupported network argument", async function () {
       this.hre.config.xdeploy.networks = ["hardhat", "WAGMI"];
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -51,8 +71,11 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to unequal length of `networks` and `rpcUrls`", async function () {
       this.hre.config.xdeploy.networks = ["hardhat"];
-      this.hre.config.xdeploy.rpcUrls = ["hardhat", "https://mainnet.infura.io/v3/506b137aa"];
-      this.hre
+      this.hre.config.xdeploy.rpcUrls = [
+        "hardhat",
+        "https://mainnet.infura.io/v3/506b137aa",
+      ];
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -72,7 +95,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to missing salt value - version 1", async function () {
       this.hre.config.xdeploy.salt = undefined;
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -90,7 +113,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to missing salt value - version 2", async function () {
       this.hre.config.xdeploy.salt = "";
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -108,7 +131,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to missing signer - version 1", async function () {
       this.hre.config.xdeploy.signer = undefined;
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -126,7 +149,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to missing signer - version 2", async function () {
       this.hre.config.xdeploy.signer = "";
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -144,7 +167,7 @@ describe("Plugin test xdeploy", function () {
 
     it("should fail due to missing contract - version 1", async function () {
       this.hre.config.xdeploy.contract = undefined;
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -156,13 +179,15 @@ describe("Plugin test xdeploy", function () {
           );
           expect(reason.message)
             .to.be.a("string")
-            .and.include("Please specify the contract name of the smart contract to be deployed.");
+            .and.include(
+              "Please specify the contract name of the smart contract to be deployed."
+            );
         });
     });
 
     it("should fail due to missing contract - version 2", async function () {
       this.hre.config.xdeploy.contract = "";
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");
@@ -174,13 +199,15 @@ describe("Plugin test xdeploy", function () {
           );
           expect(reason.message)
             .to.be.a("string")
-            .and.include("Please specify the contract name of the smart contract to be deployed.");
+            .and.include(
+              "Please specify the contract name of the smart contract to be deployed."
+            );
         });
     });
 
     it("should fail due to exceeding gasLimit", async function () {
       this.hre.config.xdeploy.gasLimit = 15.1 * 10 ** 6;
-      this.hre
+      return this.hre
         .run("xdeploy")
         .then(() => {
           assert.fail("deployment request should fail");

@@ -109,10 +109,12 @@ task(
               }
             }
           );
+
           console.log(
             `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
             "\n",
-            `Transaction details successfully written to ${saveDir}.`
+            `Transaction details successfully written to ${saveDir}.`,
+            "\n"
           );
         }
       } else if (
@@ -153,10 +155,12 @@ task(
               }
             }
           );
+
           console.log(
             `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
             "\n",
-            `Transaction details successfully written to ${saveDir}.`
+            `Transaction details successfully written to ${saveDir}.`,
+            "\n"
           );
         }
       }
