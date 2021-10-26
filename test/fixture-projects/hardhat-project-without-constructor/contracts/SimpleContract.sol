@@ -4,7 +4,7 @@ pragma solidity ^0.8.4;
 
 contract SimpleContract {
 
-    string public mark = "placeholder";
+    string public mark = "WAGMI";
 
     constructor() {}
 }

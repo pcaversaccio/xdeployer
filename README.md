@@ -88,6 +88,7 @@ you need it (tasks, scripts, tests, etc).
 
 ---
 ## Some TO DOS (before releasing v1)
+- Refactor smart contract repository;
 - Deploy to further testnets (BSC Testnet, Fantom Testnet, Huobi Testnet, Optimism Testnet, Polygon Testnet, Arbitrum Testnet); 
 - Write proper README including specific preparation for deployment on Hardhat/localhost network (node v17 port [::1]). Also only testnet support for the moment being;
 - Explain prefixed gasLimit value;

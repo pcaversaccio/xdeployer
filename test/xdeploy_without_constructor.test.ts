@@ -2,7 +2,7 @@ import { useEnvironment } from "./helpers";
 import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 
-describe("Plugin test xdeploy without constructor", function () {
+describe("Plugin test xdeploy on Hardhat without constructor", function () {
   describe("Hardhat Runtime Environment (HRE) extension", function () {
     useEnvironment("hardhat-project-without-constructor");
     it("calling xdeploy successfully", async function () {
