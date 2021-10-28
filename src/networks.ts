@@ -6,4 +6,10 @@ export const networks = [
   "ropsten",
   "kovan",
   "goerli",
+  "bsctestnet",
+  "optimismtestnet",
+  "arbitrumtestnet",
+  "mumbai",
+  "hecoinfotestnet",
+  "fantomtestnet",
 ];
