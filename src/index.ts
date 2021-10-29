@@ -122,7 +122,7 @@ task(
         hre.config.xdeploy.networks[i] === "localhost"
       ) {
         const hhcreate2Deployer = await hre.ethers.getContractFactory(
-          "Create2Deployer"
+          "Create2DeployerLocal"
         );
         create2Deployer[i] = await hhcreate2Deployer.deploy();
 
