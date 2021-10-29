@@ -2,91 +2,142 @@
 [![build status](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
-_A one line description of the plugin_
-
-[Hardhat](https://hardhat.org) plugin example. 
+[Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.
+>**Caveat:** Currently only test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). 
 
 ## What
-
-<_A longer, one paragraph, description of the plugin_>
-
-This plugin will help you with world domination by implementing a simple tic-tac-toe in the terminal.
+This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as *counterfactual interactions*.
 
 ## Installation
-
-<_A step-by-step guide on how to install the plugin_>
-
 ```bash
-npm install <your npm package name> [list of peer dependencies]
+npm install --save-dev xdeployer @nomiclabs/hardhat-ethers
 ```
 
 Import the plugin in your `hardhat.config.js`:
-
 ```js
-require("<your plugin npm package name>");
+require("xdeployer");
 ```
 
 Or if you are using TypeScript, in your `hardhat.config.ts`:
-
 ```ts
-import "<your plugin npm package name>";
+import "xdeployer";
 ```
 
-
-## Required plugins
-
-<_The list of all the required Hardhat plugins if there are any_>
-
-- [@nomiclabs/hardhat-web3](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-web3)
+## Required Plugins
+- [@nomiclabs/hardhat-ethers](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-ethers)
 
 ## Tasks
+This plugin provides the `xdeploy` task, which allows you to deploy your smart contracts across multiple EVM chains with the same deterministic address.
 
-<_A description of each task added by this plugin. If it just overrides internal 
-tasks, this may not be needed_>
-
-This plugin creates no additional tasks.
-
-<_or_>
-
-This plugin adds the _example_ task to Hardhat:
-```
-output of `npx hardhat help example`
-```
-
-## Environment extensions
-
-<_A description of each extension to the Hardhat Runtime Environment_>
-
-This plugin extends the Hardhat Runtime Environment by adding an `example` field
-whose type is `ExampleHardhatRuntimeEnvironmentField`.
+## Environment Extensions
+This plugin does not extend the environment.
 
 ## Configuration
-
-<_A description of each extension to the HardhatConfig or to its fields_>
-
-This plugin extends the `HardhatUserConfig`'s `ProjectPathsUserConfig` object with an optional
-`newPath` field.
-
-This is an example of how to set it:
+You need to add the following configurations to your `hardhat.config.js` file:
 
 ```js
 module.exports = {
-  paths: {
-    newPath: "new-path"
-  }
+  networks: {
+    mainnet: { ... }
+  },
+  xdeploy: {
+    contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
+    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
+    salt: "YOUR_SALT_MESSAGE",
+    signer: "SIGNER_PRIVATE_KEY",
+    networks: ["LIST_OF_NETWORKS"],
+    rpcUrls: ["LIST_OF_RPCURLS"],
+    gasLimit: "GAS_LIMIT",
+  },
 };
 ```
 
+Or if you are using TypeScript, in your `hardhat.config.ts`:
+```ts
+const config: HardhatUserConfig = {
+  networks: {
+    mainnet: { ... }
+  },
+  xdeploy: {
+    contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
+    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
+    salt: "YOUR_SALT_MESSAGE",
+    signer: "SIGNER_PRIVATE_KEY",
+    networks: ["LIST_OF_NETWORKS"],
+    rpcUrls: ["LIST_OF_RPCURLS"],
+    gasLimit: "GAS_LIMIT",
+  },
+};
+```
+
+The parameters `constructorArgsPath` and `gasLimit` are _optional_.
+
+_Example:_
+```ts
+xdeploy: {
+  contract: "ERC20Mock",
+  constructorArgsPath: "./deploy-args.ts",
+  salt: "WAGMI",
+  signer: process.env.PRIVATE_KEY,
+  networks: ["hardhat", "rinkeby", "kovan"],
+  rpcUrls: ["hardhat", process.env.RINKEBY_URL, process.env.KOVAN_URL],
+  gasLimit: 1.2 * 10 ** 6,
+},
+```
+
+The current available networks are:
+- localhost
+- hardhat
+- rinkeby
+- ropsten
+- kovan
+- goerli
+- bsctestnet
+- optimismtestnet
+- arbitrumtestnet
+- mumbai
+- hecoinfotestnet
+- fantomtestnet
+
+Note that you must ensure that your deployment account has sufficient funds on all target networks.
+### Local Deployment
+If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
+```solidity
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.4;
+
+import "xdeployer/src/contracts/Create2Deployer.sol";
+
+contract Create2DeployerLocal is Create2Deployer {}
+```
+
+The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
+```ts
+networks: {
+  localhost: {
+    url: [::1],
+  },
+}
+```
+
+### Further Considerations
+The constructor arguments file must have an exportable field called `data`:
+```
+const data = [
+  "ARG1",
+  "ARG2",
+  ...
+];
+export { data };
+```
+
+The `gasLimit` field is set to to 1'500'000 by default becaue the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
 ## Usage
-
-<_A description of how to use this plugin. How to use the tasks if there are any, etc._>
-
 There are no additional steps you need to take for this plugin to work.
 
-Install it and access ethers through the Hardhat Runtime Environment anywhere
-you need it (tasks, scripts, tests, etc).
+## How It Works
+EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract. Currently, the `Create2Deployer` smart contract is `ownable` and `pausable` due to the testing phase. Once we move into a wider beta phase, I will redeploy the contract at the same address after selfdestructing the former smart contract first.
 
----
-## Some TO DOS (before releasing v1)
-- Write proper README including specific preparation for deployment on Hardhat/localhost network (node v17 port [::1]). Also only testnet support for the moment being. Explain prefixed gasLimit value. Explain architecture behind plugin & deployed smart contract (& ownable & pausable structure behind it) & link to smart contract repo;
-- Thereafter publish to NPM;
+### A Note On `SELFDESTRUCT`
+Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously seldestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
