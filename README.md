@@ -29,7 +29,7 @@ import "xdeployer";
 
 ## Tasks
 This plugin provides the `xdeploy` task, which allows you to deploy your smart contracts across multiple EVM chains with the same deterministic address:
-```
+```bash
 npx hardhat xdeploy
 ```
 
@@ -147,7 +147,7 @@ export { data };
 The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
 
 ## Usage
-```
+```bash
 npx hardhat xdeploy
 ```
 
