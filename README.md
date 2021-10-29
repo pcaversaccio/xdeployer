@@ -125,16 +125,7 @@ networks: {
 ```
 
 ### Further Considerations
-The constructor arguments file must have an _exportable_ field called `data`:
-```js
-exports.data = [
-  "arg1",
-  "arg2",
-  ...
-];
-```
-
-Or if you are using TypeScript:
+The constructor arguments file must have an _exportable_ field called `data` in case you are using TypeScript:
 ```ts
 const data = [
   "arg1",
@@ -142,6 +133,15 @@ const data = [
   ...
 ];
 export { data };
+```
+
+If you are using normal JavaScript:
+```js
+module.exports = [
+  "arg1",
+  "arg2",
+  ...
+];
 ```
 
 The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
