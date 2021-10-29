@@ -59,7 +59,12 @@ task(
       const Contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
-      initcode = await Contract.getDeployTransaction(...args.data);
+      const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
+      if (ext === "ts") {
+        initcode = await Contract.getDeployTransaction(...args.data);
+      } else if (ext === "js") {
+        initcode = await Contract.getDeployTransaction(...args.default);
+      }
     } else if (
       !hre.config.xdeploy.constructorArgsPath &&
       hre.config.xdeploy.contract
