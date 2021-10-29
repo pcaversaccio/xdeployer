@@ -3,10 +3,10 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.
->**Caveat:** Currently only test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). 
+> **Caveat:** Currently only test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). 
 
 ## What
-This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as *counterfactual interactions*.
+This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
 
 ## Installation
 ```bash
@@ -34,7 +34,6 @@ This plugin does not extend the environment.
 
 ## Configuration
 You need to add the following configurations to your `hardhat.config.js` file:
-
 ```js
 module.exports = {
   networks: {
@@ -69,7 +68,6 @@ const config: HardhatUserConfig = {
   },
 };
 ```
-
 The parameters `constructorArgsPath` and `gasLimit` are _optional_.
 
 _Example:_
@@ -86,20 +84,20 @@ xdeploy: {
 ```
 
 The current available networks are:
-- localhost
-- hardhat
-- rinkeby
-- ropsten
-- kovan
-- goerli
-- bsctestnet
-- optimismtestnet
-- arbitrumtestnet
-- mumbai
-- hecoinfotestnet
-- fantomtestnet
+- `localhost`
+- `hardhat`
+- `rinkeby`
+- `ropsten`
+- `kovan`
+- `goerli`
+- `bsctestnet`
+- `optimismtestnet`
+- `arbitrumtestnet`
+- `mumbai`
+- `hecoinfotestnet`
+- `fantomtestnet`
+> Note that you must ensure that your deployment account has sufficient funds on all target networks.
 
-Note that you must ensure that your deployment account has sufficient funds on all target networks.
 ### Local Deployment
 If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
 ```solidity
@@ -122,8 +120,8 @@ networks: {
 ```
 
 ### Further Considerations
-The constructor arguments file must have an exportable field called `data`:
-```
+The constructor arguments file must have an _exportable_ field called `data`:
+```ts
 const data = [
   "ARG1",
   "ARG2",
@@ -132,7 +130,8 @@ const data = [
 export { data };
 ```
 
-The `gasLimit` field is set to to 1'500'000 by default becaue the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
+The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
+
 ## Usage
 There are no additional steps you need to take for this plugin to work.
 
