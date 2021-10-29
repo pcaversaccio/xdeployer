@@ -1,6 +1,7 @@
 # xdeployer
 [![build status](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+[![NPM Package](https://img.shields.io/npm/v/xdeployer.svg?style=flat-square)](https://www.npmjs.com/package/xdeployer)
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.
 > **Caveat:** Currently only test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). 
