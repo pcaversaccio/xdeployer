@@ -26,8 +26,7 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   xdeploy: {
     contract: "ERC20Mock",
-    constructorArgsPath:
-      "../test/fixture-projects/rinkeby-kovan-project-with-constructor/deploy-args.ts",
+    constructorArgsPath: "./deploy-args.ts",
     salt: ethers.utils.id(Date.now().toString()),
     // Just a testing private key with some Rinkeby & Kovan ether :-D - there is nothing to be gained however by stealing it ;-)
     signer:

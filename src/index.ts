@@ -48,7 +48,14 @@ task(
     const dir = "./deployments";
 
     if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
-      const args = await import(hre.config.xdeploy.constructorArgsPath);
+      const args = await import(
+        path.normalize(
+          path.join(
+            hre.config.paths.root,
+            hre.config.xdeploy.constructorArgsPath
+          )
+        )
+      );
       const Contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
