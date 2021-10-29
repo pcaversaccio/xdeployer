@@ -1,7 +1,6 @@
 name: Node.js Package
 on:
-  release:
-    workflow_dispatch:
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
