@@ -3,8 +3,8 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 [![NPM Package](https://img.shields.io/npm/v/xdeployer.svg?style=flat-square)](https://www.npmjs.com/package/xdeployer)
 
-[Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.
-> **Caveat:** Currently only test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). 
+[Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
+> **Caveat:** Currently only preselected test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). This project is in beta, use at your own risk! 
 
 ## What
 This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
@@ -100,7 +100,7 @@ The current available networks are:
 - `mumbai`
 - `hecoinfotestnet`
 - `fantomtestnet`
-> Note that you must ensure that your deployment account has sufficient funds on all target networks.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
 
 ### Local Deployment
 If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
@@ -124,6 +124,8 @@ networks: {
 }
 ```
 
+Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
+
 ### Further Considerations
 The constructor arguments file must have an _exportable_ field called `data` in case you are using TypeScript:
 ```ts
@@ -135,7 +137,7 @@ const data = [
 export { data };
 ```
 
-If you are using normal JavaScript:
+If you are using common JavaScript:
 ```js
 module.exports = [
   "arg1",
@@ -144,15 +146,18 @@ module.exports = [
 ];
 ```
 
-The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the gasLimit for these calls, so a predefined value is set.
+The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
 
 ## Usage
 ```bash
 npx hardhat xdeploy
 ```
 
+### Usage With Truffle
+[Truffle](https://www.trufflesuite.com/truffle) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle5.html) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle4.html)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
+
 ## How It Works
-EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract. Currently, the `Create2Deployer` smart contract is `ownable` and `pausable` due to the testing phase. Once we move into a wider beta phase, I will redeploy the contract at the same address after selfdestructing the former smart contract first.
+EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract. Currently, the [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) smart contract is [`ownable`](https://docs.openzeppelin.com/contracts/4.x/access-control#ownership-and-ownable) and [`pausable`](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) due to the testing phase. Once we move into a wider beta phase, I will redeploy the contract at the same address after selfdestructing the former smart contract first.
 
 ### A Note On `SELFDESTRUCT`
 Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously seldestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
