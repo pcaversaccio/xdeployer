@@ -73,6 +73,7 @@ const config: HardhatUserConfig = {
 };
 ```
 The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
+> BigInt literals (e.g. `100000000000000000000n`) are available since this plugin targets `ES2020`. See also [here](https://github.com/pcaversaccio/xdeployer/blob/main/tsconfig.json).
 
 _Example:_
 ```ts
