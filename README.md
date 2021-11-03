@@ -72,7 +72,7 @@ const config: HardhatUserConfig = {
   },
 };
 ```
-The parameters `constructorArgsPath` and `gasLimit` are _optional_.
+The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
 
 _Example:_
 ```ts
@@ -147,6 +147,8 @@ module.exports = [
 ```
 
 The `gasLimit` field is set to to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
+
+The contract creation transaction is displayed on Etherscan as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
 
 ## Usage
 ```bash
