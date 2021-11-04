@@ -102,6 +102,7 @@ The current available networks are:
 - `mumbai`
 - `hecoinfotestnet`
 - `fantomtestnet`
+- `fuji`
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
 
 ### Local Deployment

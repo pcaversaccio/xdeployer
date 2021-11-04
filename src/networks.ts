@@ -12,4 +12,5 @@ export const networks = [
   "mumbai",
   "hecoinfotestnet",
   "fantomtestnet",
+  "fuji",
 ];
