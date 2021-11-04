@@ -13,6 +13,7 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 ```bash
 npm install --save-dev xdeployer @nomiclabs/hardhat-ethers
 ```
+> **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 
 Import the plugin in your `hardhat.config.js`:
 ```js

@@ -47,6 +47,10 @@ task(
     let initcode: any;
     const dir = "./deployments";
 
+    console.log(
+      "The deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
+    );
+
     if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
       const args = await import(
         path.normalize(
@@ -109,18 +113,10 @@ task(
             path.join(
               hre.config.paths.root,
               "deployments",
-              `${hre.config.xdeploy.networks[i]}_depoyment.json`
+              `${hre.config.xdeploy.networks[i]}_deployment.json`
             )
           );
-          fs.writeFile(
-            saveDir,
-            JSON.stringify(createReceipt[i]),
-            function (err) {
-              if (err) {
-                console.log(err);
-              }
-            }
-          );
+          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
 
           console.log(
             `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
@@ -155,18 +151,10 @@ task(
             path.join(
               hre.config.paths.root,
               "deployments",
-              `${hre.config.xdeploy.networks[i]}_depoyment.json`
+              `${hre.config.xdeploy.networks[i]}_deployment.json`
             )
           );
-          fs.writeFile(
-            saveDir,
-            JSON.stringify(createReceipt[i]),
-            function (err) {
-              if (err) {
-                console.log(err);
-              }
-            }
-          );
+          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
 
           console.log(
             `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
