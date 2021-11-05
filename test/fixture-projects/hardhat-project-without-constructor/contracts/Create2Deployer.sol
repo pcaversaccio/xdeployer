@@ -3,10 +3,10 @@
 
 pragma solidity ^0.8.4;
 
-import "./imported/Create2.sol";
-import "./imported/ERC1820Implementer.sol";
-import "./imported/Ownable.sol";
-import "./imported/Pausable.sol";
+import "@openzeppelin/contracts/utils/Create2.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC1820Implementer.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
 
 
 /**
