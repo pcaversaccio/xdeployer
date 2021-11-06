@@ -26,7 +26,8 @@ import "xdeployer";
 ```
 
 ## Required Plugins
-- [@nomiclabs/hardhat-ethers](https://github.com/nomiclabs/hardhat/tree/master/packages/hardhat-ethers)
+- [@nomiclabs/hardhat-ethers](https://www.npmjs.com/package/@nomiclabs/hardhat-ethers)
+- [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 
 ## Tasks
 This plugin provides the `xdeploy` task, which allows you to deploy your smart contracts across multiple EVM chains with the same deterministic address:
@@ -74,7 +75,6 @@ const config: HardhatUserConfig = {
 };
 ```
 The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
-> BigInt literals (e.g. `100000000000000000000n`) are available since this plugin targets `ES2020`. See also [here](https://github.com/pcaversaccio/xdeployer/blob/main/tsconfig.json).
 
 _Example:_
 ```ts
@@ -110,13 +110,13 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 ```solidity
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "xdeployer/src/contracts/Create2Deployer.sol";
 
 contract Create2DeployerLocal is Create2Deployer {}
 ```
-> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.4`.
+> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9`.
 
 The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
 ```ts
@@ -139,6 +139,7 @@ const data = [
 ];
 export { data };
 ```
+> BigInt literals (e.g. `100000000000000000000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](https://github.com/pcaversaccio/xdeployer/blob/main/tsconfig.json) for an example.
 
 If you are using common JavaScript:
 ```js
