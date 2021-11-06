@@ -89,7 +89,10 @@ task(
       );
       signers[i] = wallets[i].connect(providers[i]);
 
-      if (hre.config.xdeploy.networks[i] !== "hardhat") {
+      if (
+        hre.config.xdeploy.networks[i] !== "hardhat" &&
+        hre.config.xdeploy.networks[i] !== "localhost"
+      ) {
         create2Deployer[i] = new hre.ethers.Contract(
           CREATE2_DEPLOYER_ADDRESS,
           abi,
