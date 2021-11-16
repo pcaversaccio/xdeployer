@@ -1,6 +1,6 @@
 {
   "name": "xdeployer",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Hardhat plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.",
   "author": "Pascal Marco Caversaccio",
   "license": "MIT",
@@ -40,7 +40,7 @@
   ],
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "@openzeppelin/contracts": "^4.3.2",
+    "@openzeppelin/contracts": "^4.3.3",
     "@types/chai": "^4.1.7",
     "@types/fs-extra": "^5.0.4",
     "@types/mocha": "^5.2.6",
@@ -63,6 +63,6 @@
   "peerDependencies": {
     "hardhat": "^2.6.8",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "@openzeppelin/contracts": "^4.3.2"
+    "@openzeppelin/contracts": "^4.3.3"
   }
 }
