@@ -1,4 +1,4 @@
-name: Test xdeploy
+name: Lint
 
 on: [push, pull_request]
 
@@ -34,6 +34,9 @@ jobs:
 
       - name: Install npm project with a clean slate
         run: npm ci
-        
-      - name: Run tests
-        run: npm run test
+      
+      - name: Prettier
+        run: npm run prettier -c src/**/*.{js,ts} test/**/*.{js,ts}
+
+      - name: Lint
+        run: npx eslint '**/*.{js,ts}'
