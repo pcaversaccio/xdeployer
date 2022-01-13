@@ -12,6 +12,11 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 ```bash
 npm install --save-dev xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
 ```
+
+Or if you are using [Yarn](https://classic.yarnpkg.com):
+```bash
+yarn add --dev xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
+```
 > **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 
 Import the plugin in your `hardhat.config.js`:
@@ -186,4 +191,4 @@ Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to
 
 ### A Note on `msg.sender`
 It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address.
-> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here] (https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=tx.origin#tx-origin).
+> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=tx.origin#tx-origin).
