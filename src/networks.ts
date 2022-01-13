@@ -16,7 +16,7 @@ export const networks = [
   "sokol",
   "moonbasealpha",
   "alfajores",
-  "main",
+  "ethmain",
   "bscmain",
   "optimismmain",
   "arbitrummain",

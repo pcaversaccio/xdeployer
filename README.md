@@ -113,7 +113,7 @@ The current available networks are:
   - `moonbasealpha`
   - `alfajores`
 - **EVM-Based Production Networks:**
-  - `main`
+  - `ethmain`
   - `bscmain`
   - `optimismmain`
   - `arbitrummain`
@@ -124,7 +124,7 @@ The current available networks are:
   - `gnosis`
   - `moonriver`
   - `celo`
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `main` refers to the Ethereum mainnet and `gnosis` refers to the previously known xDai chain.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
 ### Local Deployment
 If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
