@@ -148,7 +148,7 @@ networks: {
 }
 ```
 
-Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test / production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test / production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
+Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test/production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test/production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
 
 ### Further Considerations
 The constructor arguments file must have an _exportable_ field called `data` in case you are using TypeScript:
