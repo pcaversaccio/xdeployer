@@ -112,9 +112,10 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 
 pragma solidity ^0.8.9;
 
-import "xdeployer/src/contracts/Create2Deployer.sol";
+import "./Create2Deployer.sol";
 
 contract Create2DeployerLocal is Create2Deployer {}
+
 ```
 > For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9`.
 
@@ -165,5 +166,5 @@ npx hardhat xdeploy
 ## How It Works
 EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract. Currently, the [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) smart contract is [`ownable`](https://docs.openzeppelin.com/contracts/4.x/access-control#ownership-and-ownable) and [`pausable`](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) due to the testing phase. Once we move into a wider beta phase, I will redeploy the contract at the same address after selfdestructing the former smart contract first.
 
-### A Note On `SELFDESTRUCT`
+### A Note on `SELFDESTRUCT`
 Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously seldestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
