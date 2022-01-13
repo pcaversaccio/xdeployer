@@ -112,10 +112,9 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 
 pragma solidity ^0.8.9;
 
-import "./Create2Deployer.sol";
+import "xdeployer/src/contracts/Create2Deployer.sol";
 
 contract Create2DeployerLocal is Create2Deployer {}
-
 ```
 > For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9`.
 
