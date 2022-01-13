@@ -24,8 +24,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prettier:check": "prettier -c src/**/*.{js,ts} test/**/*.{js,ts}",
-    "prettier:fix": "prettier --write src/**/*.{js,ts} test/**/*.{js,ts}",
+    "prettier:check": "prettier -c src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
+    "prettier:fix": "prettier --write src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
     "lint": "eslint --ext .ts .",
     "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
@@ -54,6 +54,7 @@
     "hardhat": "^2.8.2",
     "mocha": "^7.1.2",
     "prettier": "^2.5.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
