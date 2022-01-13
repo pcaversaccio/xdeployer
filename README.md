@@ -144,7 +144,7 @@ networks: {
 }
 ```
 
-Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
+Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test / production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test / production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
 
 ### Further Considerations
 The constructor arguments file must have an _exportable_ field called `data` in case you are using TypeScript:
@@ -186,4 +186,5 @@ EVM opcodes can only be called via a smart contract. I have deployed a helper sm
 Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously seldestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
 
 ### A Note on `msg.sender`
-The `msg.sender` of 
+It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address.
+> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here] (https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=tx.origin#tx-origin).
