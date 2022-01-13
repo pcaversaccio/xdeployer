@@ -119,7 +119,7 @@ The current available networks are:
   - `arbitrummain`
   - `polygon`
   - `hecoinfomain`
-  - `fantom`
+  - `fantommain`
   - `avalanche`
   - `gnosis`
   - `moonriver`

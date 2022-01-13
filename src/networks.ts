@@ -22,7 +22,7 @@ export const networks = [
   "arbitrummain",
   "polygon",
   "hecoinfomain",
-  "fantom",
+  "fantommain",
   "avalanche",
   "gnosis",
   "moonriver",
