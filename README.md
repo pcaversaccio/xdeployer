@@ -4,7 +4,7 @@
 [![NPM Package](https://img.shields.io/npm/v/xdeployer.svg?style=flat-square)](https://www.npmjs.com/package/xdeployer)
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
-> **Caveat:** Currently only preselected test networks are supported. Production networks will be added as we move into a wider beta phase. Please report any issues [here](https://github.com/pcaversaccio/xdeployer/issues). This project is in beta, use at your own risk! 
+> **Caveat:** This project is in beta, use at your own risk!
 
 ## What
 This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
@@ -90,20 +90,37 @@ xdeploy: {
 ```
 
 The current available networks are:
-- `localhost`
-- `hardhat`
-- `rinkeby`
-- `ropsten`
-- `kovan`
-- `goerli`
-- `bsctestnet`
-- `optimismtestnet`
-- `arbitrumtestnet`
-- `mumbai`
-- `hecoinfotestnet`
-- `fantomtestnet`
-- `fuji`
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
+- **Local:**
+  - `localhost`
+  - `hardhat`
+- **EVM-Based Test Networks:**
+  - `rinkeby`
+  - `ropsten`
+  - `kovan`
+  - `goerli`
+  - `bsctestnet`
+  - `optimismtestnet`
+  - `arbitrumtestnet`
+  - `mumbai`
+  - `hecoinfotestnet`
+  - `fantomtestnet`
+  - `fuji`
+  - `sokol`
+  - `moonbasealpha`
+  - `alfajores`
+- **EVM-Based Production Networks:**
+  - `main`
+  - `bscmain`
+  - `optimismmain`
+  - `arbitrummain`
+  - `polygon`
+  - `hecoinfomain`
+  - `fantom`
+  - `avalanche`
+  - `gnosis`
+  - `moonriver`
+  - `celo`
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `main` refers to the Ethereum mainnet and `gnosis` refers to the previously known xDai chain.
 
 ### Local Deployment
 If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
@@ -163,7 +180,10 @@ npx hardhat xdeploy
 [Truffle](https://www.trufflesuite.com/truffle) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle5.html) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle4.html)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
 
 ## How It Works
-EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract. Currently, the [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) smart contract is [`ownable`](https://docs.openzeppelin.com/contracts/4.x/access-control#ownership-and-ownable) and [`pausable`](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) due to the testing phase. Once we move into a wider beta phase, I will redeploy the contract at the same address after selfdestructing the former smart contract first.
+EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract.
 
 ### A Note on `SELFDESTRUCT`
 Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously seldestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
+
+### A Note on `msg.sender`
+The `msg.sender` of 
