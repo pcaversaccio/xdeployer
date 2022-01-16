@@ -112,6 +112,7 @@ The current available networks are:
   - `sokol`
   - `moonbaseAlpha`
   - `alfajores`
+  - `auroraTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -124,6 +125,7 @@ The current available networks are:
   - `gnosis`
   - `moonriver`
   - `celo`
+  - `auroraMain`
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
 ### Local Deployment

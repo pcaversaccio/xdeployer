@@ -16,6 +16,7 @@ export const networks = [
   "sokol",
   "moonbaseAlpha",
   "alfajores",
+  "auroraTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -27,4 +28,5 @@ export const networks = [
   "gnosis",
   "moonriver",
   "celo",
+  "auroraMain",
 ];
