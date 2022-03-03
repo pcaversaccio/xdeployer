@@ -17,6 +17,7 @@ export const networks = [
   "moonbaseAlpha",
   "alfajores",
   "auroraTestnet",
+  "harmonyTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -27,6 +28,9 @@ export const networks = [
   "avalanche",
   "gnosis",
   "moonriver",
+  "moonbeam",
   "celo",
   "auroraMain",
+  "harmonyMain",
+  "autobahn",
 ];
