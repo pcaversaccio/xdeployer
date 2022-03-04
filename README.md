@@ -114,6 +114,7 @@ The current available networks are:
   - `alfajores`
   - `auroraTestnet`
   - `harmonyTestnet`
+  - `spark`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -130,6 +131,7 @@ The current available networks are:
   - `auroraMain`
   - `harmonyMain`
   - `autobahn`
+  - `fuse`
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
 ### Local Deployment

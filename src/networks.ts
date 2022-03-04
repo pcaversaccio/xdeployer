@@ -18,6 +18,7 @@ export const networks = [
   "alfajores",
   "auroraTestnet",
   "harmonyTestnet",
+  "spark",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -33,4 +34,5 @@ export const networks = [
   "auroraMain",
   "harmonyMain",
   "autobahn",
+  "fuse",
 ];
