@@ -181,7 +181,7 @@ module.exports = [
 
 The `gasLimit` field is set to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
 
-The contract creation transaction is displayed on Etherscan as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
+The contract creation transaction is displayed on Etherscan (or any other block explorer) as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works). Once the contract creation transaction has been confirmed (i.e. your transaction has been included in a block on the target EVM-based blockchain), the address of the created contract is emitted in the event logs, which can also be retrieved via Etherscan (or another block explorer).
 
 ## Usage
 ```bash
