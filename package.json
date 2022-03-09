@@ -42,7 +42,7 @@
     "@nomiclabs/hardhat-ethers": "2.0.5",
     "@openzeppelin/contracts": "4.5.0",
     "@types/chai": "4.3.0",
-    "@types/fs-extra": "5.1.0",
+    "@types/fs-extra": "9.0.13",
     "@types/mocha": "5.2.7",
     "@types/node": "8.10.66",
     "@typescript-eslint/eslint-plugin": "5.14.0",
