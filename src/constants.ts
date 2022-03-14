@@ -10,3 +10,4 @@ export const TASK_VERIFY_SALT = "verify:get-salt";
 export const TASK_VERIFY_SIGNER = "verify:get-signer";
 export const TASK_VERIFY_CONTRACT = "verify:get-contract";
 export const TASK_VERIFY_GASLIMIT = "verify:get-gaslimit";
+export const TASK_VERIFY_DEPLOYER_ADDRESS = "verify:deployer-address";

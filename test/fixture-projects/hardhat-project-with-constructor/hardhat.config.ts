@@ -25,8 +25,6 @@ const config: HardhatUserConfig = {
   },
   defaultNetwork: "hardhat",
   xdeploy: {
-    contract: "ERC20Mock",
-    constructorArgsPath: "./deploy-args.ts",
     salt: ethers.utils.id(Date.now().toString()),
     signer:
       "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
