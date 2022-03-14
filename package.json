@@ -2,7 +2,6 @@
   "name": "request-xdeployer",
   "version": "1.0",
   "description": "Fork of https://github.com/pcaversaccio/xdeployer",
-  "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -19,7 +18,7 @@
     "url": "https://github.com/requestnetwork/xdeployer.git"
   },
   "bugs": {
-    "url": "https://github.com/pcaversaccio/xdeployer/issues"
+    "url": "https://github.com/requestnetwork/xdeployer/issues"
   },
   "engines": {
     "node": ">=14.0.0"
