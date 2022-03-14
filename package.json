@@ -1,5 +1,5 @@
 {
-  "name": "@requestnetwork/request-xdeployer",
+  "name": "@requestnetwork/xdeployer",
   "version": "1.2.0",
   "description": "Fork of https://github.com/pcaversaccio/xdeployer",
   "license": "MIT",
@@ -10,8 +10,7 @@
     "ethereum",
     "create2",
     "hardhat",
-    "hardhat-plugin",
-    "request-xdeployer"
+    "hardhat-plugin"
   ],
   "repository": {
     "type": "git",
