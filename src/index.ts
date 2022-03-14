@@ -13,28 +13,31 @@ import {
   TASK_VERIFY_SIGNER,
   TASK_VERIFY_CONTRACT,
   TASK_VERIFY_GASLIMIT,
+  TASK_VERIFY_DEPLOYER_ADDRESS,
 } from "./constants";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomiclabs/hardhat-ethers";
-import * as fs from "fs";
-import path from "path";
+import { IDeploymentParams, IDeploymentResult } from "./types";
 
 extendConfig(xdeployConfigExtender);
 
 task(
   "xdeploy",
   "Deploys the contract across all predefined networks"
-).setAction(async (_, hre) => {
+).setAction(async ({ contract, constructorArgs }, hre) => {
+  console.log(`Deployment of ${contract} through xdeployer starting now !`);
+
   await hre.run(TASK_VERIFY_NETWORK_ARGUMENTS);
   await hre.run(TASK_VERIFY_SUPPORTED_NETWORKS);
   await hre.run(TASK_VERIFY_EQUAL_ARGS_NETWORKS);
   await hre.run(TASK_VERIFY_SALT);
   await hre.run(TASK_VERIFY_SIGNER);
-  await hre.run(TASK_VERIFY_CONTRACT);
+  await hre.run(TASK_VERIFY_CONTRACT, { contract });
   await hre.run(TASK_VERIFY_GASLIMIT);
+  await hre.run(TASK_VERIFY_DEPLOYER_ADDRESS);
 
   await hre.run("compile");
 
@@ -44,38 +47,13 @@ task(
     const signers: Array<any> = [];
     const create2Deployer: Array<any> = [];
     const createReceipt: Array<any> = [];
+    const result: Array<any> = [];
     let initcode: any;
-    const dir = "./deployments";
 
-    console.log(
-      "The deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
-    );
-
-    if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
-      const args = await import(
-        path.normalize(
-          path.join(
-            hre.config.paths.root,
-            hre.config.xdeploy.constructorArgsPath
-          )
-        )
-      );
-      const Contract = await hre.ethers.getContractFactory(
-        hre.config.xdeploy.contract
-      );
-      const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
-      if (ext === "ts") {
-        initcode = await Contract.getDeployTransaction(...args.data);
-      } else if (ext === "js") {
-        initcode = await Contract.getDeployTransaction(...args.default);
-      }
-    } else if (
-      !hre.config.xdeploy.constructorArgsPath &&
-      hre.config.xdeploy.contract
-    ) {
-      const Contract = await hre.ethers.getContractFactory(
-        hre.config.xdeploy.contract
-      );
+    const Contract = await hre.ethers.getContractFactory(contract);
+    if (constructorArgs && contract) {
+      initcode = await Contract.getDeployTransaction(...constructorArgs);
+    } else if (!constructorArgs && contract) {
       initcode = await Contract.getDeployTransaction();
     }
 
@@ -89,44 +67,60 @@ task(
       );
       signers[i] = wallets[i].connect(providers[i]);
 
+      let computedContractAddress: string;
       if (
         hre.config.xdeploy.networks[i] !== "hardhat" &&
         hre.config.xdeploy.networks[i] !== "localhost"
       ) {
+        if (!hre.config.xdeploy.deployerAddress) {
+          throw new Error("Deployer address undefined");
+        }
+
         create2Deployer[i] = new hre.ethers.Contract(
-          CREATE2_DEPLOYER_ADDRESS,
+          hre.config.xdeploy.deployerAddress,
           abi,
           signers[i]
         );
 
         if (hre.config.xdeploy.salt) {
-          createReceipt[i] = await create2Deployer[i].deploy(
-            AMOUNT,
-            hre.ethers.utils.id(hre.config.xdeploy.salt),
-            initcode.data,
-            { gasLimit: hre.config.xdeploy.gasLimit }
-          );
-
-          await createReceipt[i].wait();
-
-          if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
+          try {
+            computedContractAddress = await create2Deployer[i].computeAddress(
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.utils.keccak256(initcode.data)
+            );
+          } catch (err) {
+            throw new Error(
+              "Contract address could not be computed, check your contract name and arguments"
+            );
           }
-          const saveDir = path.normalize(
-            path.join(
-              hre.config.paths.root,
-              "deployments",
-              `${hre.config.xdeploy.networks[i]}_deployment.json`
-            )
-          );
-          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
+          try {
+            createReceipt[i] = await create2Deployer[i].deploy(
+              AMOUNT,
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              initcode.data,
+              { gasLimit: hre.config.xdeploy.gasLimit }
+            );
 
-          console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
-            "\n",
-            `Transaction details successfully written to ${saveDir}.`,
-            "\n"
-          );
+            createReceipt[i] = await createReceipt[i].wait();
+
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              contract: contract,
+              address: computedContractAddress,
+              receipt: createReceipt[i],
+              deployed: true,
+              error: undefined,
+            };
+          } catch (err) {
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              contract: contract,
+              address: computedContractAddress,
+              receipt: undefined,
+              deployed: false,
+              error: err,
+            };
+          }
         }
       } else if (
         hre.config.xdeploy.networks[i] === "hardhat" ||
@@ -138,36 +132,48 @@ task(
         create2Deployer[i] = await hhcreate2Deployer.deploy();
 
         if (hre.config.xdeploy.salt) {
-          createReceipt[i] = await create2Deployer[i].deploy(
-            AMOUNT,
-            hre.ethers.utils.id(hre.config.xdeploy.salt),
-            initcode.data,
-            { gasLimit: hre.config.xdeploy.gasLimit }
-          );
-
-          await createReceipt[i].wait();
-
-          if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
+          try {
+            computedContractAddress = await create2Deployer[i].computeAddress(
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.utils.keccak256(initcode.data)
+            );
+          } catch (err) {
+            throw new Error(
+              "Contract address could not be computed, check your contract name and arguments"
+            );
           }
-          const saveDir = path.normalize(
-            path.join(
-              hre.config.paths.root,
-              "deployments",
-              `${hre.config.xdeploy.networks[i]}_deployment.json`
-            )
-          );
-          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
+          try {
+            createReceipt[i] = await create2Deployer[i].deploy(
+              AMOUNT,
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              initcode.data,
+              { gasLimit: hre.config.xdeploy.gasLimit }
+            );
 
-          console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
-            "\n",
-            `Transaction details successfully written to ${saveDir}.`,
-            "\n"
-          );
+            createReceipt[i] = await createReceipt[i].wait();
+
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              contract: contract,
+              address: computedContractAddress,
+              receipt: createReceipt[i],
+              deployed: true,
+              error: undefined,
+            };
+          } catch (err) {
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              contract: contract,
+              address: computedContractAddress,
+              receipt: undefined,
+              deployed: false,
+              error: err,
+            };
+          }
         }
       }
     }
+    return result;
   }
 });
 
@@ -185,11 +191,28 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
   }
 });
 
+subtask(TASK_VERIFY_DEPLOYER_ADDRESS).setAction(async (_, hre) => {
+  if (
+    !hre.config.xdeploy.deployerAddress ||
+    hre.config.xdeploy.deployerAddress === "" ||
+    !hre.ethers.utils.isAddress(hre.config.xdeploy.deployerAddress)
+  ) {
+    throw new NomicLabsHardhatPluginError(
+      PLUGIN_NAME,
+      `The deployer contract address that you specified `
+    );
+  }
+});
+
 subtask(TASK_VERIFY_SUPPORTED_NETWORKS).setAction(async (_, hre) => {
   const unsupported = hre?.config?.xdeploy?.networks?.filter(
-    (v) => !networks.includes(v)
+    (v: string) => !networks.includes(v)
   );
-  if (unsupported && unsupported.length > 0) {
+  if (
+    hre.config.xdeploy.deployerAddress === CREATE2_DEPLOYER_ADDRESS &&
+    unsupported &&
+    unsupported.length > 0
+  ) {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `You have tried to configure a network that this plugin does not yet support,
@@ -235,8 +258,8 @@ subtask(TASK_VERIFY_SIGNER).setAction(async (_, hre) => {
   }
 });
 
-subtask(TASK_VERIFY_CONTRACT).setAction(async (_, hre) => {
-  if (!hre.config.xdeploy.contract || hre.config.xdeploy.contract === "") {
+subtask(TASK_VERIFY_CONTRACT).setAction(async ({ contract }) => {
+  if (!contract || contract === "") {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please specify the contract name of the smart contract to be deployed.
@@ -257,3 +280,5 @@ subtask(TASK_VERIFY_GASLIMIT).setAction(async (_, hre) => {
     );
   }
 });
+
+export { CREATE2_DEPLOYER_ADDRESS, IDeploymentParams, IDeploymentResult };

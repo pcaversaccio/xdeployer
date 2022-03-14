@@ -1,30 +1,25 @@
-# xdeployer 💥
-[![build status](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions)
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-[![NPM Package](https://img.shields.io/npm/v/xdeployer.svg?style=flat-square)](https://www.npmjs.com/package/xdeployer)
+# request-xdeployer 
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
 
 ## What
-This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
+This repo is a fork of [xdeployer](https://github.com/pcaversaccio/xdeployer)
+It enables smart contract deployment through the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed. It also decorelates the contract deployment address from the user nonce.
+
+This plugin is used by [The RN library](https://github.com/requestnetwork/requestnetwork) to perform some contract deployments.
 
 ## Installation
 ```bash
-npm install --save-dev xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
+npm install --save-dev request-xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
 ```
 
 Or if you are using [Yarn](https://classic.yarnpkg.com):
 ```bash
-yarn add --dev xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
+yarn add --dev request-xdeployer @nomiclabs/hardhat-ethers @openzeppelin/contracts
 ```
 > **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 
-Import the plugin in your `hardhat.config.js`:
-```js
-require("xdeployer");
-```
-
-Or if you are using TypeScript, in your `hardhat.config.ts`:
+In your `hardhat.config.ts`:
 ```ts
 import "xdeployer";
 ```
@@ -33,58 +28,33 @@ import "xdeployer";
 - [@nomiclabs/hardhat-ethers](https://www.npmjs.com/package/@nomiclabs/hardhat-ethers)
 - [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 
-## Tasks
-This plugin provides the `xdeploy` task, which allows you to deploy your smart contracts across multiple EVM chains with the same deterministic address:
-```bash
-npx hardhat xdeploy
-```
-
 ## Environment Extensions
 This plugin does not extend the environment.
 
 ## Configuration
-You need to add the following configurations to your `hardhat.config.js` file:
-```js
-module.exports = {
-  networks: {
-    mainnet: { ... }
-  },
-  xdeploy: {
-    contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
-    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
-    salt: "YOUR_SALT_MESSAGE",
-    signer: "SIGNER_PRIVATE_KEY",
-    networks: ["LIST_OF_NETWORKS"],
-    rpcUrls: ["LIST_OF_RPCURLS"],
-    gasLimit: "GAS_LIMIT",
-  },
-};
-```
-
-Or if you are using TypeScript, in your `hardhat.config.ts`:
+ TypeScript configuration in your `hardhat.config.ts`:
 ```ts
 const config: HardhatUserConfig = {
   networks: {
     mainnet: { ... }
   },
   xdeploy: {
-    contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
-    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
     salt: "YOUR_SALT_MESSAGE",
     signer: "SIGNER_PRIVATE_KEY",
     networks: ["LIST_OF_NETWORKS"],
     rpcUrls: ["LIST_OF_RPCURLS"],
     gasLimit: "GAS_LIMIT",
+    deployerAddress: "0x..."
   },
 };
 ```
-The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
 
-_Example:_
+The parameter `gasLimit` and `deployerAddress` are _optional_. If `deployerAddress` is undefined the plugin will use the default deployer contract: for more information refer to [the main repo](https://github.com/pcaversaccio/xdeployer)
+The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
+
+_Example of configuration:_
 ```ts
 xdeploy: {
-  contract: "ERC20Mock",
-  constructorArgsPath: "./deploy-args.ts",
   salt: "WAGMI",
   signer: process.env.PRIVATE_KEY,
   networks: ["hardhat", "rinkeby", "kovan"],
@@ -93,113 +63,12 @@ xdeploy: {
 },
 ```
 
-The current available networks are:
-- **Local:**
-  - `localhost`
-  - `hardhat`
-- **EVM-Based Test Networks:**
-  - `rinkeby`
-  - `ropsten`
-  - `kovan`
-  - `goerli`
-  - `bscTestnet`
-  - `optimismTestnet`
-  - `arbitrumTestnet`
-  - `mumbai`
-  - `hecoTestnet`
-  - `fantomTestnet`
-  - `fuji`
-  - `sokol`
-  - `moonbaseAlpha`
-  - `alfajores`
-  - `auroraTestnet`
-  - `harmonyTestnet`
-  - `spark`
-- **EVM-Based Production Networks:**
-  - `ethMain`
-  - `bscMain`
-  - `optimismMain`
-  - `arbitrumMain`
-  - `polygon`
-  - `hecoMain`
-  - `fantomMain`
-  - `avalanche`
-  - `gnosis`
-  - `moonriver`
-  - `moonbeam`
-  - `celo`
-  - `auroraMain`
-  - `harmonyMain`
-  - `autobahn`
-  - `fuse`
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
-
-### Local Deployment
-If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
-```solidity
-// SPDX-License-Identifier: MIT
-
-pragma solidity ^0.8.9;
-
-import "xdeployer/src/contracts/Create2Deployer.sol";
-
-contract Create2DeployerLocal is Create2Deployer {}
-```
-> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9`.
-
-The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
+To use this plugin in your code run:
 ```ts
-networks: {
-  localhost: {
-    url: [::1],
-  },
+const deploymentParams = {
+  contract: "MyContract",
+  constructorArgs: [true, 50, "example"]
 }
+const deploymentResult = await hre.run('xdeploy', deploymentParams)
 ```
 
-Eventually, it is important to note that the local deployment does _not_ generate the same deterministic address as on all live test/production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test/production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
-
-### Further Considerations
-The constructor arguments file must have an _exportable_ field called `data` in case you are using TypeScript:
-```ts
-const data = [
-  "arg1",
-  "arg2",
-  ...
-];
-export { data };
-```
-> BigInt literals (e.g. `100000000000000000000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](https://github.com/pcaversaccio/xdeployer/blob/main/tsconfig.json) for an example.
-
-If you are using common JavaScript:
-```js
-module.exports = [
-  "arg1",
-  "arg2",
-  ...
-];
-```
-
-The `gasLimit` field is set to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
-
-The contract creation transaction is displayed on Etherscan (or any other block explorer) as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
-
-## Usage
-```bash
-npx hardhat xdeploy
-```
-
-### Usage With Truffle
-[Truffle](https://www.trufflesuite.com/truffle) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle5.html) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle4.html)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
-
-## How It Works
-EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract.
-
-### A Note on `SELFDESTRUCT`
-Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously selfdestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
-
-### A Note on the Contract Creation Transaction
-It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address.
-> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=tx.origin#tx-origin).
-
-## Donation
-I am a strong advocate of the open-source and free software paradigm. However, if you feel my work deserves a donation, you can send it to this address: [`0x07bF3CDA34aA78d92949bbDce31520714AB5b228`](https://etherscan.io/address/0x07bF3CDA34aA78d92949bbDce31520714AB5b228). I can pledge that I will use this money to help fix more existing challenges in the Ethereum ecosystem 🤝.

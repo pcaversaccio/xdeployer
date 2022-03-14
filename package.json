@@ -1,7 +1,7 @@
 {
-  "name": "xdeployer",
-  "version": "1.1.6",
-  "description": "Hardhat plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.",
+  "name": "request-xdeployer",
+  "version": "1.0",
+  "description": "Fork of https://github.com/pcaversaccio/xdeployer",
   "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "MIT",
   "main": "dist/src/index.js",
@@ -11,11 +11,12 @@
     "ethereum",
     "create2",
     "hardhat",
-    "hardhat-plugin"
+    "hardhat-plugin",
+    "request-xdeployer"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pcaversaccio/xdeployer.git"
+    "url": "https://github.com/requestnetwork/xdeployer.git"
   },
   "bugs": {
     "url": "https://github.com/pcaversaccio/xdeployer/issues"

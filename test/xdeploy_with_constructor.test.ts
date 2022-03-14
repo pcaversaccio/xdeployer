@@ -6,13 +6,29 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
   describe("Hardhat Runtime Environment (HRE) extension", function () {
     useEnvironment("hardhat-project-with-constructor");
     it("calling xdeploy successfully", async function () {
-      return this.hre.run("xdeploy");
+      return this.hre.run("xdeploy", {
+        contract: "ERC20Mock",
+        constructorArgs: [
+          "MyToken",
+          "MTKN",
+          "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+          100000000000000000000n,
+        ],
+      });
     });
 
     it("should fail due to missing network arguments - version 1", async function () {
       this.hre.config.xdeploy.networks = [];
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -32,7 +48,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to missing network arguments - version 2", async function () {
       this.hre.config.xdeploy.networks = undefined;
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -52,7 +76,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to unsupported network argument", async function () {
       this.hre.config.xdeploy.networks = ["hardhat", "WAGMI"];
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -76,7 +108,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
         "https://mainnet.infura.io/v3/506b137aa",
       ];
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -96,7 +136,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to missing salt value - version 1", async function () {
       this.hre.config.xdeploy.salt = undefined;
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -114,7 +162,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to missing salt value - version 2", async function () {
       this.hre.config.xdeploy.salt = "";
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -132,7 +188,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to missing signer - version 1", async function () {
       this.hre.config.xdeploy.signer = undefined;
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -150,7 +214,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to missing signer - version 2", async function () {
       this.hre.config.xdeploy.signer = "";
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -166,9 +238,16 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     });
 
     it("should fail due to missing contract - version 1", async function () {
-      this.hre.config.xdeploy.contract = undefined;
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: undefined,
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -186,9 +265,16 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     });
 
     it("should fail due to missing contract - version 2", async function () {
-      this.hre.config.xdeploy.contract = "";
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
@@ -208,7 +294,15 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     it("should fail due to exceeding gasLimit", async function () {
       this.hre.config.xdeploy.gasLimit = 15.1 * 10 ** 6;
       return this.hre
-        .run("xdeploy")
+        .run("xdeploy", {
+          contract: "ERC20Mock",
+          constructorArgs: [
+            "MyToken",
+            "MTKN",
+            "0x9F3f11d72d96910df008Cfe3aBA40F361D2EED03",
+            100000000000000000000n,
+          ],
+        })
         .then(() => {
           assert.fail("deployment request should fail");
         })
