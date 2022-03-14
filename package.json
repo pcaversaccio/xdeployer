@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/requestnetwork/xdeployer/issues"
   },
+  "publishConfig": {
+    "@RequestNetwork": "https://npm.pkg.github.com"
+  },
   "engines": {
     "node": ">=14.0.0"
   },
