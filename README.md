@@ -63,7 +63,7 @@ xdeploy: {
 },
 ```
 
-To use this plugin in your code run:
+_To use this plugin in your code run:_
 ```ts
 const deploymentParams = {
   contract: "MyContract",
@@ -72,3 +72,14 @@ const deploymentParams = {
 const deploymentResult = await hre.run('xdeploy', deploymentParams)
 ```
 
+_Deployment result format:_
+```ts
+interface IDeploymentResult {
+  network: string;                // Name of the network the contract was deployed on
+  contract: string;               // Name of the deployed contract
+  address: string | undefined;    // Address of the newly deployed contract (if deployment successfull)
+  receipt: any;                   // Receipt of the transation 
+  deployed: boolean;
+  error: string | undefined;      // Error if any
+}
+```
