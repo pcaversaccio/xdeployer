@@ -1,6 +1,6 @@
 {
   "name": "@requestnetwork/xdeployer",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Fork of https://github.com/pcaversaccio/xdeployer",
   "license": "MIT",
   "main": "dist/src/index.js",
