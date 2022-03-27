@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
 import { xdeployConfigExtender } from "./config";
-import { networks } from "./networks";
+import { networks, explorers } from "./networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
   AMOUNT,
@@ -14,6 +14,7 @@ import {
   TASK_VERIFY_CONTRACT,
   TASK_VERIFY_GASLIMIT,
 } from "./constants";
+import { RESET, GREEN, RED } from "./colour-codes";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
@@ -44,8 +45,13 @@ task(
     const signers: Array<any> = [];
     const create2Deployer: Array<any> = [];
     const createReceipt: Array<any> = [];
-    let initcode: any;
+    const result: Array<any> = [];
     const dir = "./deployments";
+
+    let initcode: any;
+    let computedContractAddress: any;
+    let chainId: any;
+    let idx: number;
 
     console.log(
       "The deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
@@ -65,9 +71,9 @@ task(
       );
       const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
       if (ext === "ts") {
-        initcode = await Contract.getDeployTransaction(...args.data);
+        initcode = Contract.getDeployTransaction(...args.data);
       } else if (ext === "js") {
-        initcode = await Contract.getDeployTransaction(...args.default);
+        initcode = Contract.getDeployTransaction(...args.default);
       }
     } else if (
       !hre.config.xdeploy.constructorArgsPath &&
@@ -76,7 +82,7 @@ task(
       const Contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
-      initcode = await Contract.getDeployTransaction();
+      initcode = Contract.getDeployTransaction();
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
@@ -100,33 +106,103 @@ task(
         );
 
         if (hre.config.xdeploy.salt) {
-          createReceipt[i] = await create2Deployer[i].deploy(
-            AMOUNT,
-            hre.ethers.utils.id(hre.config.xdeploy.salt),
-            initcode.data,
-            { gasLimit: hre.config.xdeploy.gasLimit }
-          );
-
-          await createReceipt[i].wait();
-
-          if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
+          try {
+            computedContractAddress = await create2Deployer[i].computeAddress(
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.utils.keccak256(initcode.data)
+            );
+          } catch (err) {
+            throw new Error(
+              "The contract address could not be computed. Please check your contract name and constructor arguments."
+            );
           }
-          const saveDir = path.normalize(
-            path.join(
-              hre.config.paths.root,
-              "deployments",
-              `${hre.config.xdeploy.networks[i]}_deployment.json`
-            )
-          );
-          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
 
-          console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
-            "\n",
-            `Transaction details successfully written to ${saveDir}.`,
-            "\n"
-          );
+          try {
+            createReceipt[i] = await create2Deployer[i].deploy(
+              AMOUNT,
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              initcode.data,
+              { gasLimit: hre.config.xdeploy.gasLimit }
+            );
+            
+            chainId = createReceipt[i].chainId,
+            idx = networks.indexOf(hre.config.xdeploy.networks[i]);
+
+            createReceipt[i] = await createReceipt[i].wait();
+
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: chainId,
+              contract: hre.config.xdeploy.contract,
+              txHash: createReceipt[i].transactionHash,
+              txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
+              address: computedContractAddress,
+              addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+              receipt: createReceipt[i],
+              deployed: true,
+              error: undefined,
+            };
+
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir);
+            }
+            const saveDir = path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_deployment.json`
+              )
+            );
+            fs.writeFileSync(saveDir, JSON.stringify(result[i]));
+
+            console.log(
+              `\n${GREEN}---------------- XDEPLOY DEPLOYMENT ${
+                i + 1
+              } --------------${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
+                `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
+                `Transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
+                `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
+                `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
+                `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
+            );
+          } catch (err) {
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: undefined,
+              contract: hre.config.xdeploy.contract,
+              txHash: undefined,
+              txHashLink: undefined,
+              address: computedContractAddress,
+              addressLink: undefined,
+              receipt: undefined,
+              deployed: false,
+              error: err,
+            };
+
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir);
+            }
+            const saveDir = path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
+              )
+            );
+            fs.writeFileSync(saveDir, JSON.stringify(result[i]));
+
+            console.log(
+              `\n${RED}---------------- XDEPLOY DEPLOYMENT ${
+                i + 1
+              } --------------${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}\n${RESET}\n` +
+                `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n`
+            );
+          }
         }
       } else if (
         hre.config.xdeploy.networks[i] === "hardhat" ||
@@ -138,33 +214,103 @@ task(
         create2Deployer[i] = await hhcreate2Deployer.deploy();
 
         if (hre.config.xdeploy.salt) {
-          createReceipt[i] = await create2Deployer[i].deploy(
-            AMOUNT,
-            hre.ethers.utils.id(hre.config.xdeploy.salt),
-            initcode.data,
-            { gasLimit: hre.config.xdeploy.gasLimit }
-          );
-
-          await createReceipt[i].wait();
-
-          if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
+          try {
+            computedContractAddress = await create2Deployer[i].computeAddress(
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.utils.keccak256(initcode.data)
+            );
+          } catch (err) {
+            throw new Error(
+              "The contract address could not be computed. Please check your contract name and constructor arguments."
+            );
           }
-          const saveDir = path.normalize(
-            path.join(
-              hre.config.paths.root,
-              "deployments",
-              `${hre.config.xdeploy.networks[i]}_deployment.json`
-            )
-          );
-          fs.writeFileSync(saveDir, JSON.stringify(createReceipt[i]));
 
-          console.log(
-            `${hre.config.xdeploy.networks[i]} deployment successful with hash: ${createReceipt[i].hash}`,
-            "\n",
-            `Transaction details successfully written to ${saveDir}.`,
-            "\n"
-          );
+          try {
+            createReceipt[i] = await create2Deployer[i].deploy(
+              AMOUNT,
+              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              initcode.data,
+              { gasLimit: hre.config.xdeploy.gasLimit }
+            );
+            
+            chainId = createReceipt[i].chainId,
+            idx = networks.indexOf(hre.config.xdeploy.networks[i]);
+
+            createReceipt[i] = await createReceipt[i].wait();
+
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: chainId,
+              contract: hre.config.xdeploy.contract,
+              txHash: createReceipt[i].transactionHash,
+              txHashLink: explorers[idx],
+              address: computedContractAddress,
+              addressLink: explorers[idx],
+              receipt: createReceipt[i],
+              deployed: true,
+              error: undefined,
+            };
+
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir);
+            }
+            const saveDir = path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_deployment.json`
+              )
+            );
+            fs.writeFileSync(saveDir, JSON.stringify(result[i]));
+
+            console.log(
+              `\n${GREEN}---------------- XDEPLOY DEPLOYMENT ${
+                i + 1
+              } --------------${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
+                `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
+                `Transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
+                `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
+                `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
+                `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
+            );
+          } catch (err) {
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: undefined,
+              contract: hre.config.xdeploy.contract,
+              txHash: undefined,
+              txHashLink: undefined,
+              address: computedContractAddress,
+              addressLink: undefined,
+              receipt: undefined,
+              deployed: false,
+              error: err,
+            };
+
+            if (!fs.existsSync(dir)) {
+              fs.mkdirSync(dir);
+            }
+            const saveDir = path.normalize(
+              path.join(
+                hre.config.paths.root,
+                "deployments",
+                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
+              )
+            );
+            fs.writeFileSync(saveDir, JSON.stringify(result[i]));
+
+            console.log(
+              `\n${RED}---------------- XDEPLOY DEPLOYMENT ${
+                i + 1
+              } --------------${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}\n${RESET}\n` +
+                `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n`
+            );
+          }
         }
       }
     }
