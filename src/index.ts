@@ -124,8 +124,8 @@ task(
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
-            
-            chainId = createReceipt[i].chainId,
+
+            chainId = createReceipt[i].chainId;
             idx = networks.indexOf(hre.config.xdeploy.networks[i]);
 
             createReceipt[i] = await createReceipt[i].wait();
@@ -232,8 +232,8 @@ task(
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
-            
-            chainId = createReceipt[i].chainId,
+
+            chainId = createReceipt[i].chainId;
             idx = networks.indexOf(hre.config.xdeploy.networks[i]);
 
             createReceipt[i] = await createReceipt[i].wait();
