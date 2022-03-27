@@ -37,7 +37,7 @@ export const networks = [
   "fuse",
 ];
 
-// List of block explorers, in the same order as for `networks`
+// List of block explorers, in the same order as `networks`
 export const explorers = [
   "N/A",
   "N/A",

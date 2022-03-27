@@ -66,23 +66,25 @@ task(
           )
         )
       );
-      const Contract = await hre.ethers.getContractFactory(
+
+      const contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
+
       const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
       if (ext === "ts") {
-        initcode = Contract.getDeployTransaction(...args.data);
+        initcode = contract.getDeployTransaction(...args.data);
       } else if (ext === "js") {
-        initcode = Contract.getDeployTransaction(...args.default);
+        initcode = contract.getDeployTransaction(...args.default);
       }
     } else if (
       !hre.config.xdeploy.constructorArgsPath &&
       hre.config.xdeploy.contract
     ) {
-      const Contract = await hre.ethers.getContractFactory(
+      const contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
-      initcode = Contract.getDeployTransaction();
+      initcode = contract.getDeployTransaction();
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
@@ -130,18 +132,33 @@ task(
 
             createReceipt[i] = await createReceipt[i].wait();
 
-            result[i] = {
-              network: hre.config.xdeploy.networks[i],
-              chainId: chainId,
-              contract: hre.config.xdeploy.contract,
-              txHash: createReceipt[i].transactionHash,
-              txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
-              address: computedContractAddress,
-              addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-              receipt: createReceipt[i],
-              deployed: true,
-              error: undefined,
-            };
+            if (hre.config.xdeploy.networks[i] == "autobahn") {
+              result[i] = {
+                network: hre.config.xdeploy.networks[i],
+                chainId: chainId,
+                contract: hre.config.xdeploy.contract,
+                txHash: createReceipt[i].transactionHash,
+                txHashLink: `${explorers[idx]}transaction/${createReceipt[i].transactionHash}`,
+                address: computedContractAddress,
+                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+                receipt: createReceipt[i],
+                deployed: true,
+                error: undefined,
+              };
+            } else {
+              result[i] = {
+                network: hre.config.xdeploy.networks[i],
+                chainId: chainId,
+                contract: hre.config.xdeploy.contract,
+                txHash: createReceipt[i].transactionHash,
+                txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
+                address: computedContractAddress,
+                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+                receipt: createReceipt[i],
+                deployed: true,
+                error: undefined,
+              };
+            }
 
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
@@ -156,13 +173,15 @@ task(
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
-              `\n${GREEN}---------------- XDEPLOY DEPLOYMENT ${
-                i + 1
-              } --------------${RESET}\n\n` +
+              `\n${GREEN}----------------------------------------------------------${RESET}\n` +
+                `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${GREEN}----------------------------------------------------------${RESET}\n\n` +
                 `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
                 `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
                 `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
-                `Transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
+                `Contract creation transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
                 `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
                 `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
                 `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
@@ -195,9 +214,11 @@ task(
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
-              `\n${RED}---------------- XDEPLOY DEPLOYMENT ${
-                i + 1
-              } --------------${RESET}\n\n` +
+              `\n${RED}----------------------------------------------------------${RESET}\n` +
+                `${RED}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${RED}----------------------------------------------------------${RESET}\n\n` +
                 `Network: ${RED}${result[i].network}\n${RESET}\n` +
                 `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
                 `Error details written to: ${RED}${saveDir}${RESET}\n`
@@ -264,13 +285,15 @@ task(
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
-              `\n${GREEN}---------------- XDEPLOY DEPLOYMENT ${
-                i + 1
-              } --------------${RESET}\n\n` +
+              `\n${GREEN}----------------------------------------------------------${RESET}\n` +
+                `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${GREEN}----------------------------------------------------------${RESET}\n\n` +
                 `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
                 `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
                 `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
-                `Transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
+                `Contract creation transaction: ${GREEN}${result[i].txHash}\n${RESET}\n` +
                 `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
                 `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
                 `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
@@ -303,9 +326,11 @@ task(
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
-              `\n${RED}---------------- XDEPLOY DEPLOYMENT ${
-                i + 1
-              } --------------${RESET}\n\n` +
+              `\n${RED}----------------------------------------------------------${RESET}\n` +
+                `${RED}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${RED}----------------------------------------------------------${RESET}\n\n` +
                 `Network: ${RED}${result[i].network}\n${RESET}\n` +
                 `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
                 `Error details written to: ${RED}${saveDir}${RESET}\n`
