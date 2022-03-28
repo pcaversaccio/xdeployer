@@ -222,5 +222,26 @@ describe("Plugin test xdeploy on Rinkeby and Kovan with constructor", function (
             .and.include("Please specify a lower gasLimit.");
         });
     });
+
+    it("should fail due to existing bytecode", async function () {
+      this.hre.config.xdeploy.salt = "wagmi";
+      return this.hre
+        .run("xdeploy")
+        .then(() => {
+          this.hre.run("xdeploy");
+          assert.fail("deployment request should fail");
+        })
+        .catch((reason) => {
+          expect(reason).to.be.an.instanceOf(
+            NomicLabsHardhatPluginError,
+            "existing bytecode should throw a plugin error"
+          );
+          expect(reason.message)
+            .to.be.a("string")
+            .and.include(
+              "The address of the contract you want to deploy already has existing bytecode"
+            );
+        });
+    });
   });
 });

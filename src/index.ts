@@ -114,8 +114,18 @@ task(
               hre.ethers.utils.keccak256(initcode.data)
             );
           } catch (err) {
-            throw new Error(
-              "The contract address could not be computed. Please check your contract name and constructor arguments."
+            throw new NomicLabsHardhatPluginError(
+              PLUGIN_NAME,
+              `The contract address could not be computed. Please check your contract name and constructor arguments.`
+            );
+          }
+
+          if ((await providers[i].getCode(computedContractAddress)) !== "0x") {
+            throw new NomicLabsHardhatPluginError(
+              PLUGIN_NAME,
+              `The address of the contract you want to deploy already has existing bytecode on ${hre.config.xdeploy.networks[i]}.
+              It is very likely that you have deployed this contract before with the same salt parameter value.
+              Please try using a different salt value.`
             );
           }
 
@@ -242,8 +252,21 @@ task(
               hre.ethers.utils.keccak256(initcode.data)
             );
           } catch (err) {
-            throw new Error(
-              "The contract address could not be computed. Please check your contract name and constructor arguments."
+            throw new NomicLabsHardhatPluginError(
+              PLUGIN_NAME,
+              `The contract address could not be computed. Please check your contract name and constructor arguments.`
+            );
+          }
+
+          if (
+            (await hre.ethers.provider.getCode(computedContractAddress)) !==
+            "0x"
+          ) {
+            throw new NomicLabsHardhatPluginError(
+              PLUGIN_NAME,
+              `The address of the contract you want to deploy already has existing bytecode on ${hre.config.xdeploy.networks[i]}.
+              It is very likely that you have deployed this contract before with the same salt parameter value.
+              Please try using a different salt value.`
             );
           }
 
