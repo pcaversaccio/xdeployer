@@ -178,13 +178,12 @@ task(
                   i + 1
                 }           ><><><><${RESET}\n` +
                 `${GREEN}----------------------------------------------------------${RESET}\n\n` +
-                `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
-                `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
-                `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
-                `Contract creation transaction hash: ${GREEN}${result[i].txHash}\n${RESET}\n` +
-                `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
-                `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
-                `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
+                `Deployment status: ${GREEN}successful${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
+                `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
+                `Contract creation transaction hash: ${GREEN}${result[i].txHashLink}${RESET}\n\n` +
+                `Contract address: ${GREEN}${result[i].addressLink}${RESET}\n\n` +
                 `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
             );
           } catch (err) {
@@ -219,9 +218,11 @@ task(
                   i + 1
                 }           ><><><><${RESET}\n` +
                 `${RED}----------------------------------------------------------${RESET}\n\n` +
-                `Network: ${RED}${result[i].network}\n${RESET}\n` +
-                `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
-                `Error details written to: ${RED}${saveDir}${RESET}\n`
+                `Deployment status: ${RED}failed${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}${RESET}\n\n` +
+                `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`
             );
           }
         }
@@ -290,13 +291,12 @@ task(
                   i + 1
                 }           ><><><><${RESET}\n` +
                 `${GREEN}----------------------------------------------------------${RESET}\n\n` +
-                `Network: ${GREEN}${result[i].network}\n${RESET}\n` +
-                `Chain ID: ${GREEN}${result[i].chainId}\n${RESET}\n` +
-                `Contract name: ${GREEN}${result[i].contract}\n${RESET}\n` +
-                `Contract creation transaction: ${GREEN}${result[i].txHash}\n${RESET}\n` +
-                `Block explorer link (tx hash): ${GREEN}${result[i].txHashLink}\n${RESET}\n` +
-                `Contract address: ${GREEN}${result[i].address}\n${RESET}\n` +
-                `Block explorer link (contract address): ${GREEN}${result[i].addressLink}\n${RESET}\n` +
+                `Deployment status: ${GREEN}successful${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
+                `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
+                `Contract creation transaction: ${GREEN}${result[i].txHash}${RESET}\n\n` +
+                `Contract address: ${GREEN}${result[i].address}${RESET}\n\n` +
                 `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
             );
           } catch (err) {
@@ -331,9 +331,11 @@ task(
                   i + 1
                 }           ><><><><${RESET}\n` +
                 `${RED}----------------------------------------------------------${RESET}\n\n` +
-                `Network: ${RED}${result[i].network}\n${RESET}\n` +
-                `Contract name: ${RED}${result[i].contract}\n${RESET}\n` +
-                `Error details written to: ${RED}${saveDir}${RESET}\n`
+                `Deployment status: ${RED}failed${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}${RESET}\n\n` +
+                `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`
             );
           }
         }
