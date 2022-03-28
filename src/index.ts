@@ -14,7 +14,7 @@ import {
   TASK_VERIFY_CONTRACT,
   TASK_VERIFY_GASLIMIT,
 } from "./constants";
-import { RESET, GREEN, RED } from "./colour-codes";
+import { RESET, GREEN, RED, YELLOW } from "./colour-codes";
 import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
@@ -54,7 +54,7 @@ task(
     let idx: number;
 
     console.log(
-      "The deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
+      "\nThe deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
     );
 
     if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
@@ -111,10 +111,19 @@ task(
 
         if (hre.config.xdeploy.salt) {
           try {
+            let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
               hre.ethers.utils.id(hre.config.xdeploy.salt),
               hre.ethers.utils.keccak256(initcode.data)
             );
+            if (counter === 0) {
+              console.log(
+                `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of\n` +
+                  `the salt parameter or the bytecode of the contract!${RESET}\n`
+              );
+            }
+            ++counter;
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
@@ -261,10 +270,19 @@ task(
 
         if (hre.config.xdeploy.salt) {
           try {
+            let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
               hre.ethers.utils.id(hre.config.xdeploy.salt),
               hre.ethers.utils.keccak256(initcode.data)
             );
+            if (counter === 0) {
+              console.log(
+                `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of\n` +
+                  `the salt parameter or the bytecode of the contract!${RESET}\n`
+              );
+            }
+            ++counter;
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
