@@ -91,10 +91,12 @@ task(
       providers[i] = new hre.ethers.providers.JsonRpcProvider(
         hre.config.xdeploy.rpcUrls[i]
       );
+
       wallets[i] = new hre.ethers.Wallet(
         hre.config.xdeploy.signer,
         providers[i]
       );
+
       signers[i] = wallets[i].connect(providers[i]);
 
       if (
@@ -173,6 +175,7 @@ task(
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
             }
+
             const saveDir = path.normalize(
               path.join(
                 hre.config.paths.root,
@@ -180,6 +183,7 @@ task(
                 `${hre.config.xdeploy.networks[i]}_deployment.json`
               )
             );
+
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
@@ -213,6 +217,7 @@ task(
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
             }
+
             const saveDir = path.normalize(
               path.join(
                 hre.config.paths.root,
@@ -220,6 +225,7 @@ task(
                 `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
               )
             );
+
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
@@ -240,9 +246,17 @@ task(
         hre.config.xdeploy.networks[i] === "hardhat" ||
         hre.config.xdeploy.networks[i] === "localhost"
       ) {
-        const hhcreate2Deployer = await hre.ethers.getContractFactory(
+        let hhcreate2Deployer = await hre.ethers.getContractFactory(
           "Create2DeployerLocal"
         );
+
+        if (hre.config.xdeploy.networks[i] === "localhost") {
+          hhcreate2Deployer = await hre.ethers.getContractFactory(
+            "Create2DeployerLocal",
+            signers[i]
+          );
+        }
+
         create2Deployer[i] = await hhcreate2Deployer.deploy();
 
         if (hre.config.xdeploy.salt) {
@@ -299,6 +313,7 @@ task(
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
             }
+
             const saveDir = path.normalize(
               path.join(
                 hre.config.paths.root,
@@ -306,6 +321,7 @@ task(
                 `${hre.config.xdeploy.networks[i]}_deployment.json`
               )
             );
+
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
@@ -339,6 +355,7 @@ task(
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
             }
+
             const saveDir = path.normalize(
               path.join(
                 hre.config.paths.root,
@@ -346,6 +363,7 @@ task(
                 `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
               )
             );
+
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
 
             console.log(
