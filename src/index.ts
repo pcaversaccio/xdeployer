@@ -290,18 +290,6 @@ task(
             );
           }
 
-          if (
-            (await hre.ethers.provider.getCode(computedContractAddress)) !==
-            "0x"
-          ) {
-            throw new NomicLabsHardhatPluginError(
-              PLUGIN_NAME,
-              `The address of the contract you want to deploy already has existing bytecode on ${hre.config.xdeploy.networks[i]}.
-              It is very likely that you have deployed this contract before with the same salt parameter value.
-              Please try using a different salt value.`
-            );
-          }
-
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
