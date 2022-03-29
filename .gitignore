@@ -54,7 +54,7 @@ typings/
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
+# Yarn integrity file
 .yarn-integrity
 
 # next.js build output
