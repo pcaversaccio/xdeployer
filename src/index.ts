@@ -119,8 +119,8 @@ task(
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
-                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of\n` +
-                  `the salt parameter or the bytecode of the contract!${RESET}\n`
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`
               );
             }
             ++counter;
@@ -278,8 +278,8 @@ task(
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
-                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of\n` +
-                  `the salt parameter or the bytecode of the contract!${RESET}\n`
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`
               );
             }
             ++counter;
