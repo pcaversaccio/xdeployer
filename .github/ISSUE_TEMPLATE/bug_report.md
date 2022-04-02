@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug in this Hardhat project template.
+about: Report a bug for xdeployer.
 title: ""
 labels: bug
 assignees: ""
