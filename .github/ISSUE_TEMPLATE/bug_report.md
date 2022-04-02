@@ -3,7 +3,7 @@ name: Bug report
 about: Report a bug for xdeployer.
 title: ""
 labels: bug
-assignees: ""
+assignees: pcaversaccio
 ---
 
 **Describe the bug**

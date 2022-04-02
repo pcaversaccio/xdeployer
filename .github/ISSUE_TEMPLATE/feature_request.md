@@ -3,7 +3,7 @@ name: Feature request
 about: Suggest an idea for xdeployer.
 title: ""
 labels: enhancement
-assignees: ""
+assignees: pcaversaccio
 ---
 
 **Is your feature request related to a problem? Please describe.**
