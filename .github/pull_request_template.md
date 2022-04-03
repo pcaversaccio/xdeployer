@@ -1,5 +1,5 @@
 <!--
-Thank you for using xdeployer and taking the time to send a pull request!
+Thank you for using xdeployer and taking the time to send a pull request (PR)!
 
 If you are introducing a new feature, please discuss it in an issue or in the discussions section before submitting your change.
 
@@ -11,7 +11,7 @@ Please:
 
 #### PR Checklist
 - [ ] Because this PR includes a **bug fix**, relevant tests have been included.
-- [ ] Because this PR includes a **new feature**, the change was previously discussed on an issue or with someone from the team.
+- [ ] Because this PR includes a **new feature**, the change was previously discussed on an [issue](https://github.com/pcaversaccio/xdeployer/issues) or in the [discussions](https://github.com/pcaversaccio/xdeployer/discussions) section.
 - [x] I didn't do anything of this.
 
 ---
