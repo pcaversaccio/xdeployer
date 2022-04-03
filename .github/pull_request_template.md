@@ -10,6 +10,7 @@ Please:
 -->
 
 #### PR Checklist
+
 - [ ] Because this PR includes a **bug fix**, relevant tests have been included.
 - [ ] Because this PR includes a **new feature**, the change was previously discussed on an [issue](https://github.com/pcaversaccio/xdeployer/issues) or in the [discussions](https://github.com/pcaversaccio/xdeployer/discussions) section.
 - [x] I didn't do anything of this.
