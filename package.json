@@ -25,7 +25,7 @@
   },
   "scripts": {
     "prettier:check": "prettier -c src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
-    "prettier:fix": "prettier --write src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
+    "prettier:fix": "prettier -w src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
     "lint": "eslint --ext .ts .",
     "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
