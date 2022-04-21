@@ -19,6 +19,7 @@ export const networks = [
   "auroraTestnet",
   "harmonyTestnet",
   "spark",
+  "cronosTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -35,6 +36,7 @@ export const networks = [
   "harmonyMain",
   "autobahn",
   "fuse",
+  "cronos",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -58,6 +60,7 @@ export const explorers = [
   "https://testnet.aurorascan.dev/",
   "https://explorer.pops.one/",
   "https://explorer.fusespark.io/",
+  "https://cronos.org/explorer/testnet3/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -74,4 +77,5 @@ export const explorers = [
   "https://explorer.harmony.one/",
   "https://explorer.autobahn.network/",
   "https://explorer.fuse.io/",
+  "https://cronoscan.com/",
 ];

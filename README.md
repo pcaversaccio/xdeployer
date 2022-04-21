@@ -132,6 +132,7 @@ The current available networks are:
   - `auroraTestnet`
   - `harmonyTestnet`
   - `spark`
+  - `cronosTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -149,6 +150,7 @@ The current available networks are:
   - `harmonyMain`
   - `autobahn`
   - `fuse`
+  - `cronos`
 
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
