@@ -1,6 +1,6 @@
 # xdeployer 💥
 
-[![build status](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions)
+[![Test xdeploy](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 [![NPM Package](https://img.shields.io/npm/v/xdeployer.svg?style=flat-square)](https://www.npmjs.com/package/xdeployer)
 
