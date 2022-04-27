@@ -34,7 +34,7 @@ jobs:
 
       - name: Install npm project with a clean slate
         run: npm ci
-      
+
       - name: Prettier
         run: npm run prettier:check
 

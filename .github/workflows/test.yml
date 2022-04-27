@@ -34,6 +34,6 @@ jobs:
 
       - name: Install npm project with a clean slate
         run: npm ci
-        
+
       - name: Run tests
         run: npm run test

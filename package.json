@@ -25,8 +25,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prettier:check": "prettier -c src/**/*.{js,ts,sol,json,yml} test/**/*.{js,ts,sol,json,yml}",
-    "prettier:fix": "prettier -w src/**/*.{js,ts,sol,json,yml} test/**/*.{js,ts,sol,json,yml}",
+    "prettier:check": "prettier -c **/*.{js,ts,md,sol,json,yml}",
+    "prettier:fix": "prettier -w **/*.{js,ts,md,sol,json,yml}",
     "lint": "eslint --ext .ts .",
     "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
