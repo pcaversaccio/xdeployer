@@ -15,8 +15,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pcaversaccio/xdeployer.git"
+    "url": "git+https://github.com/pcaversaccio/xdeployer.git"
   },
+  "homepage": "https://github.com/pcaversaccio/xdeployer#readme",
   "bugs": {
     "url": "https://github.com/pcaversaccio/xdeployer/issues"
   },
@@ -24,8 +25,8 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prettier:check": "prettier -c src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
-    "prettier:fix": "prettier -w src/**/*.{js,ts,sol} test/**/*.{js,ts,sol}",
+    "prettier:check": "prettier -c src/**/*.{js,ts,sol,json,yml} test/**/*.{js,ts,sol,json,yml}",
+    "prettier:fix": "prettier -w src/**/*.{js,ts,sol,json,yml} test/**/*.{js,ts,sol,json,yml}",
     "lint": "eslint --ext .ts .",
     "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
