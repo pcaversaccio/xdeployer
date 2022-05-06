@@ -1,4 +1,4 @@
-name: Test xdeploy
+name: 🕵️‍♂️ Test xdeploy
 
 on: [push, pull_request]
 
@@ -33,7 +33,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: Install npm project with a clean slate
-        run: npm ci
+        run: npm ci --prefer-offline
 
       - name: Run tests
         run: npm run test
