@@ -119,6 +119,7 @@ The current available networks are:
   - `ropsten`
   - `kovan`
   - `goerli`
+  - `sepolia`
   - `bscTestnet`
   - `optimismTestnet`
   - `arbitrumTestnet`
