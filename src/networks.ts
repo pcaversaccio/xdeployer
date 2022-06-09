@@ -62,7 +62,7 @@ export const explorers = [
   "https://testnet.aurorascan.dev/",
   "https://explorer.pops.one/",
   "https://explorer.fusespark.io/",
-  "https://cronos.org/explorer/testnet3/",
+  "https://testnet.cronoscan.com/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
