@@ -2,9 +2,9 @@ import { useEnvironment } from "./helpers";
 import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 
-describe("Plugin test xdeploy on Rinkeby and Kovan with constructor", function () {
+describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function () {
   describe("Hardhat Runtime Environment (HRE) extension", function () {
-    useEnvironment("rinkeby-kovan-project-with-constructor");
+    useEnvironment("goerli-sepolia-project-with-constructor");
     it("calling xdeploy successfully", async function () {
       return this.hre.run("xdeploy");
     });
