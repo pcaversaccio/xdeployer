@@ -134,6 +134,8 @@ The current available networks are:
   - `harmonyTestnet`
   - `spark`
   - `cronosTestnet`
+  - `evmosTestnet`
+  - `bobaTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -152,8 +154,10 @@ The current available networks are:
   - `autobahn`
   - `fuse`
   - `cronos`
+  - `evmosMain`
+  - `bobaMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, whilst this plugin supports Optimism Kovan and Optimism Goerli via `optimismTestnet`, it will output the resulting block explorer links in the terminal of Optimism Goerli, as Optimism Kovan is deprecated (you can read the announcement [here](https://dev.optimism.io/kovan-to-goerli)). 
 
 ### Local Deployment
 
