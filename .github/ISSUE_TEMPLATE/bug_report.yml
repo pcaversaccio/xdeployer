@@ -1,0 +1,43 @@
+name: "Bug Report"
+description: "Report a bug for xdeployer."
+title: "[Bug-Candidate]: "
+labels:
+  - bug
+assignees:
+  - pcaversaccio
+body:
+  - attributes:
+      value: |
+        Please check the [issues tab](https://github.com/pcaversaccio/xdeployer/issues) to avoid duplicates.
+        Thanks for taking the time to fill out this bug report!
+    type: markdown
+  - attributes:
+      label: "Describe the issue:"
+    id: what-happened
+    type: textarea
+    validations:
+      required: true
+  - attributes:
+      label: "Code example to reproduce the issue:"
+      description: "It can be a GitHub repository/gist or a simple code snippet."
+      placeholder: "```ts\nasync function main() {}\n```"
+    id: reproduce
+    type: textarea
+    validations:
+      required: true
+  - attributes:
+      label: "Version:"
+      description: |
+        What version of xdeployer are you running?
+        Run `npm list --depth=0` and check the xdeployer version.
+    id: version
+    type: textarea
+    validations:
+      required: true
+  - attributes:
+      label: "Relevant log output:"
+      description: |
+        Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
+    id: logs
+    type: textarea
