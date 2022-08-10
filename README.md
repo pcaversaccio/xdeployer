@@ -158,7 +158,7 @@ The current available networks are:
   - `evmosMain`
   - `bobaMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, whilst this plugin supports Optimism Kovan and Optimism Goerli via `optimismTestnet` and Arbitrum Rinkeby and Arbitrum Goerli via `arbitrumTestnet`, it will output the resulting block explorer links in the terminal of Optimism Goerli and Arbitrum Goerli, as Optimism Kovan and Arbitrum Kovan are deprecated.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, whilst this plugin supports Optimism Kovan and Optimism Goerli via `optimismTestnet`, and Arbitrum Rinkeby and Arbitrum Goerli via `arbitrumTestnet`, it will output the resulting block explorer links in the terminal of Optimism Goerli and Arbitrum Goerli, as Optimism Kovan and Arbitrum Kovan are deprecated.
 
 ### Local Deployment
 
