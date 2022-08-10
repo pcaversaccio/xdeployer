@@ -175,7 +175,7 @@ contract Create2DeployerLocal is Create2Deployer {}
 
 ```
 
-> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9`.
+> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9` or higher.
 
 The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
 
