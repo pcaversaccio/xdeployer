@@ -1,4 +1,4 @@
-name: 👮‍♂️ Lint
+name: 👮‍♂️ Sanity checks
 
 on: [push, pull_request]
 
@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  unit:
+  lint:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -27,6 +27,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v3
         with:
@@ -40,3 +41,20 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+  codespell:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run codespell
+        uses: codespell-project/actions-codespell@v1.0
+        with:
+          check_filenames: true
+          skip: package-lock.json
