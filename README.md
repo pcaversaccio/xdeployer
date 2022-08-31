@@ -128,6 +128,7 @@ The current available networks are:
   - `fantomTestnet`
   - `fuji`
   - `sokol`
+  - `chiado`
   - `moonbaseAlpha`
   - `alfajores`
   - `auroraTestnet`
