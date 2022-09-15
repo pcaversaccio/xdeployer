@@ -45,14 +45,14 @@
     "@types/chai": "^4.3.3",
     "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^18.7.17",
+    "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "chai": "^4.3.6",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
-    "ethers": "^5.7.0",
-    "hardhat": "^2.11.1",
+    "ethers": "^5.7.1",
+    "hardhat": "^2.11.2",
     "mocha": "^10.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-solidity": "^1.0.0-beta.24",
@@ -63,6 +63,6 @@
   "peerDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.1.1",
     "@openzeppelin/contracts": "^4.7.3",
-    "hardhat": "^2.11.1"
+    "hardhat": "^2.11.2"
   }
 }
