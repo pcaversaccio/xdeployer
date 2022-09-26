@@ -45,7 +45,7 @@
     "@types/chai": "^4.3.3",
     "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^18.7.20",
+    "@types/node": "^18.7.21",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
     "chai": "^4.3.6",
