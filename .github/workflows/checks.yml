@@ -57,5 +57,4 @@ jobs:
         uses: codespell-project/actions-codespell@v1.0
         with:
           check_filenames: true
-          exclude_file: .git
-          skip: package-lock.json
+          skip: package-lock.json,.git
