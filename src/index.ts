@@ -153,33 +153,18 @@ task(
 
             createReceipt[i] = await createReceipt[i].wait();
 
-            if (hre.config.xdeploy.networks[i] == "autobahn") {
-              result[i] = {
-                network: hre.config.xdeploy.networks[i],
-                chainId: chainId,
-                contract: hre.config.xdeploy.contract,
-                txHash: createReceipt[i].transactionHash,
-                txHashLink: `${explorers[idx]}transaction/${createReceipt[i].transactionHash}`,
-                address: computedContractAddress,
-                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-                receipt: createReceipt[i],
-                deployed: true,
-                error: undefined,
-              };
-            } else {
-              result[i] = {
-                network: hre.config.xdeploy.networks[i],
-                chainId: chainId,
-                contract: hre.config.xdeploy.contract,
-                txHash: createReceipt[i].transactionHash,
-                txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
-                address: computedContractAddress,
-                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-                receipt: createReceipt[i],
-                deployed: true,
-                error: undefined,
-              };
-            }
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: chainId,
+              contract: hre.config.xdeploy.contract,
+              txHash: createReceipt[i].transactionHash,
+              txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
+              address: computedContractAddress,
+              addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+              receipt: createReceipt[i],
+              deployed: true,
+              error: undefined,
+            };
 
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);

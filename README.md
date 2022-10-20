@@ -133,6 +133,7 @@ The current available networks are:
   - `alfajores`
   - `auroraTestnet`
   - `harmonyTestnet`
+  - `autobahnTestnet`
   - `spark`
   - `cronosTestnet`
   - `evmosTestnet`
