@@ -78,7 +78,7 @@ export const explorers = [
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
   "https://arbiscan.io/",
-  "https://nova-explorer.arbitrum.io/",
+  "https://nova.arbiscan.io/",
   "https://polygonscan.com/",
   "https://hecoinfo.com/",
   "https://ftmscan.com/",
