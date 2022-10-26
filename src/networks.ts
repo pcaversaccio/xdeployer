@@ -58,7 +58,7 @@ export const explorers = [
   "https://sepolia.etherscan.io/",
   "https://testnet.bscscan.com/",
   "https://goerli-optimism.etherscan.io/",
-  "https://goerli-rollup-explorer.arbitrum.io/",
+  "https://goerli.arbiscan.io/",
   "https://mumbai.polygonscan.com/",
   "https://testnet.hecoinfo.com/",
   "https://testnet.ftmscan.com/",
