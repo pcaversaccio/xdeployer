@@ -66,6 +66,9 @@ module.exports = {
     contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
     constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
     salt: "YOUR_SALT_MESSAGE",
+    // The default option is to hash the salt, even if this is undefined.
+    // Should the salt not be hashed, make this "false".
+    hashSalt: "true",
     signer: "SIGNER_PRIVATE_KEY",
     networks: ["LIST_OF_NETWORKS"],
     rpcUrls: ["LIST_OF_RPCURLS"],
@@ -85,6 +88,9 @@ const config: HardhatUserConfig = {
     contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
     constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS",
     salt: "YOUR_SALT_MESSAGE",
+    // The default option is to hash the salt, even if this is undefined.
+    // Should the salt not be hashed, make this "false".
+    hashSalt: "true",
     signer: "SIGNER_PRIVATE_KEY",
     networks: ["LIST_OF_NETWORKS"],
     rpcUrls: ["LIST_OF_RPCURLS"],

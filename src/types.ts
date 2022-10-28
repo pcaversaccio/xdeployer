@@ -2,6 +2,7 @@ export interface XdeployConfig {
   contract?: string;
   constructorArgsPath?: string;
   salt?: string;
+  hashSalt?: "true" | "false";
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   signer?: any;
   networks?: Array<string>;

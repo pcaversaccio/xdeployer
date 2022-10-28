@@ -109,11 +109,16 @@ task(
           signers[i]
         );
 
-        if (hre.config.xdeploy.salt) {
+        let salt = hre.config.xdeploy.salt;
+        if (salt) {
+          if (hre.config.xdeploy.hashSalt !== "false") {
+            salt = hre.ethers.utils.id(salt);
+          }
+
           try {
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              salt,
               hre.ethers.utils.keccak256(initcode.data)
             );
             if (counter === 0) {
@@ -143,7 +148,7 @@ task(
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              salt,
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
