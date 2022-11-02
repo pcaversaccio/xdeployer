@@ -31,11 +31,7 @@ contract Create2Deployer is Ownable, Pausable {
      * - the factory must have a balance of at least `value`.
      * - if `value` is non-zero, `bytecode` must have a `payable` constructor.
      */
-    function deploy(
-        uint256 value,
-        bytes32 salt,
-        bytes memory code
-    ) public whenNotPaused {
+    function deploy(uint256 value, bytes32 salt, bytes memory code) public whenNotPaused {
         Create2.deploy(value, salt, code);
     }
 
