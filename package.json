@@ -41,7 +41,7 @@
   ],
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.1",
-    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts": "^4.8.0",
     "@types/chai": "^4.3.4",
     "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^10.0.0",
@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.1",
-    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts": "^4.8.0",
     "hardhat": "^2.12.2"
   }
 }
