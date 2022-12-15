@@ -25,6 +25,7 @@ export const networks = [
   "cronosTestnet",
   "evmosTestnet",
   "bobaTestnet",
+  "cantoTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -45,6 +46,7 @@ export const networks = [
   "cronos",
   "evmosMain",
   "bobaMain",
+  "cantoMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -74,6 +76,7 @@ export const explorers = [
   "https://testnet.cronoscan.com/",
   "https://evm.evmos.dev/",
   "https://testnet.bobascan.com/",
+  "https://testnet-explorer.canto.neobase.one/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -94,4 +97,5 @@ export const explorers = [
   "https://cronoscan.com/",
   "https://evm.evmos.org/",
   "https://bobascan.com/",
+  "https://evm.explorer.canto.io/",
 ];
