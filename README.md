@@ -170,7 +170,6 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 
 ```solidity
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.9;
 
 import "xdeployer/src/contracts/Create2Deployer.sol";
