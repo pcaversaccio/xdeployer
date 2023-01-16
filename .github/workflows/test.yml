@@ -38,3 +38,7 @@ jobs:
 
       - name: Run tests
         run: npm run test
+        env:
+          ETH_GOERLI_TESTNET_URL: ${{ secrets.ETH_GOERLI_TESTNET_URL }}
+          ETH_SEPOLIA_TESTNET_URL: ${{ secrets.ETH_SEPOLIA_TESTNET_URL }}
+          XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
