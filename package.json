@@ -28,7 +28,7 @@
     "prettier:check": "prettier -c **/*.{js,ts,md,sol,json,yml}",
     "prettier:fix": "prettier -w **/*.{js,ts,md,sol,json,yml}",
     "lint": "eslint --ext .ts .",
-    "test": "mocha --exit --recursive 'test/**/*.test.ts' --require dotenv/config",
+    "test": "mocha --exit --recursive --require dotenv/config 'test/**/*.test.ts'",
     "build": "tsc",
     "watch": "tsc -w",
     "prepublishOnly": "npm run build"

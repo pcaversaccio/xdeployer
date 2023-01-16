@@ -51,9 +51,6 @@ cache
 artifacts
 .deps
 
-# TypeScript bindings output directory
-typechain-types
-
 # Miscellaneous files
 bin
 out
