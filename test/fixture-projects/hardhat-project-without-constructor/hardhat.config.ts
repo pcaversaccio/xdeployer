@@ -17,7 +17,9 @@ const config: HardhatUserConfig = {
       accounts: [
         {
           privateKey:
-            "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
+            // If there is no `.env` entry, we use one of the standard accounts of the Hardhat network.
+            process.env.XDEPLOYER_TEST_ACCOUNT ||
+            "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
           balance: "100000000000000000000",
         },
       ],
@@ -28,8 +30,7 @@ const config: HardhatUserConfig = {
   xdeploy: {
     contract: "SimpleContract",
     salt: ethers.utils.id(Date.now().toString()),
-    signer:
-      "0xe1904817e407877ea09135933f39121aa68ed0d9729d301084c544204171d100",
+    signer: process.env.XDEPLOYER_TEST_ACCOUNT,
     networks: ["hardhat"],
     rpcUrls: ["hardhat"],
     gasLimit: 1.2 * 10 ** 6,
