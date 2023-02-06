@@ -15,7 +15,6 @@ import "@openzeppelin/contracts/security/Pausable.sol";
  * the address where a smart contract will be deployed, which allows
  * for interesting new mechanisms known as 'counterfactual interactions'.
  */
-
 contract Create2Deployer is Ownable, Pausable {
     /**
      * @dev Deploys a contract using `CREATE2`. The address where the
@@ -88,7 +87,7 @@ contract Create2Deployer is Ownable, Pausable {
     /**
      * @dev Destroys the Create2Deployer contract and transfers all ether to a pre-defined payout address.
      * @notice Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a
-     * previously seldestructed contract address. However, if a contract creation is attempted,
+     * previously selfdestructed contract address. However, if a contract creation is attempted,
      * due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination
      * address already has either nonzero nonce, or non-empty code, then the creation throws immediately,
      * with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode.
