@@ -204,7 +204,7 @@ const data = [
 export { data };
 ```
 
-> BigInt literals (e.g. `100000000000000000000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](https://github.com/pcaversaccio/xdeployer/blob/main/tsconfig.json) for an example.
+> BigInt literals (e.g. `100000000000000000000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](./tsconfig.json) for an example.
 
 If you are using common JavaScript:
 
@@ -242,7 +242,7 @@ Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to
 
 It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
 
-> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/v0.8.11/security-considerations.html?highlight=tx.origin#tx-origin).
+> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin).
 
 ## Donation
 
