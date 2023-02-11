@@ -50,7 +50,7 @@
     "@typescript-eslint/parser": "^5.51.0",
     "chai": "^4.3.7",
     "dotenv": "^16.0.3",
-    "eslint": "^8.33.0",
+    "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "ethers": "^5.7.2",
     "hardhat": "^2.12.7",
