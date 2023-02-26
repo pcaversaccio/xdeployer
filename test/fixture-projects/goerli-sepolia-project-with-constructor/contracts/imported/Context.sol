@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Context.sol.
+pragma solidity ^0.8.19;
 
 /**
  * @dev Provides information about the current execution context, including the

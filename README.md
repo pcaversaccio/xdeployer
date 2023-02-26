@@ -139,6 +139,7 @@ The current available networks are:
   - `evmosTestnet`
   - `bobaTestnet`
   - `cantoTestnet`
+  - `baseTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -170,14 +171,14 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
-import "xdeployer/src/contracts/Create2Deployer.sol";
+import { Create2Deployer } from "xdeployer/src/contracts/Create2Deployer.sol";
 
 contract Create2DeployerLocal is Create2Deployer {}
 ```
 
-> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.9` or higher.
+> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.19` or higher.
 
 The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
 

@@ -1,33 +1,25 @@
 // SPDX-License-Identifier: MIT
-// Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/mocks/ERC20Mock.sol
-pragma solidity ^0.8.4;
+// Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/mocks/ERC20Mock.sol.
+pragma solidity ^0.8.19;
 
-import "./imported/ERC20.sol";
+import {ERC20} from "./imported/ERC20.sol";
 
 // Mock class using ERC20
 contract ERC20Mock is ERC20 {
     constructor(
-        string memory name,
-        string memory symbol,
-        address initialAccount,
-        uint256 initialBalance
-    ) payable ERC20(name, symbol) {
-        _mint(initialAccount, initialBalance);
+        string memory name_,
+        string memory symbol_,
+        address initialAccount_,
+        uint256 initialBalance_
+    ) payable ERC20(name_, symbol_) {
+        _mint(initialAccount_, initialBalance_);
     }
 
-    function mint(address account, uint256 amount) public {
+    function mint(address account, uint256 amount) external {
         _mint(account, amount);
     }
 
-    function burn(address account, uint256 amount) public {
+    function burn(address account, uint256 amount) external {
         _burn(account, amount);
-    }
-
-    function transferInternal(address from, address to, uint256 value) public {
-        _transfer(from, to, value);
-    }
-
-    function approveInternal(address owner, address spender, uint256 value) public {
-        _approve(owner, spender, value);
     }
 }

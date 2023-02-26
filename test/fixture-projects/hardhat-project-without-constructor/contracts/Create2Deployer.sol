@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 // Further information: https://eips.ethereum.org/EIPS/eip-1014
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.19;
 
-import "@openzeppelin/contracts/utils/Create2.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC1820Implementer.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
+import {Create2} from "@openzeppelin/contracts/utils/Create2.sol";
+import {ERC1820Implementer} from "@openzeppelin/contracts/utils/introspection/ERC1820Implementer.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {Pausable} from "@openzeppelin/contracts/security/Pausable.sol";
 
 /**
  * @title CREATE2 Deployer Smart Contract
