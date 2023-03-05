@@ -26,10 +26,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Use Node.js ${{ matrix.node_version }}
+      - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node_version }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Install npm project with a clean slate
         run: npm ci --prefer-offline
