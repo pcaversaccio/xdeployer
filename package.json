@@ -51,7 +51,7 @@
     "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-prettier": "^8.7.0",
     "ethers": "^5.7.2",
     "hardhat": "^2.13.0",
     "mocha": "^10.2.0",
