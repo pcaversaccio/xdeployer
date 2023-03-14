@@ -6,7 +6,6 @@
   "function computeAddressWithDeployer(bytes32 salt, bytes32 codeHash, address deployer) pure returns (address)",
   "function deploy(uint256 value, bytes32 salt, bytes code)",
   "function deployERC1820Implementer(uint256 value, bytes32 salt)",
-  "function killCreate2Deployer(address payoutAddress)",
   "function owner() view returns (address)",
   "function pause()",
   "function paused() view returns (bool)",
