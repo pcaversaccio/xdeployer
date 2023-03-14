@@ -63,8 +63,7 @@ contract Create2Deployer is Ownable, Pausable {
     }
 
     /**
-     * @dev Contract can receive ether. However, the only way to transfer this ether is
-     * to call the function `killCreate2Deployer`.
+     * @dev The contract can receive ether to enable `payable` constructor calls if needed.
      */
     receive() external payable {}
 
@@ -82,19 +81,5 @@ contract Create2Deployer is Ownable, Pausable {
      */
     function unpause() public onlyOwner {
         _unpause();
-    }
-
-    /**
-     * @dev Destroys the Create2Deployer contract and transfers all ether to a pre-defined payout address.
-     * @notice Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a
-     * previously selfdestructed contract address. However, if a contract creation is attempted,
-     * due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination
-     * address already has either nonzero nonce, or non-empty code, then the creation throws immediately,
-     * with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode.
-     * This applies retroactively starting from genesis.
-     */
-    function killCreate2Deployer(address payable payoutAddress) public onlyOwner {
-        payoutAddress.transfer(address(this).balance);
-        selfdestruct(payoutAddress);
     }
 }

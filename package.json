@@ -1,6 +1,6 @@
 {
   "name": "xdeployer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Hardhat plugin to deploy your smart contracts across multiple EVM chains with the same deterministic address.",
   "author": "Pascal Marco Caversaccio <pascal.caversaccio@hotmail.ch>",
   "license": "MIT",
@@ -45,7 +45,7 @@
     "@types/chai": "^4.3.4",
     "@types/fs-extra": "^11.0.1",
     "@types/mocha": "^10.0.1",
-    "@types/node": "^18.15.2",
+    "@types/node": "^18.15.3",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "chai": "^4.3.7",

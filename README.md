@@ -6,6 +6,8 @@
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
 
+> It is pronounced _cross_-deployer.
+
 ## What
 
 This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
@@ -140,6 +142,8 @@ The current available networks are:
   - `bobaTestnet`
   - `cantoTestnet`
   - `baseTestnet`
+  - `mantleTestnet`
+  - `scrollTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
