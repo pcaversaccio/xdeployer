@@ -126,6 +126,7 @@ The current available networks are:
   - `optimismTestnet`
   - `arbitrumTestnet`
   - `mumbai`
+  - `polygonZkEVMTestnet`
   - `hecoTestnet`
   - `fantomTestnet`
   - `fuji`
