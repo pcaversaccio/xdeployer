@@ -384,7 +384,7 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please provide at least one deployment network via the hardhat config.
-        E.g.: { [...], xdeploy: { networks: ["rinkeby", "kovan"] }, [...] }
+        E.g.: { [...], xdeploy: { networks: ["goerli", "sepolia"] }, [...] }
         The current supported networks are ${networks}.`
     );
   }

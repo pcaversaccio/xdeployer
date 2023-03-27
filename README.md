@@ -105,8 +105,8 @@ xdeploy: {
   constructorArgsPath: "./deploy-args.ts",
   salt: "WAGMI",
   signer: process.env.PRIVATE_KEY,
-  networks: ["hardhat", "rinkeby", "kovan"],
-  rpcUrls: ["hardhat", process.env.RINKEBY_URL, process.env.KOVAN_URL],
+  networks: ["hardhat", "goerli", "sepolia"],
+  rpcUrls: ["hardhat", process.env.ETH_GOERLI_TESTNET_URL, process.env.ETH_SEPOLIA_TESTNET_URL],
   gasLimit: 1.2 * 10 ** 6,
 },
 ```
