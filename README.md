@@ -152,6 +152,7 @@ The current available networks are:
   - `arbitrumMain`
   - `arbitrumNova`
   - `polygon`
+  - `polygonZkEVMMain`
   - `hecoMain`
   - `fantomMain`
   - `avalanche`
