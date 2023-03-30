@@ -145,6 +145,7 @@ The current available networks are:
   - `baseTestnet`
   - `mantleTestnet`
   - `scrollTestnet`
+  - `lineaTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
