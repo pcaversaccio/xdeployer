@@ -187,7 +187,7 @@ contract Create2DeployerLocal is Create2Deployer {}
 
 > For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.19` or higher.
 
-The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 favours IPv6, which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
+The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. Note that `localhost` in Node.js v17 (and above) [favours IPv6](https://github.com/nodejs/node/issues/40537), which means that you need to configure the network endpoint of `localhost` in `hardhat.config.js` or `hardhat.config.ts` like this:
 
 ```ts
 networks: {
@@ -229,7 +229,7 @@ The `gasLimit` field is set to **1'500'000** by default because the `CREATE2` op
 The contract creation transaction is displayed on Etherscan (or any other block explorer) as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
 
 > **Warning**<br>
-> Solidity version [`0.8.20`](https://github.com/ethereum/solidity/releases/tag/v0.8.20) introduced support for the new opcode [`PUSH0`](https://eips.ethereum.org/EIPS/eip-3855), which was added as part of the [Shanghai hard fork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md). Prior to running a deployment, please verify that _all_ targeted EVM networks support the `PUSH0` opcode. Otherwise, a deployment attempt on an EVM chain without `PUSH0` support may result in deployment or runtime failure(s).
+> Solidity version [`0.8.20`](https://github.com/ethereum/solidity/releases/tag/v0.8.20) introduced support for the new opcode [`PUSH0`](https://eips.ethereum.org/EIPS/eip-3855), which was added as part of the [Shanghai hard fork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md). Prior to running a deployment with a `0.8.20`-compiled bytecode (using the EVM version `shanghai`), please verify that _all_ targeted EVM networks support the `PUSH0` opcode. Otherwise, a deployment attempt on an EVM chain without `PUSH0` support may result in deployment or runtime failure(s).
 
 ## Usage
 
