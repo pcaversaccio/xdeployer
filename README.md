@@ -202,7 +202,7 @@ const data = [
 export { data };
 ```
 
-> BigInt literals (e.g. `100000000000000000000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](./tsconfig.json) for an example.
+> BigInt literals (e.g. `100_000_000_000_000_000_000n`) can be used for the constructor arguments if you set `target: ES2020` in your `tsconfig.json` file. See also [here](./tsconfig.json) for an example.
 
 If you are using common JavaScript:
 
