@@ -66,12 +66,12 @@ module.exports = {
   },
   xdeploy: {
     contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
-    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS", # optional
+    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS", // optional; default value is `undefined`
     salt: "YOUR_SALT_MESSAGE",
     signer: "SIGNER_PRIVATE_KEY",
     networks: ["LIST_OF_NETWORKS"],
     rpcUrls: ["LIST_OF_RPCURLS"],
-    gasLimit: 1_500_000, # optional
+    gasLimit: 1_500_000, // optional; default value is `1.5e6`
   },
 };
 ```
@@ -85,12 +85,12 @@ const config: HardhatUserConfig = {
   },
   xdeploy: {
     contract: "YOUR_CONTRACT_NAME_TO_BE_DEPLOYED",
-    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS", # optional
+    constructorArgsPath: "PATH_TO_CONSTRUCTOR_ARGS", // optional; default value is `undefined`
     salt: "YOUR_SALT_MESSAGE",
     signer: "SIGNER_PRIVATE_KEY",
     networks: ["LIST_OF_NETWORKS"],
     rpcUrls: ["LIST_OF_RPCURLS"],
-    gasLimit: 1_500_000, # optional
+    gasLimit: 1_500_000, // optional; default value is `1.5e6`
   },
 };
 ```
