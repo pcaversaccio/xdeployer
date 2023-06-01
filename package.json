@@ -64,6 +64,7 @@
   "peerDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@openzeppelin/contracts": "^4.9.0",
+    "ethers": "^5.7.2",
     "hardhat": "^2.14.1"
   }
 }
