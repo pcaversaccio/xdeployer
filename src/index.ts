@@ -73,9 +73,9 @@ task(
 
       const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
       if (ext === "ts") {
-        initcode = contract.getDeployTransaction(...args.data);
+        initcode = await contract.getDeployTransaction(...args.data);
       } else if (ext === "js") {
-        initcode = contract.getDeployTransaction(...args.default);
+        initcode = await contract.getDeployTransaction(...args.default);
       }
     } else if (
       !hre.config.xdeploy.constructorArgsPath &&
@@ -84,7 +84,7 @@ task(
       const contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
-      initcode = contract.getDeployTransaction();
+      initcode = await contract.getDeployTransaction();
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
@@ -157,8 +157,8 @@ task(
               network: hre.config.xdeploy.networks[i],
               chainId: chainId,
               contract: hre.config.xdeploy.contract,
-              txHash: createReceipt[i].transactionHash,
-              txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
+              txHash: createReceipt[i].hash,
+              txHashLink: `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
               addressLink: `${explorers[idx]}address/${computedContractAddress}`,
               receipt: createReceipt[i],
@@ -292,7 +292,7 @@ task(
               network: hre.config.xdeploy.networks[i],
               chainId: chainId,
               contract: hre.config.xdeploy.contract,
-              txHash: createReceipt[i].transactionHash,
+              txHash: createReceipt[i].hash,
               txHashLink: explorers[idx],
               address: computedContractAddress,
               addressLink: explorers[idx],
