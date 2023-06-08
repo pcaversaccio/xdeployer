@@ -16,24 +16,24 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 
 ```bash
 # ethers v6
-npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.1' 'ethers^6.5.1' @openzeppelin/contracts
+npm install --save-dev 'xdeployer@^2.0.0' '@nomicfoundation/hardhat-ethers@^3.0.1' 'ethers^6.5.1' @openzeppelin/contracts
 ```
 
 ```bash
 # ethers v5
-npm install --save-dev xdeployer '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
+npm install --save-dev 'xdeployer@^1.2.7' '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
 ```
 
 Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```bash
 # ethers v6
-yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.1' 'ethers^6.5.1' @openzeppelin/contracts
+yarn add --dev 'xdeployer@^2.0.0' '@nomicfoundation/hardhat-ethers@^3.0.1' 'ethers^6.5.1' @openzeppelin/contracts
 ```
 
 ```bash
 # ethers v5
-yarn add --dev xdeployer '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
+yarn add --dev 'xdeployer@^1.2.7' '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
 ```
 
 > **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
