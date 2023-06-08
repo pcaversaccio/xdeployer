@@ -53,13 +53,6 @@ task(
     let chainId: any;
     let idx: number;
 
-    const s = (v: null | bigint) => {
-      if (v == null) {
-        return null;
-      }
-      return v.toString();
-    };
-
     console.log(
       "\nThe deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
     );
@@ -162,7 +155,7 @@ task(
 
             result[i] = {
               network: hre.config.xdeploy.networks[i],
-              chainId: s(chainId),
+              chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
               txHashLink: `${explorers[idx]}tx/${createReceipt[i].hash}`,
@@ -297,7 +290,7 @@ task(
 
             result[i] = {
               network: hre.config.xdeploy.networks[i],
-              chainId: s(chainId),
+              chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
               txHashLink: explorers[idx],
