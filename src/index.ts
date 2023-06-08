@@ -19,7 +19,7 @@ import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
-import "@nomiclabs/hardhat-ethers";
+import "@nomicfoundation/hardhat-ethers";
 import * as fs from "fs";
 import path from "path";
 
@@ -88,7 +88,7 @@ task(
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
-      providers[i] = new hre.ethers.providers.JsonRpcProvider(
+      providers[i] = new hre.ethers.JsonRpcProvider(
         hre.config.xdeploy.rpcUrls[i]
       );
 
@@ -113,8 +113,8 @@ task(
           try {
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              hre.ethers.utils.keccak256(initcode.data)
+              hre.ethers.id(hre.config.xdeploy.salt),
+              hre.ethers.keccak256(initcode.data)
             );
             if (counter === 0) {
               console.log(
@@ -143,7 +143,7 @@ task(
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
@@ -257,8 +257,8 @@ task(
           try {
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              hre.ethers.utils.keccak256(initcode.data)
+              hre.ethers.id(hre.config.xdeploy.salt),
+              hre.ethers.keccak256(initcode.data)
             );
             if (counter === 0) {
               console.log(
@@ -278,7 +278,7 @@ task(
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );

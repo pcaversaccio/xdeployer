@@ -30,7 +30,7 @@ const config: HardhatUserConfig = {
   xdeploy: {
     contract: "ERC20Mock",
     constructorArgsPath: "./deploy-args.ts",
-    salt: ethers.utils.id(Date.now().toString()),
+    salt: ethers.id(Date.now().toString()),
     signer: process.env.XDEPLOYER_TEST_ACCOUNT,
     networks: ["hardhat"],
     rpcUrls: ["hardhat"],
