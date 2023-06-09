@@ -17,31 +17,31 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 With `npm` versions `>=7`:
 
 ```bash
-# ethers v6
+# based on ethers v6
 npm install --save-dev xdeployer
 ```
 
 With `npm` version `6`:
 
 ```bash
-# ethers v6
+# based on ethers v6
 npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.2' 'ethers^6.5.1' @openzeppelin/contracts
 ```
 
 <details>
-<summary> ethers v5 </summary>
+<summary> Using ethers v5 </summary>
 
 With `npm` versions `>=7`:
 
 ```bash
-# ethers v5
+# based on ethers v5
 npm install --save-dev 'xdeployer@^1.2.7'
 ```
 
 With `npm` version `6`:
 
 ```bash
-# ethers v5
+# based on ethers v5
 npm install --save-dev 'xdeployer@^1.2.7' '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
 ```
 
@@ -50,15 +50,15 @@ npm install --save-dev 'xdeployer@^1.2.7' '@nomiclabs/hardhat-ethers@^2.2.3' 'et
 Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```bash
-# ethers v6
+# based on ethers v6
 yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.2' 'ethers^6.5.1' @openzeppelin/contracts
 ```
 
 <details>
-<summary> ethers v5 </summary>
+<summary> Using ethers v5 </summary>
 
 ```bash
-# ethers v5
+# based on ethers v5
 yarn add --dev 'xdeployer@^1.2.7' '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
 ```
 
