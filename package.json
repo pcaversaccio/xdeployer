@@ -62,7 +62,7 @@
     "undici": "^5.22.1"
   },
   "peerDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.0.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.2",
     "@openzeppelin/contracts": "^4.9.1",
     "ethers": "^6.5.1",
     "hardhat": "^2.15.0"
