@@ -14,15 +14,55 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 
 ## Installation
 
+With `npm` versions `>=7`:
+
 ```bash
-npm install --save-dev xdeployer '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
+# based on ethers v6
+npm install --save-dev xdeployer
 ```
+
+With `npm` version `6`:
+
+```bash
+# based on ethers v6
+npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.2' ethers @openzeppelin/contracts
+```
+
+<details>
+<summary> Using ethers v5 </summary>
+
+With `npm` versions `>=7`:
+
+```bash
+# based on ethers v5
+npm install --save-dev 'xdeployer@^1.2.7'
+```
+
+With `npm` version `6`:
+
+```bash
+# based on ethers v5
+npm install --save-dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
+```
+
+</details>
 
 Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```bash
-yarn add --dev xdeployer '@nomiclabs/hardhat-ethers@^2.2.3' 'ethers@^5.7.2' @openzeppelin/contracts
+# based on ethers v6
+yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.2' ethers @openzeppelin/contracts
 ```
+
+<details>
+<summary> Using ethers v5 </summary>
+
+```bash
+# based on ethers v5
+yarn add --dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
+```
+
+</details>
 
 > **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 

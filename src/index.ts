@@ -19,7 +19,7 @@ import "./type-extensions";
 import abi from "./abi/Create2Deployer.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
-import "@nomiclabs/hardhat-ethers";
+import "@nomicfoundation/hardhat-ethers";
 import * as fs from "fs";
 import path from "path";
 
@@ -73,9 +73,9 @@ task(
 
       const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
       if (ext === "ts") {
-        initcode = contract.getDeployTransaction(...args.data);
+        initcode = await contract.getDeployTransaction(...args.data);
       } else if (ext === "js") {
-        initcode = contract.getDeployTransaction(...args.default);
+        initcode = await contract.getDeployTransaction(...args.default);
       }
     } else if (
       !hre.config.xdeploy.constructorArgsPath &&
@@ -84,11 +84,11 @@ task(
       const contract = await hre.ethers.getContractFactory(
         hre.config.xdeploy.contract
       );
-      initcode = contract.getDeployTransaction();
+      initcode = await contract.getDeployTransaction();
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
-      providers[i] = new hre.ethers.providers.JsonRpcProvider(
+      providers[i] = new hre.ethers.JsonRpcProvider(
         hre.config.xdeploy.rpcUrls[i]
       );
 
@@ -113,8 +113,8 @@ task(
           try {
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              hre.ethers.utils.keccak256(initcode.data)
+              hre.ethers.id(hre.config.xdeploy.salt),
+              hre.ethers.keccak256(initcode.data)
             );
             if (counter === 0) {
               console.log(
@@ -143,7 +143,7 @@ task(
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
@@ -155,13 +155,13 @@ task(
 
             result[i] = {
               network: hre.config.xdeploy.networks[i],
-              chainId: chainId,
+              chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
-              txHash: createReceipt[i].transactionHash,
-              txHashLink: `${explorers[idx]}tx/${createReceipt[i].transactionHash}`,
+              txHash: createReceipt[i].hash,
+              txHashLink: `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
               addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-              receipt: createReceipt[i],
+              receipt: createReceipt[i].toJSON(),
               deployed: true,
               error: undefined,
             };
@@ -257,8 +257,8 @@ task(
           try {
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
-              hre.ethers.utils.keccak256(initcode.data)
+              hre.ethers.id(hre.config.xdeploy.salt),
+              hre.ethers.keccak256(initcode.data)
             );
             if (counter === 0) {
               console.log(
@@ -278,7 +278,7 @@ task(
           try {
             createReceipt[i] = await create2Deployer[i].deploy(
               AMOUNT,
-              hre.ethers.utils.id(hre.config.xdeploy.salt),
+              hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit }
             );
@@ -290,13 +290,13 @@ task(
 
             result[i] = {
               network: hre.config.xdeploy.networks[i],
-              chainId: chainId,
+              chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
-              txHash: createReceipt[i].transactionHash,
+              txHash: createReceipt[i].hash,
               txHashLink: explorers[idx],
               address: computedContractAddress,
               addressLink: explorers[idx],
-              receipt: createReceipt[i],
+              receipt: createReceipt[i].toJSON(),
               deployed: true,
               error: undefined,
             };

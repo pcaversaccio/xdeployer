@@ -29,7 +29,7 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   xdeploy: {
     contract: "SimpleContract",
-    salt: ethers.utils.id(Date.now().toString()),
+    salt: ethers.id(Date.now().toString()),
     signer: process.env.XDEPLOYER_TEST_ACCOUNT,
     networks: ["hardhat"],
     rpcUrls: ["hardhat"],
