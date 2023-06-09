@@ -20,7 +20,7 @@ npm install --save-dev 'xdeployer@^2.0.0' '@nomicfoundation/hardhat-ethers@^3.0.
 ```
 
 <details>
-<summary>`ethers v5`</summary>
+<summary> ethers v5 </summary>
 
 ```bash
 # ethers v5
@@ -37,7 +37,7 @@ yarn add --dev 'xdeployer@^2.0.0' '@nomicfoundation/hardhat-ethers@^3.0.2' 'ethe
 ```
 
 <details>
-<summary>`ethers v5`</summary>
+<summary> ethers v5 </summary>
 
 ```bash
 # ethers v5
