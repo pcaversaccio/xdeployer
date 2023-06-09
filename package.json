@@ -40,7 +40,7 @@
     "README.md"
   ],
   "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.0.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.2",
     "@openzeppelin/contracts": "^4.9.1",
     "@types/chai": "^4.3.5",
     "@types/fs-extra": "^11.0.1",
