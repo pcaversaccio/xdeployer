@@ -266,7 +266,7 @@ npx hardhat xdeploy
 
 ### Usage With Truffle
 
-[Truffle](https://trufflesuite.com/truffle) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle5) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle4)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
+[Truffle](https://trufflesuite.com/truffle/) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle4)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
 
 ## How It Works
 
