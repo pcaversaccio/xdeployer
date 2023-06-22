@@ -27,6 +27,7 @@ export const networks = [
   "mantleTestnet",
   "scrollTestnet",
   "lineaTestnet",
+  "zoraTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -48,6 +49,7 @@ export const networks = [
   "evmosMain",
   "bobaMain",
   "cantoMain",
+  "zoraMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -79,6 +81,7 @@ export const explorers = [
   "https://explorer.testnet.mantle.xyz/",
   "https://blockscout.scroll.io/",
   "https://explorer.goerli.linea.build/",
+  "https://testnet.explorer.zora.co/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -100,4 +103,5 @@ export const explorers = [
   "https://escan.live/",
   "https://bobascan.com/",
   "https://tuber.build/",
+  "https://explorer.zora.energy/",
 ];

@@ -182,6 +182,7 @@ The current available networks are:
   - `mantleTestnet`
   - `scrollTestnet`
   - `lineaTestnet`
+  - `zoraTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -204,6 +205,7 @@ The current available networks are:
   - `evmosMain`
   - `bobaMain`
   - `cantoMain`
+  - `zoraMain`
 
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
