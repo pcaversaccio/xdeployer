@@ -1,7 +1,7 @@
 # xdeployer 💥
 
 [![Test xdeploy](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml/badge.svg)](https://github.com/pcaversaccio/xdeployer/actions/workflows/test.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit/)
 [![npm package](https://img.shields.io/npm/v/xdeployer.svg)](https://www.npmjs.com/package/xdeployer)
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
@@ -157,9 +157,6 @@ The current available networks are:
   - `localhost`
   - `hardhat`
 - **EVM-Based Test Networks:**
-  - `rinkeby`
-  - `ropsten`
-  - `kovan`
   - `goerli`
   - `sepolia`
   - `bscTestnet`
@@ -176,7 +173,6 @@ The current available networks are:
   - `alfajores`
   - `auroraTestnet`
   - `harmonyTestnet`
-  - `autobahnTestnet`
   - `spark`
   - `cronosTestnet`
   - `evmosTestnet`
@@ -186,6 +182,7 @@ The current available networks are:
   - `mantleTestnet`
   - `scrollTestnet`
   - `lineaTestnet`
+  - `zoraTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -203,14 +200,14 @@ The current available networks are:
   - `celo`
   - `auroraMain`
   - `harmonyMain`
-  - `autobahn`
   - `fuse`
   - `cronos`
   - `evmosMain`
   - `bobaMain`
   - `cantoMain`
+  - `zoraMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, whilst this plugin supports Optimism Kovan and Optimism Goerli via `optimismTestnet`, and Arbitrum Rinkeby and Arbitrum Goerli via `arbitrumTestnet`, it will output the resulting block explorer links in the terminal of Optimism Goerli and Arbitrum Goerli, as Optimism Kovan and Arbitrum Kovan are deprecated.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
 ### Local Deployment
 
@@ -269,7 +266,7 @@ npx hardhat xdeploy
 
 ### Usage With Truffle
 
-[Truffle](https://www.trufflesuite.com/truffle) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle5.html) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/plugins/nomiclabs-hardhat-truffle4.html)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
+[Truffle](https://trufflesuite.com/truffle/) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5) (or if you use Truffle v4 [`hardhat-truffle4`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle4)) to integrate with `TruffleContract` from Truffle v5. This plugin allows tests and scripts written for Truffle to work with Hardhat.
 
 ## How It Works
 
