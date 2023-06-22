@@ -58,3 +58,28 @@ jobs:
         with:
           check_filenames: true
           skip: ./.git,package-lock.json
+
+  validate-links:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        ruby-version:
+          - 3.2
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Install awesome_bot
+        run: gem install awesome_bot
+
+      - name: Validate URLs
+        run: awesome_bot ./*.md contracts/*.sol --request-delay 0.4
