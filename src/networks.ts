@@ -81,7 +81,7 @@ export const explorers = [
   "https://explorer.testnet.mantle.xyz/",
   "https://blockscout.scroll.io/",
   "https://explorer.goerli.linea.build/",
-  "https://testnet.explorer.zora.co/",
+  "https://testnet.explorer.zora.energy/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
