@@ -14,7 +14,7 @@ jobs:
         os:
           - ubuntu-latest
         node_version:
-          - 18.15 # https://github.com/NomicFoundation/hardhat/issues/3877
+          - 18
 
     steps:
       - name: Checkout
