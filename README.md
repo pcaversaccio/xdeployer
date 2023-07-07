@@ -16,14 +16,14 @@ This plugin will help you make easier and safer usage of the [`CREATE2`](https:/
 
 With `npm` versions `>=7`:
 
-```bash
+```console
 # based on ethers v6
 npm install --save-dev xdeployer
 ```
 
 With `npm` version `6`:
 
-```bash
+```console
 # based on ethers v6
 npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.3' ethers @openzeppelin/contracts
 ```
@@ -33,14 +33,14 @@ npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.3' ethers
 
 With `npm` versions `>=7`:
 
-```bash
+```console
 # based on ethers v5
 npm install --save-dev 'xdeployer@^1.2.7'
 ```
 
 With `npm` version `6`:
 
-```bash
+```console
 # based on ethers v5
 npm install --save-dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
 ```
@@ -49,7 +49,7 @@ npm install --save-dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7
 
 Or if you are using [Yarn](https://classic.yarnpkg.com):
 
-```bash
+```console
 # based on ethers v6
 yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.3' ethers @openzeppelin/contracts
 ```
@@ -57,7 +57,7 @@ yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.0.3' ethers @openze
 <details>
 <summary> Using ethers v5 </summary>
 
-```bash
+```console
 # based on ethers v5
 yarn add --dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
 ```
@@ -87,7 +87,7 @@ import "xdeployer";
 
 This plugin provides the `xdeploy` task, which allows you to deploy your smart contracts across multiple EVM chains with the same deterministic address:
 
-```bash
+```console
 npx hardhat xdeploy
 ```
 
@@ -260,7 +260,7 @@ The contract creation transaction is displayed on Etherscan (or any other block 
 
 ## Usage
 
-```bash
+```console
 npx hardhat xdeploy
 ```
 
