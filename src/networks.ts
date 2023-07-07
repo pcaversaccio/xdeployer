@@ -74,7 +74,7 @@ export const explorers = [
   "https://explorer.pops.one/",
   "https://explorer.fusespark.io/",
   "https://cronos.org/explorer/testnet3/",
-  "https://evm.evmos.dev/",
+  "https://testnet.escan.live/",
   "https://testnet.bobascan.com/",
   "https://testnet.tuber.build/",
   "https://goerli.basescan.org/",
