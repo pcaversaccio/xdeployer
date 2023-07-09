@@ -25,9 +25,9 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prettier:check": "prettier -c **/*.{js,ts,md,sol,json,yml,yaml}",
-    "prettier:fix": "prettier -w **/*.{js,ts,md,sol,json,yml,yaml}",
-    "lint": "eslint --ext .ts .",
+    "prettier:check": "npx prettier -c **/*.{js,ts,md,sol,json,yml,yaml}",
+    "prettier:fix": "npx prettier -w **/*.{js,ts,md,sol,json,yml,yaml}",
+    "lint": "npx eslint --ext .ts .",
     "test": "mocha --exit --recursive --require dotenv/config 'test/**/*.test.ts'",
     "build": "tsc",
     "watch": "tsc -w",
