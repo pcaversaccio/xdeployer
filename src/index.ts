@@ -27,7 +27,7 @@ extendConfig(xdeployConfigExtender);
 
 task(
   "xdeploy",
-  "Deploys the contract across all predefined networks"
+  "Deploys the contract across all predefined networks",
 ).setAction(async (_, hre) => {
   await hre.run(TASK_VERIFY_NETWORK_ARGUMENTS);
   await hre.run(TASK_VERIFY_SUPPORTED_NETWORKS);
@@ -54,7 +54,7 @@ task(
     let idx: number;
 
     console.log(
-      "\nThe deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!"
+      "\nThe deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!",
     );
 
     if (hre.config.xdeploy.constructorArgsPath && hre.config.xdeploy.contract) {
@@ -62,13 +62,13 @@ task(
         path.normalize(
           path.join(
             hre.config.paths.root,
-            hre.config.xdeploy.constructorArgsPath
-          )
+            hre.config.xdeploy.constructorArgsPath,
+          ),
         )
       );
 
       const contract = await hre.ethers.getContractFactory(
-        hre.config.xdeploy.contract
+        hre.config.xdeploy.contract,
       );
 
       const ext = hre.config.xdeploy.constructorArgsPath.split(".").pop();
@@ -82,19 +82,19 @@ task(
       hre.config.xdeploy.contract
     ) {
       const contract = await hre.ethers.getContractFactory(
-        hre.config.xdeploy.contract
+        hre.config.xdeploy.contract,
       );
       initcode = await contract.getDeployTransaction();
     }
 
     for (let i = 0; i < hre.config.xdeploy.rpcUrls.length; i++) {
       providers[i] = new hre.ethers.JsonRpcProvider(
-        hre.config.xdeploy.rpcUrls[i]
+        hre.config.xdeploy.rpcUrls[i],
       );
 
       wallets[i] = new hre.ethers.Wallet(
         hre.config.xdeploy.signer,
-        providers[i]
+        providers[i],
       );
 
       signers[i] = wallets[i].connect(providers[i]);
@@ -106,7 +106,7 @@ task(
         create2Deployer[i] = new hre.ethers.Contract(
           CREATE2_DEPLOYER_ADDRESS,
           abi,
-          signers[i]
+          signers[i],
         );
 
         if (hre.config.xdeploy.salt) {
@@ -114,20 +114,20 @@ task(
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
               hre.ethers.id(hre.config.xdeploy.salt),
-              hre.ethers.keccak256(initcode.data)
+              hre.ethers.keccak256(initcode.data),
             );
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
                   `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
-                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
               );
             }
             ++counter;
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
-              `The contract address could not be computed. Please check your contract name and constructor arguments.`
+              `The contract address could not be computed. Please check your contract name and constructor arguments.`,
             );
           }
 
@@ -136,7 +136,7 @@ task(
               PLUGIN_NAME,
               `The address of the contract you want to deploy already has existing bytecode on ${hre.config.xdeploy.networks[i]}.
               It is very likely that you have deployed this contract before with the same salt parameter value.
-              Please try using a different salt value.`
+              Please try using a different salt value.`,
             );
           }
 
@@ -145,7 +145,7 @@ task(
               AMOUNT,
               hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
-              { gasLimit: hre.config.xdeploy.gasLimit }
+              { gasLimit: hre.config.xdeploy.gasLimit },
             );
 
             chainId = createReceipt[i].chainId;
@@ -174,8 +174,8 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment.json`
-              )
+                `${hre.config.xdeploy.networks[i]}_deployment.json`,
+              ),
             );
 
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
@@ -192,7 +192,7 @@ task(
                 `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
                 `Contract creation transaction hash: ${GREEN}${result[i].txHashLink}${RESET}\n\n` +
                 `Contract address: ${GREEN}${result[i].addressLink}${RESET}\n\n` +
-                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
             );
           } catch (err) {
             result[i] = {
@@ -216,8 +216,8 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
-              )
+                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+              ),
             );
 
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
@@ -232,7 +232,7 @@ task(
                 `Network: ${RED}${result[i].network}${RESET}\n\n` +
                 `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
                 `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
-                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
             );
           }
         }
@@ -241,13 +241,13 @@ task(
         hre.config.xdeploy.networks[i] === "localhost"
       ) {
         let hhcreate2Deployer = await hre.ethers.getContractFactory(
-          "Create2DeployerLocal"
+          "Create2DeployerLocal",
         );
 
         if (hre.config.xdeploy.networks[i] === "localhost") {
           hhcreate2Deployer = await hre.ethers.getContractFactory(
             "Create2DeployerLocal",
-            signers[i]
+            signers[i],
           );
         }
 
@@ -258,20 +258,20 @@ task(
             let counter = 0;
             computedContractAddress = await create2Deployer[i].computeAddress(
               hre.ethers.id(hre.config.xdeploy.salt),
-              hre.ethers.keccak256(initcode.data)
+              hre.ethers.keccak256(initcode.data),
             );
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
                   `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
-                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
               );
             }
             ++counter;
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
-              `The contract address could not be computed. Please check your contract name and constructor arguments.`
+              `The contract address could not be computed. Please check your contract name and constructor arguments.`,
             );
           }
 
@@ -280,7 +280,7 @@ task(
               AMOUNT,
               hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
-              { gasLimit: hre.config.xdeploy.gasLimit }
+              { gasLimit: hre.config.xdeploy.gasLimit },
             );
 
             chainId = createReceipt[i].chainId;
@@ -309,8 +309,8 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment.json`
-              )
+                `${hre.config.xdeploy.networks[i]}_deployment.json`,
+              ),
             );
 
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
@@ -327,7 +327,7 @@ task(
                 `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
                 `Contract creation transaction: ${GREEN}${result[i].txHash}${RESET}\n\n` +
                 `Contract address: ${GREEN}${result[i].address}${RESET}\n\n` +
-                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
             );
           } catch (err) {
             result[i] = {
@@ -351,8 +351,8 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`
-              )
+                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+              ),
             );
 
             fs.writeFileSync(saveDir, JSON.stringify(result[i]));
@@ -367,7 +367,7 @@ task(
                 `Network: ${RED}${result[i].network}${RESET}\n\n` +
                 `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
                 `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
-                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
             );
           }
         }
@@ -385,21 +385,21 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
       PLUGIN_NAME,
       `Please provide at least one deployment network via the hardhat config.
         E.g.: { [...], xdeploy: { networks: ["goerli", "sepolia"] }, [...] }
-        The current supported networks are ${networks}.`
+        The current supported networks are ${networks}.`,
     );
   }
 });
 
 subtask(TASK_VERIFY_SUPPORTED_NETWORKS).setAction(async (_, hre) => {
   const unsupported = hre?.config?.xdeploy?.networks?.filter(
-    (v) => !networks.includes(v)
+    (v) => !networks.includes(v),
   );
   if (unsupported && unsupported.length > 0) {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `You have tried to configure a network that this plugin does not yet support,
       or you have misspelled the network name. The currently supported networks are
-      ${networks}.`
+      ${networks}.`,
     );
   }
 });
@@ -414,7 +414,7 @@ subtask(TASK_VERIFY_EQUAL_ARGS_NETWORKS).setAction(async (_, hre) => {
       PLUGIN_NAME,
       `The parameters "network" and "rpcUrls" do not have the same length.
       Please ensure that both parameters have the same length, i.e. for each
-      network there is a corresponding rpcUrls entry.`
+      network there is a corresponding rpcUrls entry.`,
     );
   }
 });
@@ -424,7 +424,7 @@ subtask(TASK_VERIFY_SALT).setAction(async (_, hre) => {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please provide an arbitrary value as salt.
-      E.g.: { [...], xdeploy: { salt: "WAGMI" }, [...] }.`
+      E.g.: { [...], xdeploy: { salt: "WAGMI" }, [...] }.`,
     );
   }
 });
@@ -435,7 +435,7 @@ subtask(TASK_VERIFY_SIGNER).setAction(async (_, hre) => {
       PLUGIN_NAME,
       `Please provide a signer private key. We recommend using a .env file.
       See https://www.npmjs.com/package/dotenv.
-      E.g.: { [...], xdeploy: { signer: process.env.PRIVATE_KEY }, [...] }.`
+      E.g.: { [...], xdeploy: { signer: process.env.PRIVATE_KEY }, [...] }.`,
     );
   }
 });
@@ -445,7 +445,7 @@ subtask(TASK_VERIFY_CONTRACT).setAction(async (_, hre) => {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please specify the contract name of the smart contract to be deployed.
-      E.g.: { [...], xdeploy: { contract: "ERC20" }, [...] }.`
+      E.g.: { [...], xdeploy: { contract: "ERC20" }, [...] }.`,
     );
   }
 });
@@ -458,7 +458,7 @@ subtask(TASK_VERIFY_GASLIMIT).setAction(async (_, hre) => {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
       `Please specify a lower gasLimit. Each block has currently 
-      a target size of 15 million gas.`
+      a target size of 15 million gas.`,
     );
   }
 });

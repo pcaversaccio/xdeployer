@@ -19,12 +19,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing network arguments should throw a plugin error"
+            "missing network arguments should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "Please provide at least one deployment network via the hardhat config."
+              "Please provide at least one deployment network via the hardhat config.",
             );
         });
     });
@@ -39,12 +39,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing network arguments should throw a plugin error"
+            "missing network arguments should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "Please provide at least one deployment network via the hardhat config."
+              "Please provide at least one deployment network via the hardhat config.",
             );
         });
     });
@@ -59,12 +59,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "unsupported network arguments should throw a plugin error"
+            "unsupported network arguments should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "You have tried to configure a network that this plugin does not yet support,"
+              "You have tried to configure a network that this plugin does not yet support,",
             );
         });
     });
@@ -83,12 +83,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "unequal length of `networks` and `rpcUrls` arguments should throw a plugin error"
+            "unequal length of `networks` and `rpcUrls` arguments should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "Please ensure that both parameters have the same length"
+              "Please ensure that both parameters have the same length",
             );
         });
     });
@@ -103,7 +103,7 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing salt value should throw a plugin error"
+            "missing salt value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
@@ -121,7 +121,7 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing salt value should throw a plugin error"
+            "missing salt value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
@@ -139,7 +139,7 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing signer value should throw a plugin error"
+            "missing signer value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
@@ -157,7 +157,7 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing signer value should throw a plugin error"
+            "missing signer value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
@@ -175,12 +175,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing contract value should throw a plugin error"
+            "missing contract value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "Please specify the contract name of the smart contract to be deployed."
+              "Please specify the contract name of the smart contract to be deployed.",
             );
         });
     });
@@ -195,12 +195,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "missing contract value should throw a plugin error"
+            "missing contract value should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "Please specify the contract name of the smart contract to be deployed."
+              "Please specify the contract name of the smart contract to be deployed.",
             );
         });
     });
@@ -215,7 +215,7 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "too high gasLimit should throw a plugin error"
+            "too high gasLimit should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
@@ -234,12 +234,12 @@ describe("Plugin test xdeploy on Goerli and Sepolia with constructor", function 
         .catch((reason) => {
           expect(reason).to.be.an.instanceOf(
             NomicLabsHardhatPluginError,
-            "existing bytecode should throw a plugin error"
+            "existing bytecode should throw a plugin error",
           );
           expect(reason.message)
             .to.be.a("string")
             .and.include(
-              "The address of the contract you want to deploy already has existing bytecode"
+              "The address of the contract you want to deploy already has existing bytecode",
             );
         });
     });
