@@ -36,11 +36,8 @@ jobs:
       - name: Install npm project with a clean slate
         run: npm ci --prefer-offline
 
-      - name: Prettier
-        run: npm run prettier:check
-
-      - name: Lint
-        run: npm run lint
+      - name: Prettier and lint
+        run: npm run lint:check
 
   codespell:
     runs-on: ${{ matrix.os }}

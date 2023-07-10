@@ -4,7 +4,7 @@ export interface XdeployConfig {
   constructorArgsPath?: string;
   salt?: string;
   signer?: any;
-  networks?: Array<string>;
-  rpcUrls?: Array<any>;
+  networks?: string[];
+  rpcUrls?: any[];
   gasLimit?: number;
 }

@@ -40,12 +40,12 @@ task(
   await hre.run("compile");
 
   if (hre.config.xdeploy.rpcUrls && hre.config.xdeploy.networks) {
-    const providers: Array<any> = [];
-    const wallets: Array<any> = [];
-    const signers: Array<any> = [];
-    const create2Deployer: Array<any> = [];
-    const createReceipt: Array<any> = [];
-    const result: Array<any> = [];
+    const providers: any[] = [];
+    const wallets: any[] = [];
+    const signers: any[] = [];
+    const create2Deployer: any[] = [];
+    const createReceipt: any[] = [];
+    const result: any[] = [];
     const dir = "./deployments";
 
     let initcode: any;

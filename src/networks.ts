@@ -71,7 +71,7 @@ export const explorers = [
   "https://moonbase.moonscan.io/",
   "https://alfajores.celoscan.io/",
   "https://explorer.testnet.aurora.dev/",
-  "https://explorer.pops.one/",
+  "https://explorer.testnet.harmony.one/",
   "https://explorer.fusespark.io/",
   "https://cronos.org/explorer/testnet3/",
   "https://testnet.escan.live/",
