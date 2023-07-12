@@ -64,6 +64,23 @@ yarn add --dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @ope
 
 </details>
 
+In case you are using [pnpm](https://pnpm.io), invoke:
+
+```console
+# based on ethers v6
+pnpm add --save-dev xdeployer
+```
+
+<details>
+<summary> Using ethers v5 </summary>
+
+```console
+# based on ethers v5
+pnpm add --save-dev 'xdeployer@^1.2.7'
+```
+
+</details>
+
 > **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 
 Import the plugin in your `hardhat.config.js`:
