@@ -53,7 +53,7 @@
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
-    "ethers": "^6.6.2",
+    "ethers": "^6.6.3",
     "hardhat": "^2.16.1",
     "mocha": "^10.2.0",
     "prettier": "^3.0.0",
@@ -65,7 +65,7 @@
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.3",
     "@openzeppelin/contracts": "^4.9.2",
-    "ethers": "^6.6.2",
+    "ethers": "^6.6.3",
     "hardhat": "^2.16.1"
   }
 }
