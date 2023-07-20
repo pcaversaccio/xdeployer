@@ -218,10 +218,12 @@ The current available networks are:
   - `auroraMain`
   - `harmonyMain`
   - `fuse`
-  - `cronos`
+  - `cronosMain`
   - `evmosMain`
   - `bobaMain`
   - `cantoMain`
+  - `mantleMain`
+  - `lineaMain`
   - `zoraMain`
 
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.

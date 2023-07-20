@@ -45,10 +45,12 @@ export const networks = [
   "auroraMain",
   "harmonyMain",
   "fuse",
-  "cronos",
+  "cronosMain",
   "evmosMain",
   "bobaMain",
   "cantoMain",
+  "mantleMain",
+  "lineaMain",
   "zoraMain",
 ];
 
@@ -80,7 +82,7 @@ export const explorers = [
   "https://goerli.basescan.org/",
   "https://explorer.testnet.mantle.xyz/",
   "https://blockscout.scroll.io/",
-  "https://explorer.goerli.linea.build/",
+  "https://goerli.lineascan.build/",
   "https://testnet.explorer.zora.energy/",
   "https://etherscan.io/",
   "https://bscscan.com/",
@@ -103,5 +105,7 @@ export const explorers = [
   "https://escan.live/",
   "https://bobascan.com/",
   "https://tuber.build/",
+  "https://explorer.mantle.xyz/",
+  "https://lineascan.build/",
   "https://explorer.zora.energy/",
 ];
