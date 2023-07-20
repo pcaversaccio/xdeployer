@@ -226,7 +226,7 @@ The current available networks are:
   - `lineaMain`
   - `zoraMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
 
 ### Local Deployment
 
