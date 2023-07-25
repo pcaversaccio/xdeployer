@@ -28,6 +28,7 @@ export const networks = [
   "scrollTestnet",
   "lineaTestnet",
   "zoraTestnet",
+  "luksoTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -52,6 +53,7 @@ export const networks = [
   "mantleMain",
   "lineaMain",
   "zoraMain",
+  "luksoMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -84,6 +86,7 @@ export const explorers = [
   "https://blockscout.scroll.io/",
   "https://goerli.lineascan.build/",
   "https://testnet.explorer.zora.energy/",
+  "https://explorer.execution.testnet.lukso.network/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -108,4 +111,5 @@ export const explorers = [
   "https://explorer.mantle.xyz/",
   "https://lineascan.build/",
   "https://explorer.zora.energy/",
+  "https://explorer.execution.mainnet.lukso.network/",
 ];
