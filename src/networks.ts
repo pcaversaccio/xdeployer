@@ -71,7 +71,7 @@ export const explorers = [
   "https://testnet.ftmscan.com/",
   "https://testnet.snowtrace.io/",
   "https://blockscout.com/poa/sokol/",
-  "https://blockscout.chiadochain.net/",
+  "https://gnosis-chiado.blockscout.com/",
   "https://moonbase.moonscan.io/",
   "https://alfajores.celoscan.io/",
   "https://explorer.testnet.aurora.dev/",
