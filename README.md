@@ -179,6 +179,7 @@ The current available networks are:
   - `bscTestnet`
   - `optimismTestnet`
   - `arbitrumTestnet`
+  - `arbitrumSepolia`
   - `mumbai`
   - `polygonZkEVMTestnet`
   - `hecoTestnet`
@@ -229,7 +230,7 @@ The current available networks are:
   - `zoraMain`
   - `luksoMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain, and `arbitrumTestnet` targets the (soon to be deprecated) Goerli test network, whilst `arbitrumSepolia` targets the Sepolia test network. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
 
 ### Local Deployment
 
