@@ -90,7 +90,7 @@ export const explorers = [
   "https://goerli.lineascan.build/",
   "https://testnet.explorer.zora.energy/",
   "https://explorer.execution.testnet.lukso.network/",
-  "https://pacific-explorer.manta.network/",
+  "https://pacific-explorer.testnet.manta.network/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
