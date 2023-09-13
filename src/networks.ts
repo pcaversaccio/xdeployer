@@ -56,6 +56,7 @@ export const networks = [
   "lineaMain",
   "zoraMain",
   "luksoMain",
+  "mantaMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -116,4 +117,5 @@ export const explorers = [
   "https://lineascan.build/",
   "https://explorer.zora.energy/",
   "https://explorer.execution.mainnet.lukso.network/",
+  "https://pacific-explorer.manta.network/",
 ];
