@@ -203,6 +203,7 @@ The current available networks are:
   - `zoraTestnet`
   - `luksoTestnet`
   - `mantaTestnet`
+  - `artheraTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
