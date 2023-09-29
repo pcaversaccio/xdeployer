@@ -176,6 +176,7 @@ The current available networks are:
 - **EVM-Based Test Networks:**
   - `goerli`
   - `sepolia`
+  - `holesky`
   - `bscTestnet`
   - `optimismTestnet`
   - `arbitrumTestnet`
