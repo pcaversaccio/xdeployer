@@ -51,7 +51,7 @@ Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```console
 # based on ethers v6
-yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers @openzeppelin/contracts
+yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers '@openzeppelin/contracts@^4.9.3'
 ```
 
 <details>
