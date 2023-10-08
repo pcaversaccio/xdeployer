@@ -25,7 +25,7 @@ With `npm` version `6`:
 
 ```console
 # based on ethers v6
-npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers @openzeppelin/contracts
+npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers '@openzeppelin/contracts@^4.9.3'
 ```
 
 <details>
@@ -42,7 +42,7 @@ With `npm` version `6`:
 
 ```console
 # based on ethers v5
-npm install --save-dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
+npm install --save-dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' '@openzeppelin/contracts@^4.9.3'
 ```
 
 </details>
@@ -59,7 +59,7 @@ yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers @openzeppelin/co
 
 ```console
 # based on ethers v5
-yarn add --dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' @openzeppelin/contracts
+yarn add --dev 'xdeployer@^1.2.7' @nomiclabs/hardhat-ethers 'ethers@^5.7.2' '@openzeppelin/contracts@^4.9.3'
 ```
 
 </details>
