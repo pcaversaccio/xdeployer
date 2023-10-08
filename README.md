@@ -97,7 +97,8 @@ import "xdeployer";
 
 ## Required Plugins
 
-- [@nomiclabs/hardhat-ethers](https://www.npmjs.com/package/@nomiclabs/hardhat-ethers)
+- [@nomicfoundation/hardhat-ethers](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
+- [ethers](https://www.npmjs.com/package/ethers)
 - [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 
 ## Tasks
