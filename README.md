@@ -25,7 +25,7 @@ With `npm` version `6`:
 
 ```console
 # based on ethers v6
-npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers '@openzeppelin/contracts@^4.9.3'
+npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers
 ```
 
 <details>
@@ -51,7 +51,7 @@ Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```console
 # based on ethers v6
-yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers '@openzeppelin/contracts@^4.9.3'
+yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers
 ```
 
 <details>
@@ -99,7 +99,6 @@ import "xdeployer";
 
 - [@nomicfoundation/hardhat-ethers](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
 - [ethers](https://www.npmjs.com/package/ethers)
-- [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 
 ## Tasks
 
