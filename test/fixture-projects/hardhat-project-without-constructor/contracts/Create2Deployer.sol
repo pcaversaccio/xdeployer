@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.19;
 
 // File @openzeppelin/contracts/utils/Context.sol@v4.9.3
 
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/Context.sol)
-
-pragma solidity ^0.8.0;
 
 /**
  * @dev Provides information about the current execution context, including the
@@ -31,8 +30,6 @@ abstract contract Context {
 
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.9.0) (access/Ownable.sol)
-
-pragma solidity ^0.8.0;
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -115,8 +112,6 @@ abstract contract Ownable is Context {
 
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.7.0) (security/Pausable.sol)
-
-pragma solidity ^0.8.0;
 
 /**
  * @dev Contract module which allows children to implement an emergency stop
@@ -222,8 +217,6 @@ abstract contract Pausable is Context {
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC1820Implementer.sol)
 
-pragma solidity ^0.8.0;
-
 /**
  * @dev Interface for an ERC1820 implementer, as defined in the
  * https://eips.ethereum.org/EIPS/eip-1820#interface-implementation-erc1820implementerinterface[EIP].
@@ -244,8 +237,6 @@ interface IERC1820Implementer {
 
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.9.0) (utils/introspection/ERC1820Implementer.sol)
-
-pragma solidity ^0.8.0;
 
 /**
  * @dev Implementation of the {IERC1820Implementer} interface.
@@ -288,8 +279,6 @@ contract ERC1820Implementer is IERC1820Implementer {
 
 // Original license: SPDX_License_Identifier: MIT
 // OpenZeppelin Contracts (last updated v4.9.0) (utils/Create2.sol)
-
-pragma solidity ^0.8.0;
 
 /**
  * @dev Helper to make usage of the `CREATE2` EVM opcode easier and safer.
@@ -366,7 +355,6 @@ library Create2 {
 
 // Original license: SPDX_License_Identifier: MIT
 // Further information: https://eips.ethereum.org/EIPS/eip-1014
-pragma solidity ^0.8.9;
 
 /**
  * @title CREATE2 Deployer Smart Contract
