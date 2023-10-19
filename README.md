@@ -228,6 +228,7 @@ The current available networks are:
   - `bobaMain`
   - `cantoMain`
   - `mantleMain`
+  - `scrollMain`
   - `lineaMain`
   - `zoraMain`
   - `luksoMain`
