@@ -90,7 +90,7 @@ export const explorers = [
   "https://testnet.tuber.build/",
   "https://goerli.basescan.org/",
   "https://explorer.testnet.mantle.xyz/",
-  "https://blockscout.scroll.io/",
+  "https://sepolia.scrollscan.com/",
   "https://goerli.lineascan.build/",
   "https://testnet.explorer.zora.energy/",
   "https://explorer.execution.testnet.lukso.network/",
