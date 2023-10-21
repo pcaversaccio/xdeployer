@@ -174,7 +174,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment.json`,
+                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment.json`,
               ),
             );
 
@@ -216,7 +216,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
               ),
             );
 
@@ -309,7 +309,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment.json`,
+                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment.json`,
               ),
             );
 
@@ -351,7 +351,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
               ),
             );
 
