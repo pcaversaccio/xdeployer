@@ -198,6 +198,7 @@ The current available networks are:
   - `bobaTestnet`
   - `cantoTestnet`
   - `baseTestnet`
+  - `baseSepolia`
   - `mantleTestnet`
   - `scrollTestnet`
   - `lineaTestnet`
@@ -234,7 +235,7 @@ The current available networks are:
   - `luksoMain`
   - `mantaMain`
 
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain, and `arbitrumTestnet` targets the (soon to be deprecated) Goerli test network, whilst `arbitrumSepolia` targets the Sepolia test network. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain, and `arbitrumTestnet` & `baseTestnet` target the (soon to be deprecated) Goerli test network, whilst `arbitrumSepolia` & `baseSepolia` target the Sepolia test network. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
 
 ### Local Deployment
 
