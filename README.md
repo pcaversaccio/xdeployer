@@ -29,7 +29,7 @@ npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers
 ```
 
 <details>
-<summary> Using ethers v5 </summary>
+<summary> Using <code>ethers</code> v5 </summary>
 
 With `npm` versions `>=7`:
 
@@ -55,7 +55,7 @@ yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers
 ```
 
 <details>
-<summary> Using ethers v5 </summary>
+<summary> Using <code>ethers</code> v5 </summary>
 
 ```console
 # based on ethers v5
@@ -72,7 +72,7 @@ pnpm add --save-dev xdeployer
 ```
 
 <details>
-<summary> Using ethers v5 </summary>
+<summary> Using <code>ethers</code> v5 </summary>
 
 ```console
 # based on ethers v5
