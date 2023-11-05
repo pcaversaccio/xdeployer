@@ -173,7 +173,7 @@ xdeploy: {
 ```
 
 > **Note**<br>
-> We recommend using [Hardhat configuration variables](https://hardhat.org/hardhat-runner/docs/guides/configuration-variables) to set the private key of your signer. This allows secure access to your wallet to use with both testnet and mainnet funds during Hardhat deployments.
+> We recommend using [Hardhat configuration variables](https://hardhat.org/hardhat-runner/docs/guides/configuration-variables) to set the private key of your signer.
 
 The current available networks are:
 
