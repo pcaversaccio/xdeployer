@@ -433,9 +433,9 @@ subtask(TASK_VERIFY_SIGNER).setAction(async (_, hre) => {
   if (!hre.config.xdeploy.signer || hre.config.xdeploy.signer === "") {
     throw new NomicLabsHardhatPluginError(
       PLUGIN_NAME,
-      `Please provide a signer private key. We recommend using a .env file.
-      See https://www.npmjs.com/package/dotenv.
-      E.g.: { [...], xdeploy: { signer: process.env.PRIVATE_KEY }, [...] }.`,
+      `Please provide a signer private key. We recommend using Hardhat configuration variables.
+      See https://hardhat.org/hardhat-runner/docs/guides/configuration-variables.
+      E.g.: { [...], xdeploy: { signer: vars.get("PRIVATE_KEY", "") }, [...] }.`,
     );
   }
 });

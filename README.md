@@ -158,15 +158,22 @@ _Example:_
 
 ```ts
 xdeploy: {
-  contract: "ERC20Mock",
-  constructorArgsPath: "./deploy-args.ts",
-  salt: "WAGMI",
-  signer: process.env.PRIVATE_KEY,
-  networks: ["hardhat", "goerli", "sepolia"],
-  rpcUrls: ["hardhat", process.env.ETH_GOERLI_TESTNET_URL, process.env.ETH_SEPOLIA_TESTNET_URL],
-  gasLimit: 1.2 * 10 ** 6,
+    contract: "ERC20Mock",
+    constructorArgsPath: "./deploy-args.ts",
+    salt: "WAGMI",
+    signer: vars.get("PRIVATE_KEY", ""),
+    networks: ["hardhat", "goerli", "sepolia"],
+    rpcUrls: [
+      "hardhat",
+      vars.get("ETH_GOERLI_TESTNET_URL", "https://rpc.ankr.com/eth_goerli"),
+      vars.get("ETH_SEPOLIA_TESTNET_URL", "https://rpc.sepolia.org"),
+    ],
+    gasLimit: 1.2 * 10 ** 6,
 },
 ```
+
+> **Note**<br>
+> We recommend using [Hardhat configuration variables](https://hardhat.org/hardhat-runner/docs/guides/configuration-variables) to set the private key of your signer. This allows secure access to your wallet to use with both testnet and mainnet funds during Hardhat deployments.
 
 The current available networks are:
 
