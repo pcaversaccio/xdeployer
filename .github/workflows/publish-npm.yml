@@ -38,7 +38,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Use Node.js ${{ matrix.node_version }}
+      - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node_version }}
