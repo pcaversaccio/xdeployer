@@ -92,4 +92,4 @@ jobs:
       - name: Validate URLs
         run: |
           awesome_bot ./*.md src/*.ts --request-delay 0.4 \
-          --white-list http://127.0.0.1:8545,https://github.com/pcaversaccio/create2deployer,https://www.hecoinfo.com
+          --white-list http://127.0.0.1:8545,https://github.com/pcaversaccio/create2deployer
