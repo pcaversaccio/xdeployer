@@ -20,25 +20,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache node modules
-        uses: actions/cache@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          version: latest
+          run_install: false
+
+      - name: Get pnpm cache directory path
+        id: pnpm-cache-dir-path
+        run: echo "dir=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - name: Restore pnpm cache
+        uses: actions/cache@v3
+        id: pnpm-cache
+        with:
+          path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-pnpm-store-
 
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: Install npm project with a clean slate
-        run: npm ci --prefer-offline
+      - name: Install pnpm project with a clean slate
+        run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Run tests
-        run: npm run test
+        run: pnpm test
         env:
-          XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
-          ETH_GOERLI_TESTNET_URL: ${{ secrets.ETH_GOERLI_TESTNET_URL }}
-          ETH_SEPOLIA_TESTNET_URL: ${{ secrets.ETH_SEPOLIA_TESTNET_URL }}
+          HARDHAT_VAR_XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
+          HARDHAT_VAR_ETH_GOERLI_TESTNET_URL: ${{ secrets.ETH_GOERLI_TESTNET_URL }}
+          HARDHAT_VAR_ETH_SEPOLIA_TESTNET_URL: ${{ secrets.ETH_SEPOLIA_TESTNET_URL }}
