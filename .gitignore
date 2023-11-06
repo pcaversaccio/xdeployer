@@ -18,6 +18,9 @@ node_modules
 # Build directory
 dist
 
+# Hardhat configuration file
+vars.json
+
 # dotenv environment variable files
 .env
 .env.development.local
