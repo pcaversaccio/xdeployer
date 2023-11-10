@@ -162,11 +162,11 @@ xdeploy: {
     constructorArgsPath: "./deploy-args.ts",
     salt: "WAGMI",
     signer: vars.get("PRIVATE_KEY", ""),
-    networks: ["hardhat", "goerli", "sepolia"],
+    networks: ["hardhat", "sepolia", "holesky"],
     rpcUrls: [
       "hardhat",
-      vars.get("ETH_GOERLI_TESTNET_URL", "https://rpc.ankr.com/eth_goerli"),
       vars.get("ETH_SEPOLIA_TESTNET_URL", "https://rpc.sepolia.org"),
+      vars.get("ETH_HOLESKY_TESTNET_URL", "https://holesky.rpc.thirdweb.com"),
     ],
     gasLimit: 1.2 * 10 ** 6,
 },
