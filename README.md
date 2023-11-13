@@ -322,4 +322,4 @@ It is important to note that the `msg.sender` of the contract creation transacti
 
 I am a strong advocate of the open-source and free software paradigm. However, if you feel my work deserves a donation, you can send it to this address: [`0x07bF3CDA34aA78d92949bbDce31520714AB5b228`](https://etherscan.io/address/0x07bF3CDA34aA78d92949bbDce31520714AB5b228). I can pledge that I will use this money to help fix more existing challenges in the Ethereum ecosystem 🤝.
 
-[^1]: Please note that [OpenZeppelin Contracts version 5.0.0](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.0.0) has made the initial `owner` explicit (see PR [#4267](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4267)).
+[^1]: Please note that [OpenZeppelin Contracts version `5.0.0`](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.0.0) has made the initial `owner` explicit (see PR [#4267](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4267)).
