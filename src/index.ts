@@ -158,7 +158,10 @@ task(
               chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
-              txHashLink: `${explorers[idx]}tx/${createReceipt[i].hash}`,
+              txHashLink:
+                hre.config.xdeploy.networks[i] == "hecoMain"
+                  ? `${explorers[idx]}transaction/${createReceipt[i].hash}`
+                  : `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
               addressLink: `${explorers[idx]}address/${computedContractAddress}`,
               receipt: createReceipt[i].toJSON(),
