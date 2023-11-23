@@ -191,7 +191,6 @@ The current available networks are:
   - `arbitrumSepolia`
   - `mumbai`
   - `polygonZkEVMTestnet`
-  - `hecoTestnet`
   - `fantomTestnet`
   - `fuji`
   - `sokol`
