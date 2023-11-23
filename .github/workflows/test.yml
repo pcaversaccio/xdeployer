@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Run tests
-        if: ${{ (github.event.pull_request.head.repo.full_name == github.repository && github.event_name == 'pull_request') || (github.event.pull_request.head.repo.full_name != github.repository && github.event_name == 'pull_request_target') }}
+        if: ${{ (github.event_name == 'push') || (github.event_name == 'workflow_dispatch') || (github.event.pull_request.head.repo.full_name == github.repository && github.event_name == 'pull_request') || (github.event.pull_request.head.repo.full_name != github.repository && github.event_name == 'pull_request_target') }}
         run: pnpm test
         env:
           HARDHAT_VAR_XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
