@@ -1,6 +1,6 @@
 name: 🕵️‍♂️ Test xdeploy
 
-on: [push, pull_request, workflow_dispatch]
+on: [push, pull_request, pull_request_target, workflow_dispatch]
 
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
@@ -48,6 +48,7 @@ jobs:
         run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Run tests
+        if: ${{ (github.event.pull_request.head.repo.full_name == github.repository && github.event_name == 'pull_request') || (github.event.pull_request.head.repo.full_name != github.repository && github.event_name == 'pull_request_target') }}
         run: pnpm test
         env:
           HARDHAT_VAR_XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
