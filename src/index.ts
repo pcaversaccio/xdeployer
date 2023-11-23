@@ -153,33 +153,21 @@ task(
 
             createReceipt[i] = await createReceipt[i].wait();
 
-            if (hre.config.xdeploy.networks[i] == "hecoMain") {
-              result[i] = {
-                network: hre.config.xdeploy.networks[i],
-                chainId: chainId.toString(),
-                contract: hre.config.xdeploy.contract,
-                txHash: createReceipt[i].hash,
-                txHashLink: `${explorers[idx]}transaction/${createReceipt[i].hash}`,
-                address: computedContractAddress,
-                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-                receipt: createReceipt[i].toJSON(),
-                deployed: true,
-                error: undefined,
-              };
-            } else {
-              result[i] = {
-                network: hre.config.xdeploy.networks[i],
-                chainId: chainId.toString(),
-                contract: hre.config.xdeploy.contract,
-                txHash: createReceipt[i].hash,
-                txHashLink: `${explorers[idx]}tx/${createReceipt[i].hash}`,
-                address: computedContractAddress,
-                addressLink: `${explorers[idx]}address/${computedContractAddress}`,
-                receipt: createReceipt[i].toJSON(),
-                deployed: true,
-                error: undefined,
-              };
-            }
+            result[i] = {
+              network: hre.config.xdeploy.networks[i],
+              chainId: chainId.toString(),
+              contract: hre.config.xdeploy.contract,
+              txHash: createReceipt[i].hash,
+              txHashLink:
+                hre.config.xdeploy.networks[i] == "hecoMain"
+                  ? `${explorers[idx]}transaction/${createReceipt[i].hash}`
+                  : `${explorers[idx]}tx/${createReceipt[i].hash}`,
+              address: computedContractAddress,
+              addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+              receipt: createReceipt[i].toJSON(),
+              deployed: true,
+              error: undefined,
+            };
 
             if (!fs.existsSync(dir)) {
               fs.mkdirSync(dir);
