@@ -6,6 +6,7 @@
 
 [Hardhat](https://hardhat.org) plugin to deploy your smart contracts across multiple Ethereum Virtual Machine (EVM) chains with the same deterministic address.
 
+> [!TIP]
 > It is pronounced _cross_-deployer.
 
 ## What
@@ -81,7 +82,8 @@ pnpm add --save-dev 'xdeployer@^1.2.7'
 
 </details>
 
-> **Note:** This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
+> [!NOTE]
+> This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
 
 Import the plugin in your `hardhat.config.js`:
 
@@ -152,7 +154,7 @@ const config: HardhatUserConfig = {
 };
 ```
 
-The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
+The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a--on-selfdestruct).
 
 _Example:_
 
@@ -172,7 +174,7 @@ xdeploy: {
 },
 ```
 
-> **Note**<br>
+> [!NOTE]
 > We recommend using [Hardhat configuration variables](https://hardhat.org/hardhat-runner/docs/guides/configuration-variables) introduced in Hardhat version [`2.19.0`](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.19.0) to set the private key of your signer.
 
 The current available networks are:
@@ -242,6 +244,7 @@ The current available networks are:
   - `luksoMain`
   - `mantaMain`
 
+> [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain, and `optimismTestnet`, `arbitrumTestnet` & `baseTestnet` target the (soon to be deprecated) Goerli test network, whilst `optimismSepolia`, `arbitrumSepolia` & `baseSepolia` target the Sepolia test network. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
 
 ### Local Deployment
@@ -290,7 +293,7 @@ The `gasLimit` field is set to **1'500'000** by default because the `CREATE2` op
 
 The contract creation transaction is displayed on Etherscan (or any other block explorer) as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
 
-> **Warning**<br>
+> [!WARNING]
 > Solidity version [`0.8.20`](https://github.com/ethereum/solidity/releases/tag/v0.8.20) introduced support for the new opcode [`PUSH0`](https://eips.ethereum.org/EIPS/eip-3855), which was added as part of the [Shanghai hard fork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md). Prior to running a deployment with a `>=0.8.20`-compiled bytecode (using the EVM version `shanghai`), please verify that _all_ targeted EVM networks support the `PUSH0` opcode. Otherwise, a deployment attempt on an EVM chain without `PUSH0` support may result in deployment or runtime failure(s).
 
 ## Usage
@@ -315,7 +318,8 @@ Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to
 
 It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)[^1] for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
 
-> **Caveat:** Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin).
+> [!CAUTION]
+> Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin).
 
 ## Donation
 
