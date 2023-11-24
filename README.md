@@ -83,7 +83,7 @@ pnpm add --save-dev 'xdeployer@^1.2.7'
 </details>
 
 > [!NOTE]
-> This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js v13 and below.
+> This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js `v13` and below.
 
 Import the plugin in your `hardhat.config.js`:
 
