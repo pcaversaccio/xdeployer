@@ -7,7 +7,7 @@ settings:
 devDependencies:
   "@nomicfoundation/hardhat-ethers":
     specifier: ^3.0.5
-    version: 3.0.5(ethers@6.8.1)(hardhat@2.19.1)
+    version: 3.0.5(ethers@6.9.0)(hardhat@2.19.1)
   "@types/chai":
     specifier: ^4.3.11
     version: 4.3.11
@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.54.0)
   ethers:
-    specifier: ^6.8.1
-    version: 6.8.1
+    specifier: ^6.9.0
+    version: 6.9.0
   hardhat:
     specifier: ^2.19.1
     version: 2.19.1(ts-node@10.9.1)(typescript@5.3.2)
@@ -911,7 +911,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.8.1)(hardhat@2.19.1):
+  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.9.0)(hardhat@2.19.1):
     resolution:
       {
         integrity: sha512-RNFe8OtbZK6Ila9kIlHp0+S80/0Bu/3p41HUpaRIoHLm6X3WekTd83vob3rE54Duufu1edCiBDxspBzi2rxHHw==,
@@ -921,7 +921,7 @@ packages:
       hardhat: ^2.0.0
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
-      ethers: 6.8.1
+      ethers: 6.9.0
       hardhat: 2.19.1(ts-node@10.9.1)(typescript@5.3.2)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
@@ -2537,10 +2537,10 @@ packages:
       - utf-8-validate
     dev: true
 
-  /ethers@6.8.1:
+  /ethers@6.9.0:
     resolution:
       {
-        integrity: sha512-iEKm6zox5h1lDn6scuRWdIdFJUCGg3+/aQWu0F4K0GVyEZiktFkqrJbRjTn1FlYEPz7RKA707D6g5Kdk6j7Ljg==,
+        integrity: sha512-pmfNyQzc2mseLe91FnT2vmNaTt8dDzhxZ/xItAV7uGsF4dI4ek2ufMu3rAkgQETL/TIs0GS5A+U05g9QyWnv3Q==,
       }
     engines: { node: ">=14.0.0" }
     dependencies:
@@ -2925,7 +2925,7 @@ packages:
       ts-node: 10.9.1(@types/node@20.10.0)(typescript@5.3.2)
       tsort: 0.0.1
       typescript: 5.3.2
-      undici: 5.28.0
+      undici: 5.28.1
       uuid: 8.3.2
       ws: 7.5.9
     transitivePeerDependencies:
@@ -4448,10 +4448,10 @@ packages:
       }
     dev: true
 
-  /undici@5.28.0:
+  /undici@5.28.1:
     resolution:
       {
-        integrity: sha512-gM12DkXhlAc5+/TPe60iy9P6ETgVfqTuRJ6aQ4w8RYu0MqKuXhaq3/b86GfzDQnNA3NUO6aUNdvevrKH59D0Nw==,
+        integrity: sha512-xcIIvj1LOQH9zAL54iWFkuDEaIVEjLrru7qRpa3GrEEHk6OBhb/LycuUY2m7VCcTuDeLziXCxobQVyKExyGeIA==,
       }
     engines: { node: ">=14.0" }
     dependencies:
