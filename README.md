@@ -195,7 +195,6 @@ The current available networks are:
   - `polygonZkEVMTestnet`
   - `fantomTestnet`
   - `fuji`
-  - `sokol`
   - `chiado`
   - `moonbaseAlpha`
   - `alfajores`
