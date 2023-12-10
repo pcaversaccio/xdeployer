@@ -54,7 +54,7 @@
     "ethers": "^6.9.0",
     "hardhat": "^2.19.2",
     "mocha": "^10.2.0",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "prettier-plugin-solidity": "^1.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
