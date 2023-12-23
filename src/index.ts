@@ -4,7 +4,6 @@ import { xdeployConfigExtender } from "./config";
 import { networks, explorers } from "./networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
-  AMOUNT,
   PLUGIN_NAME,
   TASK_VERIFY_NETWORK_ARGUMENTS,
   TASK_VERIFY_SUPPORTED_NETWORKS,
@@ -16,7 +15,7 @@ import {
 } from "./constants";
 import { RESET, GREEN, RED, YELLOW } from "./colour-codes";
 import "./type-extensions";
-import abi from "./abi/Create2Deployer.json";
+import abi from "./abi/CreateX.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomicfoundation/hardhat-ethers";
@@ -112,8 +111,10 @@ task(
         if (hre.config.xdeploy.salt) {
           try {
             let counter = 0;
-            computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.id(hre.config.xdeploy.salt),
+            computedContractAddress = await create2Deployer[
+              i
+            ].computeCreate2Address(
+              hre.ethers.keccak256(hre.ethers.id(hre.config.xdeploy.salt)),
               hre.ethers.keccak256(initcode.data),
             );
             if (counter === 0) {
@@ -141,8 +142,7 @@ task(
           }
 
           try {
-            createReceipt[i] = await create2Deployer[i].deploy(
-              AMOUNT,
+            createReceipt[i] = await create2Deployer[i].deployCreate2(
               hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit },
@@ -259,8 +259,10 @@ task(
         if (hre.config.xdeploy.salt) {
           try {
             let counter = 0;
-            computedContractAddress = await create2Deployer[i].computeAddress(
-              hre.ethers.id(hre.config.xdeploy.salt),
+            computedContractAddress = await create2Deployer[
+              i
+            ].computeCreate2Address(
+              hre.ethers.keccak256(hre.ethers.id(hre.config.xdeploy.salt)),
               hre.ethers.keccak256(initcode.data),
             );
             if (counter === 0) {
@@ -279,8 +281,7 @@ task(
           }
 
           try {
-            createReceipt[i] = await create2Deployer[i].deploy(
-              AMOUNT,
+            createReceipt[i] = await create2Deployer[i].deployCreate2(
               hre.ethers.id(hre.config.xdeploy.salt),
               initcode.data,
               { gasLimit: hre.config.xdeploy.gasLimit },

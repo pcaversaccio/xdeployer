@@ -5,12 +5,13 @@ import { ethers } from "ethers";
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.19",
+    version: "0.8.23",
     settings: {
       optimizer: {
         enabled: true,
         runs: 999_999,
       },
+      evmVersion: "paris", // Prevent using the `PUSH0` opcode.
     },
   },
   networks: {
