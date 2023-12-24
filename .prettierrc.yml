@@ -1,3 +1,2 @@
 plugins:
   - "prettier-plugin-solidity"
-experimentalTernaries: true
