@@ -228,7 +228,6 @@ describe("Plugin test xdeploy on Sepolia and Holešky with constructor", functio
       return this.hre
         .run("xdeploy")
         .then(() => {
-          this.hre.run("xdeploy");
           assert.fail("deployment request should fail");
         })
         .catch((reason) => {

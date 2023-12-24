@@ -251,14 +251,14 @@ If you also want to test deploy your smart contracts on `"hardhat"` or `"localho
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.23;
 
-import { Create2Deployer } from "xdeployer/src/contracts/Create2Deployer.sol";
+import { CreateX } from "xdeployer/src/contracts/CreateX.sol";
 
-contract Create2DeployerLocal is Create2Deployer {}
+contract Create2DeployerLocal is CreateX {}
 ```
 
-> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.19` or higher.
+> For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.23` or higher.
 
 The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. It is important to note that the local deployment does _not_ generate the same deterministic address as on all live test/production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test/production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
 
@@ -306,7 +306,7 @@ npx hardhat xdeploy
 
 ## How It Works
 
-EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract.
+EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract.
 
 ### A Note on `SELFDESTRUCT`
 
@@ -314,7 +314,7 @@ Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to
 
 ### A Note on the Contract Creation Transaction
 
-It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`Create2Deployer`](https://github.com/pcaversaccio/create2deployer) with address `0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2`. If you are relying on common smart contract libraries such as [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)[^1] for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
+It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with address `0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed`. If you are relying on common smart contract libraries such as [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)[^1] for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
 
 > [!CAUTION]
 > Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin).
