@@ -183,11 +183,9 @@ The current available networks are:
   - `localhost`
   - `hardhat`
 - **EVM-Based Test Networks:**
-  - `goerli`
   - `sepolia`
   - `holesky`
   - `bscTestnet`
-  - `optimismTestnet`
   - `optimismSepolia`
   - `arbitrumSepolia`
   - `mumbai`
@@ -204,24 +202,23 @@ The current available networks are:
   - `evmosTestnet`
   - `bobaTestnet`
   - `cantoTestnet`
-  - `baseTestnet`
   - `baseSepolia`
   - `mantleTestnet`
-  - `scrollTestnet`
+  - `filecoinTestnet`
+  - `scrollSepolia`
   - `lineaTestnet`
-  - `zoraTestnet`
+  - `zoraSepolia`
   - `luksoTestnet`
   - `mantaTestnet`
-  - `artheraTestnet`
+  - `frameTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
   - `optimismMain`
-  - `arbitrumMain`
+  - `arbitrumOne`
   - `arbitrumNova`
   - `polygon`
   - `polygonZkEVMMain`
-  - `hecoMain`
   - `fantomMain`
   - `avalanche`
   - `gnosis`
@@ -235,7 +232,9 @@ The current available networks are:
   - `evmosMain`
   - `bobaMain`
   - `cantoMain`
+  - `baseMain`
   - `mantleMain`
+  - `filecoinMain`
   - `scrollMain`
   - `lineaMain`
   - `zoraMain`
@@ -243,7 +242,7 @@ The current available networks are:
   - `mantaMain`
 
 > [!IMPORTANT]
-> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain, and `optimismTestnet` & `baseTestnet` target the (soon to be deprecated) Goerli test network, whilst `optimismSepolia` & `baseSepolia` target the Sepolia test network. Eventually, please refer to [this](https://github.com/pcaversaccio/xdeployer/issues/164) issue why this plugin does not support the Base mainnet.
+> Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
 
 ### Local Deployment
 
