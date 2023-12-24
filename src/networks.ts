@@ -91,6 +91,7 @@ export const explorers = [
   "https://sepolia.explorer.zora.energy/",
   "https://explorer.execution.testnet.lukso.network/",
   "https://pacific-explorer.testnet.manta.network/",
+  "https://explorer.testnet.frame.xyz/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
