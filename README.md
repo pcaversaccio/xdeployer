@@ -183,11 +183,9 @@ The current available networks are:
   - `localhost`
   - `hardhat`
 - **EVM-Based Test Networks:**
-  - `goerli`
   - `sepolia`
   - `holesky`
   - `bscTestnet`
-  - `optimismTestnet`
   - `optimismSepolia`
   - `arbitrumSepolia`
   - `mumbai`
@@ -204,24 +202,23 @@ The current available networks are:
   - `evmosTestnet`
   - `bobaTestnet`
   - `cantoTestnet`
-  - `baseTestnet`
   - `baseSepolia`
   - `mantleTestnet`
-  - `scrollTestnet`
+  - `filecoinTestnet`
+  - `scrollSepolia`
   - `lineaTestnet`
-  - `zoraTestnet`
+  - `zoraSepolia`
   - `luksoTestnet`
   - `mantaTestnet`
-  - `artheraTestnet`
+  - `frameTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
   - `optimismMain`
-  - `arbitrumMain`
+  - `arbitrumOne`
   - `arbitrumNova`
   - `polygon`
   - `polygonZkEVMMain`
-  - `hecoMain`
   - `fantomMain`
   - `avalanche`
   - `gnosis`
@@ -235,7 +232,9 @@ The current available networks are:
   - `evmosMain`
   - `bobaMain`
   - `cantoMain`
+  - `baseMain`
   - `mantleMain`
+  - `filecoinMain`
   - `scrollMain`
   - `lineaMain`
   - `zoraMain`

@@ -159,8 +159,8 @@ task(
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
               txHashLink:
-                hre.config.xdeploy.networks[i] == "hecoMain" ?
-                  `${explorers[idx]}transaction/${createReceipt[i].hash}`
+                hre.config.xdeploy.networks[i].slice(0, 8) == "filecoin" ?
+                  `${explorers[idx]}message/${createReceipt[i].hash}`
                 : `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
               addressLink: `${explorers[idx]}address/${computedContractAddress}`,
