@@ -7,7 +7,7 @@ settings:
 devDependencies:
   "@nomicfoundation/hardhat-ethers":
     specifier: ^3.0.5
-    version: 3.0.5(ethers@6.9.1)(hardhat@2.19.3)
+    version: 3.0.5(ethers@6.9.1)(hardhat@2.19.4)
   "@types/chai":
     specifier: ^4.3.11
     version: 4.3.11
@@ -39,8 +39,8 @@ devDependencies:
     specifier: ^6.9.1
     version: 6.9.1
   hardhat:
-    specifier: ^2.19.3
-    version: 2.19.3(ts-node@10.9.2)(typescript@5.3.3)
+    specifier: ^2.19.4
+    version: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
   mocha:
     specifier: ^10.2.0
     version: 10.2.0
@@ -911,7 +911,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.9.1)(hardhat@2.19.3):
+  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.9.1)(hardhat@2.19.4):
     resolution:
       {
         integrity: sha512-RNFe8OtbZK6Ila9kIlHp0+S80/0Bu/3p41HUpaRIoHLm6X3WekTd83vob3rE54Duufu1edCiBDxspBzi2rxHHw==,
@@ -922,7 +922,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       ethers: 6.9.1
-      hardhat: 2.19.3(ts-node@10.9.2)(typescript@5.3.3)
+      hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -2855,10 +2855,10 @@ packages:
       }
     dev: true
 
-  /hardhat@2.19.3(ts-node@10.9.2)(typescript@5.3.3):
+  /hardhat@2.19.4(ts-node@10.9.2)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-zUvfILiu1O7W1a+t5E1nCJ6z1danRLNizQkSEQCCgDYcRx13AGXtH1MVZajKmdLmXIjKAPReTp/8JQQ4ZHaX3g==,
+        integrity: sha512-fTQJpqSt3Xo9Mn/WrdblNGAfcANM6XC3tAEi6YogB4s02DmTf93A8QsGb8uR0KR8TFcpcS8lgiW4ugAIYpnbrQ==,
       }
     hasBin: true
     peerDependencies:
