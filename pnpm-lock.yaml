@@ -7,7 +7,7 @@ settings:
 devDependencies:
   "@nomicfoundation/hardhat-ethers":
     specifier: ^3.0.5
-    version: 3.0.5(ethers@6.9.1)(hardhat@2.19.4)
+    version: 3.0.5(ethers@6.9.2)(hardhat@2.19.4)
   "@types/chai":
     specifier: ^4.3.11
     version: 4.3.11
@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^9.1.0
     version: 9.1.0(eslint@8.56.0)
   ethers:
-    specifier: ^6.9.1
-    version: 6.9.1
+    specifier: ^6.9.2
+    version: 6.9.2
   hardhat:
     specifier: ^2.19.4
     version: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
@@ -911,7 +911,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.9.1)(hardhat@2.19.4):
+  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.9.2)(hardhat@2.19.4):
     resolution:
       {
         integrity: sha512-RNFe8OtbZK6Ila9kIlHp0+S80/0Bu/3p41HUpaRIoHLm6X3WekTd83vob3rE54Duufu1edCiBDxspBzi2rxHHw==,
@@ -921,7 +921,7 @@ packages:
       hardhat: ^2.0.0
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
-      ethers: 6.9.1
+      ethers: 6.9.2
       hardhat: 2.19.4(ts-node@10.9.2)(typescript@5.3.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
@@ -2529,10 +2529,10 @@ packages:
       - utf-8-validate
     dev: true
 
-  /ethers@6.9.1:
+  /ethers@6.9.2:
     resolution:
       {
-        integrity: sha512-kuV8fGd4/8Gj7wkurbsuUsm1DCG6N5gKGYdw3fnWG/7QGknhy1xtHD7kbkCWQAcbAYmzLCLqCPedS3FYncFkKQ==,
+        integrity: sha512-YpkrtILnMQz5jSEsJQRTpduaGT/CXuLnUIuOYzHA0v/7c8IX91m2J48wSKjzGL5L9J/Us3tLoUdb+OwE3U+FFQ==,
       }
     engines: { node: ">=14.0.0" }
     dependencies:

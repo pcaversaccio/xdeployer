@@ -83,7 +83,7 @@ export const explorers = [
   "https://testnet.escan.live/",
   "https://testnet.bobascan.com/",
   "https://testnet.tuber.build/",
-  "https://base-sepolia.blockscout.com/",
+  "https://sepolia.basescan.org/",
   "https://explorer.testnet.mantle.xyz/",
   "https://calibration.filfox.info/en/",
   "https://sepolia.scrollscan.com/",
