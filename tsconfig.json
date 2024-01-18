@@ -11,8 +11,8 @@
     "rootDirs": ["./src", "./test"],
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
   },
   "exclude": ["dist", "node_modules"],
-  "include": ["./test", "./src"]
+  "include": ["./test", "./src"],
 }
