@@ -25,11 +25,11 @@
     "node": ">=14.0.0"
   },
   "scripts": {
-    "prettier:check": "npx prettier -c **/*.{js,ts,md,sol,json,yml,yaml}",
-    "prettier:fix": "npx prettier -w **/*.{js,ts,md,sol,json,yml,yaml}",
+    "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
+    "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "lint:check": "pnpm prettier:check && npx eslint --ext .ts .",
     "lint:fix": "pnpm prettier:fix && npx eslint --ext .ts . --fix",
-    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
+    "test": "mocha --exit --recursive \"test/**/*.test.ts\"",
     "build": "tsc",
     "watch": "tsc -w",
     "prepublishOnly": "pnpm build"
