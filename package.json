@@ -27,8 +27,8 @@
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
-    "lint:check": "pnpm prettier:check && npx eslint --ext .ts .",
-    "lint:fix": "pnpm prettier:fix && npx eslint --ext .ts . --fix",
+    "lint:check": "pnpm prettier:check && npx eslint .",
+    "lint:fix": "pnpm prettier:fix && npx eslint . --fix",
     "test": "mocha --exit --recursive \"test/**/*.test.ts\"",
     "build": "tsc",
     "watch": "tsc -w",
@@ -41,27 +41,27 @@
     "README.md"
   ],
   "devDependencies": {
+    "@eslint/js": "^8.56.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@types/chai": "^4.3.11",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.17",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
+    "@types/node": "^20.11.18",
     "chai": "^4.4.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "ethers": "^6.11.0",
-    "hardhat": "^2.19.5",
+    "ethers": "^6.11.1",
+    "hardhat": "^2.20.0",
     "mocha": "^10.3.0",
     "prettier": "^3.2.5",
     "prettier-plugin-solidity": "^1.3.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^7.0.1"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
-    "ethers": "^6.11.0",
-    "hardhat": "^2.19.5"
+    "ethers": "^6.11.1",
+    "hardhat": "^2.20.0"
   }
 }

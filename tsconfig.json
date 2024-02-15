@@ -13,6 +13,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "exclude": ["dist", "node_modules"],
-  "include": ["./test", "./src"]
+  "include": ["./test", "./src"],
+  "files": ["eslint.config.js"],
+  "exclude": ["dist", "node_modules"]
 }
