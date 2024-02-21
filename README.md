@@ -211,6 +211,7 @@ The current available networks are:
   - `luksoTestnet`
   - `mantaTestnet`
   - `frameTestnet`
+  - `blastTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
