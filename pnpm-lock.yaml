@@ -10,7 +10,7 @@ devDependencies:
     version: 8.57.0
   "@nomicfoundation/hardhat-ethers":
     specifier: ^3.0.5
-    version: 3.0.5(ethers@6.11.1)(hardhat@2.20.1)
+    version: 3.0.5(ethers@6.11.1)(hardhat@2.21.0)
   "@types/chai":
     specifier: ^4.3.12
     version: 4.3.12
@@ -36,8 +36,8 @@ devDependencies:
     specifier: ^6.11.1
     version: 6.11.1
   hardhat:
-    specifier: ^2.20.1
-    version: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
+    specifier: ^2.21.0
+    version: 2.21.0(ts-node@10.9.2)(typescript@5.3.3)
   mocha:
     specifier: ^10.3.0
     version: 10.3.0
@@ -54,8 +54,8 @@ devDependencies:
     specifier: ^5.3.3
     version: 5.3.3
   typescript-eslint:
-    specifier: ^7.1.0
-    version: 7.1.0(eslint@8.57.0)(typescript@5.3.3)
+    specifier: ^7.1.1
+    version: 7.1.1(eslint@8.57.0)(typescript@5.3.3)
 
 packages:
   /@aashutoshrathi/word-wrap@1.2.6:
@@ -482,43 +482,130 @@ packages:
       fastq: 1.17.1
     dev: true
 
-  /@nomicfoundation/ethereumjs-block@5.0.4:
+  /@nomicfoundation/edr-darwin-arm64@0.2.0:
     resolution:
       {
-        integrity: sha512-AcyacJ9eX/uPEvqsPiB+WO1ymE+kyH48qGGiGV+YTojdtas8itUTW5dehDSOXEEItWGbbzEJ4PRqnQZlWaPvDw==,
+        integrity: sha512-OfXruInMbc6+J6BnAlYlpTS8lj5hHmfLdzqthhiQaayuHxT6iBMrefe6N+2DC9hBxD3VjCApUWtLfV3pJzpbCg==,
       }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-trie": 6.0.4
-      "@nomicfoundation/ethereumjs-tx": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      ethereum-cryptography: 0.1.3
-    transitivePeerDependencies:
-      - c-kzg
+    engines: { node: ">= 18" }
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
     dev: true
+    optional: true
 
-  /@nomicfoundation/ethereumjs-blockchain@7.0.4:
+  /@nomicfoundation/edr-darwin-x64@0.2.0:
     resolution:
       {
-        integrity: sha512-jYsd/kwzbmpnxx86tXsYV8wZ5xGvFL+7/P0c6OlzpClHsbFzeF41KrYA9scON8Rg6bZu3ZTv6JOAgj3t7USUfg==,
+        integrity: sha512-tfNhHYSgro3nOTGCQzBvFniUy0cvUBtPCSeniNleu5M4nolArnxlZfEkNdpYRB92QRjfaREZttuBP1nrIO/b+w==,
       }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-block": 5.0.4
-      "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-ethash": 3.0.4
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-trie": 6.0.4
-      "@nomicfoundation/ethereumjs-tx": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      debug: 4.3.4(supports-color@8.1.1)
-      ethereum-cryptography: 0.1.3
-      lru-cache: 10.2.0
-    transitivePeerDependencies:
-      - c-kzg
-      - supports-color
+    engines: { node: ">= 18" }
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-linux-arm64-gnu@0.2.0:
+    resolution:
+      {
+        integrity: sha512-Km4rZIsARkiIR7HfpU6ybCkAHpD+Gg68x+5+dhQsv+eT3XvQ9pRv3jz14v3aimOjwpCd5/uUw9LhQrPtFyMGGA==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-linux-arm64-musl@0.2.0:
+    resolution:
+      {
+        integrity: sha512-pD4g2r5Q54b3AzEaI0okDktFrYjhcdCxO3lvP1pYGCvha8KYrUv9DM3Z/0kfnn3vP9y/PxzcJUBfXjG4NZuHpw==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-linux-x64-gnu@0.2.0:
+    resolution:
+      {
+        integrity: sha512-xjw8yNiEED0jlM5HuWXF/61+4bBkEpSZpMmb39XChPJXVxtZIIBzj0AcGTdzkSyH/atgkEaNutkEb1PeEuFwnQ==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-linux-x64-musl@0.2.0:
+    resolution:
+      {
+        integrity: sha512-aqqR0usfHt6V2j+7pQiMqIrIBpUwDeU27w27kuvZsHDUhrvg4sgGm3FBG1QUxN8tv9E/UrbUuW0kVt7tbEmKMA==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-win32-arm64-msvc@0.2.0:
+    resolution:
+      {
+        integrity: sha512-+S4Qnx5CVdUAxGUXa3rNq0h/qALIHkGdlKLT5KDsk/qGTmI/uuAB4tnoOaaHMc5ANckPtBdWfSwnLJjWPZbR6w==,
+      }
+    engines: { node: ">= 10" }
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-win32-ia32-msvc@0.2.0:
+    resolution:
+      {
+        integrity: sha512-hK0RVcNog8sJ63QmeEJ+WIhnCLfUCl5jXYCBjQtGOWlIkC7EzNddkZ28MmrFOMrV3xstSGOmdPvvq8q1HNVakA==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr-win32-x64-msvc@0.2.0:
+    resolution:
+      {
+        integrity: sha512-gWgMU4I94fHIeda3xOnHBYcCOzRF6ySB89vgENK4Y1S1Un/qpZ+tQwf+/hX0HCaZGMw/LqBG61ltOYUXVfZ6Yg==,
+      }
+    engines: { node: ">= 18" }
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@nomicfoundation/edr@0.2.0:
+    resolution:
+      {
+        integrity: sha512-RRWJepP4ozI4jVxqNtuw53ZbPcUB4FcKry2aYVQw8KAp9o8j/I5H3SsfpmKT+lgHRSL/5/KK0RxOx1GQSyDAZw==,
+      }
+    engines: { node: ">= 18" }
+    optionalDependencies:
+      "@nomicfoundation/edr-darwin-arm64": 0.2.0
+      "@nomicfoundation/edr-darwin-x64": 0.2.0
+      "@nomicfoundation/edr-linux-arm64-gnu": 0.2.0
+      "@nomicfoundation/edr-linux-arm64-musl": 0.2.0
+      "@nomicfoundation/edr-linux-x64-gnu": 0.2.0
+      "@nomicfoundation/edr-linux-x64-musl": 0.2.0
+      "@nomicfoundation/edr-win32-arm64-msvc": 0.2.0
+      "@nomicfoundation/edr-win32-ia32-msvc": 0.2.0
+      "@nomicfoundation/edr-win32-x64-msvc": 0.2.0
     dev: true
 
   /@nomicfoundation/ethereumjs-common@4.0.4:
@@ -532,43 +619,6 @@ packages:
       - c-kzg
     dev: true
 
-  /@nomicfoundation/ethereumjs-ethash@3.0.4:
-    resolution:
-      {
-        integrity: sha512-xvIrwIMl9sSaiYKRem68+O7vYdj7Q2XWv5P7JXiIkn83918QzWHvqbswTRsH7+r6X1UEvdsURRnZbvZszEjAaQ==,
-      }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-block": 5.0.4
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      bigint-crypto-utils: 3.3.0
-      ethereum-cryptography: 0.1.3
-    transitivePeerDependencies:
-      - c-kzg
-    dev: true
-
-  /@nomicfoundation/ethereumjs-evm@2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2):
-    resolution:
-      {
-        integrity: sha512-lTyZZi1KpeMHzaO6cSVisR2tjiTTedjo7PcmhI/+GNFo9BmyY6QYzGeSti0sFttmjbEMioHgXxl5yrLNRg6+1w==,
-      }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-statemanager": 2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
-      "@nomicfoundation/ethereumjs-tx": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      "@types/debug": 4.1.12
-      debug: 4.3.4(supports-color@8.1.1)
-      ethereum-cryptography: 0.1.3
-      rustbn-wasm: 0.2.0
-    transitivePeerDependencies:
-      - "@nomicfoundation/ethereumjs-verkle"
-      - c-kzg
-      - supports-color
-    dev: true
-
   /@nomicfoundation/ethereumjs-rlp@5.0.4:
     resolution:
       {
@@ -576,48 +626,6 @@ packages:
       }
     engines: { node: ">=18" }
     hasBin: true
-    dev: true
-
-  /@nomicfoundation/ethereumjs-statemanager@2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2):
-    resolution:
-      {
-        integrity: sha512-HPDjeFrxw6llEi+BzqXkZ+KkvFnTOPczuHBtk21hRlDiuKuZz32dPzlhpRsDBGV1b5JTmRDUVqCS1lp3Gghw4Q==,
-      }
-    peerDependencies:
-      "@nomicfoundation/ethereumjs-verkle": 0.0.2
-    peerDependenciesMeta:
-      "@nomicfoundation/ethereumjs-verkle":
-        optional: true
-    dependencies:
-      "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-trie": 6.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      "@nomicfoundation/ethereumjs-verkle": 0.0.2
-      debug: 4.3.4(supports-color@8.1.1)
-      ethereum-cryptography: 0.1.3
-      js-sdsl: 4.4.2
-      lru-cache: 10.2.0
-    transitivePeerDependencies:
-      - c-kzg
-      - supports-color
-    dev: true
-
-  /@nomicfoundation/ethereumjs-trie@6.0.4:
-    resolution:
-      {
-        integrity: sha512-3nSwQiFMvr2VFe/aZUyinuohYvtytUqZCUCvIWcPJ/BwJH6oQdZRB42aNFBJ/8nAh2s3OcroWpBLskzW01mFKA==,
-      }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      "@types/readable-stream": 2.3.15
-      ethereum-cryptography: 0.1.3
-      lru-cache: 10.2.0
-      readable-stream: 3.6.2
-    transitivePeerDependencies:
-      - c-kzg
     dev: true
 
   /@nomicfoundation/ethereumjs-tx@5.0.4:
@@ -654,46 +662,7 @@ packages:
       ethereum-cryptography: 0.1.3
     dev: true
 
-  /@nomicfoundation/ethereumjs-verkle@0.0.2:
-    resolution:
-      {
-        integrity: sha512-bjnfZElpYGK/XuuVRmLS3yDvr+cDs85D9oonZ0YUa5A3lgFgokWMp76zXrxX2jVQ0BfHaw12y860n1+iOi6yFQ==,
-      }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      lru-cache: 10.2.0
-      rust-verkle-wasm: 0.0.1
-    transitivePeerDependencies:
-      - c-kzg
-    dev: true
-
-  /@nomicfoundation/ethereumjs-vm@7.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2):
-    resolution:
-      {
-        integrity: sha512-gsA4IhmtWHI4BofKy3kio9W+dqZQs5Ji5mLjLYxHCkat+JQBUt5szjRKra2F9nGDJ2XcI/wWb0YWUFNgln4zRQ==,
-      }
-    engines: { node: ">=18" }
-    dependencies:
-      "@nomicfoundation/ethereumjs-block": 5.0.4
-      "@nomicfoundation/ethereumjs-blockchain": 7.0.4
-      "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-evm": 2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-statemanager": 2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
-      "@nomicfoundation/ethereumjs-trie": 6.0.4
-      "@nomicfoundation/ethereumjs-tx": 5.0.4
-      "@nomicfoundation/ethereumjs-util": 9.0.4
-      debug: 4.3.4(supports-color@8.1.1)
-      ethereum-cryptography: 0.1.3
-    transitivePeerDependencies:
-      - "@nomicfoundation/ethereumjs-verkle"
-      - c-kzg
-      - supports-color
-    dev: true
-
-  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.11.1)(hardhat@2.20.1):
+  /@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.11.1)(hardhat@2.21.0):
     resolution:
       {
         integrity: sha512-RNFe8OtbZK6Ila9kIlHp0+S80/0Bu/3p41HUpaRIoHLm6X3WekTd83vob3rE54Duufu1edCiBDxspBzi2rxHHw==,
@@ -704,7 +673,7 @@ packages:
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       ethers: 6.11.1
-      hardhat: 2.20.1(ts-node@10.9.2)(typescript@5.3.3)
+      hardhat: 2.21.0(ts-node@10.9.2)(typescript@5.3.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -1028,15 +997,6 @@ packages:
       }
     dev: true
 
-  /@types/debug@4.1.12:
-    resolution:
-      {
-        integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==,
-      }
-    dependencies:
-      "@types/ms": 0.7.34
-    dev: true
-
   /@types/fs-extra@11.0.4:
     resolution:
       {
@@ -1077,13 +1037,6 @@ packages:
       }
     dev: true
 
-  /@types/ms@0.7.34:
-    resolution:
-      {
-        integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==,
-      }
-    dev: true
-
   /@types/node@18.15.13:
     resolution:
       {
@@ -1109,16 +1062,6 @@ packages:
       "@types/node": 20.11.24
     dev: true
 
-  /@types/readable-stream@2.3.15:
-    resolution:
-      {
-        integrity: sha512-oM5JSKQCcICF1wvGgmecmHldZ48OZamtMxcGGVICOJA8o8cahXC1zEVAif8iwoc5j8etxFaRFnf095+CDsuoFQ==,
-      }
-    dependencies:
-      "@types/node": 20.11.24
-      safe-buffer: 5.1.2
-    dev: true
-
   /@types/secp256k1@4.0.6:
     resolution:
       {
@@ -1135,10 +1078,10 @@ packages:
       }
     dev: true
 
-  /@typescript-eslint/eslint-plugin@7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.0)(typescript@5.3.3):
+  /@typescript-eslint/eslint-plugin@7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-j6vT/kCulhG5wBmGtstKeiVr1rdXE4nk+DT1k6trYkwlrvW9eOF5ZbgKnd/YR6PcM4uTEXa0h6Fcvf6X7Dxl0w==,
+        integrity: sha512-zioDz623d0RHNhvx0eesUmGfIjzrk18nSBC8xewepKXbBvN/7c1qImV7Hg8TI1URTxKax7/zxfxj3Uph8Chcuw==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -1150,11 +1093,11 @@ packages:
         optional: true
     dependencies:
       "@eslint-community/regexpp": 4.10.0
-      "@typescript-eslint/parser": 7.1.0(eslint@8.57.0)(typescript@5.3.3)
-      "@typescript-eslint/scope-manager": 7.1.0
-      "@typescript-eslint/type-utils": 7.1.0(eslint@8.57.0)(typescript@5.3.3)
-      "@typescript-eslint/utils": 7.1.0(eslint@8.57.0)(typescript@5.3.3)
-      "@typescript-eslint/visitor-keys": 7.1.0
+      "@typescript-eslint/parser": 7.1.1(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/scope-manager": 7.1.1
+      "@typescript-eslint/type-utils": 7.1.1(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/utils": 7.1.1(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/visitor-keys": 7.1.1
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       graphemer: 1.4.0
@@ -1167,10 +1110,10 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/parser@7.1.0(eslint@8.57.0)(typescript@5.3.3):
+  /@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-V1EknKUubZ1gWFjiOZhDSNToOjs63/9O0puCgGS8aDOgpZY326fzFu15QAUjwaXzRZjf/qdsdBrckYdv9YxB8w==,
+        integrity: sha512-ZWUFyL0z04R1nAEgr9e79YtV5LbafdOtN7yapNbn1ansMyaegl2D4bL7vHoJ4HPSc4CaLwuCVas8CVuneKzplQ==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -1180,10 +1123,10 @@ packages:
       typescript:
         optional: true
     dependencies:
-      "@typescript-eslint/scope-manager": 7.1.0
-      "@typescript-eslint/types": 7.1.0
-      "@typescript-eslint/typescript-estree": 7.1.0(typescript@5.3.3)
-      "@typescript-eslint/visitor-keys": 7.1.0
+      "@typescript-eslint/scope-manager": 7.1.1
+      "@typescript-eslint/types": 7.1.1
+      "@typescript-eslint/typescript-estree": 7.1.1(typescript@5.3.3)
+      "@typescript-eslint/visitor-keys": 7.1.1
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       typescript: 5.3.3
@@ -1191,21 +1134,21 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/scope-manager@7.1.0:
+  /@typescript-eslint/scope-manager@7.1.1:
     resolution:
       {
-        integrity: sha512-6TmN4OJiohHfoOdGZ3huuLhpiUgOGTpgXNUPJgeZOZR3DnIpdSgtt83RS35OYNNXxM4TScVlpVKC9jyQSETR1A==,
+        integrity: sha512-cirZpA8bJMRb4WZ+rO6+mnOJrGFDd38WoXCEI57+CYBqta8Yc8aJym2i7vyqLL1vVYljgw0X27axkUXz32T8TA==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     dependencies:
-      "@typescript-eslint/types": 7.1.0
-      "@typescript-eslint/visitor-keys": 7.1.0
+      "@typescript-eslint/types": 7.1.1
+      "@typescript-eslint/visitor-keys": 7.1.1
     dev: true
 
-  /@typescript-eslint/type-utils@7.1.0(eslint@8.57.0)(typescript@5.3.3):
+  /@typescript-eslint/type-utils@7.1.1(eslint@8.57.0)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-UZIhv8G+5b5skkcuhgvxYWHjk7FW7/JP5lPASMEUoliAPwIH/rxoUSQPia2cuOj9AmDZmwUl1usKm85t5VUMew==,
+        integrity: sha512-5r4RKze6XHEEhlZnJtR3GYeCh1IueUHdbrukV2KSlLXaTjuSfeVF8mZUVPLovidCuZfbVjfhi4c0DNSa/Rdg5g==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -1215,8 +1158,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      "@typescript-eslint/typescript-estree": 7.1.0(typescript@5.3.3)
-      "@typescript-eslint/utils": 7.1.0(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/typescript-estree": 7.1.1(typescript@5.3.3)
+      "@typescript-eslint/utils": 7.1.1(eslint@8.57.0)(typescript@5.3.3)
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 8.57.0
       ts-api-utils: 1.2.1(typescript@5.3.3)
@@ -1225,18 +1168,18 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/types@7.1.0:
+  /@typescript-eslint/types@7.1.1:
     resolution:
       {
-        integrity: sha512-qTWjWieJ1tRJkxgZYXx6WUYtWlBc48YRxgY2JN1aGeVpkhmnopq+SUC8UEVGNXIvWH7XyuTjwALfG6bFEgCkQA==,
+        integrity: sha512-KhewzrlRMrgeKm1U9bh2z5aoL4s7K3tK5DwHDn8MHv0yQfWFz/0ZR6trrIHHa5CsF83j/GgHqzdbzCXJ3crx0Q==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     dev: true
 
-  /@typescript-eslint/typescript-estree@7.1.0(typescript@5.3.3):
+  /@typescript-eslint/typescript-estree@7.1.1(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-k7MyrbD6E463CBbSpcOnwa8oXRdHzH1WiVzOipK3L5KSML92ZKgUBrTlehdi7PEIMT8k0bQixHUGXggPAlKnOQ==,
+        integrity: sha512-9ZOncVSfr+sMXVxxca2OJOPagRwT0u/UHikM2Rd6L/aB+kL/QAuTnsv6MeXtjzCJYb8PzrXarypSGIPx3Jemxw==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -1245,8 +1188,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      "@typescript-eslint/types": 7.1.0
-      "@typescript-eslint/visitor-keys": 7.1.0
+      "@typescript-eslint/types": 7.1.1
+      "@typescript-eslint/visitor-keys": 7.1.1
       debug: 4.3.4(supports-color@8.1.1)
       globby: 11.1.0
       is-glob: 4.0.3
@@ -1258,10 +1201,10 @@ packages:
       - supports-color
     dev: true
 
-  /@typescript-eslint/utils@7.1.0(eslint@8.57.0)(typescript@5.3.3):
+  /@typescript-eslint/utils@7.1.1(eslint@8.57.0)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-WUFba6PZC5OCGEmbweGpnNJytJiLG7ZvDBJJoUcX4qZYf1mGZ97mO2Mps6O2efxJcJdRNpqweCistDbZMwIVHw==,
+        integrity: sha512-thOXM89xA03xAE0lW7alstvnyoBUbBX38YtY+zAUcpRPcq9EIhXPuJ0YTv948MbzmKh6e1AUszn5cBFK49Umqg==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -1270,9 +1213,9 @@ packages:
       "@eslint-community/eslint-utils": 4.4.0(eslint@8.57.0)
       "@types/json-schema": 7.0.15
       "@types/semver": 7.5.8
-      "@typescript-eslint/scope-manager": 7.1.0
-      "@typescript-eslint/types": 7.1.0
-      "@typescript-eslint/typescript-estree": 7.1.0(typescript@5.3.3)
+      "@typescript-eslint/scope-manager": 7.1.1
+      "@typescript-eslint/types": 7.1.1
+      "@typescript-eslint/typescript-estree": 7.1.1(typescript@5.3.3)
       eslint: 8.57.0
       semver: 7.6.0
     transitivePeerDependencies:
@@ -1280,14 +1223,14 @@ packages:
       - typescript
     dev: true
 
-  /@typescript-eslint/visitor-keys@7.1.0:
+  /@typescript-eslint/visitor-keys@7.1.1:
     resolution:
       {
-        integrity: sha512-FhUqNWluiGNzlvnDZiXad4mZRhtghdoKW6e98GoEOYSu5cND+E39rG5KwJMUzeENwm1ztYBRqof8wMLP+wNPIA==,
+        integrity: sha512-yTdHDQxY7cSoCcAtiBzVzxleJhkGB9NncSIyMYe2+OGON1ZsP9zOPws/Pqgopa65jvknOjlk/w7ulPlZ78PiLQ==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     dependencies:
-      "@typescript-eslint/types": 7.1.0
+      "@typescript-eslint/types": 7.1.1
       eslint-visitor-keys: 3.4.3
     dev: true
 
@@ -1493,14 +1436,6 @@ packages:
       }
     dependencies:
       safe-buffer: 5.2.1
-    dev: true
-
-  /bigint-crypto-utils@3.3.0:
-    resolution:
-      {
-        integrity: sha512-jOTSb+drvEDxEq6OuUybOAv/xxoh3cuYRUIPyu8sSHQNKM303UQ2R1DAo45o1AkcIXw6fzbaFI1+xGGdaXs2lg==,
-      }
-    engines: { node: ">=14.0.0" }
     dev: true
 
   /binary-extensions@2.2.0:
@@ -2000,6 +1935,21 @@ packages:
       minimalistic-crypto-utils: 1.0.1
     dev: true
 
+  /elliptic@6.5.5:
+    resolution:
+      {
+        integrity: sha512-7EjbcmUm17NQFu4Pmgmq2olYMj8nwMnpcddByChSUjArp8F5DQWcIcpriwO4ZToLNAJig0yiyjswfyGNje/ixw==,
+      }
+    dependencies:
+      bn.js: 4.12.0
+      brorand: 1.1.0
+      hash.js: 1.1.7
+      hmac-drbg: 1.0.1
+      inherits: 2.0.4
+      minimalistic-assert: 1.0.1
+      minimalistic-crypto-utils: 1.0.1
+    dev: true
+
   /emoji-regex@8.0.0:
     resolution:
       {
@@ -2233,7 +2183,7 @@ packages:
       "@types/bn.js": 4.11.6
       bn.js: 4.12.0
       create-hash: 1.2.0
-      elliptic: 6.5.4
+      elliptic: 6.5.5
       ethereum-cryptography: 0.1.3
       ethjs-util: 0.1.6
       rlp: 2.2.7
@@ -2572,10 +2522,10 @@ packages:
       }
     dev: true
 
-  /hardhat@2.20.1(ts-node@10.9.2)(typescript@5.3.3):
+  /hardhat@2.21.0(ts-node@10.9.2)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-q75xDQiQtCZcTMBwjTovrXEU5ECr49baxr4/OBkIu/ULTPzlB20yk1dRWNmD2IFbAeAeXggaWvQAdpiScaHtPw==,
+        integrity: sha512-8DlJAVJDEVHaV1sh9FLuKLLgCFv9EAJ+M+8IbjSIPgoeNo3ss5L1HgGBMfnI88c7OzMEZkdcuyGoobFeK3Orqw==,
       }
     hasBin: true
     peerDependencies:
@@ -2589,17 +2539,10 @@ packages:
     dependencies:
       "@ethersproject/abi": 5.7.0
       "@metamask/eth-sig-util": 4.0.1
-      "@nomicfoundation/ethereumjs-block": 5.0.4
-      "@nomicfoundation/ethereumjs-blockchain": 7.0.4
+      "@nomicfoundation/edr": 0.2.0
       "@nomicfoundation/ethereumjs-common": 4.0.4
-      "@nomicfoundation/ethereumjs-evm": 2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
-      "@nomicfoundation/ethereumjs-rlp": 5.0.4
-      "@nomicfoundation/ethereumjs-statemanager": 2.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
-      "@nomicfoundation/ethereumjs-trie": 6.0.4
       "@nomicfoundation/ethereumjs-tx": 5.0.4
       "@nomicfoundation/ethereumjs-util": 9.0.4
-      "@nomicfoundation/ethereumjs-verkle": 0.0.2
-      "@nomicfoundation/ethereumjs-vm": 7.0.4(@nomicfoundation/ethereumjs-verkle@0.0.2)
       "@nomicfoundation/solidity-analyzer": 0.1.1
       "@sentry/node": 5.30.0
       "@types/bn.js": 5.1.5
@@ -2891,13 +2834,6 @@ packages:
       }
     dev: true
 
-  /js-sdsl@4.4.2:
-    resolution:
-      {
-        integrity: sha512-dwXFwByc/ajSV6m5bcKAPwe4yDDF6D614pxmIi5odytzxRlwqF6nwoiCek80Ixc7Cvma5awClxrzFtxCQvcM8w==,
-      }
-    dev: true
-
   /js-sha3@0.8.0:
     resolution:
       {
@@ -3056,14 +2992,6 @@ packages:
       }
     dependencies:
       get-func-name: 2.0.2
-    dev: true
-
-  /lru-cache@10.2.0:
-    resolution:
-      {
-        integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==,
-      }
-    engines: { node: 14 || >=16.14 }
     dev: true
 
   /lru-cache@6.0.0:
@@ -3618,29 +3546,6 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /rust-verkle-wasm@0.0.1:
-    resolution:
-      {
-        integrity: sha512-BN6fiTsxcd2dCECz/cHtGTt9cdLJR925nh7iAuRcj8ymKw7OOaPmCneQZ7JePOJ/ia27TjEL91VdOi88Yf+mcA==,
-      }
-    dev: true
-
-  /rustbn-wasm@0.2.0:
-    resolution:
-      {
-        integrity: sha512-FThvYFNTqrEKGqXuseeg0zR7yROh/6U1617mCHF68OVqrN1tNKRN7Tdwy4WayPVsCmmK+eMxtIZX1qL6JxTkMg==,
-      }
-    dependencies:
-      "@scure/base": 1.1.5
-    dev: true
-
-  /safe-buffer@5.1.2:
-    resolution:
-      {
-        integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==,
-      }
-    dev: true
-
   /safe-buffer@5.2.1:
     resolution:
       {
@@ -3670,7 +3575,7 @@ packages:
     engines: { node: ">=10.0.0" }
     requiresBuild: true
     dependencies:
-      elliptic: 6.5.4
+      elliptic: 6.5.5
       node-addon-api: 2.0.2
       node-gyp-build: 4.8.0
     dev: true
@@ -4063,10 +3968,10 @@ packages:
     engines: { node: ">=8" }
     dev: true
 
-  /typescript-eslint@7.1.0(eslint@8.57.0)(typescript@5.3.3):
+  /typescript-eslint@7.1.1(eslint@8.57.0)(typescript@5.3.3):
     resolution:
       {
-        integrity: sha512-GfAALH4zoqae5mIfHr7WU3BsULHP73hjwF8vCmyTkH3IXHXjqg3JNWwUcd8CwOTLIr4tjRTZQWpToyESPnpOhg==,
+        integrity: sha512-vScnjSkm0pjZqySB5o8ZbfywfGWamVOqIGtJeOnUuDDGFaGKwMqdZWVa7EYKBnLCUSuwD8MN2a2ur9OgaKu6Tg==,
       }
     engines: { node: ^16.0.0 || >=18.0.0 }
     peerDependencies:
@@ -4076,8 +3981,8 @@ packages:
       typescript:
         optional: true
     dependencies:
-      "@typescript-eslint/eslint-plugin": 7.1.0(@typescript-eslint/parser@7.1.0)(eslint@8.57.0)(typescript@5.3.3)
-      "@typescript-eslint/parser": 7.1.0(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/eslint-plugin": 7.1.1(@typescript-eslint/parser@7.1.1)(eslint@8.57.0)(typescript@5.3.3)
+      "@typescript-eslint/parser": 7.1.1(eslint@8.57.0)(typescript@5.3.3)
       eslint: 8.57.0
       typescript: 5.3.3
     transitivePeerDependencies:
