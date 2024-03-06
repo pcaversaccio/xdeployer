@@ -59,6 +59,7 @@ export const networks = [
   "zoraMain",
   "luksoMain",
   "mantaMain",
+  "blastMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -93,7 +94,7 @@ export const explorers = [
   "https://explorer.execution.testnet.lukso.network/",
   "https://pacific-explorer.testnet.manta.network/",
   "https://explorer.testnet.frame.xyz/",
-  "https://testnet.blastscan.io/",
+  "https://sepolia.blastscan.io/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -122,4 +123,5 @@ export const explorers = [
   "https://explorer.zora.energy/",
   "https://explorer.execution.mainnet.lukso.network/",
   "https://pacific-explorer.manta.network/",
+  "https://blastscan.io/",
 ];

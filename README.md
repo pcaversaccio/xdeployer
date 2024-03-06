@@ -241,6 +241,7 @@ The current available networks are:
   - `zoraMain`
   - `luksoMain`
   - `mantaMain`
+  - `blastMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
