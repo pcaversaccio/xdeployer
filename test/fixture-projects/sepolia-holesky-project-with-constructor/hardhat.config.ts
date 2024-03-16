@@ -26,7 +26,7 @@ const config: HardhatUserConfig = {
           balance: "100000000000000000000",
         },
       ],
-      hardfork: "shanghai",
+      hardfork: "cancun",
     },
   },
   defaultNetwork: "hardhat",

@@ -31,6 +31,8 @@ export const networks = [
   "mantaTestnet",
   "frameTestnet",
   "blastTestnet",
+  "dosTestnet",
+  "fraxtalTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -60,6 +62,7 @@ export const networks = [
   "luksoMain",
   "mantaMain",
   "blastMain",
+  "dosMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -72,7 +75,7 @@ export const explorers = [
   "https://sepolia-optimism.etherscan.io/",
   "https://sepolia.arbiscan.io/",
   "https://mumbai.polygonscan.com/",
-  "https://testnet-zkevm.polygonscan.com/",
+  "https://cardona-zkevm.polygonscan.com/",
   "https://testnet.ftmscan.com/",
   "https://testnet.snowtrace.io/",
   "https://gnosis-chiado.blockscout.com/",
@@ -95,6 +98,8 @@ export const explorers = [
   "https://pacific-explorer.testnet.manta.network/",
   "https://explorer.testnet.frame.xyz/",
   "https://sepolia.blastscan.io/",
+  "https://test.doscan.io/",
+  "https://holesky.fraxscan.com/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -124,4 +129,5 @@ export const explorers = [
   "https://explorer.execution.mainnet.lukso.network/",
   "https://pacific-explorer.manta.network/",
   "https://blastscan.io/",
+  "https://doscan.io/",
 ];
