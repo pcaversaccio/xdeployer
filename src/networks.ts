@@ -33,6 +33,7 @@ export const networks = [
   "blastTestnet",
   "dosTestnet",
   "fraxtalTestnet",
+  "enduranceTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -63,6 +64,7 @@ export const networks = [
   "mantaMain",
   "blastMain",
   "dosMain",
+  "enduranceMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -100,6 +102,7 @@ export const explorers = [
   "https://sepolia.blastscan.io/",
   "https://test.doscan.io/",
   "https://holesky.fraxscan.com/",
+  "https://myexplorertestnet.fusionist.io/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -130,4 +133,5 @@ export const explorers = [
   "https://pacific-explorer.manta.network/",
   "https://blastscan.io/",
   "https://doscan.io/",
+  "https://explorer-endurance.fusionist.io/",
 ];

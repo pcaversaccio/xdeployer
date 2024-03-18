@@ -214,6 +214,7 @@ The current available networks are:
   - `blastTestnet`
   - `dosTestnet`
   - `fraxtalTestnet`
+  - `enduranceTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -245,6 +246,7 @@ The current available networks are:
   - `mantaMain`
   - `blastMain`
   - `dosMain`
+  - `enduranceMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks. In addition, please be aware that `gnosis` refers to the previously known _xDai_ chain.
