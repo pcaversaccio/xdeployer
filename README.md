@@ -300,6 +300,9 @@ The contract creation transaction is displayed on Etherscan (or any other block 
 > [!WARNING]
 > Solidity version [`0.8.20`](https://github.com/ethereum/solidity/releases/tag/v0.8.20) introduced support for the new opcode [`PUSH0`](https://eips.ethereum.org/EIPS/eip-3855), which was added as part of the [Shanghai hard fork](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/shanghai.md). Prior to running a deployment with a `>=0.8.20`-compiled bytecode (using the EVM version `shanghai`), please verify that _all_ targeted EVM networks support the `PUSH0` opcode. Otherwise, a deployment attempt on an EVM chain without `PUSH0` support may result in deployment or runtime failure(s).
 
+> [!WARNING]
+> Solidity version [0.8.25](https://github.com/ethereum/solidity/releases/tag/v0.8.25) defaults to EVM version [`cancun`](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md), which features a number of new opcodes. Prior to running a deployment with a `>=0.8.25`-compiled bytecode (using the EVM version `cancun`), please verify that _all_ targeted EVM networks support the new `cancun` opcodes. Otherwise, a deployment attempt on an EVM chain without `cancun` support may result in deployment or runtime failure(s).
+
 ## Usage
 
 ```console
