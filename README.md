@@ -214,7 +214,6 @@ The current available networks are:
   - `blastTestnet`
   - `dosTestnet`
   - `fraxtalTestnet`
-  - `enduranceTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
