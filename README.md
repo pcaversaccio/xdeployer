@@ -99,8 +99,8 @@ import "xdeployer";
 
 ## Required Plugins
 
-- [@nomicfoundation/hardhat-ethers](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
-- [ethers](https://www.npmjs.com/package/ethers)
+- [`@nomicfoundation/hardhat-ethers`](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
+- [`ethers`](https://www.npmjs.com/package/ethers)
 
 ## Tasks
 
