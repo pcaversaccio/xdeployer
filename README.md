@@ -157,7 +157,7 @@ const config: HardhatUserConfig = {
 The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random string value used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
 
 > [!IMPORTANT]
-> Please note that `xdeployer` computes the UTF-8 byte representation of the specified `salt` and computes the `keccak256` hash, which represents the 32-byte `salt` value that is passed to [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014).
+> Please note that `xdeployer` computes the UTF-8 byte representation of the specified `salt` and calculates the `keccak256` hash, which represents the 32-byte `salt` value that is passed to [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014).
 
 _Example:_
 
