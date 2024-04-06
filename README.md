@@ -11,7 +11,7 @@
 
 ## What
 
-This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. `CREATE2` can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
+This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
 
 ## Installation
 
@@ -154,7 +154,10 @@ const config: HardhatUserConfig = {
 };
 ```
 
-The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random value (32 byte string) used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
+The parameters `constructorArgsPath` and `gasLimit` are _optional_. The `salt` parameter is a random string value used to create the contract address. If you have previously deployed the same contract with the identical `salt`, the contract creation transaction will fail due to [EIP-684](https://github.com/ethereum/EIPs/issues/684). For more details, see also [here](#a-note-on-selfdestruct).
+
+> [!IMPORTANT]
+> Please note that `xdeployer` computes the UTF-8 byte representation of the specified `salt` and computes the `keccak256` hash, which represents the 32-byte `salt` value that is passed to [CREATE2](https://eips.ethereum.org/EIPS/eip-1014).
 
 _Example:_
 
@@ -265,7 +268,7 @@ contract Create2DeployerLocal is CreateX {}
 
 > For this kind of deployment, you must set the Solidity version in the `hardhat.config.js` or `hardhat.config.ts` file to `0.8.23` or higher.
 
-The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. It is important to note that the local deployment does _not_ generate the same deterministic address as on all live test/production networks, since the address of the smart contract that calls the opcode `CREATE2` differs locally from the live test/production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
+The RPC URL for `hardhat` is simply `hardhat`, while for `localhost` you must first run `npx hardhat node`, which defaults to `http://127.0.0.1:8545`. It is important to note that the local deployment does _not_ generate the same deterministic address as on all live test/production networks, since the address of the smart contract that calls the opcode [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) differs locally from the live test/production networks. I recommend using local deployments for general testing, for example to understand the correct `gasLimit` target size.
 
 ### Further Considerations
 
@@ -292,7 +295,7 @@ module.exports = [
 ];
 ```
 
-The `gasLimit` field is set to **1'500'000** by default because the `CREATE2` operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
+The `gasLimit` field is set to **1'500'000** by default because the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) operations are a complex sequence of opcode executions. Usually the providers do not manage to estimate the `gasLimit` for these calls, so a predefined value is set.
 
 The contract creation transaction is displayed on Etherscan (or any other block explorer) as a so-called _internal transaction_. An internal transaction is an action that is occurring within, or between, one or multiple smart contracts. In other words, it is initiated inside the code itself, rather than externally, from a wallet address controlled by a human. For more details on why it works this way, see [here](#how-it-works).
 
@@ -314,11 +317,11 @@ npx hardhat xdeploy
 
 ## How It Works
 
-EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with the same address across all the available networks to make easier and safer usage of the `CREATE2` EVM opcode. During your deployment, the plugin will call this contract.
+EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with the same address across all the available networks to make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. During your deployment, the plugin will call this contract.
 
 ### A Note on `SELFDESTRUCT`
 
-Using the `CREATE2` EVM opcode always allows to redeploy a new smart contract to a previously selfdestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the `CREATE`/`CREATE2` EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
+Using the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode always allows to redeploy a new smart contract to a previously selfdestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the [`CREATE`](https://www.evm.codes/#f0?fork=cancun)/[`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
 
 ### A Note on the Contract Creation Transaction
 
