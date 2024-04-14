@@ -7,7 +7,7 @@ export const networks = [
   "bscTestnet",
   "optimismSepolia",
   "arbitrumSepolia",
-  "mumbai",
+  "amoy",
   "polygonZkEVMTestnet",
   "fantomTestnet",
   "fuji",
@@ -64,6 +64,7 @@ export const networks = [
   "blastMain",
   "dosMain",
   "enduranceMain",
+  "kavaMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -75,7 +76,7 @@ export const explorers = [
   "https://testnet.bscscan.com/",
   "https://sepolia-optimism.etherscan.io/",
   "https://sepolia.arbiscan.io/",
-  "https://mumbai.polygonscan.com/",
+  "https://www.oklink.com/amoy/",
   "https://cardona-zkevm.polygonscan.com/",
   "https://testnet.ftmscan.com/",
   "https://testnet.snowtrace.io/",
@@ -90,10 +91,10 @@ export const explorers = [
   "https://testnet.bobascan.com/",
   "https://testnet.tuber.build/",
   "https://sepolia.basescan.org/",
-  "https://explorer.testnet.mantle.xyz/",
+  "https://explorer.sepolia.mantle.xyz/",
   "https://calibration.filfox.info/en/",
   "https://sepolia.scrollscan.com/",
-  "https://goerli.lineascan.build/",
+  "https://sepolia.lineascan.build/",
   "https://sepolia.explorer.zora.energy/",
   "https://explorer.execution.testnet.lukso.network/",
   "https://pacific-explorer.testnet.manta.network/",
@@ -132,4 +133,5 @@ export const explorers = [
   "https://blastscan.io/",
   "https://doscan.io/",
   "https://explorer-endurance.fusionist.io/",
+  "https://kavascan.com/",
 ];

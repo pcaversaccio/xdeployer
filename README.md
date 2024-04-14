@@ -191,7 +191,7 @@ The current available networks are:
   - `bscTestnet`
   - `optimismSepolia`
   - `arbitrumSepolia`
-  - `mumbai`
+  - `amoy`
   - `polygonZkEVMTestnet`
   - `fantomTestnet`
   - `fuji`
@@ -249,6 +249,7 @@ The current available networks are:
   - `blastMain`
   - `dosMain`
   - `enduranceMain`
+  - `kavaMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
