@@ -76,7 +76,7 @@ export const explorers = [
   "https://testnet.bscscan.com/",
   "https://sepolia-optimism.etherscan.io/",
   "https://sepolia.arbiscan.io/",
-  "https://www.oklink.com/amoy/",
+  "https://amoy.polygonscan.com/",
   "https://cardona-zkevm.polygonscan.com/",
   "https://testnet.ftmscan.com/",
   "https://testnet.snowtrace.io/",
