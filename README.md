@@ -217,6 +217,7 @@ The current available networks are:
   - `blastTestnet`
   - `dosTestnet`
   - `fraxtalTestnet`
+  - `metisTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -250,6 +251,7 @@ The current available networks are:
   - `dosMain`
   - `enduranceMain`
   - `kavaMain`
+  - `metisMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
