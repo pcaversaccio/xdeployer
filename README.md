@@ -218,6 +218,7 @@ The current available networks are:
   - `dosTestnet`
   - `fraxtalTestnet`
   - `metisTestnet`
+  - `modeTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
