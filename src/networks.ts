@@ -68,6 +68,7 @@ export const networks = [
   "enduranceMain",
   "kavaMain",
   "metisMain",
+  "modeMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -140,4 +141,5 @@ export const explorers = [
   "https://explorer-endurance.fusionist.io/",
   "https://kavascan.com/",
   "https://andromeda-explorer.metis.io/",
+  "https://explorer.mode.network/",
 ];

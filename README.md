@@ -253,6 +253,7 @@ The current available networks are:
   - `enduranceMain`
   - `kavaMain`
   - `metisMain`
+  - `modeMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
