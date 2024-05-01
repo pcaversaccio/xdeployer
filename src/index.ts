@@ -167,7 +167,8 @@ task(
                     : `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
               addressLink:
-                hre.config.xdeploy.networks[i].slice(0, 16) == "seiArcticTestnet"
+                hre.config.xdeploy.networks[i].slice(0, 16) ==
+                "seiArcticTestnet"
                   ? `${explorers[idx]}account/${computedContractAddress}`
                   : `${explorers[idx]}address/${computedContractAddress}`,
               receipt: createReceipt[i].toJSON(),
