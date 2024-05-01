@@ -161,9 +161,15 @@ task(
               txHashLink:
                 hre.config.xdeploy.networks[i].slice(0, 8) == "filecoin"
                   ? `${explorers[idx]}message/${createReceipt[i].hash}`
-                  : `${explorers[idx]}tx/${createReceipt[i].hash}`,
+                  : hre.config.xdeploy.networks[i].slice(0, 16) ==
+                      "seiArcticTestnet"
+                    ? `${explorers[idx]}transactions/${createReceipt[i].hash}`
+                    : `${explorers[idx]}tx/${createReceipt[i].hash}`,
               address: computedContractAddress,
-              addressLink: `${explorers[idx]}address/${computedContractAddress}`,
+              addressLink:
+                hre.config.xdeploy.networks[i].slice(0, 8) == "seiArcticTestnet"
+                  ? `${explorers[idx]}account/${computedContractAddress}`
+                  : `${explorers[idx]}address/${computedContractAddress}`,
               receipt: createReceipt[i].toJSON(),
               deployed: true,
               error: undefined,
