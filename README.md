@@ -219,6 +219,7 @@ The current available networks are:
   - `fraxtalTestnet`
   - `metisTestnet`
   - `modeTestnet`
+  - `seiArcticTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
