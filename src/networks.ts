@@ -36,6 +36,7 @@ export const networks = [
   "metisTestnet",
   "modeTestnet",
   "seiArcticTestnet",
+  "xlayerTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -70,6 +71,7 @@ export const networks = [
   "kavaMain",
   "metisMain",
   "modeMain",
+  "xlayerMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -110,6 +112,7 @@ export const explorers = [
   "https://sepolia-explorer.metisdevops.link/",
   "https://sepolia.explorer.mode.network/",
   "https://seistream.app/",
+  "https://www.oklink.com/xlayer-test/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -144,4 +147,5 @@ export const explorers = [
   "https://kavascan.com/",
   "https://andromeda-explorer.metis.io/",
   "https://explorer.mode.network/",
+  "https://www.oklink.com/xlayer/",
 ];

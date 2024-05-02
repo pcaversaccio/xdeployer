@@ -220,6 +220,7 @@ The current available networks are:
   - `metisTestnet`
   - `modeTestnet`
   - `seiArcticTestnet`
+  - `xlayerTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -255,6 +256,7 @@ The current available networks are:
   - `kavaMain`
   - `metisMain`
   - `modeMain`
+  - `xlayerMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
