@@ -41,9 +41,9 @@
     "README.md"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.1.1",
+    "@eslint/js": "^9.2.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.5",
-    "@types/chai": "^4.3.15",
+    "@types/chai": "^4.3.16",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.8",

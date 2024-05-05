@@ -8,14 +8,14 @@ importers:
   .:
     devDependencies:
       "@eslint/js":
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.2.0
+        version: 9.2.0
       "@nomicfoundation/hardhat-ethers":
         specifier: ^3.0.5
         version: 3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.8)(typescript@5.4.5))(typescript@5.4.5))
       "@types/chai":
-        specifier: ^4.3.15
-        version: 4.3.15
+        specifier: ^4.3.16
+        version: 4.3.16
       "@types/fs-extra":
         specifier: ^11.0.4
         version: 11.0.4
@@ -103,10 +103,10 @@ packages:
       }
     engines: { node: ^12.22.0 || ^14.17.0 || >=16.0.0 }
 
-  "@eslint/js@9.1.1":
+  "@eslint/js@9.2.0":
     resolution:
       {
-        integrity: sha512-5WoDz3Y19Bg2BnErkZTp0en+c/i9PvgFS7MBe1+m60HjFr0hrphlAGp4yzI7pxpt4xShln4ZyYp4neJm8hmOkQ==,
+        integrity: sha512-ESiIudvhoYni+MdsI8oD7skpprZ89qKocwRM2KEvhhBJ9nl5MRh7BXU5GTod7Mdygq+AUl+QzId6iWJKR/wABA==,
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
 
@@ -640,10 +640,10 @@ packages:
         integrity: sha512-V46N0zwKRF5Q00AZ6hWtN0T8gGmDUaUzLWQvHFo5yThtVwK/VCenFY3wXVbOvNfajEpsTfQM4IN9k/d6gUVX3A==,
       }
 
-  "@types/chai@4.3.15":
+  "@types/chai@4.3.16":
     resolution:
       {
-        integrity: sha512-PYVSvyeZqy9++MoSegq88PxoPndWDDLGbJmE/OZnzUk3D4cCRTmA4N6EX3g0GgLVA+vtys7bj4luhkVCglGTkQ==,
+        integrity: sha512-PatH4iOdyh3MyWtmHVFXLWCCIhUbopaltqddG9BzB+gMIzee2MJrvd+jouii9Z3wzQJruGWAm7WOMjgfG8hQlQ==,
       }
 
   "@types/fs-extra@11.0.4":
@@ -2867,7 +2867,7 @@ snapshots:
 
   "@eslint/js@8.57.0": {}
 
-  "@eslint/js@9.1.1": {}
+  "@eslint/js@9.2.0": {}
 
   "@ethersproject/abi@5.7.0":
     dependencies:
@@ -3228,7 +3228,7 @@ snapshots:
     dependencies:
       "@types/node": 20.12.8
 
-  "@types/chai@4.3.15": {}
+  "@types/chai@4.3.16": {}
 
   "@types/fs-extra@11.0.4":
     dependencies:
