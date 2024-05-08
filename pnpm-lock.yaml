@@ -12,7 +12,7 @@ importers:
         version: 9.2.0
       "@nomicfoundation/hardhat-ethers":
         specifier: ^3.0.5
-        version: 3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5))(typescript@5.4.5))
+        version: 3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))(typescript@5.4.5))
       "@types/chai":
         specifier: ^4.3.16
         version: 4.3.16
@@ -23,8 +23,8 @@ importers:
         specifier: ^10.0.6
         version: 10.0.6
       "@types/node":
-        specifier: ^20.12.10
-        version: 20.12.10
+        specifier: ^20.12.11
+        version: 20.12.11
       chai:
         specifier: ^4.4.1
         version: 4.4.1
@@ -39,7 +39,7 @@ importers:
         version: 6.12.1
       hardhat:
         specifier: ^2.22.3
-        version: 2.22.3(ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5))(typescript@5.4.5)
+        version: 2.22.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))(typescript@5.4.5)
       mocha:
         specifier: ^10.4.0
         version: 10.4.0
@@ -51,7 +51,7 @@ importers:
         version: 1.3.1(prettier@3.2.5)
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.12.10)(typescript@5.4.5)
+        version: 10.9.2(@types/node@20.12.11)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -682,10 +682,10 @@ packages:
         integrity: sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==,
       }
 
-  "@types/node@20.12.10":
+  "@types/node@20.12.11":
     resolution:
       {
-        integrity: sha512-Eem5pH9pmWBHoGAT8Dr5fdc5rYA+4NAovdM4EktRPVAAiJhmWWfQrA0cFhAbOsQdSfIHjAud6YdkbL69+zSKjw==,
+        integrity: sha512-vDg9PZ/zi+Nqp6boSOT7plNuthRugEKixDv5sFTIpkE89MmNtEArAShI4mxuX2+UrLEe9pxC1vm2cjm9YlWbJw==,
       }
 
   "@types/pbkdf2@3.1.2":
@@ -1941,13 +1941,6 @@ packages:
         integrity: sha512-zSMINGVYkdpYSOBmLi0D1Uo7JU9nVdQKrHxC8eYlV+9YKK9WePqAlL7lSlorG/U2Fw1w0hTBmaa/jrQ3UbPHtA==,
       }
 
-  lru-cache@6.0.0:
-    resolution:
-      {
-        integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==,
-      }
-    engines: { node: ">=10" }
-
   lru_map@0.3.3:
     resolution:
       {
@@ -2377,10 +2370,10 @@ packages:
       }
     hasBin: true
 
-  semver@7.6.0:
+  semver@7.6.1:
     resolution:
       {
-        integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==,
+        integrity: sha512-f/vbBsu+fOiYt+lmwZV0rVwJScl46HppnOA1ZvIuBWKOTlllpyJ3bfVax76/OrhCH38dyxoDIA8K7uB963IYgA==,
       }
     engines: { node: ">=10" }
     hasBin: true
@@ -2796,12 +2789,6 @@ packages:
       }
     engines: { node: ">=10" }
 
-  yallist@4.0.0:
-    resolution:
-      {
-        integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==,
-      }
-
   yargs-parser@20.2.4:
     resolution:
       {
@@ -3096,11 +3083,11 @@ snapshots:
       "@nomicfoundation/ethereumjs-rlp": 5.0.4
       ethereum-cryptography: 0.1.3
 
-  "@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5))(typescript@5.4.5))":
+  "@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))(typescript@5.4.5))":
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       ethers: 6.12.1
-      hardhat: 2.22.3(ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5))(typescript@5.4.5)
+      hardhat: 2.22.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))(typescript@5.4.5)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -3222,24 +3209,24 @@ snapshots:
 
   "@types/bn.js@4.11.6":
     dependencies:
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/bn.js@5.1.5":
     dependencies:
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/chai@4.3.16": {}
 
   "@types/fs-extra@11.0.4":
     dependencies:
       "@types/jsonfile": 6.1.4
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/json-schema@7.0.15": {}
 
   "@types/jsonfile@6.1.4":
     dependencies:
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/lru-cache@5.1.1": {}
 
@@ -3247,17 +3234,17 @@ snapshots:
 
   "@types/node@18.15.13": {}
 
-  "@types/node@20.12.10":
+  "@types/node@20.12.11":
     dependencies:
       undici-types: 5.26.5
 
   "@types/pbkdf2@3.1.2":
     dependencies:
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/secp256k1@4.0.6":
     dependencies:
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
 
   "@types/semver@7.5.8": {}
 
@@ -3274,7 +3261,7 @@ snapshots:
       graphemer: 1.4.0
       ignore: 5.3.1
       natural-compare: 1.4.0
-      semver: 7.6.0
+      semver: 7.6.1
       ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
       typescript: 5.4.5
@@ -3321,7 +3308,7 @@ snapshots:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
-      semver: 7.6.0
+      semver: 7.6.1
       ts-api-utils: 1.3.0(typescript@5.4.5)
     optionalDependencies:
       typescript: 5.4.5
@@ -3337,7 +3324,7 @@ snapshots:
       "@typescript-eslint/types": 7.8.0
       "@typescript-eslint/typescript-estree": 7.8.0(typescript@5.4.5)
       eslint: 8.57.0
-      semver: 7.6.0
+      semver: 7.6.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -3919,7 +3906,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5))(typescript@5.4.5):
+  hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
       "@ethersproject/abi": 5.7.0
       "@metamask/eth-sig-util": 4.0.1
@@ -3965,7 +3952,7 @@ snapshots:
       uuid: 8.3.2
       ws: 7.5.9
     optionalDependencies:
-      ts-node: 10.9.2(@types/node@20.12.10)(typescript@5.4.5)
+      ts-node: 10.9.2(@types/node@20.12.11)(typescript@5.4.5)
       typescript: 5.4.5
     transitivePeerDependencies:
       - bufferutil
@@ -4126,10 +4113,6 @@ snapshots:
     dependencies:
       get-func-name: 2.0.2
 
-  lru-cache@6.0.0:
-    dependencies:
-      yallist: 4.0.0
-
   lru_map@0.3.3: {}
 
   make-error@1.3.6: {}
@@ -4277,7 +4260,7 @@ snapshots:
     dependencies:
       "@solidity-parser/parser": 0.17.0
       prettier: 3.2.5
-      semver: 7.6.0
+      semver: 7.6.1
       solidity-comments-extractor: 0.0.8
 
   prettier@3.2.5: {}
@@ -4356,9 +4339,7 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.6.0:
-    dependencies:
-      lru-cache: 6.0.0
+  semver@7.6.1: {}
 
   serialize-javascript@6.0.0:
     dependencies:
@@ -4458,14 +4439,14 @@ snapshots:
     dependencies:
       typescript: 5.4.5
 
-  ts-node@10.9.2(@types/node@20.12.10)(typescript@5.4.5):
+  ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5):
     dependencies:
       "@cspotcode/source-map-support": 0.8.1
       "@tsconfig/node10": 1.0.11
       "@tsconfig/node12": 1.0.11
       "@tsconfig/node14": 1.0.3
       "@tsconfig/node16": 1.0.4
-      "@types/node": 20.12.10
+      "@types/node": 20.12.11
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
@@ -4556,8 +4537,6 @@ snapshots:
   ws@8.5.0: {}
 
   y18n@5.0.8: {}
-
-  yallist@4.0.0: {}
 
   yargs-parser@20.2.4: {}
 
