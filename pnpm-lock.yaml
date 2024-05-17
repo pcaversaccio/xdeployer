@@ -11,8 +11,8 @@ importers:
         specifier: ^9.2.0
         version: 9.2.0
       "@nomicfoundation/hardhat-ethers":
-        specifier: ^3.0.5
-        version: 3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5))
+        specifier: ^3.0.6
+        version: 3.0.6(ethers@6.12.1)(hardhat@2.22.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5))
       "@types/chai":
         specifier: ^4.3.16
         version: 4.3.16
@@ -38,8 +38,8 @@ importers:
         specifier: ^6.12.1
         version: 6.12.1
       hardhat:
-        specifier: ^2.22.3
-        version: 2.22.3(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
+        specifier: ^2.22.4
+        version: 2.22.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
       mocha:
         specifier: ^10.4.0
         version: 10.4.0
@@ -317,73 +317,59 @@ packages:
       }
     engines: { node: ">= 8" }
 
-  "@nomicfoundation/edr-darwin-arm64@0.3.7":
+  "@nomicfoundation/edr-darwin-arm64@0.3.8":
     resolution:
       {
-        integrity: sha512-6tK9Lv/lSfyBvpEQ4nsTfgxyDT1y1Uv/x8Wa+aB+E8qGo3ToexQ1BMVjxJk6PChXCDOWxB3B4KhqaZFjdhl3Ow==,
+        integrity: sha512-eB0leCexS8sQEmfyD72cdvLj9djkBzQGP4wSQw6SNf2I4Sw4Cnzb3d45caG2FqFFjbvfqL0t+badUUIceqQuMw==,
       }
     engines: { node: ">= 18" }
-    cpu: [arm64]
-    os: [darwin]
 
-  "@nomicfoundation/edr-darwin-x64@0.3.7":
+  "@nomicfoundation/edr-darwin-x64@0.3.8":
     resolution:
       {
-        integrity: sha512-1RrQ/1JPwxrYO69e0tglFv5H+ggour5Ii3bb727+yBpBShrxtOTQ7fZyfxA5h62LCN+0Z9wYOPeQ7XFcVurMaQ==,
+        integrity: sha512-JksVCS1N5ClwVF14EvO25HCQ+Laljh/KRfHERMVAC9ZwPbTuAd/9BtKvToCBi29uCHWqsXMI4lxCApYQv2nznw==,
       }
     engines: { node: ">= 18" }
-    cpu: [x64]
-    os: [darwin]
 
-  "@nomicfoundation/edr-linux-arm64-gnu@0.3.7":
+  "@nomicfoundation/edr-linux-arm64-gnu@0.3.8":
     resolution:
       {
-        integrity: sha512-ds/CKlBoVXIihjhflhgPn13EdKWed6r5bgvMs/YwRqT5wldQAQJZWAfA2+nYm0Yi2gMGh1RUpBcfkyl4pq7G+g==,
+        integrity: sha512-raCE+fOeNXhVBLUo87cgsHSGvYYRB6arih4eG6B9KGACWK5Veebtm9xtKeiD8YCsdUlUfat6F7ibpeNm91fpsA==,
       }
     engines: { node: ">= 18" }
-    cpu: [arm64]
-    os: [linux]
 
-  "@nomicfoundation/edr-linux-arm64-musl@0.3.7":
+  "@nomicfoundation/edr-linux-arm64-musl@0.3.8":
     resolution:
       {
-        integrity: sha512-e29udiRaPujhLkM3+R6ju7QISrcyOqpcaxb2FsDWBkuD7H8uU9JPZEyyUIpEp5uIY0Jh1eEJPKZKIXQmQAEAuw==,
+        integrity: sha512-PwiDp4wBZWMCIy29eKkv8moTKRrpiSDlrc+GQMSZLhOAm8T33JKKXPwD/2EbplbhCygJDGXZdtEKl9x9PaH66A==,
       }
     engines: { node: ">= 18" }
-    cpu: [arm64]
-    os: [linux]
 
-  "@nomicfoundation/edr-linux-x64-gnu@0.3.7":
+  "@nomicfoundation/edr-linux-x64-gnu@0.3.8":
     resolution:
       {
-        integrity: sha512-/xkjmTyv+bbJ4akBCW0qzFKxPOV4AqLOmqurov+s9umHb16oOv72osSa3SdzJED2gHDaKmpMITT4crxbar4Axg==,
+        integrity: sha512-6AcvA/XKoipGap5jJmQ9Y6yT7Uf39D9lu2hBcDCXnXbMcXaDGw4mn1/L4R63D+9VGZyu1PqlcJixCUZlGGIWlg==,
       }
     engines: { node: ">= 18" }
-    cpu: [x64]
-    os: [linux]
 
-  "@nomicfoundation/edr-linux-x64-musl@0.3.7":
+  "@nomicfoundation/edr-linux-x64-musl@0.3.8":
     resolution:
       {
-        integrity: sha512-QwBP9xlmsbf/ldZDGLcE4QiAb8Zt46E/+WLpxHBATFhGa7MrpJh6Zse+h2VlrT/SYLPbh2cpHgSmoSlqVxWG9g==,
+        integrity: sha512-cxb0sEmZjlwhYWO28sPsV64VDx31ekskhC1IsDXU1p9ntjHSJRmW4KEIqJ2O3QwJap/kLKfMS6TckvY10gjc6w==,
       }
     engines: { node: ">= 18" }
-    cpu: [x64]
-    os: [linux]
 
-  "@nomicfoundation/edr-win32-x64-msvc@0.3.7":
+  "@nomicfoundation/edr-win32-x64-msvc@0.3.8":
     resolution:
       {
-        integrity: sha512-j/80DEnkxrF2ewdbk/gQ2EOPvgF0XSsg8D0o4+6cKhUVAW6XwtWKzIphNL6dyD2YaWEPgIrNvqiJK/aln0ww4Q==,
+        integrity: sha512-yVuVPqRRNLZk7TbBMkKw7lzCvI8XO8fNTPTYxymGadjr9rEGRuNTU1yBXjfJ59I1jJU/X2TSkRk1OFX0P5tpZQ==,
       }
     engines: { node: ">= 18" }
-    cpu: [x64]
-    os: [win32]
 
-  "@nomicfoundation/edr@0.3.7":
+  "@nomicfoundation/edr@0.3.8":
     resolution:
       {
-        integrity: sha512-v2JFWnFKRsnOa6PDUrD+sr8amcdhxnG/YbL7LzmgRGU1odWEyOF4/EwNeUajQr4ZNKVWrYnJ6XjydXtUge5OBQ==,
+        integrity: sha512-u2UJ5QpznSHVkZRh6ePWoeVb6kmPrrqh08gCnZ9FHlJV9CITqlrTQHJkacd+INH31jx88pTAJnxePE4XAiH5qg==,
       }
     engines: { node: ">= 18" }
 
@@ -425,10 +411,10 @@ packages:
       c-kzg:
         optional: true
 
-  "@nomicfoundation/hardhat-ethers@3.0.5":
+  "@nomicfoundation/hardhat-ethers@3.0.6":
     resolution:
       {
-        integrity: sha512-RNFe8OtbZK6Ila9kIlHp0+S80/0Bu/3p41HUpaRIoHLm6X3WekTd83vob3rE54Duufu1edCiBDxspBzi2rxHHw==,
+        integrity: sha512-/xzkFQAaHQhmIAYOQmvHBPwL+NkwLzT9gRZBsgWUYeV+E6pzXsBQsHfRYbAZ3XEYare+T7S+5Tg/1KDJgepSkA==,
       }
     peerDependencies:
       ethers: ^6.1.0
@@ -1618,10 +1604,10 @@ packages:
         integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==,
       }
 
-  hardhat@2.22.3:
+  hardhat@2.22.4:
     resolution:
       {
-        integrity: sha512-k8JV2ECWNchD6ahkg2BR5wKVxY0OiKot7fuxiIpRK0frRqyOljcR2vKwgWSLw6YIeDcNNA4xybj7Og7NSxr2hA==,
+        integrity: sha512-09qcXJFBHQUaraJkYNr7XlmwjOj27xBB0SL2rYS024hTj9tPMbp26AFjlf5quBMO9SR4AJFg+4qWahcYcvXBuQ==,
       }
     hasBin: true
     peerDependencies:
@@ -3020,36 +3006,29 @@ snapshots:
       "@nodelib/fs.scandir": 2.1.5
       fastq: 1.17.1
 
-  "@nomicfoundation/edr-darwin-arm64@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-darwin-arm64@0.3.8": {}
 
-  "@nomicfoundation/edr-darwin-x64@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-darwin-x64@0.3.8": {}
 
-  "@nomicfoundation/edr-linux-arm64-gnu@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-linux-arm64-gnu@0.3.8": {}
 
-  "@nomicfoundation/edr-linux-arm64-musl@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-linux-arm64-musl@0.3.8": {}
 
-  "@nomicfoundation/edr-linux-x64-gnu@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-linux-x64-gnu@0.3.8": {}
 
-  "@nomicfoundation/edr-linux-x64-musl@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-linux-x64-musl@0.3.8": {}
 
-  "@nomicfoundation/edr-win32-x64-msvc@0.3.7":
-    optional: true
+  "@nomicfoundation/edr-win32-x64-msvc@0.3.8": {}
 
-  "@nomicfoundation/edr@0.3.7":
-    optionalDependencies:
-      "@nomicfoundation/edr-darwin-arm64": 0.3.7
-      "@nomicfoundation/edr-darwin-x64": 0.3.7
-      "@nomicfoundation/edr-linux-arm64-gnu": 0.3.7
-      "@nomicfoundation/edr-linux-arm64-musl": 0.3.7
-      "@nomicfoundation/edr-linux-x64-gnu": 0.3.7
-      "@nomicfoundation/edr-linux-x64-musl": 0.3.7
-      "@nomicfoundation/edr-win32-x64-msvc": 0.3.7
+  "@nomicfoundation/edr@0.3.8":
+    dependencies:
+      "@nomicfoundation/edr-darwin-arm64": 0.3.8
+      "@nomicfoundation/edr-darwin-x64": 0.3.8
+      "@nomicfoundation/edr-linux-arm64-gnu": 0.3.8
+      "@nomicfoundation/edr-linux-arm64-musl": 0.3.8
+      "@nomicfoundation/edr-linux-x64-gnu": 0.3.8
+      "@nomicfoundation/edr-linux-x64-musl": 0.3.8
+      "@nomicfoundation/edr-win32-x64-msvc": 0.3.8
 
   "@nomicfoundation/ethereumjs-common@4.0.4":
     dependencies:
@@ -3071,11 +3050,11 @@ snapshots:
       "@nomicfoundation/ethereumjs-rlp": 5.0.4
       ethereum-cryptography: 0.1.3
 
-  "@nomicfoundation/hardhat-ethers@3.0.5(ethers@6.12.1)(hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5))":
+  "@nomicfoundation/hardhat-ethers@3.0.6(ethers@6.12.1)(hardhat@2.22.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5))":
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       ethers: 6.12.1
-      hardhat: 2.22.3(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
+      hardhat: 2.22.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -3885,11 +3864,11 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  hardhat@2.22.3(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5):
+  hardhat@2.22.4(ts-node@10.9.2(@types/node@20.12.12)(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
       "@ethersproject/abi": 5.7.0
       "@metamask/eth-sig-util": 4.0.1
-      "@nomicfoundation/edr": 0.3.7
+      "@nomicfoundation/edr": 0.3.8
       "@nomicfoundation/ethereumjs-common": 4.0.4
       "@nomicfoundation/ethereumjs-tx": 5.0.4
       "@nomicfoundation/ethereumjs-util": 9.0.4
