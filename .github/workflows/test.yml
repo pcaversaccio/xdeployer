@@ -3,7 +3,7 @@ name: 🕵️‍♂️ Test xdeploy
 on: [push, pull_request, pull_request_target, workflow_dispatch]
 
 concurrency:
-  group: ${{github.workflow}}-${{github.ref}}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
