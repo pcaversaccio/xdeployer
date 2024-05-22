@@ -253,6 +253,7 @@ The current available networks are:
   - `mantaMain`
   - `blastMain`
   - `dosMain`
+  - `fraxtalMain`
   - `enduranceMain`
   - `kavaMain`
   - `metisMain`
