@@ -38,6 +38,9 @@ export const networks = [
   "seiArcticTestnet",
   "xlayerTestnet",
   "bobTestnet",
+  "coreTestnet",
+  "telosTestnet",
+  "rootstockTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -75,6 +78,9 @@ export const networks = [
   "modeMain",
   "xlayerMain",
   "bobMain",
+  "coreMain",
+  "telosMain",
+  "rootstockMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -117,6 +123,9 @@ export const explorers = [
   "https://seistream.app/",
   "https://www.oklink.com/xlayer-test/",
   "https://testnet-explorer.gobob.xyz/",
+  "https://scan.test.btcs.network/",
+  "https://testnet.teloscan.io/",
+  "https://rootstock-testnet.blockscout.com/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -154,4 +163,7 @@ export const explorers = [
   "https://explorer.mode.network/",
   "https://www.oklink.com/xlayer/",
   "https://explorer.gobob.xyz/",
+  "https://scan.coredao.org/",
+  "https://www.teloscan.io/",
+  "https://rootstock.blockscout.com/",
 ];

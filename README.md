@@ -222,6 +222,9 @@ The current available networks are:
   - `seiArcticTestnet`
   - `xlayerTestnet`
   - `bobTestnet`
+  - `coreTestnet`
+  - `telosTestnet`
+  - `rootstockTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -260,6 +263,9 @@ The current available networks are:
   - `modeMain`
   - `xlayerMain`
   - `bobMain`
+  - `coreMain`
+  - `telosMain`
+  - `rootstockMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
