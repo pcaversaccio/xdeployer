@@ -103,7 +103,7 @@ export const explorers = [
   "https://explorer.testnet.harmony.one/",
   "https://explorer.fusespark.io/",
   "https://cronos.org/explorer/testnet3/",
-  "https://testnet.escan.live/",
+  "https://www.mintscan.io/evmos-testnet/",
   "https://testnet.bobascan.com/",
   "https://testnet.tuber.build/",
   "https://sepolia.basescan.org/",
