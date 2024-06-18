@@ -143,7 +143,7 @@ export const explorers = [
   "https://explorer.harmony.one/",
   "https://explorer.fuse.io/",
   "https://cronoscan.com/",
-  "https://escan.live/",
+  "https://www.mintscan.io/evmos/",
   "https://bobascan.com/",
   "https://tuber.build/",
   "https://basescan.org/",
