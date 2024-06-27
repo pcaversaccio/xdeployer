@@ -213,7 +213,6 @@ The current available networks are:
   - `zoraSepolia`
   - `luksoTestnet`
   - `mantaTestnet`
-  - `frameTestnet`
   - `blastTestnet`
   - `dosTestnet`
   - `fraxtalTestnet`
@@ -225,6 +224,7 @@ The current available networks are:
   - `coreTestnet`
   - `telosTestnet`
   - `rootstockTestnet`
+  - `chilizTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
