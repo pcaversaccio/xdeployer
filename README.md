@@ -225,6 +225,7 @@ The current available networks are:
   - `telosTestnet`
   - `rootstockTestnet`
   - `chilizTestnet`
+  - `taraxaTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -266,6 +267,7 @@ The current available networks are:
   - `coreMain`
   - `telosMain`
   - `rootstockMain`
+  - `taraxaMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

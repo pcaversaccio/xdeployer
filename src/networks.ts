@@ -41,6 +41,7 @@ export const networks = [
   "telosTestnet",
   "rootstockTestnet",
   "chilizTestnet",
+  "taraxaTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -81,6 +82,7 @@ export const networks = [
   "coreMain",
   "telosMain",
   "rootstockMain",
+  "taraxaMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -126,6 +128,7 @@ export const explorers = [
   "https://testnet.teloscan.io/",
   "https://rootstock-testnet.blockscout.com/",
   "https://testnet.chiliscan.com/",
+  "https://testnet.explorer.taraxa.io/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -166,4 +169,5 @@ export const explorers = [
   "https://scan.coredao.org/",
   "https://www.teloscan.io/",
   "https://rootstock.blockscout.com/",
+  "https://mainnet.explorer.taraxa.io/",
 ];
