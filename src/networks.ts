@@ -115,7 +115,7 @@ export const explorers = [
   "https://sepolia.lineascan.build/",
   "https://sepolia.explorer.zora.energy/",
   "https://explorer.execution.testnet.lukso.network/",
-  "https://pacific-explorer.testnet.manta.network/",
+  "https://pacific-explorer.sepolia-testnet.manta.network/",
   "https://sepolia.blastscan.io/",
   "https://test.doscan.io/",
   "https://holesky.fraxscan.com/",
