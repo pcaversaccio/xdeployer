@@ -267,6 +267,7 @@ The current available networks are:
   - `coreMain`
   - `telosMain`
   - `rootstockMain`
+  - `chilizMain`
   - `taraxaMain`
 
 > [!IMPORTANT]

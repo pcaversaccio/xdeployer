@@ -82,6 +82,7 @@ export const networks = [
   "coreMain",
   "telosMain",
   "rootstockMain",
+  "chilizMain",
   "taraxaMain",
 ];
 
@@ -169,5 +170,6 @@ export const explorers = [
   "https://scan.coredao.org/",
   "https://www.teloscan.io/",
   "https://rootstock.blockscout.com/",
+  "https://chiliscan.com/",
   "https://mainnet.explorer.taraxa.io/",
 ];
