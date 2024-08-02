@@ -125,6 +125,7 @@ task(
               );
             }
             ++counter;
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
@@ -280,6 +281,7 @@ task(
               );
             }
             ++counter;
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
           } catch (err) {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
