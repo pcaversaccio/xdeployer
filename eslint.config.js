@@ -27,6 +27,7 @@ module.exports = tseslint.config(
   {
     ignores: [
       "node_modules/**",
+      "pnpm-lock.yaml",
       "deployments/**",
       "artifacts/**",
       "cache/**",

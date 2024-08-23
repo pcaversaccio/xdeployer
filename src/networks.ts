@@ -42,6 +42,8 @@ export const networks = [
   "rootstockTestnet",
   "chilizTestnet",
   "taraxaTestnet",
+  "taikoTestnet",
+  "zetaChainTestnet",
   "ethMain",
   "bscMain",
   "optimismMain",
@@ -84,6 +86,9 @@ export const networks = [
   "rootstockMain",
   "chilizMain",
   "taraxaMain",
+  "gravityAlphaMain",
+  "taikoMain",
+  "zetaChainMain",
 ];
 
 // List of block explorers, in the same order as `networks`
@@ -130,6 +135,8 @@ export const explorers = [
   "https://rootstock-testnet.blockscout.com/",
   "https://testnet.chiliscan.com/",
   "https://testnet.explorer.taraxa.io/",
+  "https://hekla.taikoscan.io/",
+  "https://athens.explorer.zetachain.com/",
   "https://etherscan.io/",
   "https://bscscan.com/",
   "https://optimistic.etherscan.io/",
@@ -172,4 +179,7 @@ export const explorers = [
   "https://rootstock.blockscout.com/",
   "https://chiliscan.com/",
   "https://mainnet.explorer.taraxa.io/",
+  "https://explorer.gravity.xyz/",
+  "https://taikoscan.io/",
+  "https://explorer.zetachain.com/",
 ];

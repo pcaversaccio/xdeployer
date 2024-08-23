@@ -226,6 +226,8 @@ The current available networks are:
   - `rootstockTestnet`
   - `chilizTestnet`
   - `taraxaTestnet`
+  - `taikoTestnet`
+  - `zetaChainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -269,6 +271,9 @@ The current available networks are:
   - `rootstockMain`
   - `chilizMain`
   - `taraxaMain`
+  - `gravityAlphaMain`
+  - `taikoMain`
+  - `zetaChainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
