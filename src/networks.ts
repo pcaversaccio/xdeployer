@@ -91,13 +91,13 @@ export const networksInfo = {
   zetaChainMain: "https://explorer.zetachain.com/",
 } as const;
 
-export type NetworkKeys = keyof typeof networksInfo;
+export type SupportedNetwork = keyof typeof networksInfo;
 
 export const networks = Object.keys(networksInfo);
 
 export const explorers = Object.values(networksInfo);
 
-export const getTxHashLink = (network: NetworkKeys, hash: string) => {
+export const getTxHashLink = (network: SupportedNetwork, hash: string) => {
   const explorer = networksInfo[network] as string;
 
   if (network.slice(0, 8) == "filecoin") {
@@ -109,7 +109,7 @@ export const getTxHashLink = (network: NetworkKeys, hash: string) => {
   return `${explorer}tx/${hash}`;
 };
 
-export const getAddressLink = (network: NetworkKeys, address: string) => {
+export const getAddressLink = (network: SupportedNetwork, address: string) => {
   const explorer = networksInfo[network] as string;
 
   if (network.slice(0, 16) == "seiArcticTestnet") {

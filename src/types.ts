@@ -1,4 +1,4 @@
-import { NetworkKeys } from "./networks";
+import { SupportedNetwork } from "./networks";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface XdeployConfig {
@@ -6,7 +6,7 @@ export interface XdeployConfig {
   constructorArgsPath?: string;
   salt?: string;
   signer?: any;
-  networks?: NetworkKeys[];
+  networks?: SupportedNetwork[];
   rpcUrls?: any[];
   gasLimit?: number;
 }
