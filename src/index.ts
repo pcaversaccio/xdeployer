@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
 import { xdeployConfigExtender } from "./config";
-import { getTxHashLink, getAddressLink } from "./networks";
+import {
+  networks,
+  getTxHashLink,
+  getAddressLink,
+  networksInfo,
+} from "./networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
   PLUGIN_NAME,
@@ -99,9 +104,7 @@ task(
 
       const network = hre.config.xdeploy.networks[i];
 
-      if (
-        !["hardhat", "localhost"].includes(network)
-      ) {
+      if (!["hardhat", "localhost"].includes(network)) {
         create2Deployer[i] = new hre.ethers.Contract(
           CREATE2_DEPLOYER_ADDRESS,
           abi,
@@ -120,8 +123,8 @@ task(
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
-                `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
-                `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
               );
             }
             ++counter;
@@ -182,16 +185,17 @@ task(
 
             console.log(
               `\n${GREEN}----------------------------------------------------------${RESET}\n` +
-              `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${i + 1
-              }           ><><><><${RESET}\n` +
-              `${GREEN}----------------------------------------------------------${RESET}\n\n` +
-              `Deployment status: ${GREEN}successful${RESET}\n\n` +
-              `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
-              `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
-              `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
-              `Contract creation transaction hash: ${GREEN}${result[i].txHashLink}${RESET}\n\n` +
-              `Contract address: ${GREEN}${result[i].addressLink}${RESET}\n\n` +
-              `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
+                `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${GREEN}----------------------------------------------------------${RESET}\n\n` +
+                `Deployment status: ${GREEN}successful${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
+                `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
+                `Contract creation transaction hash: ${GREEN}${result[i].txHashLink}${RESET}\n\n` +
+                `Contract address: ${GREEN}${result[i].addressLink}${RESET}\n\n` +
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
             );
           } catch (err) {
             result[i] = {
@@ -223,20 +227,19 @@ task(
 
             console.log(
               `\n${RED}----------------------------------------------------------${RESET}\n` +
-              `${RED}><><><><           XDEPLOY DEPLOYMENT ${i + 1
-              }           ><><><><${RESET}\n` +
-              `${RED}----------------------------------------------------------${RESET}\n\n` +
-              `Deployment status: ${RED}failed${RESET}\n\n` +
-              `Network: ${RED}${result[i].network}${RESET}\n\n` +
-              `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
-              `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
-              `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
+                `${RED}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${RED}----------------------------------------------------------${RESET}\n\n` +
+                `Deployment status: ${RED}failed${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}${RESET}\n\n` +
+                `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
             );
           }
         }
-      } else if (
-        ["hardhat", "localhost"].includes(network)
-      ) {
+      } else if (["hardhat", "localhost"].includes(network)) {
         let hhcreate2Deployer = await hre.ethers.getContractFactory(
           "Create2DeployerLocal",
         );
@@ -262,8 +265,8 @@ task(
             if (counter === 0) {
               console.log(
                 `\nYour deployment parameters will lead to the following contract address: ${GREEN}${computedContractAddress}${RESET}\n` +
-                `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
-                `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
+                  `\n${YELLOW}=> If this does not match your expectation, given a previous deployment, you have either changed the value of${RESET}\n` +
+                  `${YELLOW}the salt parameter or the bytecode of the contract!${RESET}\n`,
               );
             }
             ++counter;
@@ -315,16 +318,17 @@ task(
 
             console.log(
               `\n${GREEN}----------------------------------------------------------${RESET}\n` +
-              `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${i + 1
-              }           ><><><><${RESET}\n` +
-              `${GREEN}----------------------------------------------------------${RESET}\n\n` +
-              `Deployment status: ${GREEN}successful${RESET}\n\n` +
-              `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
-              `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
-              `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
-              `Contract creation transaction: ${GREEN}${result[i].txHash}${RESET}\n\n` +
-              `Contract address: ${GREEN}${result[i].address}${RESET}\n\n` +
-              `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
+                `${GREEN}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${GREEN}----------------------------------------------------------${RESET}\n\n` +
+                `Deployment status: ${GREEN}successful${RESET}\n\n` +
+                `Network: ${GREEN}${result[i].network}${RESET}\n\n` +
+                `Chain ID: ${GREEN}${result[i].chainId}${RESET}\n\n` +
+                `Contract name: ${GREEN}${result[i].contract}${RESET}\n\n` +
+                `Contract creation transaction: ${GREEN}${result[i].txHash}${RESET}\n\n` +
+                `Contract address: ${GREEN}${result[i].address}${RESET}\n\n` +
+                `Transaction details written to: ${GREEN}${saveDir}${RESET}\n`,
             );
           } catch (err) {
             result[i] = {
@@ -356,14 +360,15 @@ task(
 
             console.log(
               `\n${RED}----------------------------------------------------------${RESET}\n` +
-              `${RED}><><><><           XDEPLOY DEPLOYMENT ${i + 1
-              }           ><><><><${RESET}\n` +
-              `${RED}----------------------------------------------------------${RESET}\n\n` +
-              `Deployment status: ${RED}failed${RESET}\n\n` +
-              `Network: ${RED}${result[i].network}${RESET}\n\n` +
-              `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
-              `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
-              `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
+                `${RED}><><><><           XDEPLOY DEPLOYMENT ${
+                  i + 1
+                }           ><><><><${RESET}\n` +
+                `${RED}----------------------------------------------------------${RESET}\n\n` +
+                `Deployment status: ${RED}failed${RESET}\n\n` +
+                `Network: ${RED}${result[i].network}${RESET}\n\n` +
+                `Contract name: ${RED}${result[i].contract}${RESET}\n\n` +
+                `Error details written to: ${RED}${saveDir}${RESET}\n\n` +
+                `${RED}=> Debugging hint: Many deployment errors are due to a too low gasLimit or a reused salt parameter value.${RESET}\n`,
             );
           }
         }

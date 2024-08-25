@@ -1,7 +1,5 @@
 // List of supported networks with corresponding block explorers
-export const networksInfo: {
-  [explorer: string]: "N/A" | `{"http" | "https"}//${string}`
-} = {
+export const networksInfo = {
   localhost: "N/A",
   hardhat: "N/A",
   sepolia: "https://sepolia.etherscan.io/",
@@ -90,33 +88,33 @@ export const networksInfo: {
   taraxaMain: "https://mainnet.explorer.taraxa.io/",
   gravityAlphaMain: "https://explorer.gravity.xyz/",
   taikoMain: "https://taikoscan.io/",
-  zetaChainMain: "https://explorer.zetachain.com/"
-};
+  zetaChainMain: "https://explorer.zetachain.com/",
+} as const;
+
+export type NetworkKeys = keyof typeof networksInfo;
 
 export const networks = Object.keys(networksInfo);
 
 export const explorers = Object.values(networksInfo);
 
-export const getTxHashLink = (network: string, hash: string) => {
+export const getTxHashLink = (network: NetworkKeys, hash: string) => {
   const explorer = networksInfo[network] as string;
 
   if (network.slice(0, 8) == "filecoin") {
-    return `${explorer}message/${hash}`
-  } else if (network.slice(0, 16) ==
-    "seiArcticTestnet") {
-    return `${explorer}transactions/${hash}`
+    return `${explorer}message/${hash}`;
+  } else if (network.slice(0, 16) == "seiArcticTestnet") {
+    return `${explorer}transactions/${hash}`;
   }
 
   return `${explorer}tx/${hash}`;
-}
+};
 
-export const getAddressLink = (network: string, address: string) => {
+export const getAddressLink = (network: NetworkKeys, address: string) => {
   const explorer = networksInfo[network] as string;
 
-  if (network.slice(0, 16) ==
-    "seiArcticTestnet") {
-    return `${explorer}account/${address}`
+  if (network.slice(0, 16) == "seiArcticTestnet") {
+    return `${explorer}account/${address}`;
   }
 
   return `${explorer}address/${address}`;
-}
+};
