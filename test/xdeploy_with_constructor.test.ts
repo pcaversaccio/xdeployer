@@ -51,7 +51,10 @@ describe("Plugin test xdeploy on Hardhat with constructor", function () {
     });
 
     it("should fail due to unsupported network argument", async function () {
-      this.hre.config.xdeploy.networks = ["hardhat", "WAGMI"] as SupportedNetwork[];
+      this.hre.config.xdeploy.networks = [
+        "hardhat",
+        "WAGMI",
+      ] as SupportedNetwork[];
       return this.hre
         .run("xdeploy")
         .then(() => {
