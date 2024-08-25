@@ -1,6 +1,7 @@
 import { useEnvironment } from "./helpers";
 import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
+import { NetworkKeys } from "./networks";
 
 describe("Plugin test xdeploy on Hardhat without constructor", function () {
   describe("Hardhat Runtime Environment (HRE) extension", function () {
@@ -50,7 +51,7 @@ describe("Plugin test xdeploy on Hardhat without constructor", function () {
     });
 
     it("should fail due to unsupported network argument", async function () {
-      this.hre.config.xdeploy.networks = ["hardhat", "WAGMI"];
+      this.hre.config.xdeploy.networks = ["hardhat", "WAGMI"] as NetworkKeys[];
       return this.hre
         .run("xdeploy")
         .then(() => {
