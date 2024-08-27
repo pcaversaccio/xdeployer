@@ -43,7 +43,7 @@
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@nomicfoundation/hardhat-ethers": "^3.0.7",
-    "@types/chai": "^4.3.17",
+    "@types/chai": "^4.3.18",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.7",
     "@types/node": "^22.5.0",
@@ -57,7 +57,7 @@
     "prettier-plugin-solidity": "^1.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.2.0"
+    "typescript-eslint": "^8.3.0"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.7",
