@@ -43,10 +43,10 @@
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@nomicfoundation/hardhat-ethers": "^3.0.7",
-    "@types/chai": "^4.3.18",
+    "@types/chai": "^4.3.19",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.7",
-    "@types/node": "^22.5.0",
+    "@types/node": "^22.5.1",
     "chai": "^4.5.0",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
