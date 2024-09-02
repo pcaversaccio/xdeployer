@@ -157,7 +157,7 @@ task(
             createReceipt[i] = await createReceipt[i].wait();
 
             result[i] = {
-              network,
+              network: network,
               chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
@@ -199,7 +199,7 @@ task(
             );
           } catch (err) {
             result[i] = {
-              network,
+              network: network,
               chainId: undefined,
               contract: hre.config.xdeploy.contract,
               txHash: undefined,
@@ -290,7 +290,7 @@ task(
             createReceipt[i] = await createReceipt[i].wait();
 
             result[i] = {
-              network,
+              network: network,
               chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
@@ -332,7 +332,7 @@ task(
             );
           } catch (err) {
             result[i] = {
-              network,
+              network: network,
               chainId: undefined,
               contract: hre.config.xdeploy.contract,
               txHash: undefined,

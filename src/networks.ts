@@ -1,4 +1,4 @@
-// List of supported networks with corresponding block explorers
+// List of supported networks with corresponding block explorer links
 export const networksInfo = {
   localhost: "N/A",
   hardhat: "N/A",
@@ -91,30 +91,20 @@ export const networksInfo = {
   zetaChainMain: "https://explorer.zetachain.com/",
 } as const;
 
+// Define a type `SupportedNetwork` that represents the union of all possible network names
+// from the `networksInfo` object. This type ensures that any value assigned to a variable
+// of type `SupportedNetwork` is a valid network key in `networksInfo`. It provides
+// compile-time safety by preventing the use of unsupported or misspelled network names,
+// allowing us to catch potential errors early and ensure consistency when working with
+// network-specific functions or data
 export type SupportedNetwork = keyof typeof networksInfo;
-
 export const networks = Object.keys(networksInfo);
-
 export const explorers = Object.values(networksInfo);
 
-export const getTxHashLink = (network: SupportedNetwork, hash: string) => {
-  const explorer = networksInfo[network] as string;
+// Generate the transaction hash link
+export const getTxHashLink = (network: SupportedNetwork, hash: string) =>
+  `${networksInfo[network]}${network.startsWith("filecoin") ? "message" : network === "seiArcticTestnet" ? "transactions" : "tx"}/${hash}`;
 
-  if (network.slice(0, 8) == "filecoin") {
-    return `${explorer}message/${hash}`;
-  } else if (network.slice(0, 16) == "seiArcticTestnet") {
-    return `${explorer}transactions/${hash}`;
-  }
-
-  return `${explorer}tx/${hash}`;
-};
-
-export const getAddressLink = (network: SupportedNetwork, address: string) => {
-  const explorer = networksInfo[network] as string;
-
-  if (network.slice(0, 16) == "seiArcticTestnet") {
-    return `${explorer}account/${address}`;
-  }
-
-  return `${explorer}address/${address}`;
-};
+// Generate the contract address link
+export const getAddressLink = (network: SupportedNetwork, address: string) =>
+  `${networksInfo[network]}${network === "seiArcticTestnet" ? "account" : "address"}/${address}`;
