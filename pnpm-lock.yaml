@@ -13,7 +13,7 @@ importers:
         version: 9.9.1
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.7
-        version: 3.0.7(ethers@6.13.2)(hardhat@2.22.9(ts-node@10.9.2(@types/node@22.5.2)(typescript@5.5.4))(typescript@5.5.4))
+        version: 3.0.8(ethers@6.13.2)(hardhat@2.22.9(ts-node@10.9.2(@types/node@22.5.2)(typescript@5.5.4))(typescript@5.5.4))
       '@types/chai':
         specifier: ^4.3.19
         version: 4.3.19
@@ -258,11 +258,11 @@ packages:
       c-kzg:
         optional: true
 
-  '@nomicfoundation/hardhat-ethers@3.0.7':
-    resolution: {integrity: sha512-pxLWpDiqC208shoz/lMbVFbxcVxE+qIs8qDrwdcubWH99UO1p6uwXakMa36ICRfB/IEToSLDJGSsKhwY84feCQ==}
+  '@nomicfoundation/hardhat-ethers@3.0.8':
+    resolution: {integrity: sha512-zhOZ4hdRORls31DTOqg+GmEZM0ujly8GGIuRY7t7szEk2zW/arY1qDug/py8AEktT00v5K+b6RvbVog+va51IA==}
     peerDependencies:
       ethers: ^6.1.0
-      hardhat: ^2.22.92.0.0
+      hardhat: ^2.0.0
 
   '@nomicfoundation/solidity-analyzer-darwin-arm64@0.1.2':
     resolution: {integrity: sha512-JaqcWPDZENCvm++lFFGjrDd8mxtf+CtLd2MiXvMNTBD33dContTZ9TWETwNFwg7JTJT5Q9HEecH7FA+HTSsIUw==}
@@ -1783,7 +1783,7 @@ snapshots:
       '@nomicfoundation/ethereumjs-rlp': 5.0.4
       ethereum-cryptography: 0.1.3
 
-  '@nomicfoundation/hardhat-ethers@3.0.7(ethers@6.13.2)(hardhat@2.22.9(ts-node@10.9.2(@types/node@22.5.2)(typescript@5.5.4))(typescript@5.5.4))':
+  '@nomicfoundation/hardhat-ethers@3.0.8(ethers@6.13.2)(hardhat@2.22.9(ts-node@10.9.2(@types/node@22.5.2)(typescript@5.5.4))(typescript@5.5.4))':
     dependencies:
       debug: 4.3.6(supports-color@8.1.1)
       ethers: 6.13.2
