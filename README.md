@@ -228,6 +228,7 @@ The current available networks are:
   - `taraxaTestnet`
   - `taikoTestnet`
   - `zetaChainTestnet`
+  - `5ireChainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -274,6 +275,7 @@ The current available networks are:
   - `gravityAlphaMain`
   - `taikoMain`
   - `zetaChainMain`
+  - `5ireChainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

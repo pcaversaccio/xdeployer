@@ -44,6 +44,7 @@ export const networksInfo = {
   taraxaTestnet: "https://testnet.explorer.taraxa.io/",
   taikoTestnet: "https://hekla.taikoscan.io/",
   zetaChainTestnet: "https://athens.explorer.zetachain.com/",
+  "5ireChainTestnet": "https://testnet.5irescan.io/",
   ethMain: "https://etherscan.io/",
   bscMain: "https://bscscan.com/",
   optimismMain: "https://optimistic.etherscan.io/",
@@ -89,6 +90,7 @@ export const networksInfo = {
   gravityAlphaMain: "https://explorer.gravity.xyz/",
   taikoMain: "https://taikoscan.io/",
   zetaChainMain: "https://explorer.zetachain.com/",
+  "5ireChainMain": "https://5irescan.io/",
 } as const;
 
 // Define a type `SupportedNetwork` that represents the union of all possible network names
