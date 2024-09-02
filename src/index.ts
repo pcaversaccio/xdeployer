@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
 import { xdeployConfigExtender } from "./config";
-import { networks, explorers } from "./networks";
+import {
+  networks,
+  getTxHashLink,
+  getAddressLink,
+  networksInfo,
+} from "./networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
   PLUGIN_NAME,
@@ -50,7 +55,6 @@ task(
     let initcode: any;
     let computedContractAddress: any;
     let chainId: any;
-    let idx: number;
 
     console.log(
       "\nThe deployment is starting... Please bear with me, this may take a minute or two. Anyway, WAGMI!",
@@ -98,10 +102,9 @@ task(
 
       signers[i] = wallets[i].connect(providers[i]);
 
-      if (
-        hre.config.xdeploy.networks[i] !== "hardhat" &&
-        hre.config.xdeploy.networks[i] !== "localhost"
-      ) {
+      const network = hre.config.xdeploy.networks[i];
+
+      if (!["hardhat", "localhost"].includes(network)) {
         create2Deployer[i] = new hre.ethers.Contract(
           CREATE2_DEPLOYER_ADDRESS,
           abi,
@@ -136,7 +139,7 @@ task(
           if ((await providers[i].getCode(computedContractAddress)) !== "0x") {
             throw new NomicLabsHardhatPluginError(
               PLUGIN_NAME,
-              `The address of the contract you want to deploy already has existing bytecode on ${hre.config.xdeploy.networks[i]}.
+              `The address of the contract you want to deploy already has existing bytecode on ${network}.
               It is very likely that you have deployed this contract before with the same salt parameter value.
               Please try using a different salt value.`,
             );
@@ -150,28 +153,17 @@ task(
             );
 
             chainId = createReceipt[i].chainId;
-            idx = networks.indexOf(hre.config.xdeploy.networks[i]);
 
             createReceipt[i] = await createReceipt[i].wait();
 
             result[i] = {
-              network: hre.config.xdeploy.networks[i],
+              network: network,
               chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
-              txHashLink:
-                hre.config.xdeploy.networks[i].slice(0, 8) == "filecoin"
-                  ? `${explorers[idx]}message/${createReceipt[i].hash}`
-                  : hre.config.xdeploy.networks[i].slice(0, 16) ==
-                      "seiArcticTestnet"
-                    ? `${explorers[idx]}transactions/${createReceipt[i].hash}`
-                    : `${explorers[idx]}tx/${createReceipt[i].hash}`,
+              txHashLink: getTxHashLink(network, createReceipt[i].hash),
               address: computedContractAddress,
-              addressLink:
-                hre.config.xdeploy.networks[i].slice(0, 16) ==
-                "seiArcticTestnet"
-                  ? `${explorers[idx]}account/${computedContractAddress}`
-                  : `${explorers[idx]}address/${computedContractAddress}`,
+              addressLink: getAddressLink(network, computedContractAddress),
               receipt: createReceipt[i].toJSON(),
               deployed: true,
               error: undefined,
@@ -185,7 +177,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment.json`,
+                `${hre.config.xdeploy.contract}_${network}_deployment.json`,
               ),
             );
 
@@ -207,7 +199,7 @@ task(
             );
           } catch (err) {
             result[i] = {
-              network: hre.config.xdeploy.networks[i],
+              network: network,
               chainId: undefined,
               contract: hre.config.xdeploy.contract,
               txHash: undefined,
@@ -227,7 +219,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+                `${hre.config.xdeploy.contract}_${network}_deployment_debug.json`,
               ),
             );
 
@@ -247,15 +239,12 @@ task(
             );
           }
         }
-      } else if (
-        hre.config.xdeploy.networks[i] === "hardhat" ||
-        hre.config.xdeploy.networks[i] === "localhost"
-      ) {
+      } else if (["hardhat", "localhost"].includes(network)) {
         let hhcreate2Deployer = await hre.ethers.getContractFactory(
           "Create2DeployerLocal",
         );
 
-        if (hre.config.xdeploy.networks[i] === "localhost") {
+        if (network === "localhost") {
           hhcreate2Deployer = await hre.ethers.getContractFactory(
             "Create2DeployerLocal",
             signers[i],
@@ -297,18 +286,17 @@ task(
             );
 
             chainId = createReceipt[i].chainId;
-            idx = networks.indexOf(hre.config.xdeploy.networks[i]);
 
             createReceipt[i] = await createReceipt[i].wait();
 
             result[i] = {
-              network: hre.config.xdeploy.networks[i],
+              network: network,
               chainId: chainId.toString(),
               contract: hre.config.xdeploy.contract,
               txHash: createReceipt[i].hash,
-              txHashLink: explorers[idx],
+              txHashLink: networksInfo[network],
               address: computedContractAddress,
-              addressLink: explorers[idx],
+              addressLink: networksInfo[network],
               receipt: createReceipt[i].toJSON(),
               deployed: true,
               error: undefined,
@@ -322,7 +310,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment.json`,
+                `${hre.config.xdeploy.contract}_${network}_deployment.json`,
               ),
             );
 
@@ -344,7 +332,7 @@ task(
             );
           } catch (err) {
             result[i] = {
-              network: hre.config.xdeploy.networks[i],
+              network: network,
               chainId: undefined,
               contract: hre.config.xdeploy.contract,
               txHash: undefined,
@@ -364,7 +352,7 @@ task(
               path.join(
                 hre.config.paths.root,
                 "deployments",
-                `${hre.config.xdeploy.contract}_${hre.config.xdeploy.networks[i]}_deployment_debug.json`,
+                `${hre.config.xdeploy.contract}_${network}_deployment_debug.json`,
               ),
             );
 
@@ -405,7 +393,7 @@ subtask(TASK_VERIFY_NETWORK_ARGUMENTS).setAction(async (_, hre) => {
 
 subtask(TASK_VERIFY_SUPPORTED_NETWORKS).setAction(async (_, hre) => {
   const unsupported = hre?.config?.xdeploy?.networks?.filter(
-    (v) => !networks.includes(v),
+    (v) => !networksInfo[v],
   );
   if (unsupported && unsupported.length > 0) {
     throw new NomicLabsHardhatPluginError(
