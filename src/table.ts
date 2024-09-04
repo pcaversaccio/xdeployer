@@ -15,8 +15,8 @@ export function createNetworkInfoTable(
     "Chain ID".length,
   );
   const urlWidth = Math.max(
-    ...networks.map(([, info]) => info.url.replace(/\//g, "").length),
-    "Explorer URL".length,
+    ...networks.map(([, info]) => info.url.replace(/\/$/, "").length),
+    "Block Explorer URL".length,
   );
 
   // Create table border
@@ -26,7 +26,7 @@ export function createNetworkInfoTable(
   const header = [
     `${GREEN}${"Network Name".padEnd(networkWidth)}${RESET}`,
     `${GREEN}${"Chain ID".padEnd(chainIdWidth)}${RESET}`,
-    `${GREEN}${"Explorer URL".padEnd(urlWidth)}${RESET}`,
+    `${GREEN}${"Block Explorer URL".padEnd(urlWidth)}${RESET}`,
   ];
 
   // Print colourful title
