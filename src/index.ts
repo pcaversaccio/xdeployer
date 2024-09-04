@@ -463,3 +463,12 @@ subtask(TASK_VERIFY_GASLIMIT).setAction(async (_, hre) => {
     );
   }
 });
+
+task("xdeploy", "Deploys the contract across all predefined networks")
+  .addFlag("list", "List all supported networks")
+  .setAction(async () => {
+    const networks = Object.keys(networksInfo);
+    networks.forEach((network) => {
+      console.log(`${GREEN}${network}`);
+    });
+  });
