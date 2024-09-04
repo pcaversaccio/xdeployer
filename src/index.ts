@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
 import { xdeployConfigExtender } from "./internal/config";
+import { TaskArgs } from "./internal/types";
 import {
   networksInfo,
   networks,
@@ -27,10 +28,6 @@ import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import "@nomicfoundation/hardhat-ethers";
 import * as fs from "fs";
 import path from "path";
-
-export interface TaskArgs {
-  listNetworks: boolean;
-}
 
 extendConfig(xdeployConfigExtender);
 

@@ -10,3 +10,7 @@ export interface XdeployConfig {
   rpcUrls?: any[];
   gasLimit?: number;
 }
+
+export interface TaskArgs {
+  listNetworks: boolean;
+}
