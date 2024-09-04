@@ -182,6 +182,9 @@ xdeploy: {
 
 The current available networks are:
 
+> [!TIP]
+> To display the complete list of supported networks with the corresponding block explorer links and chain IDs, run `npx hardhat xdeploy --list-networks`.
+
 - **Local:**
   - `localhost`
   - `hardhat`

@@ -1,5 +1,5 @@
 import { ConfigExtender } from "hardhat/types";
-import { GASLIMIT } from "./constants";
+import { GASLIMIT } from "../utils/constants";
 
 export const xdeployConfigExtender: ConfigExtender = (config, userConfig) => {
   const defaultConfig = {

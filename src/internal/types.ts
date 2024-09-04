@@ -1,4 +1,4 @@
-import { SupportedNetwork } from "./networks";
+import { SupportedNetwork } from "../utils/networks";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface XdeployConfig {
@@ -9,4 +9,8 @@ export interface XdeployConfig {
   networks?: SupportedNetwork[];
   rpcUrls?: any[];
   gasLimit?: number;
+}
+
+export interface TaskArgs {
+  listNetworks: boolean;
 }
