@@ -15,7 +15,7 @@ export function createNetworkInfoTable(
     "Chain ID".length,
   );
   const urlWidth = Math.max(
-    ...networks.map(([, info]) => info.url.replace(/\/$/, "").length),
+    ...networks.map(([, info]) => info.url.length),
     "Block Explorer URL".length,
   );
 
@@ -45,7 +45,7 @@ export function createNetworkInfoTable(
     const row = [
       `${rowColor}${network.padEnd(networkWidth)}${RESET}`,
       `${rowColor}${(info.chainId?.toString() ?? "N/A").padEnd(chainIdWidth)}${RESET}`,
-      `${rowColor}${info.url.replace(/\/$/, "").padEnd(urlWidth)}${RESET}`, // Remove all trailing forward slashes from the block explorer links
+      `${rowColor}${info.url.padEnd(urlWidth)}${RESET}`,
     ];
     console.log(
       `${BRIGHT}|${RESET} ${row.join(` ${BRIGHT}|${RESET} `)} ${BRIGHT}|${RESET}`,
