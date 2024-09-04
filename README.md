@@ -280,6 +280,9 @@ The current available networks are:
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
 
+> [!TIP]
+> To display the complete list of supported networks with the corresponding block explorer links and chain IDs, run `npx hardhat xdeploy --list-networks`.
+
 ### Local Deployment
 
 If you also want to test deploy your smart contracts on `"hardhat"` or `"localhost"`, you must first add the following Solidity file called `Create2DeployerLocal.sol` to your `contracts/` folder:
