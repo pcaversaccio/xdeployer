@@ -1,10 +1,10 @@
 import { useEnvironment } from "./helpers";
 import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
-import { SupportedNetwork } from "../src/networks";
+import { SupportedNetwork } from "./utils/networks";
 
-describe("Plugin test xdeploy: Deploy on Hardhat network with constructorr", function () {
-  useEnvironment("hardhat-project-with-constructor");
+describe("Plugin test xdeploy: Deploy on Sepolia and Holešky with constructor", function () {
+  useEnvironment("sepolia-holesky-project-with-constructor");
   it("calling xdeploy successfully", async function () {
     return this.hre.run("xdeploy");
   });
@@ -223,6 +223,26 @@ describe("Plugin test xdeploy: Deploy on Hardhat network with constructorr", fun
         expect(reason.message)
           .to.be.a("string")
           .and.include("Please specify a lower gasLimit.");
+      });
+  });
+
+  it("should fail due to existing bytecode", async function () {
+    this.hre.config.xdeploy.salt = "wagmi";
+    return this.hre
+      .run("xdeploy")
+      .then(() => {
+        assert.fail("deployment request should fail");
+      })
+      .catch((reason) => {
+        expect(reason).to.be.an.instanceOf(
+          NomicLabsHardhatPluginError,
+          "existing bytecode should throw a plugin error",
+        );
+        expect(reason.message)
+          .to.be.a("string")
+          .and.include(
+            "The address of the contract you want to deploy already has existing bytecode",
+          );
       });
   });
 });

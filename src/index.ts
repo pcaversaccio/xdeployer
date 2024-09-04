@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { extendConfig, subtask, task } from "hardhat/config";
-import { xdeployConfigExtender } from "./config";
+import { xdeployConfigExtender } from "./internal/config";
 import {
   networksInfo,
   networks,
   getTxHashLink,
   getAddressLink,
-} from "./networks";
+} from "./utils/networks";
 import {
   CREATE2_DEPLOYER_ADDRESS,
   PLUGIN_NAME,
@@ -17,10 +17,10 @@ import {
   TASK_VERIFY_SIGNER,
   TASK_VERIFY_CONTRACT,
   TASK_VERIFY_GASLIMIT,
-} from "./constants";
-import { RESET, GREEN, RED, YELLOW } from "./colour-codes";
-import { createNetworkInfoTable } from "./table";
-import "./type-extensions";
+} from "./utils/constants";
+import { RESET, GREEN, RED, YELLOW } from "./utils/colour-codes";
+import { createNetworkInfoTable } from "./utils/table";
+import "./internal/type-extensions";
 import abi from "./abi/CreateX.json";
 
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";

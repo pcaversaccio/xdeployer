@@ -1,10 +1,10 @@
 import { useEnvironment } from "./helpers";
 import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
-import { SupportedNetwork } from "../src/networks";
+import { SupportedNetwork } from "./utils/networks";
 
-describe("Plugin test xdeploy: Deploy on Hardhat network without constructor", function () {
-  useEnvironment("hardhat-project-without-constructor");
+describe("Plugin test xdeploy: Deploy on Hardhat network with constructorr", function () {
+  useEnvironment("hardhat-project-with-constructor");
   it("calling xdeploy successfully", async function () {
     return this.hre.run("xdeploy");
   });
