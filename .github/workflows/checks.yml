@@ -91,5 +91,5 @@ jobs:
 
       - name: Validate URLs
         run: |
-          awesome_bot ./*.md src/*.ts --allow-dupe --request-delay 0.4 \
+          awesome_bot ./*.md src/**/*.ts test/**/*.ts --allow-dupe --request-delay 0.4 \
           --white-list http://127.0.0.1:8545,https://github.com/pcaversaccio/createx,https://rpc.sepolia.org,https://holesky.rpc.thirdweb.com,https://www.oklink.com,https://5irescan.io,https://testnet.5irescan.io
