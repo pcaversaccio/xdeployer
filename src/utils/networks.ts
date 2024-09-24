@@ -81,6 +81,10 @@ export const networksInfo = {
     chainId: 7001,
   },
   "5ireChainTestnet": { url: "https://testnet.5irescan.io", chainId: 997 },
+  sapphireTestnet: {
+    url: "https://explorer.oasis.io/testnet/sapphire",
+    chainId: 23295,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -136,6 +140,10 @@ export const networksInfo = {
   taikoMain: { url: "https://taikoscan.io", chainId: 167000 },
   zetaChainMain: { url: "https://explorer.zetachain.com", chainId: 7000 },
   "5ireChainMain": { url: "https://5irescan.io", chainId: 995 },
+  sapphireMain: {
+    url: "https://explorer.oasis.io/mainnet/sapphire",
+    chainId: 23294,
+  },
 } as const;
 
 // Define a type `SupportedNetwork` that represents the union of all possible network names
