@@ -233,6 +233,7 @@ The current available networks are:
   - `zetaChainTestnet`
   - `5ireChainTestnet`
   - `sapphireTestnet`
+  - `worldChainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -281,6 +282,7 @@ The current available networks are:
   - `zetaChainMain`
   - `5ireChainMain`
   - `sapphireMain`
+  - `worldChainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

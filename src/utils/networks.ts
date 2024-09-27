@@ -85,6 +85,10 @@ export const networksInfo = {
     url: "https://explorer.oasis.io/testnet/sapphire",
     chainId: 23295,
   },
+  worldChainTestnet: {
+    url: "https://worldchain-sepolia.explorer.alchemy.com",
+    chainId: 4801,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -143,6 +147,10 @@ export const networksInfo = {
   sapphireMain: {
     url: "https://explorer.oasis.io/mainnet/sapphire",
     chainId: 23294,
+  },
+  worldChainMain: {
+    url: "https://worldchain-mainnet.explorer.alchemy.com",
+    chainId: 480,
   },
 } as const;
 
