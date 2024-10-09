@@ -89,6 +89,10 @@ export const networksInfo = {
     url: "https://worldchain-sepolia.explorer.alchemy.com",
     chainId: 4801,
   },
+  plumeTestnet: {
+    url: "https://test-explorer.plumenetwork.xyz",
+    chainId: 98864,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
