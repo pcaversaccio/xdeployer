@@ -235,6 +235,7 @@ The current available networks are:
   - `sapphireTestnet`
   - `worldChainTestnet`
   - `plumeTestnet`
+  - `unichainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`

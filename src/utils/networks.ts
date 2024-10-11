@@ -93,6 +93,10 @@ export const networksInfo = {
     url: "https://test-explorer.plumenetwork.xyz",
     chainId: 98864,
   },
+  unichainTestnet: {
+    url: "https://sepolia.uniscan.xyz",
+    chainId: 1301,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
