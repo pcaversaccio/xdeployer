@@ -97,6 +97,10 @@ export const networksInfo = {
     url: "https://sepolia.uniscan.xyz",
     chainId: 1301,
   },
+  xdcTestnet: {
+    url: "https://apothem.xdcscan.io",
+    chainId: 51,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -159,6 +163,10 @@ export const networksInfo = {
   worldChainMain: {
     url: "https://worldchain-mainnet.explorer.alchemy.com",
     chainId: 480,
+  },
+  xdcMain: {
+    url: "https://xdcscan.io",
+    chainId: 50,
   },
 } as const;
 
