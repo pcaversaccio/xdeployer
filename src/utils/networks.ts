@@ -98,7 +98,7 @@ export const networksInfo = {
     chainId: 1301,
   },
   xdcTestnet: {
-    url: "https://apothem.xdcscan.io",
+    url: "https://testnet.xdcscan.com",
     chainId: 51,
   },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
@@ -165,7 +165,7 @@ export const networksInfo = {
     chainId: 480,
   },
   xdcMain: {
-    url: "https://xdcscan.io",
+    url: "https://xdcscan.com",
     chainId: 50,
   },
 } as const;
