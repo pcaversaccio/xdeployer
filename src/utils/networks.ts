@@ -101,6 +101,10 @@ export const networksInfo = {
     url: "https://testnet.xdcscan.com",
     chainId: 51,
   },
+  sxTestnet: {
+    url: "https://explorerl2.toronto.sx.technology",
+    chainId: 79479957,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -167,6 +171,10 @@ export const networksInfo = {
   xdcMain: {
     url: "https://xdcscan.com",
     chainId: 50,
+  },
+  sxMain: {
+    url: "https://explorerl2.sx.technology",
+    chainId: 4162,
   },
 } as const;
 

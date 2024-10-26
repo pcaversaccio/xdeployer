@@ -237,6 +237,7 @@ The current available networks are:
   - `plumeTestnet`
   - `unichainTestnet`
   - `xdcTestnet`
+  - `sxTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -287,6 +288,7 @@ The current available networks are:
   - `sapphireMain`
   - `worldChainMain`
   - `xdcMain`
+  - `sxMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
