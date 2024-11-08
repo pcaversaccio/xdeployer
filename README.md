@@ -83,7 +83,7 @@ pnpm add --save-dev 'xdeployer@^1.2.7'
 </details>
 
 > [!NOTE]
-> This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in Node.js `v13` and below.
+> This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in [Node.js](https://nodejs.org/en) `v13` and below.
 
 Import the plugin in your `hardhat.config.js`:
 
@@ -238,6 +238,9 @@ The current available networks are:
   - `unichainTestnet`
   - `xdcTestnet`
   - `sxTestnet`
+  - `liskTestnet`
+  - `metalL2Testnet`
+  - `superseedTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -289,6 +292,8 @@ The current available networks are:
   - `worldChainMain`
   - `xdcMain`
   - `sxMain`
+  - `liskMain`
+  - `metalL2Main`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

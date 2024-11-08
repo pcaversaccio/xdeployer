@@ -105,6 +105,18 @@ export const networksInfo = {
     url: "https://explorerl2.toronto.sx.technology",
     chainId: 79479957,
   },
+  liskTestnet: {
+    url: "https://sepolia-blockscout.lisk.com",
+    chainId: 4202,
+  },
+  metalL2Testnet: {
+    url: "https://testnet.explorer.metall2.com",
+    chainId: 1740,
+  },
+  superseedTestnet: {
+    url: "https://sepolia-explorer.superseed.xyz",
+    chainId: 53302,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -175,6 +187,14 @@ export const networksInfo = {
   sxMain: {
     url: "https://explorerl2.sx.technology",
     chainId: 4162,
+  },
+  liskMain: {
+    url: "https://blockscout.lisk.com",
+    chainId: 1135,
+  },
+  metalL2Main: {
+    url: "https://explorer.metall2.com",
+    chainId: 1750,
   },
 } as const;
 
