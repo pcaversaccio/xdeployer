@@ -41,23 +41,23 @@
     "README.md"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
+    "@eslint/js": "^9.15.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@types/chai": "^4.3.20",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.9",
     "@types/node": "^22.9.0",
     "chai": "^4.5.0",
-    "eslint": "^9.14.0",
+    "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "ethers": "^6.13.4",
-    "hardhat": "^2.22.15",
+    "hardhat": "^2.22.16",
     "mocha": "^10.8.2",
     "prettier": "^3.3.3",
     "prettier-plugin-solidity": "^1.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.14.0"
+    "typescript-eslint": "^8.15.0"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
