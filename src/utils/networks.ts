@@ -117,6 +117,10 @@ export const networksInfo = {
     url: "https://sepolia-explorer.superseed.xyz",
     chainId: 53302,
   },
+  storyTestnet: {
+    url: "https://odyssey.storyscan.xyz",
+    chainId: 1516,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },

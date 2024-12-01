@@ -241,6 +241,7 @@ The current available networks are:
   - `liskTestnet`
   - `metalL2Testnet`
   - `superseedTestnet`
+  - `storyTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
