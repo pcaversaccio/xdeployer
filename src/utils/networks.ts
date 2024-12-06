@@ -200,6 +200,10 @@ export const networksInfo = {
     url: "https://explorer.metall2.com",
     chainId: 1750,
   },
+  superseedMain: {
+    url: "https://explorer.superseed.xyz",
+    chainId: 5330,
+  },
 } as const;
 
 // Define a type `SupportedNetwork` that represents the union of all possible network names

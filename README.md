@@ -295,6 +295,7 @@ The current available networks are:
   - `sxMain`
   - `liskMain`
   - `metalL2Main`
+  - `superseedMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
