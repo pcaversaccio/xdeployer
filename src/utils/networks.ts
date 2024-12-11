@@ -121,6 +121,10 @@ export const networksInfo = {
     url: "https://odyssey.storyscan.xyz",
     chainId: 1516,
   },
+  sonicTestnet: {
+    url: "https://testnet.sonicscan.org",
+    chainId: 57054,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -203,6 +207,10 @@ export const networksInfo = {
   superseedMain: {
     url: "https://explorer.superseed.xyz",
     chainId: 5330,
+  },
+  sonicMain: {
+    url: "https://sonicscan.org",
+    chainId: 146,
   },
 } as const;
 

@@ -242,6 +242,7 @@ The current available networks are:
   - `metalL2Testnet`
   - `superseedTestnet`
   - `storyTestnet`
+  - `sonicTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -296,6 +297,7 @@ The current available networks are:
   - `liskMain`
   - `metalL2Main`
   - `superseedMain`
+  - `sonicMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
