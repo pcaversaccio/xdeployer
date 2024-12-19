@@ -188,6 +188,10 @@ export const networksInfo = {
     url: "https://worldchain-mainnet.explorer.alchemy.com",
     chainId: 480,
   },
+  plumeMain: {
+    url: "https://explorer.plumenetwork.xyz",
+    chainId: 98865,
+  },
   xdcMain: {
     url: "https://xdcscan.com",
     chainId: 50,

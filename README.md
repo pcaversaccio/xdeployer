@@ -292,6 +292,7 @@ The current available networks are:
   - `5ireChainMain`
   - `sapphireMain`
   - `worldChainMain`
+  - `plumeMain`
   - `xdcMain`
   - `sxMain`
   - `liskMain`
