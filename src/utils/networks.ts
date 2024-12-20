@@ -125,6 +125,10 @@ export const networksInfo = {
     url: "https://testnet.sonicscan.org",
     chainId: 57054,
   },
+  flowTestnet: {
+    url: "https://evm-testnet.flowscan.io",
+    chainId: 545,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -215,6 +219,10 @@ export const networksInfo = {
   sonicMain: {
     url: "https://sonicscan.org",
     chainId: 146,
+  },
+  flowMain: {
+    url: "https://evm.flowscan.io",
+    chainId: 747,
   },
 } as const;
 
