@@ -129,6 +129,14 @@ export const networksInfo = {
     url: "https://evm-testnet.flowscan.io",
     chainId: 545,
   },
+  inkTestnet: {
+    url: "https://explorer-sepolia.inkonchain.com",
+    chainId: 763373,
+  },
+  morphTestnet: {
+    url: "https://explorer-holesky.morphl2.io",
+    chainId: 2810,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -223,6 +231,14 @@ export const networksInfo = {
   flowMain: {
     url: "https://evm.flowscan.io",
     chainId: 747,
+  },
+  inkMain: {
+    url: "https://explorer.inkonchain.com",
+    chainId: 57073,
+  },
+  morphMain: {
+    url: "https://explorer.morphl2.io",
+    chainId: 2818,
   },
 } as const;
 

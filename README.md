@@ -244,6 +244,8 @@ The current available networks are:
   - `storyTestnet`
   - `sonicTestnet`
   - `flowTestnet`
+  - `inkTestnet`
+  - `morphTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -301,6 +303,8 @@ The current available networks are:
   - `superseedMain`
   - `sonicMain`
   - `flowMain`
+  - `inkMain`
+  - `morphMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

@@ -1259,8 +1259,8 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
-  readdirp@4.1.0:
-    resolution: {integrity: sha512-4+hHiVsxlm4OVSNFpAIrOGyGeG9kNLGcLMqvSGL5Rj2NOYBDQiQ6lJRViwAZ80i8SNbY8kCpdjgJy5PNALARew==}
+  readdirp@4.1.1:
+    resolution: {integrity: sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==}
     engines: {node: '>= 14.18.0'}
 
   require-directory@2.1.1:
@@ -2265,7 +2265,7 @@ snapshots:
 
   chokidar@4.0.3:
     dependencies:
-      readdirp: 4.1.0
+      readdirp: 4.1.1
 
   ci-info@2.0.0: {}
 
@@ -3011,7 +3011,7 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  readdirp@4.1.0: {}
+  readdirp@4.1.1: {}
 
   require-directory@2.1.1: {}
 
