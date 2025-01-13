@@ -137,6 +137,14 @@ export const networksInfo = {
     url: "https://explorer-holesky.morphl2.io",
     chainId: 2810,
   },
+  shapeTestnet: {
+    url: "https://explorer-sepolia.shape.network",
+    chainId: 11011,
+  },
+  etherlinkTestnet: {
+    url: "https://testnet.explorer.etherlink.com",
+    chainId: 128123,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -239,6 +247,14 @@ export const networksInfo = {
   morphMain: {
     url: "https://explorer.morphl2.io",
     chainId: 2818,
+  },
+  shapeMain: {
+    url: "https://shapescan.xyz",
+    chainId: 360,
+  },
+  etherlinkMain: {
+    url: "https://explorer.etherlink.com",
+    chainId: 42793,
   },
 } as const;
 

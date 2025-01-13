@@ -246,6 +246,8 @@ The current available networks are:
   - `flowTestnet`
   - `inkTestnet`
   - `morphTestnet`
+  - `shapeTestnet`
+  - `etherlinkTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -305,6 +307,8 @@ The current available networks are:
   - `flowMain`
   - `inkMain`
   - `morphMain`
+  - `shapeMain`
+  - `etherlinkMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
