@@ -145,6 +145,10 @@ export const networksInfo = {
     url: "https://testnet.explorer.etherlink.com",
     chainId: 128123,
   },
+  soneiumTestnet: {
+    url: "https://soneium-minato.blockscout.com",
+    chainId: 1946,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -255,6 +259,10 @@ export const networksInfo = {
   etherlinkMain: {
     url: "https://explorer.etherlink.com",
     chainId: 42793,
+  },
+  soneiumMain: {
+    url: "https://soneium.blockscout.com",
+    chainId: 1868,
   },
 } as const;
 

@@ -248,6 +248,7 @@ The current available networks are:
   - `morphTestnet`
   - `shapeTestnet`
   - `etherlinkTestnet`
+  - `soneiumTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -309,6 +310,7 @@ The current available networks are:
   - `morphMain`
   - `shapeMain`
   - `etherlinkMain`
+  - `soneiumMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
