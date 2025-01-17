@@ -149,6 +149,10 @@ export const networksInfo = {
     url: "https://soneium-minato.blockscout.com",
     chainId: 1946,
   },
+  swellTestnet: {
+    url: "https://swell-testnet-explorer.alt.technology",
+    chainId: 1924,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -263,6 +267,10 @@ export const networksInfo = {
   soneiumMain: {
     url: "https://soneium.blockscout.com",
     chainId: 1868,
+  },
+  swellMain: {
+    url: "https://explorer.swellnetwork.io",
+    chainId: 1923,
   },
 } as const;
 
