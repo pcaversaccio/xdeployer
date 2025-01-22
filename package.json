@@ -52,7 +52,7 @@
     "eslint-config-prettier": "^10.0.1",
     "ethers": "^6.13.5",
     "hardhat": "^2.22.18",
-    "mocha": "^11.0.1",
+    "mocha": "^11.1.0",
     "prettier": "^3.4.2",
     "prettier-plugin-solidity": "^1.4.2",
     "ts-node": "^10.9.2",
