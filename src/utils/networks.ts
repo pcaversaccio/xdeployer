@@ -153,6 +153,10 @@ export const networksInfo = {
     url: "https://swell-testnet-explorer.alt.technology",
     chainId: 1924,
   },
+  hemiTestnet: {
+    url: "https://testnet.explorer.hemi.xyz",
+    chainId: 743111,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -271,6 +275,10 @@ export const networksInfo = {
   swellMain: {
     url: "https://explorer.swellnetwork.io",
     chainId: 1923,
+  },
+  hemiMain: {
+    url: "https://explorer.hemi.xyz",
+    chainId: 43111,
   },
 } as const;
 
