@@ -157,6 +157,10 @@ export const networksInfo = {
     url: "https://testnet.explorer.hemi.xyz",
     chainId: 743111,
   },
+  berachainTestnet: {
+    url: "https://bartio.beratrail.io",
+    chainId: 80084,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -279,6 +283,10 @@ export const networksInfo = {
   hemiMain: {
     url: "https://explorer.hemi.xyz",
     chainId: 43111,
+  },
+  berachainMain: {
+    url: "https://berascan.com",
+    chainId: 80094,
   },
 } as const;
 

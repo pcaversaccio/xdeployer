@@ -24,6 +24,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
+  "packageManager": "pnpm@10.2.1",
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
@@ -63,5 +64,11 @@
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "ethers": "^6.13.5",
     "hardhat": "^2.22.18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "keccak",
+      "secp256k1"
+    ]
   }
 }

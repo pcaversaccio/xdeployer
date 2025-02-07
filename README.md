@@ -251,6 +251,7 @@ The current available networks are:
   - `soneiumTestnet`
   - `swellTestnet`
   - `hemiTestnet`
+  - `berachainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -315,6 +316,7 @@ The current available networks are:
   - `soneiumMain`
   - `swellMain`
   - `hemiMain`
+  - `berachainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
