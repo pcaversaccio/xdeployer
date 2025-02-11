@@ -165,6 +165,10 @@ export const networksInfo = {
     url: "https://testnet.monadexplorer.com",
     chainId: 10143,
   },
+  cornTestnet: {
+    url: "https://testnet.cornscan.io",
+    chainId: 21000001,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -232,6 +236,10 @@ export const networksInfo = {
     url: "https://explorer.plumenetwork.xyz",
     chainId: 98865,
   },
+  unichainMain: {
+    url: "https://uniscan.xyz",
+    chainId: 130,
+  },
   xdcMain: {
     url: "https://xdcscan.com",
     chainId: 50,
@@ -291,6 +299,10 @@ export const networksInfo = {
   berachainMain: {
     url: "https://berascan.com",
     chainId: 80094,
+  },
+  cornMain: {
+    url: "https://cornscan.io",
+    chainId: 21000000,
   },
 } as const;
 
