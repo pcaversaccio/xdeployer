@@ -252,6 +252,7 @@ The current available networks are:
   - `swellTestnet`
   - `hemiTestnet`
   - `berachainTestnet`
+  - `monadTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`

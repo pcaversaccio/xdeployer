@@ -161,6 +161,10 @@ export const networksInfo = {
     url: "https://bartio.beratrail.io",
     chainId: 80084,
   },
+  monadTestnet: {
+    url: "https://testnet.monadexplorer.com",
+    chainId: 10143,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
