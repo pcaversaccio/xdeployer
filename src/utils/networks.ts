@@ -118,8 +118,8 @@ export const networksInfo = {
     chainId: 53302,
   },
   storyTestnet: {
-    url: "https://odyssey.storyscan.xyz",
-    chainId: 1516,
+    url: "https://aeneid.storyscan.xyz",
+    chainId: 1315,
   },
   sonicTestnet: {
     url: "https://testnet.sonicscan.org",
@@ -168,6 +168,10 @@ export const networksInfo = {
   cornTestnet: {
     url: "https://testnet.cornscan.io",
     chainId: 21000001,
+  },
+  arenazTestnet: {
+    url: "https://arena-z.blockscout.com",
+    chainId: 9897,
   },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
@@ -303,6 +307,10 @@ export const networksInfo = {
   cornMain: {
     url: "https://cornscan.io",
     chainId: 21000000,
+  },
+  arenazMain: {
+    url: "https://explorer.arena-z.gg",
+    chainId: 7897,
   },
 } as const;
 
