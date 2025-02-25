@@ -52,18 +52,18 @@
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.1",
     "ethers": "^6.13.5",
-    "hardhat": "^2.22.18",
+    "hardhat": "^2.22.19",
     "mocha": "^11.1.0",
     "prettier": "^3.5.2",
     "prettier-plugin-solidity": "^1.4.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.1"
+    "typescript-eslint": "^8.25.0"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "ethers": "^6.13.5",
-    "hardhat": "^2.22.18"
+    "hardhat": "^2.22.19"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
