@@ -237,8 +237,8 @@ export const networksInfo = {
     chainId: 480,
   },
   plumeMain: {
-    url: "https://explorer.plumenetwork.xyz",
-    chainId: 98865,
+    url: "https://phoenix-explorer.plumenetwork.xyz",
+    chainId: 98866,
   },
   unichainMain: {
     url: "https://uniscan.xyz",
