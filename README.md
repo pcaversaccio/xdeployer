@@ -255,6 +255,8 @@ The current available networks are:
   - `monadTestnet`
   - `cornTestnet`
   - `arenazTestnet`
+  - `iotexTestnet`
+  - `hychainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -323,6 +325,8 @@ The current available networks are:
   - `berachainMain`
   - `cornMain`
   - `arenazMain`
+  - `iotexMain`
+  - `hychainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

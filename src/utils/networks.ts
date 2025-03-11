@@ -173,6 +173,14 @@ export const networksInfo = {
     url: "https://arena-z.blockscout.com",
     chainId: 9897,
   },
+  iotexTestnet: {
+    url: "https://testnet.iotexscan.io",
+    chainId: 4690,
+  },
+  hychainTestnet: {
+    url: "https://testnet.explorer.hychain.com",
+    chainId: 29112,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -311,6 +319,14 @@ export const networksInfo = {
   arenazMain: {
     url: "https://explorer.arena-z.gg",
     chainId: 7897,
+  },
+  iotexMain: {
+    url: "https://iotexscan.io",
+    chainId: 4689,
+  },
+  hychainMain: {
+    url: "https://explorer.hychain.com",
+    chainId: 2911,
   },
 } as const;
 
