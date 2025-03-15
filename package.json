@@ -24,7 +24,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
