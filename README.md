@@ -191,6 +191,7 @@ The current available networks are:
 - **EVM-Based Test Networks:**
   - `sepolia`
   - `holesky`
+  - `hoodi`
   - `bscTestnet`
   - `optimismSepolia`
   - `arbitrumSepolia`
