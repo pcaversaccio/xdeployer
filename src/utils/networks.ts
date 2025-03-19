@@ -90,8 +90,8 @@ export const networksInfo = {
     chainId: 4801,
   },
   plumeTestnet: {
-    url: "https://test-explorer.plumenetwork.xyz",
-    chainId: 98864,
+    url: "https://testnet-explorer.plumenetwork.xyz",
+    chainId: 98867,
   },
   unichainTestnet: {
     url: "https://sepolia.uniscan.xyz",
