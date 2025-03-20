@@ -258,6 +258,7 @@ The current available networks are:
   - `arenazTestnet`
   - `iotexTestnet`
   - `hychainTestnet`
+  - `zircuitTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -328,6 +329,7 @@ The current available networks are:
   - `arenazMain`
   - `iotexMain`
   - `hychainMain`
+  - `zircuitMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

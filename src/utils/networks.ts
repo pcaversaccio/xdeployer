@@ -119,7 +119,7 @@ export const networksInfo = {
     chainId: 53302,
   },
   storyTestnet: {
-    url: "https://aeneid.storyscan.xyz",
+    url: "https://aeneid.storyscan.io",
     chainId: 1315,
   },
   sonicTestnet: {
@@ -181,6 +181,10 @@ export const networksInfo = {
   hychainTestnet: {
     url: "https://testnet.explorer.hychain.com",
     chainId: 29112,
+  },
+  zircuitTestnet: {
+    url: "https://explorer.garfield-testnet.zircuit.com",
+    chainId: 48898,
   },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
@@ -328,6 +332,10 @@ export const networksInfo = {
   hychainMain: {
     url: "https://explorer.hychain.com",
     chainId: 2911,
+  },
+  zircuitMain: {
+    url: "https://explorer.zircuit.com",
+    chainId: 48900,
   },
 } as const;
 
