@@ -259,6 +259,7 @@ The current available networks are:
   - `iotexTestnet`
   - `hychainTestnet`
   - `zircuitTestnet`
+  - `megaETHTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`

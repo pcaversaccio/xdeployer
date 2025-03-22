@@ -186,6 +186,10 @@ export const networksInfo = {
     url: "https://explorer.garfield-testnet.zircuit.com",
     chainId: 48898,
   },
+  megaETHTestnet: {
+    url: "https://www.megaexplorer.xyz",
+    chainId: 6342,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
