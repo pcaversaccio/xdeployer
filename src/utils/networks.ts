@@ -4,7 +4,7 @@ export const networksInfo = {
   hardhat: { url: "N/A", chainId: 31337 },
   sepolia: { url: "https://sepolia.etherscan.io", chainId: 11155111 },
   holesky: { url: "https://holesky.etherscan.io", chainId: 17000 },
-  hoodi: { url: "https://hoodi.cloud.blockscout.com", chainId: 560048 },
+  hoodi: { url: "https://hoodi.etherscan.io", chainId: 560048 },
   bscTestnet: { url: "https://testnet.bscscan.com", chainId: 97 },
   optimismSepolia: {
     url: "https://sepolia-optimism.etherscan.io",
