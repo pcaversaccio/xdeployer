@@ -24,7 +24,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.7.0",
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
@@ -47,7 +47,7 @@
     "@types/chai": "^4.3.20",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.13.14",
     "chai": "^4.5.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
