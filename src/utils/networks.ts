@@ -139,7 +139,7 @@ export const networksInfo = {
     chainId: 2810,
   },
   shapeTestnet: {
-    url: "https://explorer-sepolia.shape.network",
+    url: "https://sepolia.shapescan.xyz",
     chainId: 11011,
   },
   etherlinkTestnet: {
