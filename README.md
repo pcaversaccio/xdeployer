@@ -260,6 +260,8 @@ The current available networks are:
   - `hychainTestnet`
   - `zircuitTestnet`
   - `megaETHTestnet`
+  - `bitlayerTestnet`
+  - `roninTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -331,6 +333,8 @@ The current available networks are:
   - `iotexMain`
   - `hychainMain`
   - `zircuitMain`
+  - `bitlayerMain`
+  - `roninMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

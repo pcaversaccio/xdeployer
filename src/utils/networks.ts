@@ -190,6 +190,14 @@ export const networksInfo = {
     url: "https://www.megaexplorer.xyz",
     chainId: 6342,
   },
+  bitlayerTestnet: {
+    url: "https://testnet.btrscan.com",
+    chainId: 200810,
+  },
+  roninTestnet: {
+    url: "https://saigon-app.roninchain.com",
+    chainId: 2021,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -340,6 +348,14 @@ export const networksInfo = {
   zircuitMain: {
     url: "https://explorer.zircuit.com",
     chainId: 48900,
+  },
+  bitlayerMain: {
+    url: "https://www.btrscan.com",
+    chainId: 200901,
+  },
+  roninMain: {
+    url: "https://app.roninchain.com",
+    chainId: 2020,
   },
 } as const;
 
