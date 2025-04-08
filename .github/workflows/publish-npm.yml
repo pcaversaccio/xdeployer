@@ -8,6 +8,11 @@ on:
 jobs:
   publish:
     runs-on: ${{ matrix.os }}
+    environment:
+      name: npm
+      url: https://npmjs.com/package/xdeployer
+    permissions:
+      id-token: write
     strategy:
       matrix:
         os:
@@ -50,3 +55,4 @@ jobs:
         run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
