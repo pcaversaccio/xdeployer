@@ -50,7 +50,7 @@
     "@types/node": "^22.14.0",
     "chai": "^4.5.0",
     "eslint": "^9.24.0",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-prettier": "^10.1.2",
     "ethers": "^6.13.5",
     "hardhat": "^2.22.19",
     "mocha": "^11.1.0",
