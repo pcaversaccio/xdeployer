@@ -222,7 +222,8 @@ The current available networks are:
   - `fraxtalTestnet`
   - `metisTestnet`
   - `modeTestnet`
-  - `seiArcticTestnet`
+  - `seiArcticDevnet`
+  - `seiAtlanticTestnet`
   - `xlayerTestnet`
   - `bobTestnet`
   - `coreTestnet`
@@ -298,6 +299,7 @@ The current available networks are:
   - `kavaMain`
   - `metisMain`
   - `modeMain`
+  - `seiMain`
   - `xlayerMain`
   - `bobMain`
   - `coreMain`

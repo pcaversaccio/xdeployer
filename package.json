@@ -47,7 +47,7 @@
     "@types/chai": "^4.3.20",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.14.1",
+    "@types/node": "^22.15.2",
     "chai": "^4.5.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
@@ -55,7 +55,7 @@
     "hardhat": "^2.23.0",
     "mocha": "^11.1.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-solidity": "^1.4.2",
+    "prettier-plugin-solidity": "^1.4.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.31.0"

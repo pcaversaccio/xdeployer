@@ -68,7 +68,14 @@ export const networksInfo = {
     chainId: 59902,
   },
   modeTestnet: { url: "https://sepolia.explorer.mode.network", chainId: 919 },
-  seiArcticTestnet: { url: "https://seistream.app", chainId: 713715 },
+  seiArcticDevnet: {
+    url: "https://seitrace.com/?chain=arctic-1",
+    chainId: 713715,
+  },
+  seiAtlanticTestnet: {
+    url: "https://seitrace.com/?chain=atlantic-2",
+    chainId: 1328,
+  },
   xlayerTestnet: {
     url: "https://www.oklink.com/x-layer-testnet",
     chainId: 195,
@@ -248,6 +255,7 @@ export const networksInfo = {
   kavaMain: { url: "https://kavascan.com", chainId: 2222 },
   metisMain: { url: "https://andromeda-explorer.metis.io", chainId: 1088 },
   modeMain: { url: "https://explorer.mode.network", chainId: 34443 },
+  seiMain: { url: "https://seitrace.com/?chain=pacific-1", chainId: 1329 },
   xlayerMain: { url: "https://www.oklink.com/x-layer", chainId: 196 },
   bobMain: { url: "https://explorer.gobob.xyz", chainId: 60808 },
   coreMain: { url: "https://scan.coredao.org", chainId: 1116 },
@@ -365,6 +373,18 @@ export const networksInfo = {
   },
 } as const;
 
+// Mapping of Sei networks to their chain query identifiers required for constructing the
+// correct Seitrace URLs
+export const seitraceMap = {
+  seiArcticDevnet: "arctic-1",
+  seiAtlanticTestnet: "atlantic-2",
+  seiMain: "pacific-1",
+} as const;
+
+// Define a type `SupportedSeitraceNetwork` that represents the keys from `seitraceMap`, representing
+// the supported Seitrace networks.
+export type SupportedSeitraceNetwork = keyof typeof seitraceMap;
+
 // Define a type `SupportedNetwork` that represents the union of all possible network names
 // from the `networksInfo` object. This type ensures that any value assigned to a variable
 // of type `SupportedNetwork` is a valid network key in `networksInfo`. It provides
@@ -378,18 +398,18 @@ export const networks = Object.keys(networksInfo) as SupportedNetwork[];
 
 // Generate the transaction hash link
 export const getTxHashLink = (network: SupportedNetwork, hash: string) => {
-  const baseUrl = networksInfo[network].url;
-  const path = network.startsWith("filecoin")
-    ? "message"
-    : network === "seiArcticTestnet"
-      ? "transactions"
-      : "tx";
-  return `${baseUrl}/${path}/${hash}`;
+  const baseUrl = new URL(networksInfo[network].url).origin;
+  return network.startsWith("filecoin")
+    ? `${baseUrl}/message/${hash}`
+    : network.startsWith("sei")
+      ? `${baseUrl}/tx/${hash}?chain=${seitraceMap[network as SupportedSeitraceNetwork]}`
+      : `${baseUrl}/tx/${hash}`;
 };
 
 // Generate the contract address link
 export const getAddressLink = (network: SupportedNetwork, address: string) => {
-  const baseUrl = networksInfo[network].url;
-  const path = network === "seiArcticTestnet" ? "account" : "address";
-  return `${baseUrl}/${path}/${address}`;
+  const baseUrl = new URL(networksInfo[network].url).origin;
+  return network.startsWith("sei")
+    ? `${baseUrl}/account/${address}?chain=${seitraceMap[network as SupportedSeitraceNetwork]}`
+    : `${baseUrl}/address/${address}`;
 };
