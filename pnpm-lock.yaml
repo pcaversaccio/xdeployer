@@ -13,7 +13,7 @@ importers:
         version: 9.25.1
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.8
-        version: 3.0.8(ethers@6.13.5)(hardhat@2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3))
+        version: 3.0.8(ethers@6.13.7)(hardhat@2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3))
       '@types/chai':
         specifier: ^4.3.20
         version: 4.3.20
@@ -36,8 +36,8 @@ importers:
         specifier: ^10.1.2
         version: 10.1.2(eslint@9.25.1)
       ethers:
-        specifier: ^6.13.5
-        version: 6.13.5
+        specifier: ^6.13.7
+        version: 6.13.7
       hardhat:
         specifier: ^2.23.0
         version: 2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3)
@@ -759,8 +759,8 @@ packages:
   ethereum-cryptography@2.2.1:
     resolution: {integrity: sha512-r/W8lkHSiTLxUxW8Rf3u4HGB0xQweG2RyETjywylKZSzLWoWAijRz8WCuOtJ6wah+avllXBqZuk29HCCvhEIRg==}
 
-  ethers@6.13.5:
-    resolution: {integrity: sha512-+knKNieu5EKRThQJWwqaJ10a6HE9sSehGeqWN65//wE7j47ZpFhKAnHB/JJFibwwg61I/koxaPsXbXpD/skNOQ==}
+  ethers@6.13.7:
+    resolution: {integrity: sha512-qbaJ0uIrjh+huP1Lad2f2QtzW5dcqSVjIzVH6yWB4dKoMuj2WqYz5aMeeQTCNpAKgTJBM5J9vcc2cYJ23UAimQ==}
     engines: {node: '>=14.0.0'}
 
   fast-deep-equal@3.1.3:
@@ -1779,10 +1779,10 @@ snapshots:
       '@nomicfoundation/edr-linux-x64-musl': 0.10.0
       '@nomicfoundation/edr-win32-x64-msvc': 0.10.0
 
-  '@nomicfoundation/hardhat-ethers@3.0.8(ethers@6.13.5)(hardhat@2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3))':
+  '@nomicfoundation/hardhat-ethers@3.0.8(ethers@6.13.7)(hardhat@2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3))':
     dependencies:
       debug: 4.4.0(supports-color@8.1.1)
-      ethers: 6.13.5
+      ethers: 6.13.7
       hardhat: 2.23.0(ts-node@10.9.2(@types/node@22.15.2)(typescript@5.8.3))(typescript@5.8.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
@@ -2329,7 +2329,7 @@ snapshots:
       '@scure/bip32': 1.4.0
       '@scure/bip39': 1.3.0
 
-  ethers@6.13.5:
+  ethers@6.13.7:
     dependencies:
       '@adraffy/ens-normalize': 1.10.1
       '@noble/curves': 1.2.0

@@ -51,7 +51,7 @@
     "chai": "^4.5.0",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
-    "ethers": "^6.13.5",
+    "ethers": "^6.13.7",
     "hardhat": "^2.23.0",
     "mocha": "^11.1.0",
     "prettier": "^3.5.3",
@@ -62,7 +62,7 @@
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
-    "ethers": "^6.13.5",
+    "ethers": "^6.13.7",
     "hardhat": "^2.23.0"
   },
   "pnpm": {
