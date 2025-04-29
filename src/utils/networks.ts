@@ -20,7 +20,7 @@ export const networksInfo = {
     url: "https://explorer.testnet.fantom.network",
     chainId: 4002,
   },
-  fuji: { url: "https://testnet.snowtrace.io", chainId: 43113 },
+  fuji: { url: "https://testnet.snowscan.xyz", chainId: 43113 },
   chiado: { url: "https://gnosis-chiado.blockscout.com", chainId: 10200 },
   moonbaseAlpha: { url: "https://moonbase.moonscan.io", chainId: 1287 },
   alfajores: { url: "https://alfajores.celoscan.io", chainId: 44787 },
@@ -100,7 +100,7 @@ export const networksInfo = {
     chainId: 23295,
   },
   worldChainTestnet: {
-    url: "https://worldchain-sepolia.explorer.alchemy.com",
+    url: "https://sepolia.worldscan.org",
     chainId: 4801,
   },
   plumeTestnet: {
@@ -172,8 +172,8 @@ export const networksInfo = {
     chainId: 743111,
   },
   berachainTestnet: {
-    url: "https://bartio.beratrail.io",
-    chainId: 80084,
+    url: "https://testnet.berascan.com",
+    chainId: 80069,
   },
   monadTestnet: {
     url: "https://testnet.monadexplorer.com",
@@ -219,7 +219,7 @@ export const networksInfo = {
   polygon: { url: "https://polygonscan.com", chainId: 137 },
   polygonZkEVMMain: { url: "https://zkevm.polygonscan.com", chainId: 1101 },
   fantomMain: { url: "https://explorer.fantom.network", chainId: 250 },
-  avalanche: { url: "https://snowtrace.io", chainId: 43114 },
+  avalanche: { url: "https://snowscan.xyz", chainId: 43114 },
   gnosis: { url: "https://gnosisscan.io", chainId: 100 },
   moonriver: { url: "https://moonriver.moonscan.io", chainId: 1285 },
   moonbeam: { url: "https://moonbeam.moonscan.io", chainId: 1284 },
@@ -272,7 +272,7 @@ export const networksInfo = {
     chainId: 23294,
   },
   worldChainMain: {
-    url: "https://worldchain-mainnet.explorer.alchemy.com",
+    url: "https://worldscan.org",
     chainId: 480,
   },
   plumeMain: {
