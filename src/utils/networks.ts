@@ -211,6 +211,10 @@ export const networksInfo = {
     url: "https://saigon-app.roninchain.com",
     chainId: 2021,
   },
+  zkSyncTestnet: {
+    url: "https://sepolia-era.zksync.network",
+    chainId: 300,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -370,6 +374,10 @@ export const networksInfo = {
   roninMain: {
     url: "https://app.roninchain.com",
     chainId: 2020,
+  },
+  zkSyncMain: {
+    url: "https://era.zksync.network",
+    chainId: 324,
   },
 } as const;
 

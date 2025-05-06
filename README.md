@@ -263,6 +263,7 @@ The current available networks are:
   - `megaETHTestnet`
   - `bitlayerTestnet`
   - `roninTestnet`
+  - `zkSyncTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -337,6 +338,7 @@ The current available networks are:
   - `zircuitMain`
   - `bitlayerMain`
   - `roninMain`
+  - `zkSyncMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
