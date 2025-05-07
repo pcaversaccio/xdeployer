@@ -104,7 +104,7 @@ export const networksInfo = {
     chainId: 4801,
   },
   plumeTestnet: {
-    url: "https://testnet-explorer.plumenetwork.xyz",
+    url: "https://testnet-explorer.plume.org",
     chainId: 98867,
   },
   unichainTestnet: {
@@ -280,7 +280,7 @@ export const networksInfo = {
     chainId: 480,
   },
   plumeMain: {
-    url: "https://phoenix-explorer.plumenetwork.xyz",
+    url: "https://explorer.plume.org",
     chainId: 98866,
   },
   unichainMain: {
