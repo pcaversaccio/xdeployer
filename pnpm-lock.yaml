@@ -13,7 +13,7 @@ importers:
         version: 9.26.0
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.0.8
-        version: 3.0.8(ethers@6.14.0)(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3))(typescript@5.8.3))
+        version: 3.0.8(ethers@6.14.0)(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3))(typescript@5.8.3))
       '@types/chai':
         specifier: ^4.3.20
         version: 4.3.20
@@ -24,8 +24,8 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
       '@types/node':
-        specifier: ^22.15.15
-        version: 22.15.15
+        specifier: ^22.15.16
+        version: 22.15.16
       chai:
         specifier: ^4.5.0
         version: 4.5.0
@@ -40,7 +40,7 @@ importers:
         version: 6.14.0
       hardhat:
         specifier: ^2.24.0
-        version: 2.24.0(ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3))(typescript@5.8.3)
+        version: 2.24.0(ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3))(typescript@5.8.3)
       mocha:
         specifier: ^11.2.2
         version: 11.2.2
@@ -52,7 +52,7 @@ importers:
         version: 2.0.0(prettier@3.5.3)
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@22.15.15)(typescript@5.8.3)
+        version: 10.9.2(@types/node@22.15.16)(typescript@5.8.3)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -417,8 +417,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@22.15.15':
-    resolution: {integrity: sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==}
+  '@types/node@22.15.16':
+    resolution: {integrity: sha512-3pr+KjwpVujqWqOKT8mNR+rd09FqhBLwg+5L/4t0cNYBzm/yEiYGCxWttjaPBsLtAo+WFNoXzGJfolM1JuRXoA==}
 
   '@types/node@22.7.5':
     resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
@@ -2044,11 +2044,11 @@ snapshots:
       '@nomicfoundation/edr-linux-x64-musl': 0.11.0
       '@nomicfoundation/edr-win32-x64-msvc': 0.11.0
 
-  '@nomicfoundation/hardhat-ethers@3.0.8(ethers@6.14.0)(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3))(typescript@5.8.3))':
+  '@nomicfoundation/hardhat-ethers@3.0.8(ethers@6.14.0)(hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3))(typescript@5.8.3))':
     dependencies:
       debug: 4.4.0(supports-color@8.1.1)
       ethers: 6.14.0
-      hardhat: 2.24.0(ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3))(typescript@5.8.3)
+      hardhat: 2.24.0(ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3))(typescript@5.8.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -2178,7 +2178,7 @@ snapshots:
 
   '@types/bn.js@5.1.6':
     dependencies:
-      '@types/node': 22.15.15
+      '@types/node': 22.15.16
 
   '@types/chai@4.3.20': {}
 
@@ -2187,19 +2187,19 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.15.15
+      '@types/node': 22.15.16
 
   '@types/json-schema@7.0.15': {}
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.15.15
+      '@types/node': 22.15.16
 
   '@types/lru-cache@5.1.1': {}
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@22.15.15':
+  '@types/node@22.15.16':
     dependencies:
       undici-types: 6.21.0
 
@@ -2859,7 +2859,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3))(typescript@5.8.3):
+  hardhat@2.24.0(ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3))(typescript@5.8.3):
     dependencies:
       '@ethereumjs/util': 9.1.0
       '@ethersproject/abi': 5.8.0
@@ -2903,7 +2903,7 @@ snapshots:
       uuid: 8.3.2
       ws: 7.5.10
     optionalDependencies:
-      ts-node: 10.9.2(@types/node@22.15.15)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@22.15.16)(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
       - bufferutil
@@ -3480,14 +3480,14 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
-  ts-node@10.9.2(@types/node@22.15.15)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@22.15.16)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.15.15
+      '@types/node': 22.15.16
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3

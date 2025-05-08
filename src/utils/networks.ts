@@ -215,6 +215,10 @@ export const networksInfo = {
     url: "https://sepolia-era.zksync.network",
     chainId: 300,
   },
+  immutableZkEVMTestnet: {
+    url: "https://explorer.testnet.immutable.com",
+    chainId: 13473,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -378,6 +382,10 @@ export const networksInfo = {
   zkSyncMain: {
     url: "https://era.zksync.network",
     chainId: 324,
+  },
+  immutableZkEVMMain: {
+    url: "https://explorer.immutable.com",
+    chainId: 13371,
   },
 } as const;
 
