@@ -219,6 +219,10 @@ export const networksInfo = {
     url: "https://explorer.testnet.immutable.com",
     chainId: 13473,
   },
+  abstractTestnet: {
+    url: "https://sepolia.abscan.org",
+    chainId: 11124,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -386,6 +390,10 @@ export const networksInfo = {
   immutableZkEVMMain: {
     url: "https://explorer.immutable.com",
     chainId: 13371,
+  },
+  abstractMain: {
+    url: "https://abscan.org",
+    chainId: 2741,
   },
 } as const;
 
