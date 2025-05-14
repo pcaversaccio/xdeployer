@@ -266,6 +266,7 @@ The current available networks are:
   - `zkSyncTestnet`
   - `immutableZkEVMTestnet`
   - `abstractTestnet`
+  - `hyperevmTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -343,6 +344,7 @@ The current available networks are:
   - `zkSyncMain`
   - `immutableZkEVMMain`
   - `abstractMain`
+  - `hyperevmMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
@@ -398,6 +400,9 @@ The contract creation transaction is displayed on Etherscan (or any other block 
 
 > [!WARNING]
 > Solidity version [`0.8.25`](https://github.com/ethereum/solidity/releases/tag/v0.8.25) defaults to EVM version [`cancun`](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/cancun.md), which features a number of new opcodes. Prior to running a deployment with a `>=0.8.25`-compiled bytecode (using the EVM version `cancun`), please verify that _all_ targeted EVM networks support the new `cancun` opcodes. Otherwise, a deployment attempt on an EVM chain without `cancun` support may result in deployment or runtime failure(s).
+
+> [!WARNING]
+> Solidity version [`0.8.30`](https://github.com/ethereum/solidity/releases/tag/v0.8.30) defaults to EVM version [`prague`](https://github.com/ethereum/execution-specs/blob/master/network-upgrades/mainnet-upgrades/prague.md), which introduces _no new opcodes_ but includes a few new precompiled contracts (see [EIP-2537](https://eips.ethereum.org/EIPS/eip-2537)). If your contract(s) make use of these new precompiled contracts, ensure that _all_ targeted EVM networks support the `prague` precompiled contracts. Otherwise, deployed contracts may encounter runtime failure(s).
 
 ## Usage
 

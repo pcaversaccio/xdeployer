@@ -223,6 +223,10 @@ export const networksInfo = {
     url: "https://sepolia.abscan.org",
     chainId: 11124,
   },
+  hyperevmTestnet: {
+    url: "https://testnet.purrsec.com",
+    chainId: 998,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -394,6 +398,10 @@ export const networksInfo = {
   abstractMain: {
     url: "https://abscan.org",
     chainId: 2741,
+  },
+  hyperevmMain: {
+    url: "https://purrsec.com",
+    chainId: 999,
   },
 } as const;
 
