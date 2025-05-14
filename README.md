@@ -418,13 +418,13 @@ npx hardhat xdeploy
 
 EVM opcodes can only be called via a smart contract. I have deployed a helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with the same address across all the available networks to make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. During your deployment, the plugin will call this contract.
 
-### A Note on `SELFDESTRUCT`
+### A Note on [`SELFDESTRUCT`](https://www.evm.codes/?fork=cancun#ff)
 
-Using the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode always allows to redeploy a new smart contract to a previously selfdestructed contract address. However, if a contract creation is attempted, due to either a creation transaction or the [`CREATE`](https://www.evm.codes/#f0?fork=cancun)/[`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
+Using the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode always allows to redeploy a new smart contract to a previously selfdestructed contract address.[^1] However, if a contract creation is attempted, due to either a creation transaction or the [`CREATE`](https://www.evm.codes/#f0?fork=cancun)/[`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode, and the destination address already has either nonzero nonce, or non-empty code, then the creation throws immediately, with exactly the same behavior as would arise if the first byte in the init code were an invalid opcode. This applies retroactively starting from genesis.
 
 ### A Note on the Contract Creation Transaction
 
-It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with address `0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed`. If you are relying on common smart contract libraries such as [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)[^1] for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
+It is important to note that the `msg.sender` of the contract creation transaction is the helper smart contract [`CreateX`](https://github.com/pcaversaccio/createx) with address `0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed`. If you are relying on common smart contract libraries such as [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts)[^2] for your smart contract, which set certain constructor arguments to `msg.sender` (e.g. `owner`), you will need to change these arguments to `tx.origin` so that they are set to your deployer's EOA address. For another workaround, see [here](https://github.com/pcaversaccio/xdeployer/discussions/18).
 
 > [!CAUTION]
 > Please familiarise yourself with the security considerations concerning `tx.origin`. You can find more information about it, e.g. [here](https://docs.soliditylang.org/en/latest/security-considerations.html#tx-origin).
@@ -433,4 +433,6 @@ It is important to note that the `msg.sender` of the contract creation transacti
 
 I am a strong advocate of the open-source and free software paradigm. However, if you feel my work deserves a donation, you can send it to this address: [`0x07bF3CDA34aA78d92949bbDce31520714AB5b228`](https://etherscan.io/address/0x07bF3CDA34aA78d92949bbDce31520714AB5b228). I can pledge that I will use this money to help fix more existing challenges in the Ethereum ecosystem 🤝.
 
-[^1]: Please note that [OpenZeppelin Contracts version `5.0.0`](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.0.0) has made the initial `owner` explicit (see PR [#4267](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4267)).
+[^1]: The `cancun` hard fork introduced [EIP-6780](https://eips.ethereum.org/EIPS/eip-6780), which redefines the behaviour of [`SELFDESTRUCT`](https://www.evm.codes/?fork=cancun#ff). It now only transfers the contract's balance to the target address without deleting the contract's state or code. The contract is only removed if [`SELFDESTRUCT`](https://www.evm.codes/?fork=cancun#ff) is called in the same transaction in which it was created.
+
+[^2]: Please note that [OpenZeppelin Contracts version `5.0.0`](https://github.com/OpenZeppelin/openzeppelin-contracts/releases/tag/v5.0.0) has made the initial `owner` explicit (see PR [#4267](https://github.com/OpenZeppelin/openzeppelin-contracts/pull/4267)).
