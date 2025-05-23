@@ -403,6 +403,10 @@ export const networksInfo = {
     url: "https://purrsec.com",
     chainId: 999,
   },
+  kaiaMain: {
+    url: "https://kaiascope.com",
+    chainId: 8217,
+  },
 } as const;
 
 // Mapping of Sei networks to their chain query identifiers required for constructing the
@@ -441,7 +445,9 @@ export const getTxHashLink = (network: SupportedNetwork, hash: string) => {
 // Generate the contract address link
 export const getAddressLink = (network: SupportedNetwork, address: string) => {
   const baseUrl = new URL(networksInfo[network].url).origin;
-  return network.startsWith("sei")
-    ? `${baseUrl}/account/${address}?chain=${seitraceMap[network as SupportedSeitraceNetwork]}`
-    : `${baseUrl}/address/${address}`;
+  return `${baseUrl}/${network.startsWith("sei") || network.startsWith("kaia") ? "account" : "address"}/${address}${
+    network.startsWith("sei")
+      ? `?chain=${seitraceMap[network as SupportedSeitraceNetwork]}`
+      : ""
+  }`;
 };

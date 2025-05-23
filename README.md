@@ -345,6 +345,7 @@ The current available networks are:
   - `immutableZkEVMMain`
   - `abstractMain`
   - `hyperevmMain`
+  - `kaiaMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
