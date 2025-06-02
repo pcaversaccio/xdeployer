@@ -227,6 +227,10 @@ export const networksInfo = {
     url: "https://testnet.purrsec.com",
     chainId: 998,
   },
+  apeChainTestnet: {
+    url: "https://curtis.apescan.io",
+    chainId: 33111,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -406,6 +410,10 @@ export const networksInfo = {
   kaiaMain: {
     url: "https://kaiascope.com",
     chainId: 8217,
+  },
+  apeChainMain: {
+    url: "https://apescan.io",
+    chainId: 33139,
   },
 } as const;
 

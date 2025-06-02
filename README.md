@@ -267,6 +267,7 @@ The current available networks are:
   - `immutableZkEVMTestnet`
   - `abstractTestnet`
   - `hyperevmTestnet`
+  - `apeChainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -346,6 +347,7 @@ The current available networks are:
   - `abstractMain`
   - `hyperevmMain`
   - `kaiaMain`
+  - `apeChainMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
