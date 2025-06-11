@@ -1,5 +1,9 @@
 {
   "require": "ts-node/register/files",
   "ignore": ["test/fixture-projects/**/*"],
-  "timeout": 150000
+  "spec": "test/**/*.test.ts",
+  "timeout": 150000,
+  "extension": ["ts"],
+  "exit": true,
+  "recursive": true
 }

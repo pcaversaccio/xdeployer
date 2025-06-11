@@ -4,7 +4,7 @@ const tseslint = require("typescript-eslint");
 const eslintConfigPrettier = require("eslint-config-prettier");
 /* eslint-enable @typescript-eslint/no-require-imports */
 
-/** @type {import("eslint").Linter.Config} */
+/** @type {import('typescript-eslint').TSESLint.FlatConfig.ConfigArray} */
 module.exports = tseslint.config(
   {
     files: ["**/*.{js,ts}"],
