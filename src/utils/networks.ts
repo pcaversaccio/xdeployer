@@ -231,6 +231,10 @@ export const networksInfo = {
     url: "https://curtis.apescan.io",
     chainId: 33111,
   },
+  botanixTestnet: {
+    url: "https://testnet.botanixscan.io",
+    chainId: 3636,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -414,6 +418,10 @@ export const networksInfo = {
   apeChainMain: {
     url: "https://apescan.io",
     chainId: 33139,
+  },
+  botanixMain: {
+    url: "https://botanixscan.io",
+    chainId: 3637,
   },
 } as const;
 
