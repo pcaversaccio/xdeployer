@@ -235,6 +235,10 @@ export const networksInfo = {
     url: "https://testnet.botanixscan.io",
     chainId: 3636,
   },
+  tacTestnet: {
+    url: "https://spb.explorer.tac.build",
+    chainId: 2391,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -422,6 +426,10 @@ export const networksInfo = {
   botanixMain: {
     url: "https://botanixscan.io",
     chainId: 3637,
+  },
+  tacMain: {
+    url: "https://explorer.tac.build",
+    chainId: 239,
   },
 } as const;
 
