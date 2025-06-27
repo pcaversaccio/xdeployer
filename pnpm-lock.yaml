@@ -45,11 +45,11 @@ importers:
         specifier: ^11.7.1
         version: 11.7.1
       prettier:
-        specifier: ^3.6.1
-        version: 3.6.1
+        specifier: ^3.6.2
+        version: 3.6.2
       prettier-plugin-solidity:
         specifier: ^2.0.0
-        version: 2.0.0(prettier@3.6.1)
+        version: 2.0.0(prettier@3.6.2)
       ts-node:
         specifier: ^10.9.2
         version: 10.9.2(@types/node@24.0.4)(typescript@5.8.3)
@@ -1208,8 +1208,8 @@ packages:
     peerDependencies:
       prettier: '>=3.0.0'
 
-  prettier@3.6.1:
-    resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2851,14 +2851,14 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-solidity@2.0.0(prettier@3.6.1):
+  prettier-plugin-solidity@2.0.0(prettier@3.6.2):
     dependencies:
       '@nomicfoundation/slang': 1.1.0
       '@solidity-parser/parser': 0.20.1
-      prettier: 3.6.1
+      prettier: 3.6.2
       semver: 7.7.2
 
-  prettier@3.6.1: {}
+  prettier@3.6.2: {}
 
   punycode@2.3.1: {}
 
