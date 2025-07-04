@@ -431,6 +431,10 @@ export const networksInfo = {
     url: "https://explorer.tac.build",
     chainId: 239,
   },
+  katanaMain: {
+    url: "https://explorer.katanarpc.com",
+    chainId: 747474,
+  },
 } as const;
 
 // Mapping of Sei networks to their chain query identifiers required for constructing the
