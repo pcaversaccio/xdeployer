@@ -412,7 +412,7 @@ export const networksInfo = {
     chainId: 2741,
   },
   hyperevmMain: {
-    url: "https://purrsec.com",
+    url: "https://hyperevmscan.io",
     chainId: 999,
   },
   kaiaMain: {
