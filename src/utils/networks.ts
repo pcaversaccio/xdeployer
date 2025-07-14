@@ -331,6 +331,10 @@ export const networksInfo = {
     url: "https://explorer.superseed.xyz",
     chainId: 5330,
   },
+  storyMain: {
+    url: "https://www.storyscan.io",
+    chainId: 1514,
+  },
   sonicMain: {
     url: "https://sonicscan.org",
     chainId: 146,

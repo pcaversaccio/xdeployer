@@ -327,6 +327,7 @@ The current available networks are:
   - `liskMain`
   - `metalL2Main`
   - `superseedMain`
+  - `storyMain`
   - `sonicMain`
   - `flowMain`
   - `inkMain`
