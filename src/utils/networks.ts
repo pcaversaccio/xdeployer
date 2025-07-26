@@ -33,7 +33,7 @@ export const networksInfo = {
     chainId: 1666700000,
   },
   spark: { url: "https://explorer.fusespark.io", chainId: 123 },
-  cronosTestnet: { url: "https://cronos.org/explorer/testnet3", chainId: 338 },
+  cronosTestnet: { url: "https://explorer.cronos.org/testnet", chainId: 338 },
   evmosTestnet: {
     url: "https://www.mintscan.io/evmos-testnet",
     chainId: 9000,
