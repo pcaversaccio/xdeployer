@@ -13,7 +13,7 @@ importers:
         version: 9.33.0
       '@nomicfoundation/hardhat-ethers':
         specifier: ^3.1.0
-        version: 3.1.0(ethers@6.15.0)(hardhat@2.26.2(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2))
+        version: 3.1.0(ethers@6.15.0)(hardhat@2.26.3(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2))
       '@types/chai':
         specifier: ^4.3.20
         version: 4.3.20
@@ -39,8 +39,8 @@ importers:
         specifier: ^6.15.0
         version: 6.15.0
       hardhat:
-        specifier: ^2.26.2
-        version: 2.26.2(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2)
+        specifier: ^2.26.3
+        version: 2.26.3(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2)
       mocha:
         specifier: ^11.7.1
         version: 11.7.1
@@ -888,8 +888,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  hardhat@2.26.2:
-    resolution: {integrity: sha512-uIETdC1MAWSnu+48B+583r3b8JqHtkBGEiXoAPV5hcXYGkCW5Fnnpn7SIgPa8owhObm9oUqIqMXMJ6H92N7Pyg==}
+  hardhat@2.26.3:
+    resolution: {integrity: sha512-gBfjbxCCEaRgMCRgTpjo1CEoJwqNPhyGMMVHYZJxoQ3LLftp2erSVf8ZF6hTQC0r2wst4NcqNmLWqMnHg1quTw==}
     hasBin: true
     peerDependencies:
       ts-node: '*'
@@ -1804,11 +1804,11 @@ snapshots:
       '@nomicfoundation/edr-linux-x64-musl': 0.11.3
       '@nomicfoundation/edr-win32-x64-msvc': 0.11.3
 
-  '@nomicfoundation/hardhat-ethers@3.1.0(ethers@6.15.0)(hardhat@2.26.2(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2))':
+  '@nomicfoundation/hardhat-ethers@3.1.0(ethers@6.15.0)(hardhat@2.26.3(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2))':
     dependencies:
       debug: 4.4.1(supports-color@8.1.1)
       ethers: 6.15.0
-      hardhat: 2.26.2(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2)
+      hardhat: 2.26.3(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -2484,7 +2484,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  hardhat@2.26.2(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2):
+  hardhat@2.26.3(ts-node@10.9.2(@types/node@24.2.1)(typescript@5.9.2))(typescript@5.9.2):
     dependencies:
       '@ethereumjs/util': 9.1.0
       '@ethersproject/abi': 5.8.0
