@@ -178,7 +178,7 @@ xdeploy: {
 ```
 
 > [!NOTE]
-> We recommend using [Hardhat configuration variables](https://hardhat.org/hardhat-runner/docs/guides/configuration-variables) introduced in Hardhat version [`2.19.0`](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.19.0) to set the private key of your signer.
+> We recommend using [Hardhat configuration variables](https://v2.hardhat.org/hardhat-runner/docs/guides/configuration-variables) introduced in Hardhat version [`2.19.0`](https://github.com/NomicFoundation/hardhat/releases/tag/hardhat%402.19.0) to set the private key of your signer.
 
 The current available networks are:
 
@@ -421,7 +421,7 @@ npx hardhat xdeploy
 
 ### Usage With Truffle
 
-[Truffle](https://archive.trufflesuite.com) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5) (or if you use Truffle `v4` [`hardhat-truffle4`](https://hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle4)) to integrate with `TruffleContract` from Truffle `v5`. This plugin allows tests and scripts written for Truffle to work with Hardhat.
+[Truffle](https://archive.trufflesuite.com) suite users can leverage the Hardhat plugin [`hardhat-truffle5`](https://v2.hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle5) (or if you use Truffle `v4` [`hardhat-truffle4`](https://v2.hardhat.org/hardhat-runner/plugins/nomiclabs-hardhat-truffle4)) to integrate with `TruffleContract` from Truffle `v5`. This plugin allows tests and scripts written for Truffle to work with Hardhat.
 
 ## How It Works
 
