@@ -239,6 +239,10 @@ export const networksInfo = {
     url: "https://spb.explorer.tac.build",
     chainId: 2391,
   },
+  plasmaTestnet: {
+    url: "https://testnet-rpc.plasma.to",
+    chainId: 9746,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -438,6 +442,10 @@ export const networksInfo = {
   katanaMain: {
     url: "https://explorer.katanarpc.com",
     chainId: 747474,
+  },
+  plasmaMain: {
+    url: "https://rpc.plasma.to",
+    chainId: 9745,
   },
 } as const;
 

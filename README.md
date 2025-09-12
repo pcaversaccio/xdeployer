@@ -270,6 +270,7 @@ The current available networks are:
   - `apeChainTestnet`
   - `botanixTestnet`
   - `tacTestnet`
+  - `plasmaTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -354,6 +355,7 @@ The current available networks are:
   - `botanixMain`
   - `tacMain`
   - `katanaMain`
+  - `plasmaMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
