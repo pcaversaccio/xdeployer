@@ -91,7 +91,7 @@ export const networksInfo = {
   taraxaTestnet: { url: "https://testnet.explorer.taraxa.io", chainId: 842 },
   taikoTestnet: { url: "https://hekla.taikoscan.io", chainId: 167009 },
   zetaChainTestnet: {
-    url: "https://athens.explorer.zetachain.com",
+    url: "https://testnet.zetascan.com",
     chainId: 7001,
   },
   "5ireChainTestnet": { url: "https://testnet.5irescan.io", chainId: 997 },
