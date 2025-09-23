@@ -297,7 +297,7 @@ export const networksInfo = {
   taraxaMain: { url: "https://mainnet.explorer.taraxa.io", chainId: 841 },
   gravityAlphaMain: { url: "https://explorer.gravity.xyz", chainId: 1625 },
   taikoMain: { url: "https://taikoscan.io", chainId: 167000 },
-  zetaChainMain: { url: "https://explorer.zetachain.com", chainId: 7000 },
+  zetaChainMain: { url: "https://zetascan.com", chainId: 7000 },
   "5ireChainMain": { url: "https://5irescan.io", chainId: 995 },
   sapphireMain: {
     url: "https://explorer.oasis.io/mainnet/sapphire",
