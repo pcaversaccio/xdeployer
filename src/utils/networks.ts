@@ -240,7 +240,7 @@ export const networksInfo = {
     chainId: 2391,
   },
   plasmaTestnet: {
-    url: "https://testnet-rpc.plasma.to",
+    url: "https://testnet.plasmascan.to",
     chainId: 9746,
   },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
@@ -444,7 +444,7 @@ export const networksInfo = {
     chainId: 747474,
   },
   plasmaMain: {
-    url: "https://rpc.plasma.to",
+    url: "https://plasmascan.to",
     chainId: 9745,
   },
 } as const;
