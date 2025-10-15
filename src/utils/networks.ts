@@ -23,7 +23,7 @@ export const networksInfo = {
   fuji: { url: "https://testnet.snowscan.xyz", chainId: 43113 },
   chiado: { url: "https://gnosis-chiado.blockscout.com", chainId: 10200 },
   moonbaseAlpha: { url: "https://moonbase.moonscan.io", chainId: 1287 },
-  alfajores: { url: "https://alfajores.celoscan.io", chainId: 44787 },
+  celoTestnet: { url: "https://sepolia.celoscan.io", chainId: 11142220 },
   auroraTestnet: {
     url: "https://explorer.testnet.aurora.dev",
     chainId: 1313161555,

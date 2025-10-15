@@ -201,7 +201,7 @@ The current available networks are:
   - `fuji`
   - `chiado`
   - `moonbaseAlpha`
-  - `alfajores`
+  - `celoTestnet`
   - `auroraTestnet`
   - `harmonyTestnet`
   - `spark`
