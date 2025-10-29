@@ -243,6 +243,10 @@ export const networksInfo = {
     url: "https://testnet.plasmascan.to",
     chainId: 9746,
   },
+  sophonTestnet: {
+    url: "https://testnet.sophscan.xyz",
+    chainId: 531050104,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -446,6 +450,10 @@ export const networksInfo = {
   plasmaMain: {
     url: "https://plasmascan.to",
     chainId: 9745,
+  },
+  sophonMain: {
+    url: "https://sophscan.xyz",
+    chainId: 50104,
   },
 } as const;
 
