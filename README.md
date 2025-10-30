@@ -272,6 +272,7 @@ The current available networks are:
   - `tacTestnet`
   - `plasmaTestnet`
   - `sophonTestnet`
+  - `jovayTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -358,6 +359,7 @@ The current available networks are:
   - `katanaMain`
   - `plasmaMain`
   - `sophonMain`
+  - `jovayMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

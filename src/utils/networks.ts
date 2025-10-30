@@ -247,6 +247,10 @@ export const networksInfo = {
     url: "https://testnet.sophscan.xyz",
     chainId: 531050104,
   },
+  jovayTestnet: {
+    url: "https://sepolia-explorer.jovay.io/l2",
+    chainId: 2019775,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -454,6 +458,10 @@ export const networksInfo = {
   sophonMain: {
     url: "https://sophscan.xyz",
     chainId: 50104,
+  },
+  jovayMain: {
+    url: "https://explorer.jovay.io/l2",
+    chainId: 5734951,
   },
 } as const;
 
