@@ -62,9 +62,9 @@
     "typescript-eslint": "^8.46.2"
   },
   "peerDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.1.1",
+    "@nomicfoundation/hardhat-ethers": "^3.1.2",
     "ethers": "^6.15.0",
-    "hardhat": "^2.26.4"
+    "hardhat": "^2.26.5"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
