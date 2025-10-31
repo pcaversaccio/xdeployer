@@ -35,10 +35,10 @@ const config: HardhatUserConfig = {
     constructorArgsPath: "./deploy-args.ts",
     salt: ethers.id(Date.now().toString()),
     signer: vars.get("XDEPLOYER_TEST_ACCOUNT", ""),
-    networks: ["sepolia", "holesky"],
+    networks: ["sepolia", "hoodi"],
     rpcUrls: [
       vars.get("ETH_SEPOLIA_TESTNET_URL", "https://rpc.sepolia.org"),
-      vars.get("ETH_HOLESKY_TESTNET_URL", "https://holesky.rpc.thirdweb.com"),
+      vars.get("ETH_HOODI_TESTNET_URL", "https://0xrpc.io/hoodi"),
     ],
     gasLimit: 1.2 * 10 ** 6,
   },

@@ -3,8 +3,8 @@ import { assert, expect } from "chai";
 import { NomicLabsHardhatPluginError } from "hardhat/plugins";
 import { SupportedNetwork } from "./utils/networks";
 
-describe("Plugin test xdeploy: Deploy on Sepolia and Holešky with constructor", function () {
-  useEnvironment("sepolia-holesky-project-with-constructor");
+describe("Plugin test xdeploy: Deploy on Sepolia and Hoodi with constructor", function () {
+  useEnvironment("sepolia-hoodi-project-with-constructor");
   it("calling xdeploy successfully", async function () {
     return this.hre.run("xdeploy");
   });
