@@ -175,7 +175,7 @@ export const networksInfo = {
     chainId: 80069,
   },
   monadTestnet: {
-    url: "https://testnet.monadexplorer.com",
+    url: "https://testnet.monvision.io",
     chainId: 10143,
   },
   cornTestnet: {
