@@ -59,7 +59,7 @@
     "prettier-plugin-solidity": "^2.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.4"
+    "typescript-eslint": "^8.47.0"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.1.2",
