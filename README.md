@@ -341,6 +341,7 @@ The current available networks are:
   - `swellMain`
   - `hemiMain`
   - `berachainMain`
+  - `monadMain`
   - `cornMain`
   - `arenazMain`
   - `iotexMain`

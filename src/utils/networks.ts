@@ -175,7 +175,7 @@ export const networksInfo = {
     chainId: 80069,
   },
   monadTestnet: {
-    url: "https://testnet.monadvision.com",
+    url: "https://testnet.monadscan.com",
     chainId: 10143,
   },
   cornTestnet: {
@@ -243,7 +243,7 @@ export const networksInfo = {
     chainId: 9746,
   },
   sophonTestnet: {
-    url: "https://testnet.sophscan.xyz",
+    url: "https://explorer.testnet.sophon.xyz",
     chainId: 531050104,
   },
   jovayTestnet: {
@@ -390,6 +390,10 @@ export const networksInfo = {
     url: "https://berascan.com",
     chainId: 80094,
   },
+  monadMain: {
+    url: "https://monadscan.com",
+    chainId: 143,
+  },
   cornMain: {
     url: "https://cornscan.io",
     chainId: 21000000,
@@ -459,7 +463,7 @@ export const networksInfo = {
     chainId: 9745,
   },
   sophonMain: {
-    url: "https://sophscan.xyz",
+    url: "https://explorer.sophon.xyz",
     chainId: 50104,
   },
   jovayMain: {
