@@ -44,16 +44,16 @@
   ],
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@nomicfoundation/hardhat-ethers": "^3.1.2",
-    "@types/chai": "^4.3.20",
+    "@nomicfoundation/hardhat-ethers": "^4.0.0",
+    "@types/chai": "^5.0.0",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.10.1",
-    "chai": "^4.5.0",
+    "chai": "^6.0.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "ethers": "^6.15.0",
-    "hardhat": "^2.27.1",
+    "hardhat": "^3.0.0",
     "mocha": "^11.7.5",
     "prettier": "^3.7.3",
     "prettier-plugin-solidity": "^2.2.0",
@@ -62,9 +62,9 @@
     "typescript-eslint": "^8.48.0"
   },
   "peerDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^3.1.2",
+    "@nomicfoundation/hardhat-ethers": "^4.0.0",
     "ethers": "^6.15.0",
-    "hardhat": "^2.27.1"
+    "hardhat": "^3.0.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
