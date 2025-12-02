@@ -273,6 +273,8 @@ The current available networks are:
   - `sophonTestnet`
   - `jovayTestnet`
   - `intuitionTestnet`
+  - `memecoreTestnet`
+  - `lightlinkTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -362,6 +364,8 @@ The current available networks are:
   - `sophonMain`
   - `jovayMain`
   - `intuitionMain`
+  - `memecoreMain`
+  - `lightlinkMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

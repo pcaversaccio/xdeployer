@@ -254,6 +254,14 @@ export const networksInfo = {
     url: "https://testnet.explorer.intuition.systems",
     chainId: 13579,
   },
+  memecoreTestnet: {
+    url: "https://insectarium.blockscout.memecore.com",
+    chainId: 43522,
+  },
+  lightlinkTestnet: {
+    url: "https://pegasus.lightlink.io",
+    chainId: 1891,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
@@ -473,6 +481,14 @@ export const networksInfo = {
   intuitionMain: {
     url: "https://explorer.intuition.systems",
     chainId: 1155,
+  },
+  memecoreMain: {
+    url: "https://memecorescan.io",
+    chainId: 4352,
+  },
+  lightlinkMain: {
+    url: "https://phoenix.lightlink.io",
+    chainId: 1890,
   },
 } as const;
 
