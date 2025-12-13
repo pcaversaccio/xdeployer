@@ -25,7 +25,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.25.0",
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
@@ -43,28 +43,29 @@
     "README.md"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
+    "@eslint/js": "^9.39.2",
     "@nomicfoundation/hardhat-ethers": "^3.1.2",
     "@types/chai": "^4.3.20",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.1",
     "chai": "^4.5.0",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "ethers": "^6.16.0",
-    "hardhat": "^2.27.1",
+    "globals": "^16.5.0",
+    "hardhat": "^2.27.2",
     "mocha": "^11.7.5",
     "prettier": "^3.7.4",
     "prettier-plugin-solidity": "^2.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1"
+    "typescript-eslint": "^8.49.0"
   },
   "peerDependencies": {
     "@nomicfoundation/hardhat-ethers": "^3.1.2",
-    "ethers": "^6.15.0",
-    "hardhat": "^2.27.1"
+    "ethers": "^6.16.0",
+    "hardhat": "^2.27.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

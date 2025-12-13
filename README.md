@@ -425,6 +425,9 @@ The contract creation transaction is displayed on Etherscan (or any other block 
 > [!WARNING]
 > Solidity version [`0.8.30`](https://github.com/argotorg/solidity/releases/tag/v0.8.30) defaults to EVM version [`prague`](https://github.com/ethereum/execution-specs/blob/forks/osaka/src/ethereum/forks/prague/__init__.py), which introduces _no new opcodes_ but includes a few new precompiled contracts (see [EIP-2537](https://eips.ethereum.org/EIPS/eip-2537)). If your contract(s) make use of these new precompiled contracts, ensure that _all_ targeted EVM networks support the `prague` precompiled contracts. Otherwise, deployed contracts may encounter runtime failure(s).
 
+> [!WARNING]
+> Solidity version [`0.8.31`](https://github.com/argotorg/solidity/releases/tag/v0.8.31) defaults to EVM version [`osaka`](https://github.com/ethereum/execution-specs/blob/forks/osaka/src/ethereum/forks/osaka/__init__.py), which features a new opcode [`CLZ`](https://eips.ethereum.org/EIPS/eip-7939) and precompiled contract [`P256VERIFY`](https://eips.ethereum.org/EIPS/eip-7951). Prior to running a deployment with a `>=0.8.31`-compiled bytecode (using the EVM version `osaka`), please verify that _all_ targeted EVM networks support support the `CLZ` opcode. Otherwise, a deployment attempt on an EVM chain without `osaka` support may result in deployment or runtime failure(s).
+
 ## Usage
 
 ```console
