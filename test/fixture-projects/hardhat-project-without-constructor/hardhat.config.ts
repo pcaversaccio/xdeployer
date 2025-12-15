@@ -11,7 +11,7 @@ const config: HardhatUserConfig = {
         enabled: true,
         runs: 999_999,
       },
-      evmVersion: "paris", // Prevent using the `PUSH0` and `cancun` opcodes.
+      evmVersion: "osaka",
     },
   },
   networks: {
