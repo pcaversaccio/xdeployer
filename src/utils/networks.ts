@@ -281,7 +281,7 @@ export const networksInfo = {
   },
   harmonyMain: { url: "https://explorer.harmony.one", chainId: 1666600000 },
   fuse: { url: "https://explorer.fuse.io", chainId: 122 },
-  cronosMain: { url: "https://cronoscan.com", chainId: 25 },
+  cronosMain: { url: "https://explorer.cronos.org", chainId: 25 },
   evmosMain: { url: "https://www.mintscan.io/evmos", chainId: 9001 },
   bobaMain: { url: "https://bobascan.com", chainId: 288 },
   cantoMain: { url: "https://tuber.build", chainId: 7700 },
