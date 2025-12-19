@@ -25,7 +25,7 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@10.26.0",
+  "packageManager": "pnpm@10.26.1",
   "scripts": {
     "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
     "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
@@ -57,7 +57,7 @@
     "hardhat": "^2.28.0",
     "mocha": "^11.7.5",
     "prettier": "^3.7.4",
-    "prettier-plugin-solidity": "^2.2.0",
+    "prettier-plugin-solidity": "^2.2.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.50.0"
