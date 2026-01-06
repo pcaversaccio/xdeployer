@@ -155,8 +155,8 @@ export const networksInfo = {
     chainId: 11011,
   },
   etherlinkTestnet: {
-    url: "https://testnet.explorer.etherlink.com",
-    chainId: 128123,
+    url: "https://shadownet.explorer.etherlink.com",
+    chainId: 127823,
   },
   soneiumTestnet: {
     url: "https://soneium-minato.blockscout.com",
