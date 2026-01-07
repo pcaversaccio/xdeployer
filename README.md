@@ -192,6 +192,7 @@ The current available networks are:
   - `sepolia`
   - `hoodi`
   - `bscTestnet`
+  - `opbnbTestnet`
   - `optimismSepolia`
   - `arbitrumSepolia`
   - `amoy`
@@ -278,6 +279,7 @@ The current available networks are:
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
+  - `opbnbMain`
   - `optimismMain`
   - `arbitrumOne`
   - `arbitrumNova`
