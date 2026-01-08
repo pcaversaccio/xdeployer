@@ -62,7 +62,7 @@ export const networksInfo = {
   },
   blastTestnet: { url: "https://sepolia.blastscan.io", chainId: 168587773 },
   dosTestnet: { url: "https://test.doscan.io", chainId: 3939 },
-  fraxtalTestnet: { url: "https://holesky.fraxscan.com", chainId: 2522 },
+  fraxtalTestnet: { url: "https://hoodi.fraxscan.com", chainId: 2523 },
   metisTestnet: {
     url: "https://sepolia-explorer.metisdevops.link",
     chainId: 59902,
@@ -89,7 +89,7 @@ export const networksInfo = {
   },
   chilizTestnet: { url: "https://testnet.chiliscan.com", chainId: 88882 },
   taraxaTestnet: { url: "https://testnet.explorer.taraxa.io", chainId: 842 },
-  taikoTestnet: { url: "https://hekla.taikoscan.io", chainId: 167009 },
+  taikoTestnet: { url: "https://hoodi.taikoscan.io", chainId: 167013 },
   zetaChainTestnet: {
     url: "https://testnet.zetascan.com",
     chainId: 7001,
