@@ -148,8 +148,8 @@ export const networksInfo = {
     chainId: 763373,
   },
   morphTestnet: {
-    url: "https://explorer-holesky.morphl2.io",
-    chainId: 2810,
+    url: "https://explorer-hoodi.morph.network",
+    chainId: 2910,
   },
   shapeTestnet: {
     url: "https://sepolia.shapescan.xyz",
@@ -373,7 +373,7 @@ export const networksInfo = {
     chainId: 57073,
   },
   morphMain: {
-    url: "https://explorer.morphl2.io",
+    url: "https://explorer.morph.network",
     chainId: 2818,
   },
   shapeMain: {
