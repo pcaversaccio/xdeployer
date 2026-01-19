@@ -239,6 +239,10 @@ export const networksInfo = {
     url: "https://spb.explorer.tac.build",
     chainId: 2391,
   },
+  katanaTestnet: {
+    url: "https://bokuto.katanascan.com",
+    chainId: 737373,
+  },
   plasmaTestnet: {
     url: "https://testnet.plasmascan.to",
     chainId: 9746,
@@ -465,7 +469,7 @@ export const networksInfo = {
     chainId: 239,
   },
   katanaMain: {
-    url: "https://explorer.katanarpc.com",
+    url: "https://katanascan.com",
     chainId: 747474,
   },
   plasmaMain: {

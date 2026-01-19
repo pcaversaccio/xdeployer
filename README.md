@@ -270,6 +270,7 @@ The current available networks are:
   - `apeChainTestnet`
   - `botanixTestnet`
   - `tacTestnet`
+  - `katanaTestnet`
   - `plasmaTestnet`
   - `sophonTestnet`
   - `jovayTestnet`
