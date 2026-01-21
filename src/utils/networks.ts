@@ -267,6 +267,10 @@ export const networksInfo = {
     url: "https://pegasus.lightlink.io",
     chainId: 1891,
   },
+  xrplEVMTestnet: {
+    url: "https://explorer.testnet.xrplevm.org",
+    chainId: 1449000,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -495,6 +499,10 @@ export const networksInfo = {
   lightlinkMain: {
     url: "https://phoenix.lightlink.io",
     chainId: 1890,
+  },
+  xrplEVMMain: {
+    url: "https://explorer.xrplevm.org",
+    chainId: 1440000,
   },
 } as const;
 

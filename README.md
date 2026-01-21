@@ -277,6 +277,7 @@ The current available networks are:
   - `intuitionTestnet`
   - `memecoreTestnet`
   - `lightlinkTestnet`
+  - `xrplEVMTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -369,6 +370,7 @@ The current available networks are:
   - `intuitionMain`
   - `memecoreMain`
   - `lightlinkMain`
+  - `xrplEVMMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.
