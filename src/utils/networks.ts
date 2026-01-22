@@ -271,6 +271,10 @@ export const networksInfo = {
     url: "https://explorer.testnet.xrplevm.org",
     chainId: 1449000,
   },
+  arcTestnet: {
+    url: "https://testnet.arcscan.app",
+    chainId: 5042002,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },

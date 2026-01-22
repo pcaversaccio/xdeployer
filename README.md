@@ -278,6 +278,7 @@ The current available networks are:
   - `memecoreTestnet`
   - `lightlinkTestnet`
   - `xrplEVMTestnet`
+  - `arcTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
