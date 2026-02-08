@@ -9,6 +9,9 @@
 > [!TIP]
 > It is pronounced _cross_-deployer.
 
+> [!IMPORTANT]
+> This plugin currently targets Hardhat 2 and is not compatible with Hardhat 3.
+
 ## What
 
 This plugin will help you make easier and safer usage of the [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) EVM opcode. [`CREATE2`](https://eips.ethereum.org/EIPS/eip-1014) can be used to compute in advance the address where a smart contract will be deployed, which allows for interesting new mechanisms known as _counterfactual interactions_.
@@ -26,7 +29,7 @@ With `npm` version `6`:
 
 ```console
 # based on ethers v6
-npm install --save-dev xdeployer @nomicfoundation/hardhat-ethers ethers
+npm install --save-dev xdeployer '@nomicfoundation/hardhat-ethers@^3.1.3' ethers
 ```
 
 <details>
@@ -52,7 +55,7 @@ Or if you are using [Yarn](https://classic.yarnpkg.com):
 
 ```console
 # based on ethers v6
-yarn add --dev xdeployer @nomicfoundation/hardhat-ethers ethers
+yarn add --dev xdeployer '@nomicfoundation/hardhat-ethers@^3.1.3' ethers
 ```
 
 <details>
@@ -82,6 +85,23 @@ pnpm add --save-dev 'xdeployer@^1.2.7'
 
 </details>
 
+If you are a [Bun](https://bun.sh) user, run:
+
+```console
+# based on ethers v6
+bun add --dev xdeployer
+```
+
+<details>
+<summary> Using <code>ethers</code> version <code>5</code> </summary>
+
+```console
+# based on ethers v5
+bun add --dev 'xdeployer@^1.2.7'
+```
+
+</details>
+
 > [!NOTE]
 > This plugin uses the optional chaining operator (`?.`). Optional chaining is _not_ supported in [Node.js](https://nodejs.org/en) `v13` and below.
 
@@ -99,7 +119,7 @@ import "xdeployer";
 
 ## Required Plugins
 
-- [`@nomicfoundation/hardhat-ethers`](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
+- [`@nomicfoundation/hardhat-ethers@3`](https://www.npmjs.com/package/@nomicfoundation/hardhat-ethers)
 - [`ethers`](https://www.npmjs.com/package/ethers)
 
 ## Tasks

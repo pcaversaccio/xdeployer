@@ -25,12 +25,12 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "scripts": {
-    "prettier:check": "npx prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
-    "prettier:fix": "npx prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
-    "lint:check": "pnpm prettier:check && npx eslint .",
-    "lint:fix": "pnpm prettier:fix && npx eslint . --fix",
+    "prettier:check": "prettier -c \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
+    "prettier:fix": "prettier -w \"**/*.{js,ts,md,sol,json,yml,yaml}\"",
+    "lint:check": "pnpm prettier:check && eslint .",
+    "lint:fix": "pnpm prettier:fix && eslint . --fix",
     "test": "mocha",
     "build": "tsc",
     "watch": "tsc -w",
@@ -48,7 +48,7 @@
     "@types/chai": "^4.3.20",
     "@types/fs-extra": "^11.0.4",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^25.2.1",
+    "@types/node": "^25.2.2",
     "chai": "^4.5.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
