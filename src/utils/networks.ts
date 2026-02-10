@@ -200,8 +200,8 @@ export const networksInfo = {
     chainId: 48898,
   },
   megaETHTestnet: {
-    url: "https://www.megaexplorer.xyz",
-    chainId: 6342,
+    url: "https://testnet-mega.etherscan.io",
+    chainId: 6343,
   },
   bitlayerTestnet: {
     url: "https://testnet.btrscan.com",
@@ -435,6 +435,10 @@ export const networksInfo = {
   zircuitMain: {
     url: "https://explorer.zircuit.com",
     chainId: 48900,
+  },
+  megaETHMain: {
+    url: "https://mega.etherscan.io",
+    chainId: 4326,
   },
   bitlayerMain: {
     url: "https://www.btrscan.com",

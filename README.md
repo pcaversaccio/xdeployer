@@ -374,6 +374,7 @@ The current available networks are:
   - `iotexMain`
   - `hychainMain`
   - `zircuitMain`
+  - `megaETHMain`
   - `bitlayerMain`
   - `roninMain`
   - `zkSyncMain`
