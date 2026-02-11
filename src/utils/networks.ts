@@ -275,6 +275,10 @@ export const networksInfo = {
     url: "https://testnet.arcscan.app",
     chainId: 5042002,
   },
+  dmdTestnet: {
+    url: "https://testnet-explorer.bit.diamonds",
+    chainId: 37373,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -511,6 +515,10 @@ export const networksInfo = {
   xrplEVMMain: {
     url: "https://explorer.xrplevm.org",
     chainId: 1440000,
+  },
+  dmdMain: {
+    url: "https://explorer.bit.diamonds",
+    chainId: 17771,
   },
 } as const;
 
