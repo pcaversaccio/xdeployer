@@ -300,6 +300,8 @@ The current available networks are:
   - `xrplEVMTestnet`
   - `arcTestnet`
   - `dmdTestnet`
+  - `citreaTestnet`
+  - `tempoTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -395,6 +397,7 @@ The current available networks are:
   - `lightlinkMain`
   - `xrplEVMMain`
   - `dmdMain`
+  - `citreaMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

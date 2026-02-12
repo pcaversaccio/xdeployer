@@ -279,6 +279,14 @@ export const networksInfo = {
     url: "https://testnet-explorer.bit.diamonds",
     chainId: 37373,
   },
+  citreaTestnet: {
+    url: "https://explorer.testnet.citrea.xyz",
+    chainId: 5115,
+  },
+  tempoTestnet: {
+    url: "https://explore.tempo.xyz",
+    chainId: 42431,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -519,6 +527,10 @@ export const networksInfo = {
   dmdMain: {
     url: "https://explorer.bit.diamonds",
     chainId: 17771,
+  },
+  citreaMain: {
+    url: "https://explorer.mainnet.citrea.xyz",
+    chainId: 4114,
   },
 } as const;
 
