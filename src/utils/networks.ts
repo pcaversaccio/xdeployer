@@ -212,7 +212,7 @@ export const networksInfo = {
     chainId: 2021,
   },
   zkSyncTestnet: {
-    url: "https://sepolia-era.zksync.network",
+    url: "https://sepolia.explorer.zksync.io",
     chainId: 300,
   },
   immutableZkEVMTestnet: {
@@ -292,7 +292,7 @@ export const networksInfo = {
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
   optimismMain: { url: "https://optimistic.etherscan.io", chainId: 10 },
   arbitrumOne: { url: "https://arbiscan.io", chainId: 42161 },
-  arbitrumNova: { url: "https://nova.arbiscan.io", chainId: 42170 },
+  arbitrumNova: { url: "https://arbitrum-nova.blockscout.com", chainId: 42170 },
   polygon: { url: "https://polygonscan.com", chainId: 137 },
   polygonZkEVMMain: { url: "https://zkevm.polygonscan.com", chainId: 1101 },
   fantomMain: { url: "https://explorer.fantom.network", chainId: 250 },
@@ -461,7 +461,7 @@ export const networksInfo = {
     chainId: 2020,
   },
   zkSyncMain: {
-    url: "https://era.zksync.network",
+    url: "https://explorer.zksync.io",
     chainId: 324,
   },
   immutableZkEVMMain: {
