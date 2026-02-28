@@ -287,6 +287,10 @@ export const networksInfo = {
     url: "https://explore.tempo.xyz",
     chainId: 42431,
   },
+  lensTestnet: {
+    url: "https://explorer.testnet.lens.xyz",
+    chainId: 37111,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -531,6 +535,10 @@ export const networksInfo = {
   citreaMain: {
     url: "https://explorer.mainnet.citrea.xyz",
     chainId: 4114,
+  },
+  lensMain: {
+    url: "https://explorer.lens.xyz",
+    chainId: 232,
   },
 } as const;
 
