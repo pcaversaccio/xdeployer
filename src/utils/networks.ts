@@ -284,7 +284,7 @@ export const networksInfo = {
     chainId: 5115,
   },
   tempoTestnet: {
-    url: "https://explore.tempo.xyz",
+    url: "https://explore.testnet.tempo.xyz",
     chainId: 42431,
   },
   lensTestnet: {
@@ -535,6 +535,10 @@ export const networksInfo = {
   citreaMain: {
     url: "https://explorer.mainnet.citrea.xyz",
     chainId: 4114,
+  },
+  tempoMain: {
+    url: "https://explore.tempo.xyz",
+    chainId: 4217,
   },
   lensMain: {
     url: "https://explorer.lens.xyz",

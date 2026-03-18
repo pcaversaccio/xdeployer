@@ -399,6 +399,7 @@ The current available networks are:
   - `xrplEVMMain`
   - `dmdMain`
   - `citreaMain`
+  - `tempoMain`
   - `lensMain`
 
 > [!IMPORTANT]
