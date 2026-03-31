@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2024",
+    "target": "es2025",
     "module": "commonjs",
     "allowJs": true,
     "strict": true,
@@ -12,7 +12,8 @@
     "rootDirs": ["./src", "./test"],
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "rootDir": "."
   },
   "include": ["./test", "./src"],
   "files": ["eslint.config.js"],
