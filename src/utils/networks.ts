@@ -291,6 +291,10 @@ export const networksInfo = {
     url: "https://explorer.testnet.lens.xyz",
     chainId: 37111,
   },
+  pulsechainTestnet: {
+    url: "https://scan.v4.testnet.pulsechain.com",
+    chainId: 943,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -543,6 +547,10 @@ export const networksInfo = {
   lensMain: {
     url: "https://explorer.lens.xyz",
     chainId: 232,
+  },
+  pulsechainMain: {
+    url: "https://scan.pulsechain.com",
+    chainId: 369,
   },
 } as const;
 
