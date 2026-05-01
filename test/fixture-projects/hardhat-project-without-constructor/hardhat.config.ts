@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.34",
+    version: "0.8.35",
     settings: {
       optimizer: {
         enabled: true,
