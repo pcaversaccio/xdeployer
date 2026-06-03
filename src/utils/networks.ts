@@ -341,7 +341,7 @@ export const networksInfo = {
   metisMain: { url: "https://andromeda-explorer.metis.io", chainId: 1088 },
   modeMain: { url: "https://explorer.mode.network", chainId: 34443 },
   seiMain: { url: "https://seitrace.com/?chain=pacific-1", chainId: 1329 },
-  xlayerMain: { url: "https://www.oklink.com/x-layer", chainId: 196 },
+  xlayerMain: { url: "https://www.oklink.com/x-layer/evm", chainId: 196 },
   bobMain: { url: "https://explorer.gobob.xyz", chainId: 60808 },
   coreMain: { url: "https://scan.coredao.org", chainId: 1116 },
   telosMain: { url: "https://www.teloscan.io", chainId: 40 },
