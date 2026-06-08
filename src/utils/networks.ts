@@ -33,7 +33,7 @@ export const networksInfo = {
     chainId: 1666700000,
   },
   spark: { url: "https://explorer.fusespark.io", chainId: 123 },
-  cronosTestnet: { url: "https://explorer.cronos.org/testnet", chainId: 338 },
+  cronosTestnet: { url: "https://explorer.cronos.com/testnet", chainId: 338 },
   evmosTestnet: {
     url: "https://www.mintscan.io/evmos-testnet",
     chainId: 9000,
@@ -315,7 +315,7 @@ export const networksInfo = {
   },
   harmonyMain: { url: "https://explorer.harmony.one", chainId: 1666600000 },
   fuse: { url: "https://explorer.fuse.io", chainId: 122 },
-  cronosMain: { url: "https://explorer.cronos.org", chainId: 25 },
+  cronosMain: { url: "https://explorer.cronos.com", chainId: 25 },
   evmosMain: { url: "https://www.mintscan.io/evmos", chainId: 9001 },
   bobaMain: { url: "https://bobascan.com", chainId: 288 },
   cantoMain: { url: "https://tuber.build", chainId: 7700 },
