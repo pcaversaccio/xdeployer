@@ -304,6 +304,7 @@ The current available networks are:
   - `tempoTestnet`
   - `lensTestnet`
   - `pulsechainTestnet`
+  - `robinhoodChainTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`

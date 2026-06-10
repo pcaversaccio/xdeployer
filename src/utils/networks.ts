@@ -295,6 +295,10 @@ export const networksInfo = {
     url: "https://scan.v4.testnet.pulsechain.com",
     chainId: 943,
   },
+  robinhoodChainTestnet: {
+    url: "https://explorer.testnet.chain.robinhood.com",
+    chainId: 46630,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
