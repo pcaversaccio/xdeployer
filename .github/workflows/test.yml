@@ -1,6 +1,6 @@
 name: 🕵️‍♂️ Test xdeploy
 
-on: [push, pull_request, pull_request_target, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -14,11 +14,11 @@ jobs:
         os:
           - ubuntu-latest
         node_version:
-          - 24
+          - 26
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
@@ -30,7 +30,7 @@ jobs:
         run: echo "dir=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
 
       - name: Restore pnpm cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         id: pnpm-cache
         with:
           path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
@@ -47,9 +47,13 @@ jobs:
         run: pnpm install --prefer-offline --frozen-lockfile
 
       - name: Run tests
-        if: ${{ (github.event_name == 'push') || (github.event_name == 'workflow_dispatch') || (github.event.pull_request.head.repo.full_name == github.repository && github.event_name == 'pull_request') || (github.event.pull_request.head.repo.full_name != github.repository && github.event_name == 'pull_request_target') }}
+        if: ${{ (github.event_name == 'push') || (github.event_name == 'workflow_dispatch') || (github.event.pull_request.head.repo.full_name == github.repository && github.event_name == 'pull_request') }}
         run: pnpm test
         env:
           HARDHAT_VAR_XDEPLOYER_TEST_ACCOUNT: ${{ secrets.XDEPLOYER_TEST_ACCOUNT }}
           HARDHAT_VAR_ETH_SEPOLIA_TESTNET_URL: ${{ secrets.ETH_SEPOLIA_TESTNET_URL }}
           HARDHAT_VAR_ETH_HOODI_TESTNET_URL: ${{ secrets.ETH_HOODI_TESTNET_URL }}
+
+      - name: Run external fork PR tests
+        if: ${{ github.event.pull_request.head.repo.full_name != github.repository && github.event_name == 'pull_request' }}
+        run: pnpm exec mocha --config .mocharc.fork-pr.json test/xdeploy-with-constructor.test.ts test/xdeploy-without-constructor.test.ts
