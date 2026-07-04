@@ -556,6 +556,10 @@ export const networksInfo = {
     url: "https://scan.pulsechain.com",
     chainId: 369,
   },
+  robinhoodChainMain: {
+    url: "https://robinhoodchain.blockscout.com",
+    chainId: 4663,
+  },
 } as const;
 
 // Mapping of Sei networks to their chain query identifiers required for constructing the
