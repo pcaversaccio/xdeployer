@@ -263,7 +263,7 @@ The current available networks are:
   - `liskTestnet`
   - `metalL2Testnet`
   - `superseedTestnet`
-  - `storyTestnet`
+  - `dataNetworkTestnet`
   - `sonicTestnet`
   - `flowTestnet`
   - `inkTestnet`
@@ -363,7 +363,7 @@ The current available networks are:
   - `liskMain`
   - `metalL2Main`
   - `superseedMain`
-  - `storyMain`
+  - `dataNetworkMain`
   - `sonicMain`
   - `flowMain`
   - `inkMain`

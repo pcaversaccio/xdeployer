@@ -131,8 +131,8 @@ export const networksInfo = {
     url: "https://sepolia-explorer.superseed.xyz",
     chainId: 53302,
   },
-  storyTestnet: {
-    url: "https://aeneid.storyscan.io",
+  dataNetworkTestnet: {
+    url: "https://aeneid.datanetscan.io",
     chainId: 1315,
   },
   sonicTestnet: {
@@ -392,8 +392,8 @@ export const networksInfo = {
     url: "https://explorer.superseed.xyz",
     chainId: 5330,
   },
-  storyMain: {
-    url: "https://www.storyscan.io",
+  dataNetworkMain: {
+    url: "https://datanetscan.io",
     chainId: 1514,
   },
   sonicMain: {
