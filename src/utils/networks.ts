@@ -196,7 +196,7 @@ export const networksInfo = {
     chainId: 29112,
   },
   zircuitTestnet: {
-    url: "https://explorer.garfield-testnet.zircuit.com",
+    url: "https://exp.garfield-testnet.zircuit.com",
     chainId: 48898,
   },
   megaETHTestnet: {
@@ -393,7 +393,7 @@ export const networksInfo = {
     chainId: 5330,
   },
   dataNetworkMain: {
-    url: "https://datanetscan.io",
+    url: "https://www.datanetscan.io",
     chainId: 1514,
   },
   sonicMain: {
