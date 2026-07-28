@@ -13,7 +13,8 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "rootDir": "."
+    "rootDir": ".",
+    "types": ["node", "mocha"]
   },
   "include": ["./test", "./src"],
   "files": ["eslint.config.js"],
