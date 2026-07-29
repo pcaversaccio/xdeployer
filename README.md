@@ -305,6 +305,7 @@ The current available networks are:
   - `lensTestnet`
   - `pulsechainTestnet`
   - `robinhoodChainTestnet`
+  - `stableTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -405,6 +406,7 @@ The current available networks are:
   - `lensMain`
   - `pulsechainMain`
   - `robinhoodChainMain`
+  - `stableMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

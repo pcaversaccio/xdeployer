@@ -140,7 +140,7 @@ export const networksInfo = {
     chainId: 57054,
   },
   flowTestnet: {
-    url: "https://evm-testnet.flowscan.io",
+    url: "https://testnet.evm.flow.com",
     chainId: 545,
   },
   inkTestnet: {
@@ -299,6 +299,10 @@ export const networksInfo = {
     url: "https://explorer.testnet.chain.robinhood.com",
     chainId: 46630,
   },
+  stableTestnet: {
+    url: "https://testnet.stablescan.xyz",
+    chainId: 2201,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -401,7 +405,7 @@ export const networksInfo = {
     chainId: 146,
   },
   flowMain: {
-    url: "https://evm.flowscan.io",
+    url: "https://evm.flow.com",
     chainId: 747,
   },
   inkMain: {
@@ -559,6 +563,10 @@ export const networksInfo = {
   robinhoodChainMain: {
     url: "https://robinhoodchain.blockscout.com",
     chainId: 4663,
+  },
+  stableMain: {
+    url: "https://stablescan.xyz",
+    chainId: 988,
   },
 } as const;
 
