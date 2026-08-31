@@ -13,7 +13,7 @@ importers:
         version: 10.0.1(eslint@10.8.1(supports-color@8.1.1))
       '@nomicfoundation/hardhat-ethers':
         specifier: 3.1.3
-        version: 3.1.3(ethers@6.17.0)(hardhat@2.29.0(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3))(supports-color@8.1.1)
+        version: 3.1.3(ethers@6.17.0)(hardhat@2.29.1(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3))(supports-color@8.1.1)
       '@types/chai':
         specifier: 4.3.20
         version: 4.3.20
@@ -42,8 +42,8 @@ importers:
         specifier: 17.11.0
         version: 17.11.0
       hardhat:
-        specifier: 2.29.0
-        version: 2.29.0(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3)
+        specifier: 2.29.1
+        version: 2.29.1(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3)
       mocha:
         specifier: 11.8.0
         version: 11.8.0
@@ -242,9 +242,6 @@ packages:
 
   '@noble/secp256k1@1.7.1':
     resolution: {integrity: sha512-hOUk6AyBFmqVrv7k5WAw/LpszxVbj9gGN4JRkIX52fdFAj1UA61KXmZDvqVEm+pOyec3+fIeZB02LYa/pWOArw==}
-
-  '@noble/secp256k1@1.7.2':
-    resolution: {integrity: sha512-/qzwYl5eFLH8OWIecQWM31qld2g1NfjgylK+TNhqtaUKP37Nm+Y+z30Fjhw0Ct8p9yCQEm2N3W/AckdIb3SMcQ==}
 
   '@nomicfoundation/edr-darwin-arm64@0.12.0-next.23':
     resolution: {integrity: sha512-Amh7mRoDzZyJJ4efqoePqdoZOzharmSOttZuJDlVE5yy07BoE8hL6ZRpa5fNYn0LCqn/KoWs8OHANWxhKDGhvQ==}
@@ -805,9 +802,6 @@ packages:
   fp-ts@1.19.3:
     resolution: {integrity: sha512-H5KQDspykdHuztLTg+ajGN0Z2qUjcEf3Ybxc6hLt0k7/zPkn29XnKnxlBPyW2XIddWrGaJBzBl4VLYOtk39yZg==}
 
-  fp-ts@1.19.5:
-    resolution: {integrity: sha512-wDNqTimnzs8QqpldiId9OavWK2NptormjXnRJTQecNjzwfyp6P/8s/zG8e4h3ja3oqkKaY72UlTjQYt/1yXf9A==}
-
   fs-extra@7.0.1:
     resolution: {integrity: sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==}
     engines: {node: '>=6 <7 || >=8'}
@@ -835,8 +829,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  hardhat@2.29.0:
-    resolution: {integrity: sha512-tsj5mCSjDCFOhGfBl4vwqDEcwdlES9VUzRWfdrwvEVhus6D8W6u+WfUKRLLwFhKGS/8lKPoXGsjYWPXl3CCpOg==}
+  hardhat@2.29.1:
+    resolution: {integrity: sha512-BVPE15F9+gWH5Eof7aAhprXTi05mNHwn32fwIKMeMFqrkU3Jun1f7NubXsJ0SOeMqu0mchF6KkW7rx1CHinlWw==}
     hasBin: true
     peerDependencies:
       ts-node: '*'
@@ -1627,8 +1621,6 @@ snapshots:
 
   '@noble/secp256k1@1.7.1': {}
 
-  '@noble/secp256k1@1.7.2': {}
-
   '@nomicfoundation/edr-darwin-arm64@0.12.0-next.23': {}
 
   '@nomicfoundation/edr-darwin-x64@0.12.0-next.23': {}
@@ -1653,11 +1645,11 @@ snapshots:
       '@nomicfoundation/edr-linux-x64-musl': 0.12.0-next.23
       '@nomicfoundation/edr-win32-x64-msvc': 0.12.0-next.23
 
-  '@nomicfoundation/hardhat-ethers@3.1.3(ethers@6.17.0)(hardhat@2.29.0(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3))(supports-color@8.1.1)':
+  '@nomicfoundation/hardhat-ethers@3.1.3(ethers@6.17.0)(hardhat@2.29.1(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3))(supports-color@8.1.1)':
     dependencies:
       debug: 4.4.3(supports-color@8.1.1)
       ethers: 6.17.0
-      hardhat: 2.29.0(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3)
+      hardhat: 2.29.1(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3)
       lodash.isequal: 4.5.0
     transitivePeerDependencies:
       - supports-color
@@ -1707,7 +1699,7 @@ snapshots:
   '@scure/bip32@1.1.5':
     dependencies:
       '@noble/hashes': 1.2.0
-      '@noble/secp256k1': 1.7.2
+      '@noble/secp256k1': 1.7.1
       '@scure/base': 1.1.9
 
   '@scure/bip32@1.4.0':
@@ -2234,8 +2226,6 @@ snapshots:
 
   fp-ts@1.19.3: {}
 
-  fp-ts@1.19.5: {}
-
   fs-extra@7.0.1:
     dependencies:
       graceful-fs: 4.2.11
@@ -2263,7 +2253,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  hardhat@2.29.0(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3):
+  hardhat@2.29.1(supports-color@8.1.1)(ts-node@10.9.2(@types/node@26.2.0)(typescript@6.0.3))(typescript@6.0.3):
     dependencies:
       '@ethereumjs/util': 9.1.0
       '@ethersproject/abi': 5.8.0
@@ -2360,7 +2350,7 @@ snapshots:
 
   io-ts@1.10.4:
     dependencies:
-      fp-ts: 1.19.5
+      fp-ts: 1.19.3
 
   is-extglob@2.1.1: {}
 

@@ -54,7 +54,7 @@
     "eslint-config-prettier": "10.1.8",
     "ethers": "6.17.0",
     "globals": "17.11.0",
-    "hardhat": "2.29.0",
+    "hardhat": "2.29.1",
     "mocha": "11.8.0",
     "prettier": "3.9.6",
     "prettier-plugin-solidity": "2.4.1",
