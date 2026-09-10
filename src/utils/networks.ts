@@ -303,6 +303,10 @@ export const networksInfo = {
     url: "https://testnet.stablescan.xyz",
     chainId: 2201,
   },
+  tezosXTestnet: {
+    url: "https://blockscout.previewnet.tezosx.nomadic-labs.com",
+    chainId: 128064,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },

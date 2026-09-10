@@ -306,6 +306,7 @@ The current available networks are:
   - `pulsechainTestnet`
   - `robinhoodChainTestnet`
   - `stableTestnet`
+  - `tezosXTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
