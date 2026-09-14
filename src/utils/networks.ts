@@ -565,7 +565,7 @@ export const networksInfo = {
     chainId: 369,
   },
   robinhoodChainMain: {
-    url: "https://robinhoodchain.blockscout.com",
+    url: "https://robin.etherscan.io",
     chainId: 4663,
   },
   stableMain: {
