@@ -401,6 +401,7 @@ The current available networks are:
   - `memecoreMain`
   - `lightlinkMain`
   - `xrplEVMMain`
+  - `arcMain`
   - `dmdMain`
   - `citreaMain`
   - `tempoMain`

@@ -272,7 +272,7 @@ export const networksInfo = {
     chainId: 1449000,
   },
   arcTestnet: {
-    url: "https://testnet.arcscan.app",
+    url: "https://explorer.testnet.arc.io",
     chainId: 5042002,
   },
   dmdTestnet: {
@@ -543,6 +543,10 @@ export const networksInfo = {
   xrplEVMMain: {
     url: "https://explorer.xrplevm.org",
     chainId: 1440000,
+  },
+  arcMain: {
+    url: "https://explorer.arc.io",
+    chainId: 5042,
   },
   dmdMain: {
     url: "https://explorer.bit.diamonds",
