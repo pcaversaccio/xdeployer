@@ -545,7 +545,7 @@ export const networksInfo = {
     chainId: 1440000,
   },
   arcMain: {
-    url: "https://explorer.arc.io",
+    url: "https://arc.etherscan.io",
     chainId: 5042,
   },
   dmdMain: {
