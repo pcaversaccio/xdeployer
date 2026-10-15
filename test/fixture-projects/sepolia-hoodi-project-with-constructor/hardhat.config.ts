@@ -40,7 +40,7 @@ const config: HardhatUserConfig = {
       vars.get("ETH_SEPOLIA_TESTNET_URL", "https://rpc.sepolia.org"),
       vars.get("ETH_HOODI_TESTNET_URL", "https://0xrpc.io/hoodi"),
     ],
-    gasLimit: 1.2 * 10 ** 6,
+    gasLimit: 6.5 * 10 ** 6, // Sepolia activated the `amsterdam` hardfork thus the increased gas limit of 6.5m is required for contract deployment.
   },
 };
 
