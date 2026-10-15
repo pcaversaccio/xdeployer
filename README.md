@@ -307,6 +307,7 @@ The current available networks are:
   - `robinhoodChainTestnet`
   - `stableTestnet`
   - `tezosXTestnet`
+  - `shibariumTestnet`
 - **EVM-Based Production Networks:**
   - `ethMain`
   - `bscMain`
@@ -409,6 +410,7 @@ The current available networks are:
   - `pulsechainMain`
   - `robinhoodChainMain`
   - `stableMain`
+  - `shibariumMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

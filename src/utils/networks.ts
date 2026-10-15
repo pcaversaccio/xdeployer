@@ -307,6 +307,10 @@ export const networksInfo = {
     url: "https://blockscout.previewnet.tezosx.nomadic-labs.com",
     chainId: 128064,
   },
+  shibariumTestnet: {
+    url: "https://puppyscan.shib.io",
+    chainId: 157,
+  },
   ethMain: { url: "https://etherscan.io", chainId: 1 },
   bscMain: { url: "https://bscscan.com", chainId: 56 },
   opbnbMain: { url: "https://opbnb.bscscan.com", chainId: 204 },
@@ -575,6 +579,10 @@ export const networksInfo = {
   stableMain: {
     url: "https://stablescan.xyz",
     chainId: 988,
+  },
+  shibariumMain: {
+    url: "https://shibariumscan.io",
+    chainId: 109,
   },
 } as const;
 
