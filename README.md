@@ -411,6 +411,7 @@ The current available networks are:
   - `robinhoodChainMain`
   - `stableMain`
   - `shibariumMain`
+  - `dotOneMain`
 
 > [!IMPORTANT]
 > Note that you must ensure that your deployment account has sufficient funds on **all** target networks.

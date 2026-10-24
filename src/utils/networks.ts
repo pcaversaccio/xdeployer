@@ -584,6 +584,10 @@ export const networksInfo = {
     url: "https://shibariumscan.io",
     chainId: 109,
   },
+  dotOneMain: {
+    url: "https://dotscan.one",
+    chainId: 505,
+  },
 } as const;
 
 // Mapping of Sei networks to their chain query identifiers required for constructing the
