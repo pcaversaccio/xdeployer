@@ -228,7 +228,7 @@ export const networksInfo = {
     chainId: 998,
   },
   apeChainTestnet: {
-    url: "https://curtis.apescan.io",
+    url: "https://curtis.apechain.com",
     chainId: 33111,
   },
   botanixTestnet: {
